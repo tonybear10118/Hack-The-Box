@@ -1,6 +1,6 @@
 ### FootHold Shell:
 
-First using nmap, found you there's port 443 opened.(HTTPS)
+First using nmap, found that there's port 443 opened.(HTTPS)
 So now we comming to 10.10.10.110:443, setting broswer allow to view page.
 
 Then we can find out there's a icon button redirect to https://gogs.craft.htb .
