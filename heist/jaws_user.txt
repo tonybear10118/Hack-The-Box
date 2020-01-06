@@ -1,0 +1,1035 @@
+Running J.A.W.S. Enumeration
+Access denied 
+At C:\Users\Chase\Documents\jaws-enum.ps1:31 char:21
++     $win_version = (Get-WmiObject -class Win32_OperatingSystem)
++                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+	- Gathering User Information
+	- Gathering Processes, Services and Scheduled Tasks
+Access denied 
+At C:\Users\Chase\Documents\jaws-enum.ps1:105 char:28
++     $output = $output +  ((Get-WmiObject win32_process | Select-Objec ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Cannot open Service Control Manager on computer '.'. This operation might require other privileges.
+At C:\Users\Chase\Documents\jaws-enum.ps1:115 char:26
++     $output = $output + (get-service | Select Name,DisplayName,Status ...
++                          ~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Service], InvalidOperationException
+    + FullyQualifiedErrorId : System.InvalidOperationException,Microsoft.PowerShell.Commands.GetServiceCommand
+	- Gathering Installed Software
+Access denied 
+At C:\Users\Chase\Documents\jaws-enum.ps1:122 char:27
++     $output = $output +  (get-wmiobject -Class win32_product | select ...
++                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Access denied 
+At C:\Users\Chase\Documents\jaws-enum.ps1:127 char:27
++ ... $output +  (Get-Wmiobject -class Win32_QuickFixEngineering -namespace ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+	- Gathering File System Information
+Access denied 
+At C:\Users\Chase\Documents\jaws-enum.ps1:173 char:27
++ ...  $output = $output +  (Get-WmiObject -Class Win32_LogicalDisk | selec ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+cmd.exe : ERROR:
+    + CategoryInfo          : NotSpecified: (ERROR::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+Description = Access denied
+	- Looking for Simple Priv Esc Methods
+Property DefaultPassword does not exist at path HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon.
+At C:\Users\Chase\Documents\jaws-enum.ps1:247 char:26
++ ... Password = (get-itemproperty -path $Winlogon -Name DefaultPassword).D ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (DefaultPassword:String) [Get-ItemProperty], PSArgumentException
+    + FullyQualifiedErrorId : System.Management.Automation.PSArgumentException,Microsoft.PowerShell.Commands.GetItemPropertyCommand
+############################################################
+##     J.A.W.S. (Just Another Windows Enum Script)        ##
+##                                                        ##
+##           https://github.com/411Hall/JAWS              ##
+##                                                        ##
+############################################################
+
+Windows Version: 
+Architecture: AMD64
+Hostname: SUPPORTDESK
+Current User: Chase
+Current Time\Date: 10/29/2019 09:17:54
+
+-----------------------------------------------------------
+ Users
+-----------------------------------------------------------
+----------
+Username: Administrator
+Groups:   Administrators Users
+----------
+Username: Chase
+Groups:   Remote Management Users Users
+----------
+Username: DefaultAccount
+Groups:   System Managed Accounts Group
+----------
+Username: Guest
+Groups:   Guests
+----------
+Username: Hazard
+Groups:   Users
+----------
+Username: Jason
+Groups:   Users
+----------
+Username: support
+Groups:   Users
+----------
+Username: WDAGUtilityAccount
+Groups:   
+
+-----------------------------------------------------------
+ Network Information
+-----------------------------------------------------------
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . : 
+   IPv6 Address. . . . . . . . . . . : dead:beef::31cd:ef1c:5a27:acc2
+   Link-local IPv6 Address . . . . . : fe80::31cd:ef1c:5a27:acc2%15
+   IPv4 Address. . . . . . . . . . . : 10.10.10.149
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:feaa:9c8d%15
+                                       10.10.10.2
+
+-----------------------------------------------------------
+ Arp
+-----------------------------------------------------------
+
+Interface: 10.10.10.149 --- 0xf
+  Internet Address      Physical Address      Type
+  10.10.10.2            00-50-56-aa-9c-8d     dynamic   
+  10.10.10.255          ff-ff-ff-ff-ff-ff     static    
+  224.0.0.22            01-00-5e-00-00-16     static    
+  224.0.0.251           01-00-5e-00-00-fb     static    
+  224.0.0.252           01-00-5e-00-00-fc     static    
+
+
+-----------------------------------------------------------
+ NetStat
+-----------------------------------------------------------
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State           PID
+  TCP    0.0.0.0:80             0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       872
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:5985           0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:47001          0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING       480
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING       1052
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING       1428
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING       2616
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING       624
+  TCP    0.0.0.0:49669          0.0.0.0:0              LISTENING       644
+  TCP    10.10.10.149:80        10.10.14.15:47836      ESTABLISHED     4
+  TCP    10.10.10.149:80        10.10.14.15:47838      ESTABLISHED     4
+  TCP    10.10.10.149:80        10.10.14.15:47840      ESTABLISHED     4
+  TCP    10.10.10.149:80        10.10.14.15:47842      ESTABLISHED     4
+  TCP    10.10.10.149:80        10.10.14.15:47844      ESTABLISHED     4
+  TCP    10.10.10.149:80        10.10.14.15:47846      ESTABLISHED     4
+  TCP    10.10.10.149:80        10.10.14.15:47848      ESTABLISHED     4
+  TCP    10.10.10.149:80        10.10.14.15:47850      ESTABLISHED     4
+  TCP    10.10.10.149:80        10.10.14.15:47852      ESTABLISHED     4
+  TCP    10.10.10.149:80        10.10.14.15:47854      ESTABLISHED     4
+  TCP    10.10.10.149:139       0.0.0.0:0              LISTENING       4
+  TCP    10.10.10.149:5985      10.10.14.34:33690      TIME_WAIT       0
+  TCP    10.10.10.149:5985      10.10.14.34:33694      TIME_WAIT       0
+  TCP    10.10.10.149:5985      10.10.14.34:33698      TIME_WAIT       0
+  TCP    10.10.10.149:5985      10.10.14.34:33700      ESTABLISHED     4
+  TCP    127.0.0.1:49672        127.0.0.1:49673        ESTABLISHED     7016
+  TCP    127.0.0.1:49673        127.0.0.1:49672        ESTABLISHED     7016
+  TCP    127.0.0.1:49674        127.0.0.1:49675        ESTABLISHED     4940
+  TCP    127.0.0.1:49675        127.0.0.1:49674        ESTABLISHED     4940
+  TCP    127.0.0.1:49677        127.0.0.1:49678        ESTABLISHED     4004
+  TCP    127.0.0.1:49678        127.0.0.1:49677        ESTABLISHED     4004
+  TCP    127.0.0.1:49679        127.0.0.1:49680        ESTABLISHED     6788
+  TCP    127.0.0.1:49680        127.0.0.1:49679        ESTABLISHED     6788
+  TCP    [::]:80                [::]:0                 LISTENING       4
+  TCP    [::]:135               [::]:0                 LISTENING       872
+  TCP    [::]:445               [::]:0                 LISTENING       4
+  TCP    [::]:5985              [::]:0                 LISTENING       4
+  TCP    [::]:47001             [::]:0                 LISTENING       4
+  TCP    [::]:49664             [::]:0                 LISTENING       480
+  TCP    [::]:49665             [::]:0                 LISTENING       1052
+  TCP    [::]:49666             [::]:0                 LISTENING       1428
+  TCP    [::]:49667             [::]:0                 LISTENING       2616
+  TCP    [::]:49668             [::]:0                 LISTENING       624
+  TCP    [::]:49669             [::]:0                 LISTENING       644
+  UDP    0.0.0.0:123            *:*                                    2944
+  UDP    0.0.0.0:500            *:*                                    2712
+  UDP    0.0.0.0:4500           *:*                                    2712
+  UDP    0.0.0.0:5353           *:*                                    1624
+  UDP    0.0.0.0:5355           *:*                                    1624
+  UDP    10.10.10.149:137       *:*                                    4
+  UDP    10.10.10.149:138       *:*                                    4
+  UDP    127.0.0.1:57612        *:*                                    3036
+  UDP    [::]:123               *:*                                    2944
+  UDP    [::]:500               *:*                                    2712
+  UDP    [::]:4500              *:*                                    2712
+  UDP    [::]:5353              *:*                                    1624
+  UDP    [::]:5355              *:*                                    1624
+
+
+-----------------------------------------------------------
+ Firewall Status
+-----------------------------------------------------------
+
+Firwall is Enabled
+
+-----------------------------------------------------------
+ FireWall Rules
+-----------------------------------------------------------
+
+Name                                                                                                                                                                LocalPorts        ApplicationName                             
+----                                                                                                                                                                ----------        ---------------                             
+@{Microsoft.AAD.BrokerPlugin_1000.17763.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}                                                                                  
+@{Microsoft.AAD.BrokerPlugin_1000.17763.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}                                                                                  
+@{Microsoft.AAD.BrokerPlugin_1000.17763.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}                                                                                  
+@{Microsoft.Win32WebViewHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/DisplayName}                                                                                             
+@{Microsoft.Win32WebViewHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/DisplayName}                                                                                             
+@{Microsoft.Windows.CloudExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}                                                                  
+@{Microsoft.Windows.CloudExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}                                                                  
+@{Microsoft.Windows.CloudExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}                                                                  
+@{Microsoft.Windows.Cortana_1.11.5.17763_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Cortana/resources/PackageDisplayName}                                                                                      
+@{Microsoft.Windows.Cortana_1.11.5.17763_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Cortana/resources/PackageDisplayName}                                                                                      
+@{Microsoft.Windows.Cortana_1.11.5.17763_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Cortana/resources/PackageDisplayName}                                                                                      
+Firefox (C:\Program Files\Mozilla Firefox)                                                                                                                          *                 C:\Program Files\Mozilla Firefox\firefox.exe
+Firefox (C:\Program Files\Mozilla Firefox)                                                                                                                          *                 C:\Program Files\Mozilla Firefox\firefox.exe
+Netlogon Service Authz (RPC)                                                                                                                                        RPC,              C:\Windows\System32\lsass.exe               
+Cast to Device streaming server (RTCP-Streaming-In)                                                                                                                 *                 C:\Windows\system32\mdeserver.exe           
+Cast to Device streaming server (RTCP-Streaming-In)                                                                                                                 *                 C:\Windows\system32\mdeserver.exe           
+Cast to Device streaming server (RTCP-Streaming-In)                                                                                                                 *                 C:\Windows\system32\mdeserver.exe           
+Cast to Device streaming server (RTSP-Streaming-In)                                                                                                                 23554,23555,23556 C:\Windows\system32\mdeserver.exe           
+Cast to Device streaming server (RTSP-Streaming-In)                                                                                                                 23554,23555,23556 C:\Windows\system32\mdeserver.exe           
+Cast to Device streaming server (RTSP-Streaming-In)                                                                                                                 23554,23555,23556 C:\Windows\system32\mdeserver.exe           
+AllJoyn Router (TCP-In)                                                                                                                                             9955              C:\Windows\system32\svchost.exe             
+AllJoyn Router (UDP-In)                                                                                                                                             *                 C:\Windows\system32\svchost.exe             
+Cast to Device functionality (qWave-TCP-In)                                                                                                                         2177              C:\Windows\system32\svchost.exe             
+Cast to Device functionality (qWave-UDP-In)                                                                                                                         2177              C:\Windows\system32\svchost.exe             
+Cast to Device SSDP Discovery (UDP-In)                                                                                                                              Ply2Disc,         C:\Windows\system32\svchost.exe             
+Core Networking - Dynamic Host Configuration Protocol (DHCP-In)                                                                                                     68                C:\Windows\system32\svchost.exe             
+Core Networking - Dynamic Host Configuration Protocol for IPv6(DHCPV6-In)                                                                                           546               C:\Windows\system32\svchost.exe             
+Core Networking - Teredo (UDP-In)                                                                                                                                   Teredo,           C:\Windows\system32\svchost.exe             
+Delivery Optimization (TCP-In)                                                                                                                                      7680              C:\Windows\system32\svchost.exe             
+Delivery Optimization (UDP-In)                                                                                                                                      7680              C:\Windows\system32\svchost.exe             
+Distributed Transaction Coordinator (RPC)                                                                                                                           RPC,              C:\Windows\system32\svchost.exe             
+Distributed Transaction Coordinator (RPC-EPMAP)                                                                                                                     RPC-EPMap,        C:\Windows\system32\svchost.exe             
+mDNS (UDP-In)                                                                                                                                                       5353              C:\Windows\system32\svchost.exe             
+mDNS (UDP-In)                                                                                                                                                       5353              C:\Windows\system32\svchost.exe             
+mDNS (UDP-In)                                                                                                                                                       5353              C:\Windows\system32\svchost.exe             
+Network Discovery (LLMNR-UDP-In)                                                                                                                                    5355              C:\Windows\system32\svchost.exe             
+Network Discovery (Pub-WSD-In)                                                                                                                                      3702              C:\Windows\system32\svchost.exe             
+Network Discovery (SSDP-In)                                                                                                                                         1900              C:\Windows\system32\svchost.exe             
+Network Discovery (WSD-In)                                                                                                                                          3702              C:\Windows\system32\svchost.exe             
+Cast to Device streaming server (HTTP-Streaming-In)                                                                                                                 10246             System                                      
+Cast to Device streaming server (HTTP-Streaming-In)                                                                                                                 10246             System                                      
+Cast to Device streaming server (HTTP-Streaming-In)                                                                                                                 10246             System                                      
+Cast to Device UPnP Events (TCP-In)                                                                                                                                 2869              System                                      
+Core Networking - Destination Unreachable (ICMPv6-In)                                                                                                                                 System                                      
+Core Networking - Destination Unreachable Fragmentation Needed (ICMPv4-In)                                                                                                            System                                      
+Core Networking - Internet Group Management Protocol (IGMP-In)                                                                                                                        System                                      
+Core Networking - IPHTTPS (TCP-In)                                                                                                                                  IPHTTPS,          System                                      
+Core Networking - IPv6 (IPv6-In)                                                                                                                                                      System                                      
+Core Networking - Multicast Listener Done (ICMPv6-In)                                                                                                                                 System                                      
+Core Networking - Multicast Listener Query (ICMPv6-In)                                                                                                                                System                                      
+Core Networking - Multicast Listener Report (ICMPv6-In)                                                                                                                               System                                      
+Core Networking - Multicast Listener Report v2 (ICMPv6-In)                                                                                                                            System                                      
+Core Networking - Neighbor Discovery Advertisement (ICMPv6-In)                                                                                                                        System                                      
+Core Networking - Neighbor Discovery Solicitation (ICMPv6-In)                                                                                                                         System                                      
+Core Networking - Packet Too Big (ICMPv6-In)                                                                                                                                          System                                      
+Core Networking - Parameter Problem (ICMPv6-In)                                                                                                                                       System                                      
+Core Networking - Router Advertisement (ICMPv6-In)                                                                                                                                    System                                      
+Core Networking - Router Solicitation (ICMPv6-In)                                                                                                                                     System                                      
+Core Networking - Time Exceeded (ICMPv6-In)                                                                                                                                           System                                      
+DIAL protocol server (HTTP-In)                                                                                                                                      10247             System                                      
+DIAL protocol server (HTTP-In)                                                                                                                                      10247             System                                      
+File and Printer Sharing (Echo Request - ICMPv4-In)                                                                                                                                   System                                      
+File and Printer Sharing (SMB-In)                                                                                                                                   445               System                                      
+Netlogon Service (NP-In)                                                                                                                                            445               System                                      
+Network Discovery (NB-Datagram-In)                                                                                                                                  138               System                                      
+Network Discovery (NB-Name-In)                                                                                                                                      137               System                                      
+Network Discovery (UPnP-In)                                                                                                                                         2869              System                                      
+Network Discovery (WSD Events-In)                                                                                                                                   5357              System                                      
+Network Discovery (WSD EventsSecure-In)                                                                                                                             5358              System                                      
+Windows Remote Management (HTTP-In)                                                                                                                                 5985              System                                      
+Windows Remote Management (HTTP-In)                                                                                                                                 5985              System                                      
+World Wide Web Services (HTTP Traffic-In)                                                                                                                           80                System                                      
+World Wide Web Services (HTTPS Traffic-In)                                                                                                                          443               System                                      
+@{Microsoft.AAD.BrokerPlugin_1000.17763.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}                                                                                  
+@{Microsoft.AAD.BrokerPlugin_1000.17763.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}                                                                                  
+@{Microsoft.AAD.BrokerPlugin_1000.17763.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}                                                                                  
+@{Microsoft.AccountsControl_10.0.17763.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.AccountsControl/Resources/DisplayName}                                                                                                    
+@{Microsoft.AccountsControl_10.0.17763.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.AccountsControl/Resources/DisplayName}                                                                                                    
+@{Microsoft.LockApp_10.0.17763.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.LockApp/resources/AppDisplayName}                                                                                                                 
+@{Microsoft.LockApp_10.0.17763.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.LockApp/resources/AppDisplayName}                                                                                                                 
+@{Microsoft.Win32WebViewHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/DisplayName}                                                                                             
+@{Microsoft.Win32WebViewHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/DisplayName}                                                                                             
+@{Microsoft.Windows.Apprep.ChxApp_1000.17763.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Apprep.ChxApp/resources/DisplayName}                                                                               
+@{Microsoft.Windows.Apprep.ChxApp_1000.17763.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Apprep.ChxApp/resources/DisplayName}                                                                               
+@{Microsoft.Windows.CloudExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}                                                                  
+@{Microsoft.Windows.CloudExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}                                                                  
+@{Microsoft.Windows.CloudExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}                                                                  
+@{Microsoft.Windows.Cortana_1.11.5.17763_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Cortana/resources/PackageDisplayName}                                                                                      
+@{Microsoft.Windows.Cortana_1.11.5.17763_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Cortana/resources/PackageDisplayName}                                                                                      
+@{Microsoft.Windows.Cortana_1.11.5.17763_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Cortana/resources/PackageDisplayName}                                                                                      
+@{Microsoft.Windows.NarratorQuickStart_10.0.17763.1_neutral_neutral_8wekyb3d8bbwe?ms-resource://Microsoft.Windows.NarratorQuickStart/Resources/AppDisplayName}                                                                    
+@{Microsoft.Windows.NarratorQuickStart_10.0.17763.1_neutral_neutral_8wekyb3d8bbwe?ms-resource://Microsoft.Windows.NarratorQuickStart/Resources/AppDisplayName}                                                                    
+@{Microsoft.Windows.OOBENetworkCaptivePortal_10.0.17763.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.OOBENetworkCaptivePortal/Resources/AppDisplayName}                                                               
+@{Microsoft.Windows.OOBENetworkCaptivePortal_10.0.17763.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.OOBENetworkCaptivePortal/Resources/AppDisplayName}                                                               
+@{Microsoft.Windows.PeopleExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.PeopleExperienceHost/resources/PkgDisplayName}                                                                
+@{Microsoft.Windows.PeopleExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.PeopleExperienceHost/resources/PkgDisplayName}                                                                
+@{Microsoft.Windows.SecHealthUI_10.0.17763.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.SecHealthUI/resources/PackageDisplayName}                                                                                     
+@{Microsoft.Windows.SecHealthUI_10.0.17763.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.SecHealthUI/resources/PackageDisplayName}                                                                                     
+@{Microsoft.Windows.ShellExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.ShellExperienceHost/resources/PkgDisplayName}                                                                  
+@{Microsoft.Windows.ShellExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.ShellExperienceHost/resources/PkgDisplayName}                                                                  
+@{Microsoft.Windows.ShellExperienceHost_10.0.17763.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.ShellExperienceHost/resources/PkgDisplayName}                                                                  
+Shell Input Application                                                                                                                                                                                                           
+Shell Input Application                                                                                                                                                                                                           
+Windows Device Management Certificate Installer (TCP out)                                                                                                           *                 C:\Windows\system32\dmcertinst.exe          
+Core Networking - Group Policy (LSASS-Out)                                                                                                                          *                 C:\Windows\system32\lsass.exe               
+Cast to Device streaming server (RTP-Streaming-Out)                                                                                                                 *                 C:\Windows\system32\mdeserver.exe           
+Cast to Device streaming server (RTP-Streaming-Out)                                                                                                                 *                 C:\Windows\system32\mdeserver.exe           
+Cast to Device streaming server (RTP-Streaming-Out)                                                                                                                 *                 C:\Windows\system32\mdeserver.exe           
+Windows Device Management Sync Client (TCP out)                                                                                                                     *                 C:\Windows\system32\omadmclient.exe         
+AllJoyn Router (TCP-Out)                                                                                                                                            *                 C:\Windows\system32\svchost.exe             
+AllJoyn Router (UDP-Out)                                                                                                                                            *                 C:\Windows\system32\svchost.exe             
+Cast to Device functionality (qWave-TCP-Out)                                                                                                                        *                 C:\Windows\system32\svchost.exe             
+Cast to Device functionality (qWave-UDP-Out)                                                                                                                        *                 C:\Windows\system32\svchost.exe             
+Connected User Experiences and Telemetry                                                                                                                            *                 C:\Windows\system32\svchost.exe             
+Core Networking - DNS (UDP-Out)                                                                                                                                     *                 C:\Windows\system32\svchost.exe             
+Core Networking - Dynamic Host Configuration Protocol (DHCP-Out)                                                                                                    68                C:\Windows\system32\svchost.exe             
+Core Networking - Dynamic Host Configuration Protocol for IPv6(DHCPV6-Out)                                                                                          546               C:\Windows\system32\svchost.exe             
+Core Networking - Group Policy (TCP-Out)                                                                                                                            *                 C:\Windows\system32\svchost.exe             
+Core Networking - IPHTTPS (TCP-Out)                                                                                                                                 *                 C:\Windows\system32\svchost.exe             
+Core Networking - Teredo (UDP-Out)                                                                                                                                  *                 C:\Windows\system32\svchost.exe             
+mDNS (UDP-Out)                                                                                                                                                      *                 C:\Windows\system32\svchost.exe             
+mDNS (UDP-Out)                                                                                                                                                      *                 C:\Windows\system32\svchost.exe             
+mDNS (UDP-Out)                                                                                                                                                      *                 C:\Windows\system32\svchost.exe             
+Network Discovery (LLMNR-UDP-Out)                                                                                                                                   *                 C:\Windows\system32\svchost.exe             
+Network Discovery (Pub WSD-Out)                                                                                                                                     *                 C:\Windows\system32\svchost.exe             
+Network Discovery (SSDP-Out)                                                                                                                                        *                 C:\Windows\system32\svchost.exe             
+Network Discovery (UPnPHost-Out)                                                                                                                                    *                 C:\Windows\system32\svchost.exe             
+Network Discovery (WSD-Out)                                                                                                                                         *                 C:\Windows\system32\svchost.exe             
+Windows Device Management Enrollment Service (TCP out)                                                                                                              *                 C:\Windows\system32\svchost.exe             
+Core Networking - Group Policy (NP-Out)                                                                                                                             *                 System                                      
+Core Networking - Internet Group Management Protocol (IGMP-Out)                                                                                                                       System                                      
+Core Networking - IPv6 (IPv6-Out)                                                                                                                                                     System                                      
+Core Networking - Multicast Listener Done (ICMPv6-Out)                                                                                                                                System                                      
+Core Networking - Multicast Listener Query (ICMPv6-Out)                                                                                                                               System                                      
+Core Networking - Multicast Listener Report (ICMPv6-Out)                                                                                                                              System                                      
+Core Networking - Multicast Listener Report v2 (ICMPv6-Out)                                                                                                                           System                                      
+Core Networking - Neighbor Discovery Advertisement (ICMPv6-Out)                                                                                                                       System                                      
+Core Networking - Neighbor Discovery Solicitation (ICMPv6-Out)                                                                                                                        System                                      
+Core Networking - Packet Too Big (ICMPv6-Out)                                                                                                                                         System                                      
+Core Networking - Parameter Problem (ICMPv6-Out)                                                                                                                                      System                                      
+Core Networking - Router Advertisement (ICMPv6-Out)                                                                                                                                   System                                      
+Core Networking - Router Solicitation (ICMPv6-Out)                                                                                                                                    System                                      
+Core Networking - Time Exceeded (ICMPv6-Out)                                                                                                                                          System                                      
+Network Discovery (NB-Datagram-Out)                                                                                                                                 *                 System                                      
+Network Discovery (NB-Name-Out)                                                                                                                                     *                 System                                      
+Network Discovery (UPnP-Out)                                                                                                                                        *                 System                                      
+Network Discovery (WSD Events-Out)                                                                                                                                  *                 System                                      
+Network Discovery (WSD EventsSecure-Out)                                                                                                                            *                 System                                      
+
+
+-----------------------------------------------------------
+ Hosts File Content
+-----------------------------------------------------------
+
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+
+-----------------------------------------------------------
+ Processes
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+ Scheduled Tasks
+-----------------------------------------------------------
+Current System Time: 10/29/2019 09:18:05
+
+TaskName    : \Microsoft\Windows\Server Initial Configuration Task
+Run As User : SYSTEM
+Task To Run : %windir%\system32\srvinitconfig.exe /disableconfigtask
+
+TaskName    : \Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 64
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 64 Critical
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 Critical
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Active Directory Rights Management Services Client\AD RMS Rights Policy Template Management (Automated)
+Run As User : Everyone
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Active Directory Rights Management Services Client\AD RMS Rights Policy Template Management (Automated)
+Run As User : Everyone
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Active Directory Rights Management Services Client\AD RMS Rights Policy Template Management (Manual)
+Run As User : Everyone
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\AppID\PolicyConverter
+Run As User : SYSTEM
+Task To Run : %windir%\system32\appidpolicyconverter.exe 
+
+TaskName    : \Microsoft\Windows\AppID\VerifiedPublisherCertStoreCheck
+Run As User : LOCAL SERVICE
+Task To Run : %windir%\system32\appidcertstorecheck.exe 
+
+TaskName    : \Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser
+Run As User : SYSTEM
+Task To Run : %windir%\system32\compattelrunner.exe 
+
+TaskName    : \Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser
+Run As User : SYSTEM
+Task To Run : %windir%\system32\compattelrunner.exe 
+
+TaskName    : \Microsoft\Windows\Application Experience\ProgramDataUpdater
+Run As User : SYSTEM
+Task To Run : %windir%\system32\compattelrunner.exe -maintenance
+
+TaskName    : \Microsoft\Windows\Application Experience\StartupAppTask
+Run As User : INTERACTIVE
+Task To Run : %windir%\system32\rundll32.exe Startupscan.dll,SusRunTask
+
+TaskName    : \Microsoft\Windows\ApplicationData\appuriverifierdaily
+Run As User : INTERACTIVE
+Task To Run : %windir%\system32\AppHostRegistrationVerifier.exe 
+
+TaskName    : \Microsoft\Windows\ApplicationData\appuriverifierinstall
+Run As User : INTERACTIVE
+Task To Run : %windir%\system32\AppHostRegistrationVerifier.exe 
+
+TaskName    : \Microsoft\Windows\ApplicationData\CleanupTemporaryState
+Run As User : SYSTEM
+Task To Run : %windir%\system32\rundll32.exe Windows.Storage.ApplicationData.dll,CleanupTemporaryState
+
+TaskName    : \Microsoft\Windows\ApplicationData\DsSvcCleanup
+Run As User : SYSTEM
+Task To Run : %windir%\system32\dstokenclean.exe 
+
+TaskName    : \Microsoft\Windows\AppxDeploymentClient\Pre-staged app cleanup
+Run As User : SYSTEM
+Task To Run : %windir%\system32\rundll32.exe %windir%\system32\AppxDeploymentClient.dll,AppxPreStageCleanupRunTask
+
+TaskName    : \Microsoft\Windows\Autochk\Proxy
+Run As User : SYSTEM
+Task To Run : %windir%\system32\rundll32.exe /d acproxy.dll,PerformAutochkOperations
+
+TaskName    : \Microsoft\Windows\BitLocker\BitLocker Encrypt All Drives
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\BitLocker\BitLocker MDM policy Refresh
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Bluetooth\UninstallDeviceTask
+Run As User : SYSTEM
+Task To Run : BthUdTask.exe $(Arg0)
+
+TaskName    : \Microsoft\Windows\BrokerInfrastructure\BgTaskRegistrationMaintenanceTask
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Chkdsk\ProactiveScan
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Chkdsk\SyspartRepair
+Run As User : SYSTEM
+Task To Run : %windir%\system32\bcdboot.exe %windir% /sysrepair
+
+TaskName    : \Microsoft\Windows\CloudExperienceHost\CreateObjectTask
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Customer Experience Improvement Program\Consolidator
+Run As User : SYSTEM
+Task To Run : %SystemRoot%\System32\wsqmcons.exe 
+
+TaskName    : \Microsoft\Windows\Customer Experience Improvement Program\UsbCeip
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Data Integrity Scan\Data Integrity Scan
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Data Integrity Scan\Data Integrity Scan
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Data Integrity Scan\Data Integrity Scan for Crash Recovery
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Defrag\ScheduledDefrag
+Run As User : SYSTEM
+Task To Run : %windir%\system32\defrag.exe -c -h -k -g -$
+
+TaskName    : \Microsoft\Windows\Device Information\Device
+Run As User : SYSTEM
+Task To Run : %windir%\system32\devicecensus.exe 
+
+TaskName    : \Microsoft\Windows\Device Information\Device
+Run As User : SYSTEM
+Task To Run : %windir%\system32\devicecensus.exe 
+
+TaskName    : \Microsoft\Windows\Diagnosis\Scheduled
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\DirectX\DXGIAdapterCache
+Run As User : SYSTEM
+Task To Run : %windir%\system32\dxgiadaptercache.exe 
+
+TaskName    : \Microsoft\Windows\DirectX\DXGIAdapterCache
+Run As User : SYSTEM
+Task To Run : %windir%\system32\dxgiadaptercache.exe 
+
+TaskName    : \Microsoft\Windows\DiskCleanup\SilentCleanup
+Run As User : Users
+Task To Run : %windir%\system32\cleanmgr.exe /autoclean /d %systemdrive%
+
+TaskName    : \Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector
+Run As User : SYSTEM
+Task To Run : %windir%\system32\rundll32.exe dfdts.dll,DfdGetDefaultPolicyAndSMART
+
+TaskName    : \Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticResolver
+Run As User : Users
+Task To Run : %windir%\system32\DFDWiz.exe 
+
+TaskName    : \Microsoft\Windows\DiskFootprint\Diagnostics
+Run As User : SYSTEM
+Task To Run : %windir%\system32\disksnapshot.exe -z
+
+TaskName    : \Microsoft\Windows\DiskFootprint\StorageSense
+Run As User : Users
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\EDP\EDP App Launch Task
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\EDP\EDP Auth Task
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\EDP\EDP Inaccessible Credentials Task
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\EDP\StorageCardEncryption Task
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\ExploitGuard\ExploitGuard MDM policy Refresh
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\ExploitGuard\ExploitGuard MDM policy Refresh
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\ExploitGuard\ExploitGuard MDM policy Refresh
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\File Classification Infrastructure\Property Definition Sync
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Flighting\OneSettings\RefreshCache
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\InstallService\ScanForUpdates
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\InstallService\ScanForUpdates
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\InstallService\ScanForUpdates
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\InstallService\ScanForUpdatesAsUser
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\InstallService\WakeUpAndContinueUpdates
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\InstallService\WakeUpAndScanForUpdates
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Location\Notifications
+Run As User : Authenticated Users
+Task To Run : %windir%\System32\LocationNotificationWindows.exe 
+
+TaskName    : \Microsoft\Windows\Location\WindowsActionDialog
+Run As User : Authenticated Users
+Task To Run : %windir%\System32\WindowsActionDialog.exe 
+
+TaskName    : \Microsoft\Windows\Maintenance\WinSAT
+Run As User : Administrators
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Maps\MapsToastTask
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Maps\MapsUpdateTask
+Run As User : NETWORK SERVICE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents
+Run As User : Administrators
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents
+Run As User : Administrators
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents
+Run As User : Administrators
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents
+Run As User : Administrators
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\MemoryDiagnostic\RunFullMemoryDiagnostic
+Run As User : Administrators
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Mobile Broadband Accounts\MNO Metadata Parser
+Run As User : SYSTEM
+Task To Run : %SystemRoot%\System32\MbaeParserTask.exe 
+
+TaskName    : \Microsoft\Windows\MUI\LPRemove
+Run As User : SYSTEM
+Task To Run : %windir%\system32\lpremove.exe 
+
+TaskName    : \Microsoft\Windows\Multimedia\SystemSoundsService
+Run As User : Users
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\NetTrace\GatherNetworkInfo
+Run As User : Users
+Task To Run : %windir%\system32\gatherNetworkInfo.vbs 
+
+TaskName    : \Microsoft\Windows\Offline Files\Background Synchronization
+Run As User : Authenticated Users
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Offline Files\Logon Synchronization
+Run As User : Authenticated Users
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\PLA\Server Manager Performance Monitor
+Run As User : SYSTEM
+Task To Run : %systemroot%\system32\rundll32.exe %systemroot%\system32\pla.dll,PlaHost Server Manager Performance Monitor" "$(Arg0)""
+
+TaskName    : \Microsoft\Windows\Plug and Play\Device Install Group Policy
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Plug and Play\Device Install Reboot Required
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Plug and Play\Device Install Reboot Required
+Run As User : INTERACTIVE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Plug and Play\Sysprep Generalize Drivers
+Run As User : SYSTEM
+Task To Run : %SystemRoot%\System32\drvinst.exe 6
+
+TaskName    : \Microsoft\Windows\Power Efficiency Diagnostics\AnalyzeSystem
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\RecoveryEnvironment\VerifyWinRE
+Run As User : Administrators
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Server Manager\CleanupOldPerfLogs
+Run As User : SYSTEM
+Task To Run : %systemroot%\system32\cscript.exe /B /nologo %systemroot%\system32\calluxxprovider.vbs $(Arg0) $(Arg1) $(Arg2)
+
+TaskName    : \Microsoft\Windows\Server Manager\ServerManager
+Run As User : Administrators
+Task To Run : %windir%\system32\ServerManagerLauncher.exe 
+
+TaskName    : \Microsoft\Windows\Servicing\StartComponentCleanup
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\SharedPC\Account Cleanup
+Run As User : SYSTEM
+Task To Run : %windir%\System32\rundll32.exe %windir%\System32\Windows.SharedPC.AccountManager.dll,StartMaintenance
+
+TaskName    : \Microsoft\Windows\Shell\CreateObjectTask
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Shell\IndexerAutomaticMaintenance
+Run As User : LOCAL SERVICE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Software Inventory Logging\Collection
+Run As User : SYSTEM
+Task To Run : %systemroot%\system32\cmd.exe /d /c %systemroot%\system32\silcollector.cmd publish
+
+TaskName    : \Microsoft\Windows\Software Inventory Logging\Configuration
+Run As User : SYSTEM
+Task To Run : %systemroot%\system32\cmd.exe /d /c %systemroot%\system32\silcollector.cmd configure
+
+TaskName    : \Microsoft\Windows\SpacePort\SpaceAgentTask
+Run As User : SYSTEM
+Task To Run : %windir%\system32\SpaceAgent.exe 
+
+TaskName    : \Microsoft\Windows\SpacePort\SpaceAgentTask
+Run As User : SYSTEM
+Task To Run : %windir%\system32\SpaceAgent.exe 
+
+TaskName    : \Microsoft\Windows\SpacePort\SpaceManagerTask
+Run As User : SYSTEM
+Task To Run : %windir%\system32\spaceman.exe /Work
+
+TaskName    : \Microsoft\Windows\SpacePort\SpaceManagerTask
+Run As User : SYSTEM
+Task To Run : %windir%\system32\spaceman.exe /Work
+
+TaskName    : \Microsoft\Windows\Speech\HeadsetButtonPress
+Run As User : INTERACTIVE
+Task To Run : %windir%\system32\speech_onecore\common\SpeechRuntime.exe StartedFromTask
+
+TaskName    : \Microsoft\Windows\Speech\SpeechModelDownloadTask
+Run As User : NETWORK SERVICE
+Task To Run : %windir%\system32\speech_onecore\common\SpeechModelDownload.exe 
+
+TaskName    : \Microsoft\Windows\Storage Tiers Management\Storage Tiers Management Initialization
+Run As User : SYSTEM
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Storage Tiers Management\Storage Tiers Optimization
+Run As User : SYSTEM
+Task To Run : %windir%\system32\defrag.exe -c -h -g -# -m 8 -i 13500
+
+TaskName    : \Microsoft\Windows\TextServicesFramework\MsCtfMonitor
+Run As User : Users
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Time Synchronization\ForceSynchronizeTime
+Run As User : LOCAL SERVICE
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Time Synchronization\SynchronizeTime
+Run As User : LOCAL SERVICE
+Task To Run : %windir%\system32\sc.exe start w32time task_started
+
+TaskName    : \Microsoft\Windows\Time Zone\SynchronizeTimeZone
+Run As User : SYSTEM
+Task To Run : %windir%\system32\tzsync.exe 
+
+TaskName    : \Microsoft\Windows\UPnP\UPnPHostConfig
+Run As User : SYSTEM
+Task To Run : sc.exe config upnphost start= auto
+
+TaskName    : \Microsoft\Windows\Windows Defender\Windows Defender Cache Maintenance
+Run As User : SYSTEM
+Task To Run : C:\ProgramData\Microsoft\Windows Defender\platform\4.18.1903.4-0\MpCmdRun.exe -IdleTask -TaskName WdCacheMaintenance
+
+TaskName    : \Microsoft\Windows\Windows Defender\Windows Defender Cleanup
+Run As User : SYSTEM
+Task To Run : C:\ProgramData\Microsoft\Windows Defender\platform\4.18.1903.4-0\MpCmdRun.exe -IdleTask -TaskName WdCleanup
+
+TaskName    : \Microsoft\Windows\Windows Defender\Windows Defender Scheduled Scan
+Run As User : SYSTEM
+Task To Run : C:\ProgramData\Microsoft\Windows Defender\platform\4.18.1903.4-0\MpCmdRun.exe Scan -ScheduleJob -ScanTrigger 55
+
+TaskName    : \Microsoft\Windows\Windows Defender\Windows Defender Verification
+Run As User : SYSTEM
+Task To Run : C:\ProgramData\Microsoft\Windows Defender\platform\4.18.1903.4-0\MpCmdRun.exe -IdleTask -TaskName WdVerification
+
+TaskName    : \Microsoft\Windows\Windows Error Reporting\QueueReporting
+Run As User : SYSTEM
+Task To Run : %windir%\system32\wermgr.exe -upload
+
+TaskName    : \Microsoft\Windows\Windows Error Reporting\QueueReporting
+Run As User : SYSTEM
+Task To Run : %windir%\system32\wermgr.exe -upload
+
+TaskName    : \Microsoft\Windows\Windows Error Reporting\QueueReporting
+Run As User : SYSTEM
+Task To Run : %windir%\system32\wermgr.exe -upload
+
+TaskName    : \Microsoft\Windows\Windows Error Reporting\QueueReporting
+Run As User : SYSTEM
+Task To Run : %windir%\system32\wermgr.exe -upload
+
+TaskName    : \Microsoft\Windows\Windows Filtering Platform\BfeOnServiceStartTypeChange
+Run As User : SYSTEM
+Task To Run : %windir%\system32\rundll32.exe bfe.dll,BfeOnServiceStartTypeChange
+
+TaskName    : \Microsoft\Windows\Windows Media Sharing\UpdateLibrary
+Run As User : Authenticated Users
+Task To Run : %ProgramFiles%\Windows Media Player\wmpnscfg.exe" "
+
+TaskName    : \Microsoft\Windows\WindowsColorSystem\Calibration Loader
+Run As User : Users
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\WindowsColorSystem\Calibration Loader
+Run As User : Users
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\WindowsUpdate\Scheduled Start
+Run As User : SYSTEM
+Task To Run : C:\Windows\system32\sc.exe start wuauserv
+
+TaskName    : \Microsoft\Windows\WindowsUpdate\Scheduled Start
+Run As User : SYSTEM
+Task To Run : C:\Windows\system32\sc.exe start wuauserv
+
+TaskName    : \Microsoft\Windows\WindowsUpdate\Scheduled Start
+Run As User : SYSTEM
+Task To Run : C:\Windows\system32\sc.exe start wuauserv
+
+TaskName    : \Microsoft\Windows\WindowsUpdate\Scheduled Start
+Run As User : SYSTEM
+Task To Run : C:\Windows\system32\sc.exe start wuauserv
+
+TaskName    : \Microsoft\Windows\Wininet\CacheTask
+Run As User : Users
+Task To Run : COM handler
+
+TaskName    : \Microsoft\Windows\Workplace Join\Automatic-Device-Join
+Run As User : SYSTEM
+Task To Run : %SystemRoot%\System32\dsregcmd.exe $(Arg0) $(Arg1) $(Arg2)
+
+TaskName    : \Microsoft\Windows\Workplace Join\Automatic-Device-Join
+Run As User : SYSTEM
+Task To Run : %SystemRoot%\System32\dsregcmd.exe $(Arg0) $(Arg1) $(Arg2)
+
+TaskName    : \Microsoft\Windows\Workplace Join\Recovery-Check
+Run As User : INTERACTIVE
+Task To Run : %SystemRoot%\System32\dsregcmd.exe /checkrecovery
+
+
+
+
+-----------------------------------------------------------
+ Services
+-----------------------------------------------------------
+
+
+-----------------------------------------------------------
+ Installed Programs
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+ Installed Patches
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+ Program Folders
+-----------------------------------------------------------
+
+C:\Program Files
+-------------
+Common Files                               
+internet explorer                          
+Mozilla Firefox                            
+PHP                                        
+Reference Assemblies                       
+runphp                                     
+VMware                                     
+Windows Defender                           
+Windows Defender Advanced Threat Protection
+Windows Mail                               
+Windows Media Player                       
+Windows Multimedia Platform                
+windows nt                                 
+Windows Photo Viewer                       
+Windows Portable Devices                   
+Windows Security                           
+WindowsPowerShell                          
+
+
+C:\Program Files (x86)
+-------------------
+Common Files               
+Internet Explorer          
+Microsoft.NET              
+Mozilla Maintenance Service
+PHP                        
+Reference Assemblies       
+Windows Defender           
+Windows Mail               
+Windows Media Player       
+Windows Multimedia Platform
+windows nt                 
+Windows Photo Viewer       
+Windows Portable Devices   
+WindowsPowerShell          
+
+
+
+-----------------------------------------------------------
+ Files with Full Control and Modify Access
+-----------------------------------------------------------
+
+C:\Users\Chase\Desktop\todo.txt       
+C:\Users\Chase\Desktop\user.txt       
+C:\Users\Chase\Documents\jaws-enum.ps1
+
+
+-----------------------------------------------------------
+ Folders with Full Control and Modify Access
+-----------------------------------------------------------
+
+Failed to read more folders
+
+Failed to read more folders
+
+Failed to read more folders
+
+-----------------------------------------------------------
+ Mapped Drives
+-----------------------------------------------------------
+-----------------------------------------------------------
+ Unquoted Service Paths
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+ Recent Documents
+-----------------------------------------------------------
+
+AutomaticDestinations
+CustomDestinations   
+todo.lnk             
+user.lnk             
+
+
+
+-----------------------------------------------------------
+ Potentially Interesting Files in Users Directory 
+-----------------------------------------------------------
+C:\Users\Chase\Desktop\todo.txt
+C:\Users\Chase\Desktop\user.txt
+C:\Users\Chase\Documents\jaws-enum.ps1
+
+-----------------------------------------------------------
+ 10 Last Modified Files in C:\User
+-----------------------------------------------------------
+C:\Users\Chase\Links\Downloads.lnk
+C:\Users\Chase\Links
+C:\Users\Hazard
+C:\Users\Chase\Desktop\user.txt
+C:\Users\Chase\Desktop\todo.txt
+C:\Users\Chase
+C:\Users\Chase\Desktop
+C:\Users\Administrator
+C:\Users\Chase\Documents
+C:\Users\Chase\Documents\jaws-enum.ps1
+
+-----------------------------------------------------------
+ MUICache Files
+-----------------------------------------------------------
+LangID
+C:\Program Files (x86)\Windows Media Player\wmplayer.exe.FriendlyAppName
+C:\Program Files (x86)\Windows Media Player\wmplayer.exe.ApplicationCompany
+C:\Windows\system32\mspaint.exe.FriendlyAppName
+C:\Windows\system32\mspaint.exe.ApplicationCompany
+C:\Program Files\Mozilla Firefox\firefox.exe.FriendlyAppName
+C:\Program Files\Mozilla Firefox\firefox.exe.ApplicationCompany
+C:\Program Files\VMware\VMware Tools\VMwareHostOpen.exe.FriendlyAppName
+C:\Program Files\VMware\VMware Tools\VMwareHostOpen.exe.ApplicationCompany
+C:\Windows\System32\appresolver.dll.FriendlyAppName
+C:\Windows\System32\appresolver.dll.ApplicationCompany
+C:\Windows\system32\NOTEPAD.EXE.FriendlyAppName
+C:\Windows\system32\NOTEPAD.EXE.ApplicationCompany
+
+-----------------------------------------------------------
+ System Files with Passwords
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+ AlwaysInstalledElevated Registry Key
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+ Stored Credentials
+-----------------------------------------------------------
+
+Currently stored credentials:
+
+* NONE *
+
+-----------------------------------------------------------
+ Checking for AutoAdminLogon 
+-----------------------------------------------------------
+The default username is Administrator 
+The default password is  
+The default domainname is . 
+

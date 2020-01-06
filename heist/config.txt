@@ -1,0 +1,21 @@
+found creds from : http://10.10.10.149/attachments/config.txt
+1.
+username rout3r password 7 0242114B0E143F015F5D1E161713
+plaintext : $uperP@ssword
+
+2.
+username admin privilege 15 password 7 02375012182C1A1D751618034F36415408
+plaintext : Q4)sJu\Y8qz*A3?d
+
+3.
+security passwords min-length 12
+enable secret 5 $1$pdQG$o8nrSzsGXeaduXrjlvKc91
+
+
+cracked by john the ripper :
+> john --wordlist=/root/rockyou.txt crack.txt
+> john --show crack.txt
+plaintxt : ?:stealth1agent
+
+
+POSSIBLE username : Hazard

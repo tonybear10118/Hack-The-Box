@@ -1,0 +1,13 @@
+# Nmap 7.80 scan initiated Fri Oct 25 15:36:15 2019 as: nmap -p 445 --script smb2-security-mode -o nmap_445_smb_security.txt 10.10.10.149
+Nmap scan report for 10.10.10.149
+Host is up (0.56s latency).
+
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Host script results:
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+
+# Nmap done at Fri Oct 25 15:36:18 2019 -- 1 IP address (1 host up) scanned in 3.90 seconds

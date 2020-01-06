@@ -1,0 +1,32 @@
+Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sat Oct 26 12:33:21 2019
+
+ ========================== 
+|    Target Information    |
+ ========================== 
+Target ........... 10.10.10.149
+RID Range ........ 500-550,1000-1050
+Username ......... 'Hazard'
+Password ......... 'stealth1agent'
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ==================================================== 
+|    Enumerating Workgroup/Domain on 10.10.10.149    |
+ ==================================================== 
+[E] Can't find workgroup/domain
+
+
+ ===================================== 
+|    Session Check on 10.10.10.149    |
+ ===================================== 
+[+] Server 10.10.10.149 allows sessions using username 'Hazard', password 'stealth1agent'
+[+] Got domain/workgroup name: 
+
+ =========================================== 
+|    Getting domain SID for 10.10.10.149    |
+ =========================================== 
+Domain Name: WORKGROUP
+Domain Sid: (NULL SID)
+[+] Can't determine if host is part of domain or part of a workgroup
+enum4linux complete on Sat Oct 26 12:33:39 2019
+

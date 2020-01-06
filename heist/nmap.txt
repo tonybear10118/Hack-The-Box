@@ -1,0 +1,30 @@
+# Nmap 7.80 scan initiated Thu Oct 24 11:03:21 2019 as: nmap -sC -sV -o nmap.txt 10.10.10.149
+Nmap scan report for 10.10.10.149
+Host is up (0.40s latency).
+Not shown: 997 filtered ports
+PORT    STATE SERVICE       VERSION
+80/tcp  open  http          Microsoft IIS httpd 10.0
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+| http-title: Support Login Page
+|_Requested resource was login.php
+135/tcp open  msrpc         Microsoft Windows RPC
+445/tcp open  microsoft-ds?
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: -3s
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2019-10-24T15:04:25
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Oct 24 11:05:05 2019 -- 1 IP address (1 host up) scanned in 104.24 seconds
