@@ -1,0 +1,18 @@
+<key>b355a9e0cd018d3f7f03607141518419</key>
+
+<username>root</username>
+<password>fMVWh7bDHpgZkyfqQXreTjU9</password>
+
+admin pannel:
+http://10.10.10.140/index.php/admin/cms_wysiwyg_images/thumbnail/file/cGhwLnBuZw--/key/b355a9e0cd018d3f7f03607141518419
+
+adminal cookie?
+9uef88c2eueaf277ouu690qqd5
+
+
+port:6379?
+
+
+/index.php/admin/cms_wysiwyg_images/thumbnail/file :D
+
+exploit : https://www.exploit-db.com/exploits/37977
