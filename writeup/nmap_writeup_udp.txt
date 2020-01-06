@@ -1,0 +1,6 @@
+# Nmap 7.80 scan initiated Sat Sep 28 02:08:57 2019 as: nmap -sU -o nmap_wirteup_udp.txt 10.10.10.138
+Nmap scan report for 10.10.10.138
+Host is up (0.30s latency).
+All 1000 scanned ports on 10.10.10.138 are open|filtered
+
+# Nmap done at Sat Sep 28 02:14:01 2019 -- 1 IP address (1 host up) scanned in 304.35 seconds

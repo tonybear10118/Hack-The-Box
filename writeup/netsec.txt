@@ -1,0 +1,25 @@
+# Nmap 7.80 scan initiated Sun Sep 29 03:32:28 2019 as: nmap -sC -sV -o netsec.txt mm.netsecfocus.com
+Nmap scan report for mm.netsecfocus.com (142.93.65.94)
+Host is up (0.027s latency).
+Not shown: 995 filtered ports
+PORT     STATE SERVICE  VERSION
+21/tcp   open  ftp?
+80/tcp   open  http     nginx 1.15.7
+|_http-server-header: nginx/1.15.7
+|_http-title: Did not follow redirect to https://mm.netsecfocus.com/
+443/tcp  open  ssl/http nginx 1.15.7
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: nginx/1.15.7
+|_http-title: Mattermost
+| ssl-cert: Subject: commonName=mm.netsecfocus.com
+| Subject Alternative Name: DNS:chat.netsecfocus.com, DNS:mm.netsecfocus.com
+| Not valid before: 2019-09-27T05:50:20
+|_Not valid after:  2019-12-26T05:50:20
+554/tcp  open  rtsp?
+|_rtsp-methods: ERROR: Script execution failed (use -d to debug)
+1723/tcp open  pptp?
+|_pptp-version: ERROR: Script execution failed (use -d to debug)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Sep 29 03:36:09 2019 -- 1 IP address (1 host up) scanned in 220.40 seconds

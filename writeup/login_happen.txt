@@ -1,0 +1,24 @@
+2019/10/01 14:48:37 CMD: UID=0    PID=3695   | sh -c /usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin run-parts --lsbsysinit /etc/update-motd.d > /run/motd.dynamic.new 
+2019/10/01 14:48:37 CMD: UID=0    PID=3694   | sh -c /usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin run-parts --lsbsysinit /etc/update-motd.d > /run/motd.dynamic.new 
+2019/10/01 14:48:37 CMD: UID=0    PID=3697   | sshd: jkr [priv] 
+2019/10/01 14:51:46 CMD: UID=0    PID=3843   | bash /usr/local/bin/run-parts --lsbsysinit /etc/update-motd.d
+
+
+2019/10/01 14:49:30 CMD: UID=0    PID=3749   | sh -c /usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin run-parts --lsbsysinit /etc/update-motd.d > /run/motd.dynamic.new 
+2019/10/01 14:49:30 CMD: UID=0    PID=3748   | sh -c /usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin run-parts --lsbsysinit /etc/update-motd.d > /run/motd.dynamic.new 
+2019/10/01 14:51:46 CMD: UID=0    PID=3843   | bash /usr/local/bin/run-parts --lsbsysinit /etc/update-motd.d
+
+
+
+
+2019/10/02 06:48:29 CMD: UID=0    PID=3308   | sh -c /usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin run-parts --lsbsysinit /etc/update-motd.d > /run/motd.dynamic.new 
+2019/10/02 06:48:29 CMD: UID=0    PID=3307   | sh -c /usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin run-parts --lsbsysinit /etc/update-motd.d > /run/motd.dynamic.new 
+2019/10/02 06:48:29 CMD: UID=0    PID=3309   | run-parts --lsbsysinit /etc/update-motd.d 
+2019/10/02 06:48:29 CMD: UID=0    PID=3310   | /bin/sh /etc/update-motd.d/10-uname 
+2019/10/02 06:48:29 CMD: UID=0    PID=3311   | sshd: jkr [priv]
+
+
+2019/10/02 09:13:02 CMD: UID=0    PID=5839   | run-parts --lsbsysinit /etc/update-motd.d 
+2019/10/02 09:13:02 CMD: UID=0    PID=5840   | /bin/sh /etc/update-motd.d/10-uname 
+2019/10/02 09:13:02 CMD: UID=0    PID=5842   | uname -rnsom 
+
