@@ -1,0 +1,4 @@
+/aa.php (Status: 200)
+/mon/server-status (Status: 403)
+php (Status: 200)
+/server-status (Status: 403)

