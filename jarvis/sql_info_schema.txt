@@ -1,0 +1,1404 @@
+Database: information_schema                                                                                  
+Table: TABLESPACES
+[9 columns]
++--------------------+---------------------+
+| Column             | Type                |
++--------------------+---------------------+
+| AUTOEXTEND_SIZE    | bigint(21) unsigned |
+| ENGINE             | varchar(64)         |
+| EXTENT_SIZE        | bigint(21) unsigned |
+| LOGFILE_GROUP_NAME | varchar(64)         |
+| MAXIMUM_SIZE       | bigint(21) unsigned |
+| NODEGROUP_ID       | bigint(21) unsigned |
+| TABLESPACE_COMMENT | varchar(2048)       |
+| TABLESPACE_NAME    | varchar(64)         |
+| TABLESPACE_TYPE    | varchar(64)         |
++--------------------+---------------------+
+
+Database: information_schema
+Table: ROUTINES
+[31 columns]
++--------------------------+---------------------+
+| Column                   | Type                |
++--------------------------+---------------------+
+| CHARACTER_MAXIMUM_LENGTH | int(21)             |
+| CHARACTER_OCTET_LENGTH   | int(21)             |
+| CHARACTER_SET_CLIENT     | varchar(32)         |
+| CHARACTER_SET_NAME       | varchar(64)         |
+| COLLATION_CONNECTION     | varchar(32)         |
+| COLLATION_NAME           | varchar(64)         |
+| CREATED                  | datetime            |
+| DATA_TYPE                | varchar(64)         |
+| DATABASE_COLLATION       | varchar(32)         |
+| DATETIME_PRECISION       | bigint(21) unsigned |
+| DEFINER                  | varchar(189)        |
+| DTD_IDENTIFIER           | longtext            |
+| EXTERNAL_LANGUAGE        | varchar(64)         |
+| EXTERNAL_NAME            | varchar(64)         |
+| IS_DETERMINISTIC         | varchar(3)          |
+| LAST_ALTERED             | datetime            |
+| NUMERIC_PRECISION        | int(21)             |
+| NUMERIC_SCALE            | int(21)             |
+| PARAMETER_STYLE          | varchar(8)          |
+| ROUTINE_BODY             | varchar(8)          |
+| ROUTINE_CATALOG          | varchar(512)        |
+| ROUTINE_COMMENT          | longtext            |
+| ROUTINE_DEFINITION       | longtext            |
+| ROUTINE_NAME             | varchar(64)         |
+| ROUTINE_SCHEMA           | varchar(64)         |
+| ROUTINE_TYPE             | varchar(9)          |
+| SECURITY_TYPE            | varchar(7)          |
+| SPECIFIC_NAME            | varchar(64)         |
+| SQL_DATA_ACCESS          | varchar(64)         |
+| SQL_MODE                 | varchar(8192)       |
+| SQL_PATH                 | varchar(64)         |
++--------------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_SYS_INDEXES
+[7 columns]
++----------+---------------------+
+| Column   | Type                |
++----------+---------------------+
+| SPACE    | int(11)             |
+| INDEX_ID | bigint(21) unsigned |
+| N_FIELDS | int(11)             |
+| NAME     | varchar(193)        |
+| PAGE_NO  | int(11)             |
+| TABLE_ID | bigint(21) unsigned |
+| TYPE     | int(11)             |
++----------+---------------------+
+
+Database: information_schema
+Table: INNODB_LOCKS
+[10 columns]
++-------------+---------------------+
+| Column      | Type                |
++-------------+---------------------+
+| lock_data   | varchar(8192)       |
+| lock_id     | varchar(81)         |
+| lock_index  | varchar(1024)       |
+| lock_mode   | varchar(32)         |
+| lock_page   | bigint(21) unsigned |
+| lock_rec    | bigint(21) unsigned |
+| lock_space  | bigint(21) unsigned |
+| lock_table  | varchar(1024)       |
+| lock_trx_id | varchar(18)         |
+| lock_type   | varchar(32)         |
++-------------+---------------------+
+
+Database: information_schema
+Table: INNODB_SYS_FOREIGN
+[5 columns]
++----------+------------------+
+| Column   | Type             |
++----------+------------------+
+| FOR_NAME | varchar(193)     |
+| ID       | varchar(193)     |
+| N_COLS   | int(11) unsigned |
+| REF_NAME | varchar(193)     |
+| TYPE     | int(11) unsigned |
++----------+------------------+
+
+Database: information_schema
+Table: INNODB_FT_BEING_DELETED
+[1 column]
++--------+---------------------+
+| Column | Type                |
++--------+---------------------+
+| DOC_ID | bigint(21) unsigned |
++--------+---------------------+
+
+Database: information_schema
+Table: COLLATION_CHARACTER_SET_APPLICABILITY
+[2 columns]
++--------------------+-------------+
+| Column             | Type        |
++--------------------+-------------+
+| CHARACTER_SET_NAME | varchar(32) |
+| COLLATION_NAME     | varchar(32) |
++--------------------+-------------+
+
+Database: information_schema
+Table: COLUMN_PRIVILEGES
+[7 columns]
++----------------+--------------+
+| Column         | Type         |
++----------------+--------------+
+| COLUMN_NAME    | varchar(64)  |
+| GRANTEE        | varchar(190) |
+| IS_GRANTABLE   | varchar(3)   |
+| PRIVILEGE_TYPE | varchar(64)  |
+| TABLE_CATALOG  | varchar(512) |
+| TABLE_NAME     | varchar(64)  |
+| TABLE_SCHEMA   | varchar(64)  |
++----------------+--------------+
+
+Database: information_schema
+Table: INNODB_CMP_PER_INDEX_RESET
+[8 columns]
++-----------------+--------------+
+| Column          | Type         |
++-----------------+--------------+
+| compress_ops    | int(11)      |
+| compress_ops_ok | int(11)      |
+| compress_time   | int(11)      |
+| database_name   | varchar(192) |
+| index_name      | varchar(192) |
+| table_name      | varchar(192) |
+| uncompress_ops  | int(11)      |
+| uncompress_time | int(11)      |
++-----------------+--------------+
+
+Database: information_schema
+Table: INNODB_METRICS
+[17 columns]
++-----------------+--------------+
+| Column          | Type         |
++-----------------+--------------+
+| COUNT           | bigint(21)   |
+| AVG_COUNT       | double       |
+| AVG_COUNT_RESET | double       |
+| COMMENT         | varchar(193) |
+| COUNT_RESET     | bigint(21)   |
+| MAX_COUNT       | bigint(21)   |
+| MAX_COUNT_RESET | bigint(21)   |
+| MIN_COUNT       | bigint(21)   |
+| MIN_COUNT_RESET | bigint(21)   |
+| NAME            | varchar(193) |
+| STATUS          | varchar(193) |
+| SUBSYSTEM       | varchar(193) |
+| TIME_DISABLED   | datetime     |
+| TIME_ELAPSED    | bigint(21)   |
+| TIME_ENABLED    | datetime     |
+| TIME_RESET      | datetime     |
+| TYPE            | varchar(193) |
++-----------------+--------------+
+
+Database: information_schema
+Table: GLOBAL_VARIABLES
+[2 columns]
++----------------+---------------+
+| Column         | Type          |
++----------------+---------------+
+| VARIABLE_NAME  | varchar(64)   |
+| VARIABLE_VALUE | varchar(2048) |
++----------------+---------------+
+
+Database: information_schema
+Table: INNODB_MUTEXES
+[4 columns]
++-------------+---------------------+
+| Column      | Type                |
++-------------+---------------------+
+| CREATE_FILE | varchar(4000)       |
+| CREATE_LINE | int(11) unsigned    |
+| NAME        | varchar(4000)       |
+| OS_WAITS    | bigint(21) unsigned |
++-------------+---------------------+
+
+Database: information_schema
+Table: INNODB_SYS_FOREIGN_COLS
+[4 columns]
++--------------+------------------+
+| Column       | Type             |
++--------------+------------------+
+| FOR_COL_NAME | varchar(193)     |
+| ID           | varchar(193)     |
+| POS          | int(11) unsigned |
+| REF_COL_NAME | varchar(193)     |
++--------------+------------------+
+
+Database: information_schema
+Table: PARTITIONS
+[25 columns]
++-------------------------------+---------------------+
+| Column                        | Type                |
++-------------------------------+---------------------+
+| AVG_ROW_LENGTH                | bigint(21) unsigned |
+| CHECK_TIME                    | datetime            |
+| CHECKSUM                      | bigint(21) unsigned |
+| CREATE_TIME                   | datetime            |
+| DATA_FREE                     | bigint(21) unsigned |
+| DATA_LENGTH                   | bigint(21) unsigned |
+| INDEX_LENGTH                  | bigint(21) unsigned |
+| MAX_DATA_LENGTH               | bigint(21) unsigned |
+| NODEGROUP                     | varchar(12)         |
+| PARTITION_COMMENT             | varchar(80)         |
+| PARTITION_DESCRIPTION         | longtext            |
+| PARTITION_EXPRESSION          | longtext            |
+| PARTITION_METHOD              | varchar(18)         |
+| PARTITION_NAME                | varchar(64)         |
+| PARTITION_ORDINAL_POSITION    | bigint(21) unsigned |
+| SUBPARTITION_EXPRESSION       | longtext            |
+| SUBPARTITION_METHOD           | varchar(12)         |
+| SUBPARTITION_NAME             | varchar(64)         |
+| SUBPARTITION_ORDINAL_POSITION | bigint(21) unsigned |
+| TABLE_CATALOG                 | varchar(512)        |
+| TABLE_NAME                    | varchar(64)         |
+| TABLE_ROWS                    | bigint(21) unsigned |
+| TABLE_SCHEMA                  | varchar(64)         |
+| TABLESPACE_NAME               | varchar(64)         |
+| UPDATE_TIME                   | datetime            |
++-------------------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_FT_INDEX_CACHE
+[6 columns]
++--------------+---------------------+
+| Column       | Type                |
++--------------+---------------------+
+| POSITION     | bigint(21) unsigned |
+| DOC_COUNT    | bigint(21) unsigned |
+| DOC_ID       | bigint(21) unsigned |
+| FIRST_DOC_ID | bigint(21) unsigned |
+| LAST_DOC_ID  | bigint(21) unsigned |
+| WORD         | varchar(337)        |
++--------------+---------------------+
+
+Database: information_schema
+Table: INDEX_STATISTICS
+[4 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| INDEX_NAME   | varchar(192) |
+| ROWS_READ    | bigint(21)   |
+| TABLE_NAME   | varchar(192) |
+| TABLE_SCHEMA | varchar(192) |
++--------------+--------------+
+
+Database: information_schema
+Table: USER_PRIVILEGES
+[4 columns]
++----------------+--------------+
+| Column         | Type         |
++----------------+--------------+
+| GRANTEE        | varchar(190) |
+| IS_GRANTABLE   | varchar(3)   |
+| PRIVILEGE_TYPE | varchar(64)  |
+| TABLE_CATALOG  | varchar(512) |
++----------------+--------------+
+
+Database: information_schema
+Table: ENGINES
+[6 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| COMMENT      | varchar(160) |
+| ENGINE       | varchar(64)  |
+| SAVEPOINTS   | varchar(3)   |
+| SUPPORT      | varchar(8)   |
+| TRANSACTIONS | varchar(3)   |
+| XA           | varchar(3)   |
++--------------+--------------+
+
+Database: information_schema
+Table: PARAMETERS
+[16 columns]
++--------------------------+---------------------+
+| Column                   | Type                |
++--------------------------+---------------------+
+| CHARACTER_MAXIMUM_LENGTH | int(21)             |
+| CHARACTER_OCTET_LENGTH   | int(21)             |
+| CHARACTER_SET_NAME       | varchar(64)         |
+| COLLATION_NAME           | varchar(64)         |
+| DATA_TYPE                | varchar(64)         |
+| DATETIME_PRECISION       | bigint(21) unsigned |
+| DTD_IDENTIFIER           | longtext            |
+| NUMERIC_PRECISION        | int(21)             |
+| NUMERIC_SCALE            | int(21)             |
+| ORDINAL_POSITION         | int(21)             |
+| PARAMETER_MODE           | varchar(5)          |
+| PARAMETER_NAME           | varchar(64)         |
+| ROUTINE_TYPE             | varchar(9)          |
+| SPECIFIC_CATALOG         | varchar(512)        |
+| SPECIFIC_NAME            | varchar(64)         |
+| SPECIFIC_SCHEMA          | varchar(64)         |
++--------------------------+---------------------+
+
+Database: information_schema
+Table: TRIGGERS
+[22 columns]
++----------------------------+---------------+
+| Column                     | Type          |
++----------------------------+---------------+
+| ACTION_CONDITION           | longtext      |
+| ACTION_ORDER               | bigint(4)     |
+| ACTION_ORIENTATION         | varchar(9)    |
+| ACTION_REFERENCE_NEW_ROW   | varchar(3)    |
+| ACTION_REFERENCE_NEW_TABLE | varchar(64)   |
+| ACTION_REFERENCE_OLD_ROW   | varchar(3)    |
+| ACTION_REFERENCE_OLD_TABLE | varchar(64)   |
+| ACTION_STATEMENT           | longtext      |
+| ACTION_TIMING              | varchar(6)    |
+| CHARACTER_SET_CLIENT       | varchar(32)   |
+| COLLATION_CONNECTION       | varchar(32)   |
+| CREATED                    | datetime      |
+| DATABASE_COLLATION         | varchar(32)   |
+| DEFINER                    | varchar(189)  |
+| EVENT_MANIPULATION         | varchar(6)    |
+| EVENT_OBJECT_CATALOG       | varchar(512)  |
+| EVENT_OBJECT_SCHEMA        | varchar(64)   |
+| EVENT_OBJECT_TABLE         | varchar(64)   |
+| SQL_MODE                   | varchar(8192) |
+| TRIGGER_CATALOG            | varchar(512)  |
+| TRIGGER_NAME               | varchar(64)   |
+| TRIGGER_SCHEMA             | varchar(64)   |
++----------------------------+---------------+
+
+Database: information_schema
+Table: INNODB_TABLESPACES_SCRUBBING
+[8 columns]
++-------------------------------+---------------------+
+| Column                        | Type                |
++-------------------------------+---------------------+
+| SPACE                         | bigint(21) unsigned |
+| COMPRESSED                    | int(11) unsigned    |
+| CURRENT_SCRUB_ACTIVE_THREADS  | int(11) unsigned    |
+| CURRENT_SCRUB_MAX_PAGE_NUMBER | bigint(21) unsigned |
+| CURRENT_SCRUB_PAGE_NUMBER     | bigint(21) unsigned |
+| CURRENT_SCRUB_STARTED         | datetime            |
+| LAST_SCRUB_COMPLETED          | datetime            |
+| NAME                          | varchar(655)        |
++-------------------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_BUFFER_POOL_STATS
+[32 columns]
++----------------------------------+---------------------+
+| Column                           | Type                |
++----------------------------------+---------------------+
+| DATABASE_PAGES                   | bigint(21) unsigned |
+| FREE_BUFFERS                     | bigint(21) unsigned |
+| HIT_RATE                         | bigint(21) unsigned |
+| LRU_IO_CURRENT                   | bigint(21) unsigned |
+| LRU_IO_TOTAL                     | bigint(21) unsigned |
+| MODIFIED_DATABASE_PAGES          | bigint(21) unsigned |
+| NOT_YOUNG_MAKE_PER_THOUSAND_GETS | bigint(21) unsigned |
+| NUMBER_PAGES_CREATED             | bigint(21) unsigned |
+| NUMBER_PAGES_GET                 | bigint(21) unsigned |
+| NUMBER_PAGES_READ                | bigint(21) unsigned |
+| NUMBER_PAGES_READ_AHEAD          | bigint(21) unsigned |
+| NUMBER_PAGES_WRITTEN             | bigint(21) unsigned |
+| NUMBER_READ_AHEAD_EVICTED        | bigint(21) unsigned |
+| OLD_DATABASE_PAGES               | bigint(21) unsigned |
+| PAGES_CREATE_RATE                | double              |
+| PAGES_MADE_NOT_YOUNG_RATE        | double              |
+| PAGES_MADE_YOUNG                 | bigint(21) unsigned |
+| PAGES_MADE_YOUNG_RATE            | double              |
+| PAGES_NOT_MADE_YOUNG             | bigint(21) unsigned |
+| PAGES_READ_RATE                  | double              |
+| PAGES_WRITTEN_RATE               | double              |
+| PENDING_DECOMPRESS               | bigint(21) unsigned |
+| PENDING_FLUSH_LIST               | bigint(21) unsigned |
+| PENDING_FLUSH_LRU                | bigint(21) unsigned |
+| PENDING_READS                    | bigint(21) unsigned |
+| POOL_ID                          | bigint(21) unsigned |
+| POOL_SIZE                        | bigint(21) unsigned |
+| READ_AHEAD_EVICTED_RATE          | double              |
+| READ_AHEAD_RATE                  | double              |
+| UNCOMPRESS_CURRENT               | bigint(21) unsigned |
+| UNCOMPRESS_TOTAL                 | bigint(21) unsigned |
+| YOUNG_MAKE_PER_THOUSAND_GETS     | bigint(21) unsigned |
++----------------------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_SYS_SEMAPHORE_WAITS
+[22 columns]
++------------------+---------------------+
+| Column           | Type                |
++------------------+---------------------+
+| CREATED_FILE     | varchar(4000)       |
+| CREATED_LINE     | int(11) unsigned    |
+| FILE             | varchar(4000)       |
+| HOLDER_FILE      | varchar(4000)       |
+| HOLDER_LINE      | int(11) unsigned    |
+| HOLDER_THREAD_ID | bigint(21) unsigned |
+| LAST_READER_FILE | varchar(4000)       |
+| LAST_READER_LINE | int(11) unsigned    |
+| LAST_WRITER_FILE | varchar(4000)       |
+| LAST_WRITER_LINE | int(11) unsigned    |
+| LINE             | int(11) unsigned    |
+| LOCK_WORD        | bigint(21) unsigned |
+| OBJECT_NAME      | varchar(4000)       |
+| OS_WAIT_COUNT    | int(11) unsigned    |
+| READERS          | int(11) unsigned    |
+| RESERVATION_MODE | varchar(16)         |
+| THREAD_ID        | bigint(21) unsigned |
+| WAIT_OBJECT      | bigint(21) unsigned |
+| WAIT_TIME        | bigint(21) unsigned |
+| WAIT_TYPE        | varchar(16)         |
+| WAITERS_FLAG     | bigint(21) unsigned |
+| WRITER_THREAD    | bigint(21) unsigned |
++------------------+---------------------+
+
+Database: information_schema
+Table: SPATIAL_REF_SYS
+[4 columns]
++-----------+---------------+
+| Column    | Type          |
++-----------+---------------+
+| AUTH_NAME | varchar(512)  |
+| AUTH_SRID | int(5)        |
+| SRID      | smallint(5)   |
+| SRTEXT    | varchar(2048) |
++-----------+---------------+
+
+Database: information_schema
+Table: TABLE_CONSTRAINTS
+[6 columns]
++--------------------+--------------+
+| Column             | Type         |
++--------------------+--------------+
+| CONSTRAINT_CATALOG | varchar(512) |
+| CONSTRAINT_NAME    | varchar(64)  |
+| CONSTRAINT_SCHEMA  | varchar(64)  |
+| CONSTRAINT_TYPE    | varchar(64)  |
+| TABLE_NAME         | varchar(64)  |
+| TABLE_SCHEMA       | varchar(64)  |
++--------------------+--------------+
+
+Database: information_schema
+Table: CHARACTER_SETS
+[4 columns]
++----------------------+-------------+
+| Column               | Type        |
++----------------------+-------------+
+| CHARACTER_SET_NAME   | varchar(32) |
+| DEFAULT_COLLATE_NAME | varchar(32) |
+| DESCRIPTION          | varchar(60) |
+| MAXLEN               | bigint(3)   |
++----------------------+-------------+
+
+Database: information_schema
+Table: INNODB_SYS_COLUMNS
+[6 columns]
++----------+---------------------+
+| Column   | Type                |
++----------+---------------------+
+| LEN      | int(11)             |
+| MTYPE    | int(11)             |
+| NAME     | varchar(193)        |
+| POS      | bigint(21) unsigned |
+| PRTYPE   | int(11)             |
+| TABLE_ID | bigint(21) unsigned |
++----------+---------------------+
+
+Database: information_schema
+Table: XTRADB_INTERNAL_HASH_TABLES
+[4 columns]
++--------------------------+---------------------+
+| Column                   | Type                |
++--------------------------+---------------------+
+| CONSTANT_MEMORY          | bigint(21) unsigned |
+| INTERNAL_HASH_TABLE_NAME | varchar(100)        |
+| TOTAL_MEMORY             | bigint(21) unsigned |
+| VARIABLE_MEMORY          | bigint(21) unsigned |
++--------------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_CMP_PER_INDEX
+[8 columns]
++-----------------+--------------+
+| Column          | Type         |
++-----------------+--------------+
+| compress_ops    | int(11)      |
+| compress_ops_ok | int(11)      |
+| compress_time   | int(11)      |
+| database_name   | varchar(192) |
+| index_name      | varchar(192) |
+| table_name      | varchar(192) |
+| uncompress_ops  | int(11)      |
+| uncompress_time | int(11)      |
++-----------------+--------------+
+
+Database: information_schema
+Table: INNODB_BUFFER_PAGE_LRU
+[20 columns]
++---------------------+---------------------+
+| Column              | Type                |
++---------------------+---------------------+
+| SPACE               | bigint(21) unsigned |
+| ACCESS_TIME         | bigint(21) unsigned |
+| COMPRESSED          | varchar(3)          |
+| COMPRESSED_SIZE     | bigint(21) unsigned |
+| DATA_SIZE           | bigint(21) unsigned |
+| FIX_COUNT           | bigint(21) unsigned |
+| FLUSH_TYPE          | bigint(21) unsigned |
+| FREE_PAGE_CLOCK     | bigint(21) unsigned |
+| INDEX_NAME          | varchar(1024)       |
+| IO_FIX              | varchar(64)         |
+| IS_HASHED           | varchar(3)          |
+| IS_OLD              | varchar(3)          |
+| LRU_POSITION        | bigint(21) unsigned |
+| NEWEST_MODIFICATION | bigint(21) unsigned |
+| NUMBER_RECORDS      | bigint(21) unsigned |
+| OLDEST_MODIFICATION | bigint(21) unsigned |
+| PAGE_NUMBER         | bigint(21) unsigned |
+| PAGE_TYPE           | varchar(64)         |
+| POOL_ID             | bigint(21) unsigned |
+| TABLE_NAME          | varchar(1024)       |
++---------------------+---------------------+
+
+Database: information_schema
+Table: SCHEMATA
+[5 columns]
++----------------------------+--------------+
+| Column                     | Type         |
++----------------------------+--------------+
+| CATALOG_NAME               | varchar(512) |
+| DEFAULT_CHARACTER_SET_NAME | varchar(32)  |
+| DEFAULT_COLLATION_NAME     | varchar(32)  |
+| SCHEMA_NAME                | varchar(64)  |
+| SQL_PATH                   | varchar(512) |
++----------------------------+--------------+
+
+Database: information_schema
+Table: KEY_CACHES
+[12 columns]
++----------------+---------------------+
+| Column         | Type                |
++----------------+---------------------+
+| READS          | bigint(21) unsigned |
+| BLOCK_SIZE     | bigint(21) unsigned |
+| DIRTY_BLOCKS   | bigint(21) unsigned |
+| FULL_SIZE      | bigint(21) unsigned |
+| KEY_CACHE_NAME | varchar(192)        |
+| READ_REQUESTS  | bigint(21) unsigned |
+| SEGMENT_NUMBER | int(3) unsigned     |
+| SEGMENTS       | int(3) unsigned     |
+| UNUSED_BLOCKS  | bigint(21) unsigned |
+| USED_BLOCKS    | bigint(21) unsigned |
+| WRITE_REQUESTS | bigint(21) unsigned |
+| WRITES         | bigint(21) unsigned |
++----------------+---------------------+
+
+Database: information_schema
+Table: PLUGINS
+[13 columns]
++------------------------+-------------+
+| Column                 | Type        |
++------------------------+-------------+
+| LOAD_OPTION            | varchar(64) |
+| PLUGIN_AUTH_VERSION    | varchar(80) |
+| PLUGIN_AUTHOR          | varchar(64) |
+| PLUGIN_DESCRIPTION     | longtext    |
+| PLUGIN_LIBRARY         | varchar(64) |
+| PLUGIN_LIBRARY_VERSION | varchar(20) |
+| PLUGIN_LICENSE         | varchar(80) |
+| PLUGIN_MATURITY        | varchar(12) |
+| PLUGIN_NAME            | varchar(64) |
+| PLUGIN_STATUS          | varchar(16) |
+| PLUGIN_TYPE            | varchar(80) |
+| PLUGIN_TYPE_VERSION    | varchar(20) |
+| PLUGIN_VERSION         | varchar(20) |
++------------------------+-------------+
+
+Database: information_schema
+Table: CLIENT_STATISTICS
+[25 columns]
++-----------------------------+---------------------+
+| Column                      | Type                |
++-----------------------------+---------------------+
+| ACCESS_DENIED               | bigint(21)          |
+| BINLOG_BYTES_WRITTEN        | bigint(21)          |
+| BUSY_TIME                   | double              |
+| BYTES_RECEIVED              | bigint(21)          |
+| BYTES_SENT                  | bigint(21)          |
+| CLIENT                      | varchar(64)         |
+| COMMIT_TRANSACTIONS         | bigint(21)          |
+| CONCURRENT_CONNECTIONS      | bigint(21)          |
+| CONNECTED_TIME              | bigint(21)          |
+| CPU_TIME                    | double              |
+| DENIED_CONNECTIONS          | bigint(21)          |
+| EMPTY_QUERIES               | bigint(21)          |
+| LOST_CONNECTIONS            | bigint(21)          |
+| MAX_STATEMENT_TIME_EXCEEDED | bigint(21)          |
+| OTHER_COMMANDS              | bigint(21)          |
+| ROLLBACK_TRANSACTIONS       | bigint(21)          |
+| ROWS_DELETED                | bigint(21)          |
+| ROWS_INSERTED               | bigint(21)          |
+| ROWS_READ                   | bigint(21)          |
+| ROWS_SENT                   | bigint(21)          |
+| ROWS_UPDATED                | bigint(21)          |
+| SELECT_COMMANDS             | bigint(21)          |
+| TOTAL_CONNECTIONS           | bigint(21)          |
+| TOTAL_SSL_CONNECTIONS       | bigint(21) unsigned |
+| UPDATE_COMMANDS             | bigint(21)          |
++-----------------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_FT_INDEX_TABLE
+[6 columns]
++--------------+---------------------+
+| Column       | Type                |
++--------------+---------------------+
+| POSITION     | bigint(21) unsigned |
+| DOC_COUNT    | bigint(21) unsigned |
+| DOC_ID       | bigint(21) unsigned |
+| FIRST_DOC_ID | bigint(21) unsigned |
+| LAST_DOC_ID  | bigint(21) unsigned |
+| WORD         | varchar(337)        |
++--------------+---------------------+
+
+Database: information_schema
+Table: INNODB_CMPMEM
+[6 columns]
++----------------------+------------+
+| Column               | Type       |
++----------------------+------------+
+| buffer_pool_instance | int(11)    |
+| page_size            | int(5)     |
+| pages_free           | int(11)    |
+| pages_used           | int(11)    |
+| relocation_ops       | bigint(21) |
+| relocation_time      | int(11)    |
++----------------------+------------+
+
+Database: information_schema
+Table: EVENTS
+[24 columns]
++----------------------+---------------+
+| Column               | Type          |
++----------------------+---------------+
+| CHARACTER_SET_CLIENT | varchar(32)   |
+| COLLATION_CONNECTION | varchar(32)   |
+| CREATED              | datetime      |
+| DATABASE_COLLATION   | varchar(32)   |
+| DEFINER              | varchar(189)  |
+| ENDS                 | datetime      |
+| EVENT_BODY           | varchar(8)    |
+| EVENT_CATALOG        | varchar(64)   |
+| EVENT_COMMENT        | varchar(64)   |
+| EVENT_DEFINITION     | longtext      |
+| EVENT_NAME           | varchar(64)   |
+| EVENT_SCHEMA         | varchar(64)   |
+| EVENT_TYPE           | varchar(9)    |
+| EXECUTE_AT           | datetime      |
+| INTERVAL_FIELD       | varchar(18)   |
+| INTERVAL_VALUE       | varchar(256)  |
+| LAST_ALTERED         | datetime      |
+| LAST_EXECUTED        | datetime      |
+| ON_COMPLETION        | varchar(12)   |
+| ORIGINATOR           | bigint(10)    |
+| SQL_MODE             | varchar(8192) |
+| STARTS               | datetime      |
+| STATUS               | varchar(18)   |
+| TIME_ZONE            | varchar(64)   |
++----------------------+---------------+
+
+Database: information_schema
+Table: USER_STATISTICS
+[25 columns]
++-----------------------------+---------------------+
+| Column                      | Type                |
++-----------------------------+---------------------+
+| USER                        | varchar(128)        |
+| ACCESS_DENIED               | bigint(21)          |
+| BINLOG_BYTES_WRITTEN        | bigint(21)          |
+| BUSY_TIME                   | double              |
+| BYTES_RECEIVED              | bigint(21)          |
+| BYTES_SENT                  | bigint(21)          |
+| COMMIT_TRANSACTIONS         | bigint(21)          |
+| CONCURRENT_CONNECTIONS      | int(11)             |
+| CONNECTED_TIME              | int(11)             |
+| CPU_TIME                    | double              |
+| DENIED_CONNECTIONS          | bigint(21)          |
+| EMPTY_QUERIES               | bigint(21)          |
+| LOST_CONNECTIONS            | bigint(21)          |
+| MAX_STATEMENT_TIME_EXCEEDED | bigint(21)          |
+| OTHER_COMMANDS              | bigint(21)          |
+| ROLLBACK_TRANSACTIONS       | bigint(21)          |
+| ROWS_DELETED                | bigint(21)          |
+| ROWS_INSERTED               | bigint(21)          |
+| ROWS_READ                   | bigint(21)          |
+| ROWS_SENT                   | bigint(21)          |
+| ROWS_UPDATED                | bigint(21)          |
+| SELECT_COMMANDS             | bigint(21)          |
+| TOTAL_CONNECTIONS           | int(11)             |
+| TOTAL_SSL_CONNECTIONS       | bigint(21) unsigned |
+| UPDATE_COMMANDS             | bigint(21)          |
++-----------------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_CMP_RESET
+[6 columns]
++-----------------+---------+
+| Column          | Type    |
++-----------------+---------+
+| compress_ops    | int(11) |
+| compress_ops_ok | int(11) |
+| compress_time   | int(11) |
+| page_size       | int(5)  |
+| uncompress_ops  | int(11) |
+| uncompress_time | int(11) |
++-----------------+---------+
+
+Database: information_schema
+Table: APPLICABLE_ROLES
+[4 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| GRANTEE      | varchar(190) |
+| IS_DEFAULT   | varchar(3)   |
+| IS_GRANTABLE | varchar(3)   |
+| ROLE_NAME    | varchar(128) |
++--------------+--------------+
+
+Database: information_schema
+Table: INNODB_SYS_TABLESPACES
+[7 columns]
++---------------+------------------+
+| Column        | Type             |
++---------------+------------------+
+| SPACE         | int(11) unsigned |
+| FILE_FORMAT   | varchar(10)      |
+| FLAG          | int(11) unsigned |
+| NAME          | varchar(655)     |
+| PAGE_SIZE     | int(11) unsigned |
+| ROW_FORMAT    | varchar(22)      |
+| ZIP_PAGE_SIZE | int(11) unsigned |
++---------------+------------------+
+
+Database: information_schema
+Table: COLLATIONS
+[6 columns]
++--------------------+-------------+
+| Column             | Type        |
++--------------------+-------------+
+| CHARACTER_SET_NAME | varchar(32) |
+| COLLATION_NAME     | varchar(32) |
+| ID                 | bigint(11)  |
+| IS_COMPILED        | varchar(3)  |
+| IS_DEFAULT         | varchar(3)  |
+| SORTLEN            | bigint(3)   |
++--------------------+-------------+
+
+Database: information_schema
+Table: CHANGED_PAGE_BITMAPS
+[1 column]
++--------+---------------------+
+| Column | Type                |
++--------+---------------------+
+| dummy  | bigint(21) unsigned |
++--------+---------------------+
+
+Database: information_schema
+Table: REFERENTIAL_CONSTRAINTS
+[11 columns]
++---------------------------+--------------+
+| Column                    | Type         |
++---------------------------+--------------+
+| CONSTRAINT_CATALOG        | varchar(512) |
+| CONSTRAINT_NAME           | varchar(64)  |
+| CONSTRAINT_SCHEMA         | varchar(64)  |
+| DELETE_RULE               | varchar(64)  |
+| MATCH_OPTION              | varchar(64)  |
+| REFERENCED_TABLE_NAME     | varchar(64)  |
+| TABLE_NAME                | varchar(64)  |
+| UNIQUE_CONSTRAINT_CATALOG | varchar(512) |
+| UNIQUE_CONSTRAINT_NAME    | varchar(64)  |
+| UNIQUE_CONSTRAINT_SCHEMA  | varchar(64)  |
+| UPDATE_RULE               | varchar(64)  |
++---------------------------+--------------+
+
+Database: information_schema
+Table: PROCESSLIST
+[17 columns]
++---------------+---------------+
+| Column        | Type          |
++---------------+---------------+
+| TIME          | int(7)        |
+| USER          | varchar(128)  |
+| COMMAND       | varchar(16)   |
+| DB            | varchar(64)   |
+| EXAMINED_ROWS | int(7)        |
+| HOST          | varchar(64)   |
+| ID            | bigint(4)     |
+| INFO          | longtext      |
+| INFO_BINARY   | blob          |
+| MAX_STAGE     | tinyint(2)    |
+| MEMORY_USED   | int(7)        |
+| PROGRESS      | decimal(7,3)  |
+| QUERY_ID      | bigint(4)     |
+| STAGE         | tinyint(2)    |
+| STATE         | varchar(64)   |
+| TID           | bigint(4)     |
+| TIME_MS       | decimal(22,3) |
++---------------+---------------+
+
+Database: information_schema
+Table: PROFILING
+[18 columns]
++---------------------+--------------+
+| Column              | Type         |
++---------------------+--------------+
+| BLOCK_OPS_IN        | int(20)      |
+| BLOCK_OPS_OUT       | int(20)      |
+| CONTEXT_INVOLUNTARY | int(20)      |
+| CONTEXT_VOLUNTARY   | int(20)      |
+| CPU_SYSTEM          | decimal(9,6) |
+| CPU_USER            | decimal(9,6) |
+| DURATION            | decimal(9,6) |
+| MESSAGES_RECEIVED   | int(20)      |
+| MESSAGES_SENT       | int(20)      |
+| PAGE_FAULTS_MAJOR   | int(20)      |
+| PAGE_FAULTS_MINOR   | int(20)      |
+| QUERY_ID            | int(20)      |
+| SEQ                 | int(20)      |
+| SOURCE_FILE         | varchar(20)  |
+| SOURCE_FUNCTION     | varchar(30)  |
+| SOURCE_LINE         | int(20)      |
+| STATE               | varchar(30)  |
+| SWAPS               | int(20)      |
++---------------------+--------------+
+
+Database: information_schema
+Table: XTRADB_READ_VIEW
+[4 columns]
++--------------------------------+---------------------+
+| Column                         | Type                |
++--------------------------------+---------------------+
+| READ_VIEW_LOW_LIMIT_TRX_ID     | varchar(18)         |
+| READ_VIEW_LOW_LIMIT_TRX_NUMBER | varchar(18)         |
+| READ_VIEW_UNDO_NUMBER          | bigint(21) unsigned |
+| READ_VIEW_UPPER_LIMIT_TRX_ID   | varchar(18)         |
++--------------------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_CMP
+[6 columns]
++-----------------+---------+
+| Column          | Type    |
++-----------------+---------+
+| compress_ops    | int(11) |
+| compress_ops_ok | int(11) |
+| compress_time   | int(11) |
+| page_size       | int(5)  |
+| uncompress_ops  | int(11) |
+| uncompress_time | int(11) |
++-----------------+---------+
+
+Database: information_schema
+Table: INNODB_FT_DELETED
+[1 column]
++--------+---------------------+
+| Column | Type                |
++--------+---------------------+
+| DOC_ID | bigint(21) unsigned |
++--------+---------------------+
+
+Database: information_schema
+Table: INNODB_SYS_TABLESTATS
+[9 columns]
++-------------------+---------------------+
+| Column            | Type                |
++-------------------+---------------------+
+| AUTOINC           | bigint(21) unsigned |
+| CLUST_INDEX_SIZE  | bigint(21) unsigned |
+| MODIFIED_COUNTER  | bigint(21) unsigned |
+| NAME              | varchar(193)        |
+| NUM_ROWS          | bigint(21) unsigned |
+| OTHER_INDEX_SIZE  | bigint(21) unsigned |
+| REF_COUNT         | int(11)             |
+| STATS_INITIALIZED | varchar(193)        |
+| TABLE_ID          | bigint(21) unsigned |
++-------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_SYS_FIELDS
+[3 columns]
++----------+---------------------+
+| Column   | Type                |
++----------+---------------------+
+| INDEX_ID | bigint(21) unsigned |
+| NAME     | varchar(193)        |
+| POS      | int(11) unsigned    |
++----------+---------------------+
+
+Database: information_schema
+Table: INNODB_LOCK_WAITS
+[4 columns]
++-------------------+-------------+
+| Column            | Type        |
++-------------------+-------------+
+| blocking_lock_id  | varchar(81) |
+| blocking_trx_id   | varchar(18) |
+| requested_lock_id | varchar(81) |
+| requesting_trx_id | varchar(18) |
++-------------------+-------------+
+
+Database: information_schema
+Table: COLUMNS
+[20 columns]
++--------------------------+---------------------+
+| Column                   | Type                |
++--------------------------+---------------------+
+| PRIVILEGES               | varchar(80)         |
+| CHARACTER_MAXIMUM_LENGTH | bigint(21) unsigned |
+| CHARACTER_OCTET_LENGTH   | bigint(21) unsigned |
+| CHARACTER_SET_NAME       | varchar(32)         |
+| COLLATION_NAME           | varchar(32)         |
+| COLUMN_COMMENT           | varchar(1024)       |
+| COLUMN_DEFAULT           | longtext            |
+| COLUMN_KEY               | varchar(3)          |
+| COLUMN_NAME              | varchar(64)         |
+| COLUMN_TYPE              | longtext            |
+| DATA_TYPE                | varchar(64)         |
+| DATETIME_PRECISION       | bigint(21) unsigned |
+| EXTRA                    | varchar(27)         |
+| IS_NULLABLE              | varchar(3)          |
+| NUMERIC_PRECISION        | bigint(21) unsigned |
+| NUMERIC_SCALE            | bigint(21) unsigned |
+| ORDINAL_POSITION         | bigint(21) unsigned |
+| TABLE_CATALOG            | varchar(512)        |
+| TABLE_NAME               | varchar(64)         |
+| TABLE_SCHEMA             | varchar(64)         |
++--------------------------+---------------------+
+
+Database: information_schema
+Table: FILES
+[38 columns]
++----------------------+---------------------+
+| Column               | Type                |
++----------------------+---------------------+
+| VERSION              | bigint(21) unsigned |
+| AUTOEXTEND_SIZE      | bigint(21) unsigned |
+| AVG_ROW_LENGTH       | bigint(21) unsigned |
+| CHECK_TIME           | datetime            |
+| CHECKSUM             | bigint(21) unsigned |
+| CREATE_TIME          | datetime            |
+| CREATION_TIME        | datetime            |
+| DATA_FREE            | bigint(21) unsigned |
+| DATA_LENGTH          | bigint(21) unsigned |
+| DELETED_ROWS         | bigint(4)           |
+| ENGINE               | varchar(64)         |
+| EXTENT_SIZE          | bigint(4)           |
+| EXTRA                | varchar(255)        |
+| FILE_ID              | bigint(4)           |
+| FILE_NAME            | varchar(64)         |
+| FILE_TYPE            | varchar(20)         |
+| FREE_EXTENTS         | bigint(4)           |
+| FULLTEXT_KEYS        | varchar(64)         |
+| INDEX_LENGTH         | bigint(21) unsigned |
+| INITIAL_SIZE         | bigint(21) unsigned |
+| LAST_ACCESS_TIME     | datetime            |
+| LAST_UPDATE_TIME     | datetime            |
+| LOGFILE_GROUP_NAME   | varchar(64)         |
+| LOGFILE_GROUP_NUMBER | bigint(4)           |
+| MAX_DATA_LENGTH      | bigint(21) unsigned |
+| MAXIMUM_SIZE         | bigint(21) unsigned |
+| RECOVER_TIME         | bigint(4)           |
+| ROW_FORMAT           | varchar(10)         |
+| STATUS               | varchar(20)         |
+| TABLE_CATALOG        | varchar(64)         |
+| TABLE_NAME           | varchar(64)         |
+| TABLE_ROWS           | bigint(21) unsigned |
+| TABLE_SCHEMA         | varchar(64)         |
+| TABLESPACE_NAME      | varchar(64)         |
+| TOTAL_EXTENTS        | bigint(4)           |
+| TRANSACTION_COUNTER  | bigint(4)           |
+| UPDATE_COUNT         | bigint(4)           |
+| UPDATE_TIME          | datetime            |
++----------------------+---------------------+
+
+Database: information_schema
+Table: TABLES
+[21 columns]
++-----------------+---------------------+
+| Column          | Type                |
++-----------------+---------------------+
+| VERSION         | bigint(21) unsigned |
+| AUTO_INCREMENT  | bigint(21) unsigned |
+| AVG_ROW_LENGTH  | bigint(21) unsigned |
+| CHECK_TIME      | datetime            |
+| CHECKSUM        | bigint(21) unsigned |
+| CREATE_OPTIONS  | varchar(2048)       |
+| CREATE_TIME     | datetime            |
+| DATA_FREE       | bigint(21) unsigned |
+| DATA_LENGTH     | bigint(21) unsigned |
+| ENGINE          | varchar(64)         |
+| INDEX_LENGTH    | bigint(21) unsigned |
+| MAX_DATA_LENGTH | bigint(21) unsigned |
+| ROW_FORMAT      | varchar(10)         |
+| TABLE_CATALOG   | varchar(512)        |
+| TABLE_COLLATION | varchar(32)         |
+| TABLE_COMMENT   | varchar(2048)       |
+| TABLE_NAME      | varchar(64)         |
+| TABLE_ROWS      | bigint(21) unsigned |
+| TABLE_SCHEMA    | varchar(64)         |
+| TABLE_TYPE      | varchar(64)         |
+| UPDATE_TIME     | datetime            |
++-----------------+---------------------+
+
+Database: information_schema
+Table: INNODB_FT_DEFAULT_STOPWORD
+[1 column]
++--------+-------------+
+| Column | Type        |
++--------+-------------+
+| value  | varchar(18) |
++--------+-------------+
+
+Database: information_schema
+Table: STATISTICS
+[16 columns]
++---------------+---------------+
+| Column        | Type          |
++---------------+---------------+
+| COLLATION     | varchar(1)    |
+| CARDINALITY   | bigint(21)    |
+| COLUMN_NAME   | varchar(64)   |
+| COMMENT       | varchar(16)   |
+| INDEX_COMMENT | varchar(1024) |
+| INDEX_NAME    | varchar(64)   |
+| INDEX_SCHEMA  | varchar(64)   |
+| INDEX_TYPE    | varchar(16)   |
+| NON_UNIQUE    | bigint(1)     |
+| NULLABLE      | varchar(3)    |
+| PACKED        | varchar(10)   |
+| SEQ_IN_INDEX  | bigint(2)     |
+| SUB_PART      | bigint(3)     |
+| TABLE_CATALOG | varchar(512)  |
+| TABLE_NAME    | varchar(64)   |
+| TABLE_SCHEMA  | varchar(64)   |
++---------------+---------------+
+
+Database: information_schema
+Table: ENABLED_ROLES
+[1 column]
++-----------+--------------+
+| Column    | Type         |
++-----------+--------------+
+| ROLE_NAME | varchar(128) |
++-----------+--------------+
+
+Database: information_schema
+Table: INNODB_SYS_TABLES
+[8 columns]
++---------------+---------------------+
+| Column        | Type                |
++---------------+---------------------+
+| SPACE         | int(11)             |
+| FILE_FORMAT   | varchar(10)         |
+| FLAG          | int(11)             |
+| N_COLS        | int(11)             |
+| NAME          | varchar(655)        |
+| ROW_FORMAT    | varchar(12)         |
+| TABLE_ID      | bigint(21) unsigned |
+| ZIP_PAGE_SIZE | int(11) unsigned    |
++---------------+---------------------+
+
+Database: information_schema
+Table: INNODB_CHANGED_PAGES
+[4 columns]
++-----------+---------------------+
+| Column    | Type                |
++-----------+---------------------+
+| end_lsn   | bigint(21) unsigned |
+| page_id   | int(11) unsigned    |
+| space_id  | int(11) unsigned    |
+| start_lsn | bigint(21) unsigned |
++-----------+---------------------+
+
+Database: information_schema
+Table: VIEWS
+[11 columns]
++----------------------+--------------+
+| Column               | Type         |
++----------------------+--------------+
+| ALGORITHM            | varchar(10)  |
+| CHARACTER_SET_CLIENT | varchar(32)  |
+| CHECK_OPTION         | varchar(8)   |
+| COLLATION_CONNECTION | varchar(32)  |
+| DEFINER              | varchar(189) |
+| IS_UPDATABLE         | varchar(3)   |
+| SECURITY_TYPE        | varchar(7)   |
+| TABLE_CATALOG        | varchar(512) |
+| TABLE_NAME           | varchar(64)  |
+| TABLE_SCHEMA         | varchar(64)  |
+| VIEW_DEFINITION      | longtext     |
++----------------------+--------------+
+
+Database: information_schema
+Table: TABLE_PRIVILEGES
+[6 columns]
++----------------+--------------+
+| Column         | Type         |
++----------------+--------------+
+| GRANTEE        | varchar(190) |
+| IS_GRANTABLE   | varchar(3)   |
+| PRIVILEGE_TYPE | varchar(64)  |
+| TABLE_CATALOG  | varchar(512) |
+| TABLE_NAME     | varchar(64)  |
+| TABLE_SCHEMA   | varchar(64)  |
++----------------+--------------+
+
+Database: information_schema
+Table: KEY_COLUMN_USAGE
+[12 columns]
++-------------------------------+--------------+
+| Column                        | Type         |
++-------------------------------+--------------+
+| COLUMN_NAME                   | varchar(64)  |
+| CONSTRAINT_CATALOG            | varchar(512) |
+| CONSTRAINT_NAME               | varchar(64)  |
+| CONSTRAINT_SCHEMA             | varchar(64)  |
+| ORDINAL_POSITION              | bigint(10)   |
+| POSITION_IN_UNIQUE_CONSTRAINT | bigint(10)   |
+| REFERENCED_COLUMN_NAME        | varchar(64)  |
+| REFERENCED_TABLE_NAME         | varchar(64)  |
+| REFERENCED_TABLE_SCHEMA       | varchar(64)  |
+| TABLE_CATALOG                 | varchar(512) |
+| TABLE_NAME                    | varchar(64)  |
+| TABLE_SCHEMA                  | varchar(64)  |
++-------------------------------+--------------+
+
+Database: information_schema
+Table: SESSION_STATUS
+[2 columns]
++----------------+---------------+
+| Column         | Type          |
++----------------+---------------+
+| VARIABLE_NAME  | varchar(64)   |
+| VARIABLE_VALUE | varchar(2048) |
++----------------+---------------+
+
+Database: information_schema
+Table: INNODB_SYS_DATAFILES
+[2 columns]
++--------+------------------+
+| Column | Type             |
++--------+------------------+
+| PATH   | varchar(4000)    |
+| SPACE  | int(11) unsigned |
++--------+------------------+
+
+Database: information_schema
+Table: SYSTEM_VARIABLES
+[14 columns]
++-----------------------+---------------+
+| Column                | Type          |
++-----------------------+---------------+
+| COMMAND_LINE_ARGUMENT | varchar(64)   |
+| DEFAULT_VALUE         | varchar(2048) |
+| ENUM_VALUE_LIST       | longtext      |
+| GLOBAL_VALUE          | varchar(2048) |
+| GLOBAL_VALUE_ORIGIN   | varchar(64)   |
+| NUMERIC_BLOCK_SIZE    | varchar(21)   |
+| NUMERIC_MAX_VALUE     | varchar(21)   |
+| NUMERIC_MIN_VALUE     | varchar(21)   |
+| READ_ONLY             | varchar(3)    |
+| SESSION_VALUE         | varchar(2048) |
+| VARIABLE_COMMENT      | varchar(2048) |
+| VARIABLE_NAME         | varchar(64)   |
+| VARIABLE_SCOPE        | varchar(64)   |
+| VARIABLE_TYPE         | varchar(64)   |
++-----------------------+---------------+
+
+Database: information_schema
+Table: SCHEMA_PRIVILEGES
+[5 columns]
++----------------+--------------+
+| Column         | Type         |
++----------------+--------------+
+| GRANTEE        | varchar(190) |
+| IS_GRANTABLE   | varchar(3)   |
+| PRIVILEGE_TYPE | varchar(64)  |
+| TABLE_CATALOG  | varchar(512) |
+| TABLE_SCHEMA   | varchar(64)  |
++----------------+--------------+
+
+Database: information_schema
+Table: SESSION_VARIABLES
+[2 columns]
++----------------+---------------+
+| Column         | Type          |
++----------------+---------------+
+| VARIABLE_NAME  | varchar(64)   |
+| VARIABLE_VALUE | varchar(2048) |
++----------------+---------------+
+
+Database: information_schema
+Table: XTRADB_RSEG
+[6 columns]
++-----------+---------------------+
+| Column    | Type                |
++-----------+---------------------+
+| curr_size | bigint(21) unsigned |
+| max_size  | bigint(21) unsigned |
+| page_no   | bigint(21) unsigned |
+| rseg_id   | bigint(21) unsigned |
+| space_id  | bigint(21) unsigned |
+| zip_size  | bigint(21) unsigned |
++-----------+---------------------+
+
+Database: information_schema
+Table: GLOBAL_STATUS
+[2 columns]
++----------------+---------------+
+| Column         | Type          |
++----------------+---------------+
+| VARIABLE_NAME  | varchar(64)   |
+| VARIABLE_VALUE | varchar(2048) |
++----------------+---------------+
+
+Database: information_schema
+Table: INNODB_FT_CONFIG
+[2 columns]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| KEY    | varchar(193) |
+| VALUE  | varchar(193) |
++--------+--------------+
+
+Database: information_schema
+Table: INNODB_TRX
+[24 columns]
++----------------------------+---------------------+
+| Column                     | Type                |
++----------------------------+---------------------+
+| trx_adaptive_hash_latched  | int(1)              |
+| trx_adaptive_hash_timeout  | bigint(21) unsigned |
+| trx_autocommit_non_locking | int(1)              |
+| trx_concurrency_tickets    | bigint(21) unsigned |
+| trx_foreign_key_checks     | int(1)              |
+| trx_id                     | varchar(18)         |
+| trx_is_read_only           | int(1)              |
+| trx_isolation_level        | varchar(16)         |
+| trx_last_foreign_key_error | varchar(256)        |
+| trx_lock_memory_bytes      | bigint(21) unsigned |
+| trx_lock_structs           | bigint(21) unsigned |
+| trx_mysql_thread_id        | bigint(21) unsigned |
+| trx_operation_state        | varchar(64)         |
+| trx_query                  | varchar(1024)       |
+| trx_requested_lock_id      | varchar(81)         |
+| trx_rows_locked            | bigint(21) unsigned |
+| trx_rows_modified          | bigint(21) unsigned |
+| trx_started                | datetime            |
+| trx_state                  | varchar(13)         |
+| trx_tables_in_use          | bigint(21) unsigned |
+| trx_tables_locked          | bigint(21) unsigned |
+| trx_unique_checks          | int(1)              |
+| trx_wait_started           | datetime            |
+| trx_weight                 | bigint(21) unsigned |
++----------------------------+---------------------+
+
+Database: information_schema
+Table: INNODB_BUFFER_PAGE
+[20 columns]
++---------------------+---------------------+
+| Column              | Type                |
++---------------------+---------------------+
+| SPACE               | bigint(21) unsigned |
+| ACCESS_TIME         | bigint(21) unsigned |
+| BLOCK_ID            | bigint(21) unsigned |
+| COMPRESSED_SIZE     | bigint(21) unsigned |
+| DATA_SIZE           | bigint(21) unsigned |
+| FIX_COUNT           | bigint(21) unsigned |
+| FLUSH_TYPE          | bigint(21) unsigned |
+| FREE_PAGE_CLOCK     | bigint(21) unsigned |
+| INDEX_NAME          | varchar(1024)       |
+| IO_FIX              | varchar(64)         |
+| IS_HASHED           | varchar(3)          |
+| IS_OLD              | varchar(3)          |
+| NEWEST_MODIFICATION | bigint(21) unsigned |
+| NUMBER_RECORDS      | bigint(21) unsigned |
+| OLDEST_MODIFICATION | bigint(21) unsigned |
+| PAGE_NUMBER         | bigint(21) unsigned |
+| PAGE_STATE          | varchar(64)         |
+| PAGE_TYPE           | varchar(64)         |
+| POOL_ID             | bigint(21) unsigned |
+| TABLE_NAME          | varchar(1024)       |
++---------------------+---------------------+
+
+Database: information_schema
+Table: TABLE_STATISTICS
+[5 columns]
++------------------------+--------------+
+| Column                 | Type         |
++------------------------+--------------+
+| ROWS_CHANGED           | bigint(21)   |
+| ROWS_CHANGED_X_INDEXES | bigint(21)   |
+| ROWS_READ              | bigint(21)   |
+| TABLE_NAME             | varchar(192) |
+| TABLE_SCHEMA           | varchar(192) |
++------------------------+--------------+
+
+Database: information_schema
+Table: INNODB_TABLESPACES_ENCRYPTION
+[10 columns]
++------------------------------+---------------------+
+| Column                       | Type                |
++------------------------------+---------------------+
+| SPACE                        | int(11) unsigned    |
+| CURRENT_KEY_ID               | int(11) unsigned    |
+| CURRENT_KEY_VERSION          | int(11) unsigned    |
+| ENCRYPTION_SCHEME            | int(11) unsigned    |
+| KEY_ROTATION_MAX_PAGE_NUMBER | bigint(21) unsigned |
+| KEY_ROTATION_PAGE_NUMBER     | bigint(21) unsigned |
+| KEYSERVER_REQUESTS           | int(11) unsigned    |
+| MIN_KEY_VERSION              | int(11) unsigned    |
+| NAME                         | varchar(655)        |
+| ROTATING_OR_FLUSHING         | int(1) unsigned     |
++------------------------------+---------------------+
+
+Database: information_schema
+Table: GEOMETRY_COLUMNS
+[13 columns]
++-------------------+--------------+
+| Column            | Type         |
++-------------------+--------------+
+| COORD_DIMENSION   | tinyint(2)   |
+| F_GEOMETRY_COLUMN | varchar(64)  |
+| F_TABLE_CATALOG   | varchar(512) |
+| F_TABLE_NAME      | varchar(64)  |
+| F_TABLE_SCHEMA    | varchar(64)  |
+| G_GEOMETRY_COLUMN | varchar(64)  |
+| G_TABLE_CATALOG   | varchar(512) |
+| G_TABLE_NAME      | varchar(64)  |
+| G_TABLE_SCHEMA    | varchar(64)  |
+| GEOMETRY_TYPE     | int(7)       |
+| MAX_PPR           | tinyint(2)   |
+| SRID              | smallint(5)  |
+| STORAGE_TYPE      | tinyint(2)   |
++-------------------+--------------+
+
+Database: information_schema
+Table: INNODB_CMPMEM_RESET
+[6 columns]
++----------------------+------------+
+| Column               | Type       |
++----------------------+------------+
+| buffer_pool_instance | int(11)    |
+| page_size            | int(5)     |
+| pages_free           | int(11)    |
+| pages_used           | int(11)    |
+| relocation_ops       | bigint(21) |
+| relocation_time      | int(11)    |
++----------------------+------------+
+
+Database: information_schema
+Table: ALL_PLUGINS
+[13 columns]
++------------------------+-------------+
+| Column                 | Type        |
++------------------------+-------------+
+| LOAD_OPTION            | varchar(64) |
+| PLUGIN_AUTH_VERSION    | varchar(80) |
+| PLUGIN_AUTHOR          | varchar(64) |
+| PLUGIN_DESCRIPTION     | longtext    |
+| PLUGIN_LIBRARY         | varchar(64) |
+| PLUGIN_LIBRARY_VERSION | varchar(20) |
+| PLUGIN_LICENSE         | varchar(80) |
+| PLUGIN_MATURITY        | varchar(12) |
+| PLUGIN_NAME            | varchar(64) |
+| PLUGIN_STATUS          | varchar(16) |
+| PLUGIN_TYPE            | varchar(80) |
+| PLUGIN_TYPE_VERSION    | varchar(20) |
+| PLUGIN_VERSION         | varchar(20) |
++------------------------+-------------+

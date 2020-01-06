@@ -1,0 +1,7 @@
+/images (Status: 301)
+/css (Status: 301)
+/js (Status: 301)
+/fonts (Status: 301)
+/phpmyadmin (Status: 301)
+/sass (Status: 301)
+/server-status (Status: 403)

