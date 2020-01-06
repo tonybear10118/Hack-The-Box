@@ -1,0 +1,1081 @@
+=================================================================================================
+LINUX PRIVILEGE ESCALATION CHECKER
+=================================================================================================
+
+[*] GETTING BASIC SYSTEM INFO...
+
+[+] Kernel
+    Linux version 3.10.0-957.1.3.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Thu Nov 29 14:49:43 UTC 2018
+
+[+] Hostname
+    haystack
+
+[+] Operating System
+    \S
+    Kernel \r on an \m
+
+[*] GETTING NETWORKING INFO...
+
+[+] Interfaces
+
+[+] Netstat
+
+[+] Route
+
+[*] GETTING FILESYSTEM INFO...
+
+[+] Mount results
+    sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+    proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+    devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=1918880k,nr_inodes=479720,mode=755)
+    securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+    tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+    devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+    tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+    tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
+    cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+    pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+    cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,devices)
+    cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,blkio)
+    cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,perf_event)
+    cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,memory)
+    cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuset)
+    cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,hugetlb)
+    cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuacct,cpu)
+    cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,pids)
+    cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,freezer)
+    cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,net_prio,net_cls)
+    configfs on /sys/kernel/config type configfs (rw,relatime)
+    /dev/mapper/centos-root on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+    selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
+    systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=32,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=21551)
+    debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+    hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
+    mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
+    /dev/sda1 on /boot type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+    tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=386156k,mode=700,uid=1000,gid=1000)
+    binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+
+[+] fstab entries
+    #
+    # /etc/fstab
+    # Created by anaconda on Wed Nov 28 12:04:41 2018
+    #
+    # Accessible filesystems, by reference, are maintained under '/dev/disk'
+    # See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+    #
+    /dev/mapper/centos-root /                       xfs     defaults        0 0
+    UUID=782e0556-01fa-4981-9f45-c39b049bacdf /boot                   xfs     defaults        0 0
+    /dev/mapper/centos-swap swap                    swap    defaults        0 0
+
+[+] Scheduled cron jobs
+    -rw-------. 1 root root   0 Nov 20  2018 /etc/cron.deny
+    -rw-r--r--. 1 root root 451 Jun  9  2014 /etc/crontab
+    /etc/cron.d:
+    total 16
+    drwxr-xr-x.  2 root root   21 Dec 11  2018 .
+    drwxr-xr-x. 85 root root 8192 Aug 27 04:38 ..
+    -rw-r--r--.  1 root root  128 Nov 20  2018 0hourly
+    /etc/cron.daily:
+    total 20
+    drwxr-xr-x.  2 root root   42 Dec 11  2018 .
+    drwxr-xr-x. 85 root root 8192 Aug 27 04:38 ..
+    -rwx------.  1 root root  219 Oct 30  2018 logrotate
+    -rwxr-xr-x.  1 root root  618 Oct 30  2018 man-db.cron
+    /etc/cron.hourly:
+    total 16
+    drwxr-xr-x.  2 root root   22 Dec 11  2018 .
+    drwxr-xr-x. 85 root root 8192 Aug 27 04:38 ..
+    -rwxr-xr-x.  1 root root  392 Nov 20  2018 0anacron
+    /etc/cron.monthly:
+    total 12
+    drwxr-xr-x.  2 root root    6 Jun  9  2014 .
+    drwxr-xr-x. 85 root root 8192 Aug 27 04:38 ..
+    /etc/cron.weekly:
+    total 12
+    drwxr-xr-x.  2 root root    6 Jun  9  2014 .
+    drwxr-xr-x. 85 root root 8192 Aug 27 04:38 ..
+
+[+] Writable cron dirs
+
+
+[*] ENUMERATING USER AND ENVIRONMENTAL INFO...
+
+[+] Logged in User Activity
+    13:37:37 up 14 min,  5 users,  load average: 0.34, 0.98, 1.09
+    USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+    security pts/0    10.10.15.239     13:24    1.00s  0.05s  0.05s -bash
+    security pts/1    10.10.13.14      13:24    1.00s  0.07s  0.00s /bin/sh -c w 2>/dev/null
+    security pts/2    10.10.14.20      13:25   10:33   0.03s  0.03s -bash
+    security pts/3    10.10.14.20      13:26    7:53   0.01s  0.01s -bash
+    security pts/5    10.10.15.43      13:34    1.00s  0.05s  0.05s -bash
+
+[+] Super Users Found:
+    root
+
+[+] Environment
+    XDG_SESSION_ID=3
+    HOSTNAME=haystack
+    SELINUX_ROLE_REQUESTED=
+    SHELL=/bin/bash
+    TERM=xterm-256color
+    HISTSIZE=1000
+    SSH_CLIENT=10.10.13.14 38080 22
+    SELINUX_USE_CURRENT_RANGE=
+    SSH_TTY=/dev/pts/1
+    USER=security
+    PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/security/.local/bin:/home/security/bin
+    MAIL=/var/spool/mail/security
+    _=/usr/bin/env
+    PWD=/home/security
+    LANG=en_US.UTF-8
+    SELINUX_LEVEL_REQUESTED=
+    HISTCONTROL=ignoredups
+    HOME=/home/security
+    SHLVL=2
+    LOGNAME=security
+    SSH_CONNECTION=10.10.13.14 38080 10.10.10.115 22
+    LESSOPEN=||/usr/bin/lesspipe.sh %s
+    XDG_RUNTIME_DIR=/run/user/1000
+
+[+] Root and current user history (depends on privs)
+    lrwxrwxrwx. 1 root root 9 Jan 25  2019 /home/security/.bash_history -> /dev/null
+
+[+] Sudoers (privileged)
+
+[+] All users
+    root:x:0:0:root:/root:/bin/bash
+    bin:x:1:1:bin:/bin:/sbin/nologin
+    daemon:x:2:2:daemon:/sbin:/sbin/nologin
+    adm:x:3:4:adm:/var/adm:/sbin/nologin
+    lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+    sync:x:5:0:sync:/sbin:/bin/sync
+    shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+    halt:x:7:0:halt:/sbin:/sbin/halt
+    mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+    operator:x:11:0:operator:/root:/sbin/nologin
+    games:x:12:100:games:/usr/games:/sbin/nologin
+    ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+    nobody:x:99:99:Nobody:/:/sbin/nologin
+    systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+    dbus:x:81:81:System message bus:/:/sbin/nologin
+    polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+    sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+    postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+    chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+    security:x:1000:1000:security:/home/security:/bin/bash
+    elasticsearch:x:997:995:elasticsearch user:/nonexistent:/sbin/nologin
+    logstash:x:996:994:logstash:/usr/share/logstash:/sbin/nologin
+    nginx:x:995:993:Nginx web server:/var/lib/nginx:/sbin/nologin
+    kibana:x:994:992:kibana service user:/home/kibana:/sbin/nologin
+
+[+] Current User
+    security
+
+[+] Current User ID
+    uid=1000(security) gid=1000(security) groups=1000(security) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+[*] ENUMERATING FILE AND DIRECTORY PERMISSIONS/CONTENTS...
+
+[+] World Writeable Directories for User/Group 'Root'
+    drwxrwxrwt. 2 root root 40 Oct  4 13:23 /dev/mqueue
+    drwxrwxrwt. 2 root root 80 Oct  4 13:27 /dev/shm
+    drwxrwxrwt. 9 root root 4096 Oct  4 13:26 /var/tmp
+    drwxrwxrwt. 21 root root 4096 Oct  4 13:36 /tmp
+    drwxrwxrwt. 2 root root 6 Nov 28  2018 /tmp/.X11-unix
+    drwxrwxrwt. 2 root root 6 Nov 28  2018 /tmp/.ICE-unix
+    drwxrwxrwt. 2 root root 6 Nov 28  2018 /tmp/.Test-unix
+    drwxrwxrwt. 2 root root 6 Nov 28  2018 /tmp/.font-unix
+    drwxrwxrwt. 2 root root 6 Nov 28  2018 /tmp/.XIM-unix
+
+[+] World Writeable Directories for Users other than Root
+
+[+] World Writable Files
+    -rw-rw-rw-. 1 root root 0 Oct  4 13:23 /sys/fs/selinux/member
+    -rw-rw-rw-. 1 root root 0 Oct  4 13:23 /sys/fs/selinux/user
+    -rw-rw-rw-. 1 root root 0 Oct  4 13:23 /sys/fs/selinux/relabel
+    -rw-rw-rw-. 1 root root 0 Oct  4 13:23 /sys/fs/selinux/create
+    -rw-rw-rw-. 1 root root 0 Oct  4 13:23 /sys/fs/selinux/access
+    -rw-rw-rw-. 1 root root 0 Oct  4 13:23 /sys/fs/selinux/context
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/net_cls,net_prio/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/freezer/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/pids/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/cpu,cpuacct/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/hugetlb/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/cpuset/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/memory/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/perf_event/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/blkio/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/devices/system.slice/rsyslog.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/devices/system.slice/nginx.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/devices/system.slice/sshd.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/devices/system.slice/tuned.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/devices/system.slice/elasticsearch.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/auditd.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/logstash.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/dbus.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/chronyd.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/systemd-logind.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/kibana.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/polkit.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/NetworkManager.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/systemd-udevd.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/lvm2-lvmetad.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/systemd-journald.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/firewalld.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/crond.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/system-getty.slice/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/vmware-tools.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/system.slice/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/devices/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:34 /sys/fs/cgroup/systemd/user.slice/user-1000.slice/session-7.scope/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:26 /sys/fs/cgroup/systemd/user.slice/user-1000.slice/session-6.scope/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:25 /sys/fs/cgroup/systemd/user.slice/user-1000.slice/session-5.scope/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/systemd/user.slice/user-1000.slice/session-3.scope/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/systemd/user.slice/user-1000.slice/session-1.scope/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/systemd/user.slice/user-1000.slice/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/user.slice/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:37 /sys/fs/cgroup/systemd/system.slice/kdump.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:37 /sys/fs/cgroup/systemd/system.slice/run-user-1000.mount/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:37 /sys/fs/cgroup/systemd/system.slice/proc-sys-fs-binfmt_misc.mount/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/systemd/system.slice/network.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/systemd/system.slice/rsyslog.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/systemd/system.slice/nginx.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/systemd/system.slice/sshd.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/systemd/system.slice/tuned.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:24 /sys/fs/cgroup/systemd/system.slice/elasticsearch.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/NetworkManager-wait-online.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/-.mount/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-vconsole-setup.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/sys-kernel-config.mount/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/rhel-dmesg.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/NetworkManager.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/firewalld.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-user-sessions.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/crond.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-update-utmp.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-logind.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/dbus.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/logstash.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/kibana.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/polkit.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/vmware-tools.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/chronyd.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-tmpfiles-setup.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/auditd.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/dev-centos-swap.swap/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/dev-disk-by\x2did-dm\x2duuid\x2dLVM\x2dd6YnIh8XcI2ssrOmmidGNctFlv3gGtucRTnlzUWTZVPn9J8fg2oMLXYqk2awBv4A.swap/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/rhel-import-state.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/dev-disk-by\x2duuid-c1c40309\x2d5a02\x2d428b\x2d9e20\x2d8052dd2e4094.swap/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/dev-dm\x2d1.swap/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/dev-disk-by\x2did-dm\x2dname\x2dcentos\x2dswap.swap/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/dev-mapper-centos\x2dswap.swap/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/lvm2-monitor.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/boot.mount/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-random-seed.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-udev-trigger.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/system-lvm2\x2dpvscan.slice/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/rhel-readonly.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-udevd.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-tmpfiles-setup-dev.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-journal-flush.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-sysctl.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/rhel-domainname.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-remount-fs.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/kmod-static-nodes.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/lvm2-lvmetad.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/dev-mqueue.mount/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/system-selinux\x2dpolicy\x2dmigrate\x2dlocal\x2dchanges.slice/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/dev-hugepages.mount/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/sys-kernel-debug.mount/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/system-getty.slice/getty@tty1.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/system-getty.slice/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/systemd-journald.service/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/system.slice/cgroup.event_control
+    --w--w--w-. 1 root root 0 Oct  4 13:23 /sys/fs/cgroup/systemd/cgroup.event_control
+
+[+] Checking if root's home folder is accessible
+
+[+] SUID/SGID Files and Directories
+    drwxr-sr-x. 3 root systemd-journal 60 Oct  4 13:23 /run/log/journal
+    drwxr-s---+ 2 root systemd-journal 60 Oct  4 13:23 /run/log/journal/d4a42591aae549a293fb7ac08e37916d
+    drwxr-s---. 2 root elasticsearch 224 Jan 25  2019 /etc/elasticsearch
+    -r-xr-sr-x. 1 root tty 15344 Jun  9  2014 /usr/bin/wall
+    -rws--x--x. 1 root root 24048 Oct 30  2018 /usr/bin/chfn
+    -rws--x--x. 1 root root 23960 Oct 30  2018 /usr/bin/chsh
+    -rwsr-xr-x. 1 root root 44320 Oct 30  2018 /usr/bin/mount
+    -rwsr-xr-x. 1 root root 64328 Oct 30  2018 /usr/bin/chage
+    -rwsr-xr-x. 1 root root 78272 Oct 30  2018 /usr/bin/gpasswd
+    -rwsr-xr-x. 1 root root 41872 Oct 30  2018 /usr/bin/newgrp
+    -rwsr-xr-x. 1 root root 32208 Oct 30  2018 /usr/bin/su
+    -rwsr-xr-x. 1 root root 32048 Oct 30  2018 /usr/bin/umount
+    -rwxr-sr-x. 1 root tty 19624 Oct 30  2018 /usr/bin/write
+    ---s--x--x. 1 root root 147392 Oct 30  2018 /usr/bin/sudo
+    -rwsr-xr-x. 1 root root 23656 Oct 30  2018 /usr/bin/pkexec
+    -rwsr-xr-x. 1 root root 57664 Nov 20  2018 /usr/bin/crontab
+    ---x--s--x. 1 root nobody 382240 Apr 11  2018 /usr/bin/ssh-agent
+    -rwsr-xr-x. 1 root root 27832 Jun 10  2014 /usr/bin/passwd
+    -rwsr-xr-x. 1 root root 11216 Apr 11  2018 /usr/sbin/pam_timestamp_check
+    -rwsr-xr-x. 1 root root 36280 Apr 11  2018 /usr/sbin/unix_chkpwd
+    -rwxr-sr-x. 1 root root 7208 Oct 30  2018 /usr/sbin/netreport
+    -rwsr-xr-x. 1 root root 11376 Oct 30  2018 /usr/sbin/usernetctl
+    -rwxr-sr-x. 1 root postdrop 218632 Oct 30  2018 /usr/sbin/postdrop
+    -rwxr-sr-x. 1 root postdrop 260112 Oct 30  2018 /usr/sbin/postqueue
+    -rwsr-xr-x. 1 root root 15512 Oct 30  2018 /usr/lib/polkit-1/polkit-agent-helper-1
+    -r-sr-xr-x. 1 root root 14320 Aug 27 04:37 /usr/lib/vmware-tools/bin64/vmware-user-suid-wrapper
+    -r-sr-xr-x. 1 root root 13628 Aug 27 04:37 /usr/lib/vmware-tools/bin32/vmware-user-suid-wrapper
+    -rwx--s--x. 1 root utmp 11192 Jun  9  2014 /usr/libexec/utempter/utempter
+    -rwsr-x---. 1 root dbus 58024 Nov  2  2018 /usr/libexec/dbus-1/dbus-daemon-launch-helper
+    ---x--s--x. 1 root ssh_keys 469880 Apr 11  2018 /usr/libexec/openssh/ssh-keysign
+
+[+] Logs containing keyword 'password'
+
+[+] Config files containing keyword 'password'
+    /etc/NetworkManager/NetworkManager.conf:# Logfiles contain no passwords and little sensitive information. But please
+    /etc/pki/tls/openssl.cnf:# input_password = secret
+    /etc/pki/tls/openssl.cnf:# output_password = secret
+    /etc/pki/tls/openssl.cnf:challengePassword		= A challenge password
+    /etc/security/pwquality.conf:# Configuration for systemwide password quality limits
+    /etc/security/pwquality.conf:# Number of characters in the new password that must not be present in the
+    /etc/security/pwquality.conf:# old password.
+    /etc/security/pwquality.conf:# Minimum acceptable size for the new password (plus one if
+    /etc/security/pwquality.conf:# The maximum credit for having digits in the new password. If less than 0
+    /etc/security/pwquality.conf:# it is the minimum number of digits in the new password.
+    /etc/security/pwquality.conf:# The maximum credit for having uppercase characters in the new password.
+    /etc/security/pwquality.conf:# password.
+    /etc/security/pwquality.conf:# The maximum credit for having lowercase characters in the new password.
+    /etc/security/pwquality.conf:# password.
+    /etc/security/pwquality.conf:# The maximum credit for having other characters in the new password.
+    /etc/security/pwquality.conf:# password.
+    /etc/security/pwquality.conf:# password (digits, uppercase, lowercase, others).
+    /etc/security/pwquality.conf:# The maximum number of allowed consecutive same characters in the new password.
+    /etc/security/pwquality.conf:# new password.
+    /etc/postfix/main.cf:# NOTE: if you use this feature for accounts not in the UNIX password
+    /etc/postfix/main.cf:# NOTE: if you use this feature for accounts not in the UNIX password
+    /etc/postfix/main.cf:# NOTE: if you use this feature for accounts not in the UNIX password
+    /etc/logstash/logstash-sample.conf:    #password => "changeme"
+
+[+] Shadow File (Privileged)
+
+[*] ENUMERATING PROCESSES AND APPLICATIONS...
+
+[+] Installed Packages
+    acl-2.2.51-14.el7.x86_64
+    aic94xx-firmware-30-6.el7.noarch
+    alsa-firmware-1.0.28-2.el7.noarch
+    alsa-lib-1.1.6-2.el7.x86_64
+    alsa-tools-firmware-1.1.0-1.el7.x86_64
+    audit-2.8.4-4.el7.x86_64
+    audit-libs-2.8.4-4.el7.x86_64
+    authconfig-6.2.8-30.el7.x86_64
+    basesystem-10.0-7.el7.centos.noarch
+    bash-4.2.46-31.el7.x86_64
+    bind-libs-lite-9.9.4-72.el7.x86_64
+    bind-license-9.9.4-72.el7.noarch
+    binutils-2.27-34.base.el7.x86_64
+    biosdevname-0.7.3-1.el7.x86_64
+    btrfs-progs-4.9.1-1.el7.x86_64
+    bzip2-libs-1.0.6-13.el7.x86_64
+    ca-certificates-2018.2.22-70.0.el7_5.noarch
+    centos-logos-70.0.6-3.el7.centos.noarch
+    centos-release-7-6.1810.2.el7.centos.x86_64
+    chkconfig-1.7.4-1.el7.x86_64
+    chrony-3.2-2.el7.x86_64
+    copy-jdk-configs-3.3-10.el7_5.noarch
+    coreutils-8.22-23.el7.x86_64
+    cpio-2.11-27.el7.x86_64
+    cracklib-2.9.0-11.el7.x86_64
+    cracklib-dicts-2.9.0-11.el7.x86_64
+    cronie-1.4.11-20.el7_6.x86_64
+    cronie-anacron-1.4.11-20.el7_6.x86_64
+    crontabs-1.11-6.20121102git.el7.noarch
+    cryptsetup-libs-2.0.3-3.el7.x86_64
+    curl-7.29.0-51.el7.x86_64
+    cyrus-sasl-lib-2.1.26-23.el7.x86_64
+    dbus-1.10.24-12.el7.x86_64
+    dbus-glib-0.100-7.el7.x86_64
+    dbus-libs-1.10.24-12.el7.x86_64
+    dbus-python-1.1.1-9.el7.x86_64
+    dejavu-fonts-common-2.33-6.el7.noarch
+    dejavu-sans-fonts-2.33-6.el7.noarch
+    device-mapper-1.02.149-10.el7_6.2.x86_64
+    device-mapper-event-1.02.149-10.el7_6.2.x86_64
+    device-mapper-event-libs-1.02.149-10.el7_6.2.x86_64
+    device-mapper-libs-1.02.149-10.el7_6.2.x86_64
+    device-mapper-persistent-data-0.7.3-3.el7.x86_64
+    dhclient-4.2.5-68.el7.centos.1.x86_64
+    dhcp-common-4.2.5-68.el7.centos.1.x86_64
+    dhcp-libs-4.2.5-68.el7.centos.1.x86_64
+    diffutils-3.3-4.el7.x86_64
+    dmidecode-3.1-2.el7.x86_64
+    dracut-033-554.el7.x86_64
+    dracut-config-rescue-033-554.el7.x86_64
+    dracut-network-033-554.el7.x86_64
+    e2fsprogs-1.42.9-13.el7.x86_64
+    e2fsprogs-libs-1.42.9-13.el7.x86_64
+    ebtables-2.0.10-16.el7.x86_64
+    elasticsearch-6.4.2-1.noarch
+    elfutils-default-yama-scope-0.172-2.el7.noarch
+    elfutils-libelf-0.172-2.el7.x86_64
+    elfutils-libs-0.172-2.el7.x86_64
+    epel-release-7-11.noarch
+    ethtool-4.8-9.el7.x86_64
+    expat-2.1.0-10.el7_3.x86_64
+    file-5.11-35.el7.x86_64
+    file-libs-5.11-35.el7.x86_64
+    filesystem-3.2-25.el7.x86_64
+    findutils-4.5.11-6.el7.x86_64
+    fipscheck-1.4.1-6.el7.x86_64
+    fipscheck-lib-1.4.1-6.el7.x86_64
+    firewalld-0.5.3-5.el7.noarch
+    firewalld-filesystem-0.5.3-5.el7.noarch
+    fontconfig-2.13.0-4.3.el7.x86_64
+    fontpackages-filesystem-1.44-8.el7.noarch
+    freetype-2.8-12.el7.x86_64
+    fxload-2002_04_11-16.el7.x86_64
+    gawk-4.0.2-4.el7_3.1.x86_64
+    gd-2.0.35-26.el7.x86_64
+    gdbm-1.10-8.el7.x86_64
+    GeoIP-1.5.0-13.el7.x86_64
+    gettext-0.19.8.1-2.el7.x86_64
+    gettext-libs-0.19.8.1-2.el7.x86_64
+    giflib-4.1.6-9.el7.x86_64
+    glib2-2.56.1-2.el7.x86_64
+    glibc-2.17-260.el7.x86_64
+    glibc-common-2.17-260.el7.x86_64
+    gmp-6.0.0-15.el7.x86_64
+    gnupg2-2.0.22-5.el7_5.x86_64
+    gobject-introspection-1.56.1-1.el7.x86_64
+    gperftools-libs-2.6.1-1.el7.x86_64
+    gpgme-1.3.2-5.el7.x86_64
+    gpg-pubkey-352c64e5-52ae6884
+    gpg-pubkey-d88e42b4-52371eca
+    gpg-pubkey-f4a80eb5-53a7ff4b
+    gpm-libs-1.20.7-5.el7.x86_64
+    grep-2.20-3.el7.x86_64
+    groff-base-1.22.2-8.el7.x86_64
+    grub2-2.02-0.76.el7.centos.x86_64
+    grub2-common-2.02-0.76.el7.centos.noarch
+    grub2-pc-2.02-0.76.el7.centos.x86_64
+    grub2-pc-modules-2.02-0.76.el7.centos.noarch
+    grub2-tools-2.02-0.76.el7.centos.x86_64
+    grub2-tools-extra-2.02-0.76.el7.centos.x86_64
+    grub2-tools-minimal-2.02-0.76.el7.centos.x86_64
+    grubby-8.28-25.el7.x86_64
+    gzip-1.5-10.el7.x86_64
+    hardlink-1.0-19.el7.x86_64
+    hostname-3.13-3.el7.x86_64
+    hwdata-0.252-9.1.el7.x86_64
+    info-5.1-5.el7.x86_64
+    initscripts-9.49.46-1.el7.x86_64
+    iproute-4.11.0-14.el7.x86_64
+    iprutils-2.4.16.1-1.el7.x86_64
+    ipset-6.38-3.el7_6.x86_64
+    ipset-libs-6.38-3.el7_6.x86_64
+    iptables-1.4.21-28.el7.x86_64
+    iputils-20160308-10.el7.x86_64
+    irqbalance-1.0.7-11.el7.x86_64
+    ivtv-firmware-20080701-26.el7.noarch
+    iwl1000-firmware-39.31.5.1-69.el7.noarch
+    iwl100-firmware-39.31.5.1-69.el7.noarch
+    iwl105-firmware-18.168.6.1-69.el7.noarch
+    iwl135-firmware-18.168.6.1-69.el7.noarch
+    iwl2000-firmware-18.168.6.1-69.el7.noarch
+    iwl2030-firmware-18.168.6.1-69.el7.noarch
+    iwl3160-firmware-22.0.7.0-69.el7.noarch
+    iwl3945-firmware-15.32.2.9-69.el7.noarch
+    iwl4965-firmware-228.61.2.24-69.el7.noarch
+    iwl5000-firmware-8.83.5.1_1-69.el7.noarch
+    iwl5150-firmware-8.24.2.2-69.el7.noarch
+    iwl6000-firmware-9.221.4.1-69.el7.noarch
+    iwl6000g2a-firmware-17.168.5.3-69.el7.noarch
+    iwl6000g2b-firmware-17.168.5.2-69.el7.noarch
+    iwl6050-firmware-41.28.5.1-69.el7.noarch
+    iwl7260-firmware-22.0.7.0-69.el7.noarch
+    iwl7265-firmware-22.0.7.0-69.el7.noarch
+    jansson-2.10-1.el7.x86_64
+    java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
+    java-1.8.0-openjdk-headless-1.8.0.191.b12-1.el7_6.x86_64
+    javapackages-tools-3.4.1-11.el7.noarch
+    json-c-0.11-4.el7_0.x86_64
+    kbd-1.15.5-15.el7.x86_64
+    kbd-legacy-1.15.5-15.el7.noarch
+    kbd-misc-1.15.5-15.el7.noarch
+    kernel-3.10.0-862.14.4.el7.x86_64
+    kernel-3.10.0-862.el7.x86_64
+    kernel-3.10.0-957.1.3.el7.x86_64
+    kernel-tools-3.10.0-957.1.3.el7.x86_64
+    kernel-tools-libs-3.10.0-957.1.3.el7.x86_64
+    kexec-tools-2.0.15-21.el7.x86_64
+    keyutils-libs-1.5.8-3.el7.x86_64
+    kibana-6.4.2-1.x86_64
+    kmod-20-23.el7.x86_64
+    kmod-libs-20-23.el7.x86_64
+    kpartx-0.4.9-123.el7.x86_64
+    krb5-libs-1.15.1-34.el7.x86_64
+    less-458-9.el7.x86_64
+    libacl-2.2.51-14.el7.x86_64
+    libaio-0.3.109-13.el7.x86_64
+    libassuan-2.1.0-3.el7.x86_64
+    libattr-2.4.46-13.el7.x86_64
+    libblkid-2.23.2-59.el7.x86_64
+    libcap-2.22-9.el7.x86_64
+    libcap-ng-0.7.5-4.el7.x86_64
+    libcom_err-1.42.9-13.el7.x86_64
+    libcroco-0.6.12-4.el7.x86_64
+    libcurl-7.29.0-51.el7.x86_64
+    libdaemon-0.14-7.el7.x86_64
+    libdb-5.3.21-24.el7.x86_64
+    libdb-utils-5.3.21-24.el7.x86_64
+    libdrm-2.4.91-3.el7.x86_64
+    libedit-3.0-12.20121213cvs.el7.x86_64
+    libestr-0.1.9-2.el7.x86_64
+    libfastjson-0.99.4-3.el7.x86_64
+    libffi-3.0.13-18.el7.x86_64
+    libfontenc-1.1.3-3.el7.x86_64
+    libgcc-4.8.5-36.el7.x86_64
+    libgcrypt-1.5.3-14.el7.x86_64
+    libgomp-4.8.5-36.el7.x86_64
+    libgpg-error-1.12-3.el7.x86_64
+    libICE-1.0.9-9.el7.x86_64
+    libidn-1.28-4.el7.x86_64
+    libjpeg-turbo-1.2.90-6.el7.x86_64
+    libmnl-1.0.3-7.el7.x86_64
+    libmount-2.23.2-59.el7.x86_64
+    libndp-1.2-7.el7.x86_64
+    libnetfilter_conntrack-1.0.6-1.el7_3.x86_64
+    libnfnetlink-1.0.1-4.el7.x86_64
+    libnl3-3.2.28-4.el7.x86_64
+    libnl3-cli-3.2.28-4.el7.x86_64
+    libpciaccess-0.14-1.el7.x86_64
+    libpipeline-1.2.3-3.el7.x86_64
+    libpng-1.5.13-7.el7_2.x86_64
+    libpwquality-1.2.3-5.el7.x86_64
+    libseccomp-2.3.1-3.el7.x86_64
+    libselinux-2.5-14.1.el7.x86_64
+    libselinux-python-2.5-14.1.el7.x86_64
+    libselinux-utils-2.5-14.1.el7.x86_64
+    libsemanage-2.5-14.el7.x86_64
+    libsepol-2.5-10.el7.x86_64
+    libSM-1.2.2-2.el7.x86_64
+    libsmartcols-2.23.2-59.el7.x86_64
+    libss-1.42.9-13.el7.x86_64
+    libssh2-1.4.3-12.el7.x86_64
+    libstdc++-4.8.5-36.el7.x86_64
+    libsysfs-2.1.0-16.el7.x86_64
+    libtasn1-4.10-1.el7.x86_64
+    libteam-1.27-5.el7.x86_64
+    libunistring-0.9.3-9.el7.x86_64
+    libuser-0.60-9.el7.x86_64
+    libutempter-1.1.6-4.el7.x86_64
+    libuuid-2.23.2-59.el7.x86_64
+    libverto-0.2.5-4.el7.x86_64
+    libX11-1.6.5-2.el7.x86_64
+    libX11-common-1.6.5-2.el7.noarch
+    libXau-1.0.8-2.1.el7.x86_64
+    libxcb-1.13-1.el7.x86_64
+    libXcomposite-0.4.4-4.1.el7.x86_64
+    libXext-1.3.3-3.el7.x86_64
+    libXfont-1.5.4-1.el7.x86_64
+    libXi-1.7.9-1.el7.x86_64
+    libxml2-2.9.1-6.el7_2.3.x86_64
+    libXpm-3.5.12-1.el7.x86_64
+    libXrender-0.9.10-1.el7.x86_64
+    libxslt-1.1.28-5.el7.x86_64
+    libXtst-1.2.3-1.el7.x86_64
+    linux-firmware-20180911-69.git85c5d90.el7.noarch
+    lksctp-tools-1.0.17-2.el7.x86_64
+    logrotate-3.8.6-17.el7.x86_64
+    logstash-6.4.2-1.noarch
+    lsscsi-0.27-6.el7.x86_64
+    lua-5.1.4-15.el7.x86_64
+    lvm2-2.02.180-10.el7_6.2.x86_64
+    lvm2-libs-2.02.180-10.el7_6.2.x86_64
+    lz4-1.7.5-2.el7.x86_64
+    lzo-2.06-8.el7.x86_64
+    make-3.82-23.el7.x86_64
+    man-db-2.6.3-11.el7.x86_64
+    mariadb-libs-5.5.60-1.el7_5.x86_64
+    microcode_ctl-2.1-47.el7.x86_64
+    mozjs17-17.0.0-20.el7.x86_64
+    ncurses-5.9-14.20130511.el7_4.x86_64
+    ncurses-base-5.9-14.20130511.el7_4.noarch
+    ncurses-libs-5.9-14.20130511.el7_4.x86_64
+    NetworkManager-1.12.0-8.el7_6.x86_64
+    NetworkManager-libnm-1.12.0-8.el7_6.x86_64
+    NetworkManager-team-1.12.0-8.el7_6.x86_64
+    NetworkManager-tui-1.12.0-8.el7_6.x86_64
+    NetworkManager-wifi-1.12.0-8.el7_6.x86_64
+    newt-0.52.15-4.el7.x86_64
+    newt-python-0.52.15-4.el7.x86_64
+    nginx-1.12.2-2.el7.x86_64
+    nginx-all-modules-1.12.2-2.el7.noarch
+    nginx-filesystem-1.12.2-2.el7.noarch
+    nginx-mod-http-geoip-1.12.2-2.el7.x86_64
+    nginx-mod-http-image-filter-1.12.2-2.el7.x86_64
+    nginx-mod-http-perl-1.12.2-2.el7.x86_64
+    nginx-mod-http-xslt-filter-1.12.2-2.el7.x86_64
+    nginx-mod-mail-1.12.2-2.el7.x86_64
+    nginx-mod-stream-1.12.2-2.el7.x86_64
+    nspr-4.19.0-1.el7_5.x86_64
+    nss-3.36.0-7.el7_5.x86_64
+    nss-pem-1.0.3-5.el7.x86_64
+    nss-softokn-3.36.0-5.el7_5.x86_64
+    nss-softokn-freebl-3.36.0-5.el7_5.x86_64
+    nss-sysinit-3.36.0-7.el7_5.x86_64
+    nss-tools-3.36.0-7.el7_5.x86_64
+    nss-util-3.36.0-1.el7_5.x86_64
+    numactl-libs-2.0.9-7.el7.x86_64
+    openldap-2.4.44-20.el7.x86_64
+    openssh-7.4p1-16.el7.x86_64
+    openssh-clients-7.4p1-16.el7.x86_64
+    openssh-server-7.4p1-16.el7.x86_64
+    openssl-1.0.2k-16.el7.x86_64
+    openssl-libs-1.0.2k-16.el7.x86_64
+    os-prober-1.58-9.el7.x86_64
+    p11-kit-0.23.5-3.el7.x86_64
+    p11-kit-trust-0.23.5-3.el7.x86_64
+    pam-1.1.8-22.el7.x86_64
+    parted-3.1-29.el7.x86_64
+    passwd-0.79-4.el7.x86_64
+    pciutils-libs-3.5.1-3.el7.x86_64
+    pcre-8.32-17.el7.x86_64
+    perl-5.16.3-293.el7.x86_64
+    perl-Carp-1.26-244.el7.noarch
+    perl-constant-1.27-2.el7.noarch
+    perl-Encode-2.51-7.el7.x86_64
+    perl-Exporter-5.68-3.el7.noarch
+    perl-File-Path-2.09-2.el7.noarch
+    perl-File-Temp-0.23.01-3.el7.noarch
+    perl-Filter-1.49-3.el7.x86_64
+    perl-Getopt-Long-2.40-3.el7.noarch
+    perl-HTTP-Tiny-0.033-3.el7.noarch
+    perl-libs-5.16.3-293.el7.x86_64
+    perl-macros-5.16.3-293.el7.x86_64
+    perl-parent-0.225-244.el7.noarch
+    perl-PathTools-3.40-5.el7.x86_64
+    perl-Pod-Escapes-1.04-293.el7.noarch
+    perl-podlators-2.5.1-3.el7.noarch
+    perl-Pod-Perldoc-3.20-4.el7.noarch
+    perl-Pod-Simple-3.28-4.el7.noarch
+    perl-Pod-Usage-1.63-3.el7.noarch
+    perl-Scalar-List-Utils-1.27-248.el7.x86_64
+    perl-Socket-2.010-4.el7.x86_64
+    perl-Storable-2.45-3.el7.x86_64
+    perl-Text-ParseWords-3.29-4.el7.noarch
+    perl-threads-1.87-4.el7.x86_64
+    perl-threads-shared-1.43-6.el7.x86_64
+    perl-Time-HiRes-1.9725-3.el7.x86_64
+    perl-Time-Local-1.2300-2.el7.noarch
+    pinentry-0.8.1-17.el7.x86_64
+    pkgconfig-0.27.1-4.el7.x86_64
+    plymouth-0.8.9-0.31.20140113.el7.centos.x86_64
+    plymouth-core-libs-0.8.9-0.31.20140113.el7.centos.x86_64
+    plymouth-scripts-0.8.9-0.31.20140113.el7.centos.x86_64
+    policycoreutils-2.5-29.el7.x86_64
+    polkit-0.112-18.el7.x86_64
+    polkit-pkla-compat-0.1-4.el7.x86_64
+    popt-1.13-16.el7.x86_64
+    postfix-2.10.1-7.el7.x86_64
+    procps-ng-3.3.10-23.el7.x86_64
+    pth-2.0.7-23.el7.x86_64
+    pygpgme-0.3-9.el7.x86_64
+    pyliblzma-0.5.3-11.el7.x86_64
+    python-2.7.5-76.el7.x86_64
+    python-configobj-4.7.2-7.el7.noarch
+    python-decorator-3.4.0-3.el7.noarch
+    python-firewall-0.5.3-5.el7.noarch
+    python-gobject-base-3.22.0-1.el7_4.1.x86_64
+    python-iniparse-0.4-9.el7.noarch
+    python-javapackages-3.4.1-11.el7.noarch
+    python-libs-2.7.5-76.el7.x86_64
+    python-linux-procfs-0.4.9-4.el7.noarch
+    python-lxml-3.2.1-4.el7.x86_64
+    python-perf-3.10.0-957.1.3.el7.x86_64
+    python-pycurl-7.19.0-19.el7.x86_64
+    python-pyudev-0.15-9.el7.noarch
+    python-schedutils-0.4-6.el7.x86_64
+    python-slip-0.4.0-4.el7.noarch
+    python-slip-dbus-0.4.0-4.el7.noarch
+    python-urlgrabber-3.10-9.el7.noarch
+    pyxattr-0.5.1-5.el7.x86_64
+    qrencode-libs-3.4.1-3.el7.x86_64
+    readline-6.2-10.el7.x86_64
+    rootfiles-8.1-11.el7.noarch
+    rpm-4.11.3-35.el7.x86_64
+    rpm-build-libs-4.11.3-35.el7.x86_64
+    rpm-libs-4.11.3-35.el7.x86_64
+    rpm-python-4.11.3-35.el7.x86_64
+    rsyslog-8.24.0-34.el7.x86_64
+    sed-4.2.2-5.el7.x86_64
+    selinux-policy-3.13.1-229.el7_6.6.noarch
+    selinux-policy-targeted-3.13.1-229.el7_6.6.noarch
+    setup-2.8.71-10.el7.noarch
+    shadow-utils-4.1.5.1-25.el7.x86_64
+    shared-mime-info-1.8-4.el7.x86_64
+    slang-2.2.4-11.el7.x86_64
+    snappy-1.1.0-3.el7.x86_64
+    sqlite-3.7.17-8.el7.x86_64
+    stix-fonts-1.1.0-5.el7.noarch
+    sudo-1.8.23-3.el7.x86_64
+    systemd-219-62.el7.x86_64
+    systemd-libs-219-62.el7.x86_64
+    systemd-sysv-219-62.el7.x86_64
+    sysvinit-tools-2.88-14.dsf.el7.x86_64
+    tar-1.26-35.el7.x86_64
+    tcp_wrappers-libs-7.6-77.el7.x86_64
+    teamd-1.27-5.el7.x86_64
+    ttmkfdir-3.0.9-42.el7.x86_64
+    tuned-2.10.0-6.el7.noarch
+    tzdata-2018g-1.el7.noarch
+    tzdata-java-2018g-1.el7.noarch
+    ustr-1.0.4-16.el7.x86_64
+    util-linux-2.23.2-59.el7.x86_64
+    vim-common-7.4.160-5.el7.x86_64
+    vim-enhanced-7.4.160-5.el7.x86_64
+    vim-filesystem-7.4.160-5.el7.x86_64
+    vim-minimal-7.4.160-5.el7.x86_64
+    virt-what-1.18-4.el7.x86_64
+    which-2.20-7.el7.x86_64
+    wpa_supplicant-2.6-12.el7.x86_64
+    xfsprogs-4.5.0-18.el7.x86_64
+    xorg-x11-fonts-Type1-7.5-9.el7.noarch
+    xorg-x11-font-utils-7.5-21.el7.x86_64
+    xz-5.2.2-1.el7.x86_64
+    xz-libs-5.2.2-1.el7.x86_64
+    yum-3.4.3-161.el7.centos.noarch
+    yum-metadata-parser-1.1.4-10.el7.x86_64
+    yum-plugin-fastestmirror-1.1.31-50.el7.noarch
+    zlib-1.2.7-18.el7.x86_64
+
+[+] Current processes
+    USER PID START TIME COMMAND
+    root 1 13:23 0:02 /usr/lib/systemd/systemd
+    root 2 13:23 0:00 [kthreadd]
+    root 3 13:23 0:02 [ksoftirqd/0]
+    root 5 13:23 0:00 [kworker/0:0H]
+    root 6 13:23 0:00 [kworker/u256:0]
+    root 7 13:23 0:00 [migration/0]
+    root 8 13:23 0:00 [rcu_bh]
+    root 9 13:23 0:03 [rcu_sched]
+    root 10 13:23 0:00 [lru-add-drain]
+    root 11 13:23 0:00 [watchdog/0]
+    root 13 13:23 0:00 [kdevtmpfs]
+    root 14 13:23 0:00 [netns]
+    root 15 13:23 0:00 [khungtaskd]
+    root 16 13:23 0:00 [writeback]
+    root 17 13:23 0:00 [kintegrityd]
+    root 18 13:23 0:00 [bioset]
+    root 19 13:23 0:00 [bioset]
+    root 20 13:23 0:00 [bioset]
+    root 21 13:23 0:00 [kblockd]
+    root 22 13:23 0:00 [md]
+    root 23 13:23 0:00 [edac-poller]
+    root 24 13:23 0:00 [watchdogd]
+    root 25 13:23 0:01 [kworker/0:1]
+    root 30 13:23 0:00 [kswapd0]
+    root 31 13:23 0:00 [ksmd]
+    root 32 13:23 0:00 [khugepaged]
+    root 33 13:23 0:00 [crypto]
+    root 41 13:23 0:00 [kthrotld]
+    root 43 13:23 0:00 [kmpath_rdacd]
+    root 44 13:23 0:00 [kaluad]
+    root 45 13:23 0:00 [kpsmoused]
+    root 47 13:23 0:00 [ipv6_addrconf]
+    root 60 13:23 0:00 [deferwq]
+    root 91 13:23 0:00 [kauditd]
+    root 139 13:23 0:00 [kworker/0:3]
+    root 1659 13:23 0:00 [nfit]
+    root 1680 13:23 0:00 [ata_sff]
+    root 1683 13:23 0:00 [mpt_poll_0]
+    root 1685 13:23 0:00 [mpt/0]
+    root 2234 13:23 0:00 [scsi_eh_0]
+    root 2236 13:23 0:00 [scsi_tmf_0]
+    root 2503 13:23 0:00 [scsi_eh_1]
+    root 2504 13:23 0:00 [kworker/u256:2]
+    root 2510 13:23 0:00 [scsi_tmf_1]
+    root 2512 13:23 0:00 [scsi_eh_2]
+    root 2516 13:23 0:00 [scsi_tmf_2]
+    root 2518 13:23 0:00 [ttm_swap]
+    root 2520 13:23 0:00 [irq/16-vmwgfx]
+    root 2929 13:23 0:00 [kworker/0:1H]
+    root 2972 13:23 0:00 [kdmflush]
+    root 2973 13:23 0:00 [bioset]
+    root 2987 13:23 0:00 [kdmflush]
+    root 2988 13:23 0:00 [bioset]
+    root 3006 13:23 0:00 [bioset]
+    root 3011 13:23 0:00 [xfsalloc]
+    root 3016 13:23 0:00 [xfs_mru_cache]
+    root 3019 13:23 0:00 [xfs-buf/dm-0]
+    root 3022 13:23 0:00 [xfs-data/dm-0]
+    root 3025 13:23 0:00 [xfs-conv/dm-0]
+    root 3026 13:23 0:00 [xfs-cil/dm-0]
+    root 3027 13:23 0:00 [xfs-reclaim/dm-]
+    root 3028 13:23 0:00 [xfs-log/dm-0]
+    root 3029 13:23 0:00 [xfs-eofblocks/d]
+    root 3030 13:23 0:00 [xfsaild/dm-0]
+    root 3097 13:23 0:00 /usr/lib/systemd/systemd-journald
+    root 3114 13:23 0:00 /usr/sbin/lvmetad
+    root 3129 13:23 0:01 /usr/lib/systemd/systemd-udevd
+    root 5002 13:23 0:00 [xfs-buf/sda1]
+    root 5004 13:23 0:00 [xfs-data/sda1]
+    root 5010 13:23 0:00 [xfs-conv/sda1]
+    root 5014 13:23 0:00 [xfs-cil/sda1]
+    root 5019 13:23 0:00 [xfs-reclaim/sda]
+    root 5024 13:23 0:00 [xfs-log/sda1]
+    root 5028 13:23 0:00 [xfs-eofblocks/s]
+    root 5031 13:23 0:00 [xfsaild/sda1]
+    root 6123 13:23 0:00 /sbin/auditd
+    polkitd 6272 13:23 0:00 /usr/lib/polkit-1/polkitd
+    kibana 6279 13:23 0:23 /usr/share/kibana/bin/../node/bin/node
+    root 6283 13:23 2:25 /bin/java
+    dbus 6288 13:23 0:00 /usr/bin/dbus-daemon
+    chrony 6299 13:23 0:00 /usr/sbin/chronyd
+    root 6321 13:23 0:00 /usr/lib/systemd/systemd-logind
+    root 6330 13:23 0:00 /usr/sbin/crond
+    root 6337 13:23 0:01 /usr/bin/python
+    root 6358 13:23 0:00 /sbin/agetty
+    root 6521 13:23 0:00 /usr/sbin/NetworkManager
+    root 6849 13:23 0:02 /usr/sbin/vmtoolsd
+    root 6884 13:23 0:00 /usr/lib/vmware-vgauth/VGAuthService
+    elastic+ 7257 13:24 1:54 /bin/java
+    root 7258 13:24 0:00 /usr/bin/python2
+    root 7259 13:24 0:00 /usr/sbin/sshd
+    root 7261 13:24 0:00 /usr/sbin/rsyslogd
+    root 7325 13:24 0:00 nginx:
+    nginx 7326 13:24 1:21 nginx:
+    root 8614 13:24 0:00 sshd:
+    root 9335 13:24 0:00 sshd:
+    security 9737 13:24 0:00 sshd:
+    security 9897 13:24 0:00 -bash
+    security 12966 13:24 0:00 sshd:
+    security 13089 13:24 0:00 -bash
+    root 15696 13:25 0:00 sshd:
+    elastic+ 15699 13:25 0:00 /usr/share/elasticsearch/modules/x-pack-ml/platform/linux-x86_64/bin/controller
+    security 15707 13:25 0:00 sshd:
+    security 15708 13:25 0:00 -bash
+    root 15802 13:25 0:00 sshd:
+    security 16737 13:26 0:00 sshd:
+    security 16760 13:26 0:00 -bash
+    kibana 17051 13:27 0:00 /bin/sh
+    kibana 17052 13:27 0:00 python
+    kibana 17053 13:27 0:00 /bin/bash
+    root 17100 13:30 0:00 python
+    root 17102 13:30 0:00 /bin/sh
+    root 17138 13:33 0:00 [kworker/0:0]
+    root 17140 13:34 0:00 sshd:
+    root 17142 13:34 0:00 [kworker/0:2]
+    security 17145 13:34 0:00 sshd:
+    security 17146 13:34 0:00 -bash
+    security 17466 13:37 0:00 python
+    security 17697 13:37 0:00 /bin/sh
+    security 17698 13:37 0:00 ps
+    security 17699 13:37 0:00 awk
+
+[+] Apache Version and Modules
+
+[+] Apache Config File
+
+[+] Sudo Version (Check out http://www.exploit-db.com/search/?action=search&filter_page=1&filter_description=sudo)
+    Sudo version 1.8.23
+    Sudoers policy plugin version 1.8.23
+    Sudoers file grammar version 46
+    Sudoers I/O plugin version 1.8.23
+
+[*] IDENTIFYING PROCESSES AND PACKAGES RUNNING AS ROOT OR OTHER SUPERUSER...
+
+    root 2520 13:23 0:00 [irq/16-vmwgfx]
+    root 2516 13:23 0:00 [scsi_tmf_2]
+    root 5031 13:23 0:00 [xfsaild/sda1]
+    root 3 13:23 0:02 [ksoftirqd/0]
+    root 6849 13:23 0:02 /usr/sbin/vmtoolsd
+    root 2929 13:23 0:00 [kworker/0:1H]
+    root 5010 13:23 0:00 [xfs-conv/sda1]
+    root 41 13:23 0:00 [kthrotld]
+    root 9 13:23 0:03 [rcu_sched]
+    root 6330 13:23 0:00 /usr/sbin/crond
+    root 5028 13:23 0:00 [xfs-eofblocks/s]
+    root 3022 13:23 0:00 [xfs-data/dm-0]
+    root 15802 13:25 0:00 sshd:
+    root 7258 13:24 0:00 /usr/bin/python2
+    root 3030 13:23 0:00 [xfsaild/dm-0]
+    root 11 13:23 0:00 [watchdog/0]
+    root 139 13:23 0:00 [kworker/0:3]
+    root 17138 13:33 0:00 [kworker/0:0]
+    root 1659 13:23 0:00 [nfit]
+    root 22 13:23 0:00 [md]
+    root 5024 13:23 0:00 [xfs-log/sda1]
+    root 45 13:23 0:00 [kpsmoused]
+    root 3016 13:23 0:00 [xfs_mru_cache]
+    root 3019 13:23 0:00 [xfs-buf/dm-0]
+    root 3114 13:23 0:00 /usr/sbin/lvmetad
+    root 2503 13:23 0:00 [scsi_eh_1]
+    root 18 13:23 0:00 [bioset]
+    root 33 13:23 0:00 [crypto]
+    root 1685 13:23 0:00 [mpt/0]
+    root 6123 13:23 0:00 /sbin/auditd
+    root 3129 13:23 0:01 /usr/lib/systemd/systemd-udevd
+    root 5 13:23 0:00 [kworker/0:0H]
+    root 15 13:23 0:00 [khungtaskd]
+    root 91 13:23 0:00 [kauditd]
+    root 7259 13:24 0:00 /usr/sbin/sshd
+    root 8 13:23 0:00 [rcu_bh]
+    root 2510 13:23 0:00 [scsi_tmf_1]
+    root 3011 13:23 0:00 [xfsalloc]
+    root 43 13:23 0:00 [kmpath_rdacd]
+    root 5014 13:23 0:00 [xfs-cil/sda1]
+    root 2234 13:23 0:00 [scsi_eh_0]
+    root 2988 13:23 0:00 [bioset]
+    root 1 13:23 0:02 /usr/lib/systemd/systemd
+        Possible Related Packages: 
+            systemd-219-62.el7.x86_64
+            systemd-libs-219-62.el7.x86_64
+            systemd-sysv-219-62.el7.x86_64
+    root 2972 13:23 0:00 [kdmflush]
+    root 17100 13:30 0:00 python
+        Possible Related Packages: 
+            dbus-python-1.1.1-9.el7.x86_64
+            libselinux-python-2.5-14.1.el7.x86_64
+            newt-python-0.52.15-4.el7.x86_64
+            python-2.7.5-76.el7.x86_64
+            python-configobj-4.7.2-7.el7.noarch
+            python-decorator-3.4.0-3.el7.noarch
+            python-firewall-0.5.3-5.el7.noarch
+            python-gobject-base-3.22.0-1.el7_4.1.x86_64
+            python-iniparse-0.4-9.el7.noarch
+            python-javapackages-3.4.1-11.el7.noarch
+            python-libs-2.7.5-76.el7.x86_64
+            python-linux-procfs-0.4.9-4.el7.noarch
+            python-lxml-3.2.1-4.el7.x86_64
+            python-perf-3.10.0-957.1.3.el7.x86_64
+            python-pycurl-7.19.0-19.el7.x86_64
+            python-pyudev-0.15-9.el7.noarch
+            python-schedutils-0.4-6.el7.x86_64
+            python-slip-0.4.0-4.el7.noarch
+            python-slip-dbus-0.4.0-4.el7.noarch
+            python-urlgrabber-3.10-9.el7.noarch
+            rpm-python-4.11.3-35.el7.x86_64
+    root 17140 13:34 0:00 sshd:
+    root 30 13:23 0:00 [kswapd0]
+    root 5019 13:23 0:00 [xfs-reclaim/sda]
+    root 17142 13:34 0:00 [kworker/0:2]
+    root 32 13:23 0:00 [khugepaged]
+    root 6283 13:23 2:25 /bin/java
+        Possible Related Packages: 
+            java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
+            java-1.8.0-openjdk-headless-1.8.0.191.b12-1.el7_6.x86_64
+            javapackages-tools-3.4.1-11.el7.noarch
+            python-javapackages-3.4.1-11.el7.noarch
+            tzdata-java-2018g-1.el7.noarch
+    root 17 13:23 0:00 [kintegrityd]
+    root 3026 13:23 0:00 [xfs-cil/dm-0]
+    root 7 13:23 0:00 [migration/0]
+    root 19 13:23 0:00 [bioset]
+    root 5002 13:23 0:00 [xfs-buf/sda1]
+    root 21 13:23 0:00 [kblockd]
+    root 23 13:23 0:00 [edac-poller]
+    root 3025 13:23 0:00 [xfs-conv/dm-0]
+    root 9335 13:24 0:00 sshd:
+    root 1683 13:23 0:00 [mpt_poll_0]
+    root 8614 13:24 0:00 sshd:
+    root 2518 13:23 0:00 [ttm_swap]
+    root 16 13:23 0:00 [writeback]
+    root 6 13:23 0:00 [kworker/u256:0]
+    root 2987 13:23 0:00 [kdmflush]
+    root 7325 13:24 0:00 nginx:
+    root 1680 13:23 0:00 [ata_sff]
+    root 17102 13:30 0:00 /bin/sh
+    root 44 13:23 0:00 [kaluad]
+    root 6521 13:23 0:00 /usr/sbin/NetworkManager
+        Possible Related Packages: 
+            NetworkManager-1.12.0-8.el7_6.x86_64
+            NetworkManager-libnm-1.12.0-8.el7_6.x86_64
+            NetworkManager-team-1.12.0-8.el7_6.x86_64
+            NetworkManager-tui-1.12.0-8.el7_6.x86_64
+            NetworkManager-wifi-1.12.0-8.el7_6.x86_64
+    root 2512 13:23 0:00 [scsi_eh_2]
+    root 3029 13:23 0:00 [xfs-eofblocks/d]
+    root 3027 13:23 0:00 [xfs-reclaim/dm-]
+    root 24 13:23 0:00 [watchdogd]
+    root 2973 13:23 0:00 [bioset]
+    root 5004 13:23 0:00 [xfs-data/sda1]
+    root 47 13:23 0:00 [ipv6_addrconf]
+    root 3097 13:23 0:00 /usr/lib/systemd/systemd-journald
+    root 31 13:23 0:00 [ksmd]
+    root 2236 13:23 0:00 [scsi_tmf_0]
+    root 6337 13:23 0:01 /usr/bin/python
+        Possible Related Packages: 
+            dbus-python-1.1.1-9.el7.x86_64
+            libselinux-python-2.5-14.1.el7.x86_64
+            newt-python-0.52.15-4.el7.x86_64
+            python-2.7.5-76.el7.x86_64
+            python-configobj-4.7.2-7.el7.noarch
+            python-decorator-3.4.0-3.el7.noarch
+            python-firewall-0.5.3-5.el7.noarch
+            python-gobject-base-3.22.0-1.el7_4.1.x86_64
+            python-iniparse-0.4-9.el7.noarch
+            python-javapackages-3.4.1-11.el7.noarch
+            python-libs-2.7.5-76.el7.x86_64
+            python-linux-procfs-0.4.9-4.el7.noarch
+            python-lxml-3.2.1-4.el7.x86_64
+            python-perf-3.10.0-957.1.3.el7.x86_64
+            python-pycurl-7.19.0-19.el7.x86_64
+            python-pyudev-0.15-9.el7.noarch
+            python-schedutils-0.4-6.el7.x86_64
+            python-slip-0.4.0-4.el7.noarch
+            python-slip-dbus-0.4.0-4.el7.noarch
+            python-urlgrabber-3.10-9.el7.noarch
+            rpm-python-4.11.3-35.el7.x86_64
+    root 20 13:23 0:00 [bioset]
+    root 6321 13:23 0:00 /usr/lib/systemd/systemd-logind
+    root 3028 13:23 0:00 [xfs-log/dm-0]
+    root 2 13:23 0:00 [kthreadd]
+    root 13 13:23 0:00 [kdevtmpfs]
+    root 6884 13:23 0:00 /usr/lib/vmware-vgauth/VGAuthService
+    root 25 13:23 0:01 [kworker/0:1]
+    root 3006 13:23 0:00 [bioset]
+    root 10 13:23 0:00 [lru-add-drain]
+    root 7261 13:24 0:00 /usr/sbin/rsyslogd
+    root 2504 13:23 0:00 [kworker/u256:2]
+    root 15696 13:25 0:00 sshd:
+    root 6358 13:23 0:00 /sbin/agetty
+    root 60 13:23 0:00 [deferwq]
+    root 14 13:23 0:00 [netns]
+
+[*] ENUMERATING INSTALLED LANGUAGES/TOOLS FOR SPLOIT BUILDING...
+
+[+] Installed Tools
+    /usr/bin/awk
+    /usr/bin/perl
+    /usr/bin/python
+    /usr/bin/vi
+    /usr/bin/vim
+    /usr/bin/find
+
+[+] Related Shell Escape Sequences...
+
+    vi-->	:!bash
+    vi-->	:set shell=/bin/bash:shell
+    vi-->	:!bash
+    vi-->	:set shell=/bin/bash:shell
+    awk-->	awk 'BEGIN {system("/bin/bash")}'
+    find-->	find / -exec /usr/bin/awk 'BEGIN {system("/bin/bash")}' \;
+    perl-->	perl -e 'exec "/bin/bash";'
+
+[*] FINDING RELEVENT PRIVILEGE ESCALATION EXPLOITS...
+
+    Note: Exploits relying on a compile/scripting language not detected on this system are marked with a '**' but should still be tested!
+
+    The following exploits are ranked higher in probability of success because this script detected a related running process, OS, or mounted file system
+
+    The following exploits are applicable to this kernel version and should be investigated as well
+    - Kernel ia32syscall Emulation Privilege Escalation || http://www.exploit-db.com/exploits/15023 || Language=c**
+    - Sendpage Local Privilege Escalation || http://www.exploit-db.com/exploits/19933 || Language=ruby**
+    - CAP_SYS_ADMIN to Root Exploit 2 (32 and 64-bit) || http://www.exploit-db.com/exploits/15944 || Language=c**
+    - CAP_SYS_ADMIN to root Exploit || http://www.exploit-db.com/exploits/15916 || Language=c**
+    - MySQL 4.x/5.0 User-Defined Function Local Privilege Escalation Exploit || http://www.exploit-db.com/exploits/1518 || Language=c**
+    - open-time Capability file_ns_capable() Privilege Escalation || http://www.exploit-db.com/exploits/25450 || Language=c**
+    - open-time Capability file_ns_capable() - Privilege Escalation Vulnerability || http://www.exploit-db.com/exploits/25307 || Language=c**
+
+Finished
+=================================================================================================

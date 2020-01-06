@@ -1,0 +1,338 @@
+[90m---
+[90m---
+
+[94m        User:[0;0m kibana
+[94m     User ID:[0;0m 994
+[94m    Password:[0;0m [90mnone[0;0m
+[94m        Home:[0;0m /home/kibana
+[94m        Path:[0;0m /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+[94m       umask:[0;0m 0022
+
+[94m    Hostname:[0;0m haystack
+[94m       Linux:[0;0m 3.10.0-957.1.3.el7.x86_64
+[94mDistribution:[0;0m CentOS Linux 7 (Core)
+[94mArchitecture:[0;0m x86_64
+
+[35m==================================================================([32m users [35m)=====[0;0m
+[97m[[94mi[97m] [90musr000[97m Current user groups[90m.............................................[34m yes![0;0m
+[90m---[0;0m
+kibana
+[90m---[0;0m
+[97m[[93m*[97m] [90musr010[97m Is current user in an administrative group?[90m.....................[90m nope[0;0m
+[97m[[93m*[97m] [90musr020[97m Are there other users in an administrative groups?[90m..............[90m nope[0;0m
+[97m[[93m*[97m] [90musr030[97m Other users with shell[90m..........................................[36m yes![0;0m
+[90m---[0;0m
+root:x:0:0:root:/root:/bin/bash
+security:x:1000:1000:security:/home/security:/bin/bash
+[90m---[0;0m
+[97m[[94mi[97m] [90musr040[97m Environment information[90m.........................................[34m yes![0;0m
+[90m---[0;0m
+KILL_ON_STOP_TIMEOUT=0
+chroot=/
+SHELL=/sbin/nologin
+nice=
+user=kibana
+USER=kibana
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/usr/sbin
+PWD=/tmp
+BABEL_CACHE_PATH=/usr/share/kibana/optimize/.babelcache.json
+LANG=es_CL.UTF-8
+NODE_ENV=production
+SHLVL=2
+HOME=/home/kibana
+group=kibana
+LOGNAME=kibana
+chdir=/
+_=/usr/bin/env
+[90m---[0;0m
+[97m[[94mi[97m] [90musr050[97m Groups for other users[90m..........................................[34m yes![0;0m
+[90m---[0;0m
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:postfix
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+nobody:x:99:
+users:x:100:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+systemd-journal:x:190:
+systemd-network:x:192:
+dbus:x:81:
+polkitd:x:998:
+ssh_keys:x:997:
+sshd:x:74:
+postdrop:x:90:
+postfix:x:89:
+chrony:x:996:
+security:x:1000:security
+elasticsearch:x:995:
+logstash:x:994:
+nginx:x:993:
+kibana:x:992:
+[90m---[0;0m
+[97m[[94mi[97m] [90musr060[97m Other users[90m.....................................................[34m yes![0;0m
+[90m---[0;0m
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+security:x:1000:1000:security:/home/security:/bin/bash
+elasticsearch:x:997:995:elasticsearch user:/nonexistent:/sbin/nologin
+logstash:x:996:994:logstash:/usr/share/logstash:/sbin/nologin
+nginx:x:995:993:Nginx web server:/var/lib/nginx:/sbin/nologin
+kibana:x:994:992:kibana service user:/home/kibana:/sbin/nologin
+[90m---[0;0m
+[35m===================================================================([32m sudo [35m)=====[0;0m
+[97m[[91m![97m] [90msud000[97m Can we sudo without a password?[90m.................................[90m nope[0;0m
+[97m[[91m![97m] [90msud010[97m Can we list sudo commands without a password?[90m...................[90m nope[0;0m
+[97m[[93m*[97m] [90msud040[97m Can we read /etc/sudoers?[90m.......................................[90m nope[0;0m
+[97m[[93m*[97m] [90msud050[97m Do we know if any other users used sudo?[90m........................[90m nope[0;0m
+[35m============================================================([32m file system [35m)=====[0;0m
+[97m[[93m*[97m] [90mfst000[97m Writable files outside user's home[90m..............................[36m yes![0;0m
+[90m---[0;0m
+/etc/logstash/conf.d
+/etc/logstash/startup.options
+/var/tmp
+/var/lib/kibana
+/var/lib/kibana/uuid
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/colorwheel.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/scandir.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/page_events.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/loadspeed.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/injectme.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/render_multi_url.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/server.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/netlog.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/pagecallback.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/module.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/arguments.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/universe.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/openurlwithproxy.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/sleepsort.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/modernizr.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/unrandomize.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/hello.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/stdin-stdout-stderr.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/fibo.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/phantomwebintro.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/echoToFile.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/post.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/loadurlwithoutcss.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/child_process-examples.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/printenv.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/useragent.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/rasterize.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/outputEncoding.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/waitfor.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/serverkeepalive.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/postserver.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/printmargins.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/version.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/run-qunit.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/features.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/netsniff.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/walk_through_frames.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/printheaderfooter.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/responsive-screenshot.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/countdown.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/detectsniff.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/simpleserver.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/postjson.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/run-jasmine2.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/examples/run-jasmine.js
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/README.md
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/LICENSE.BSD
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/bin
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/third-party.txt
+/var/lib/kibana/phantomjs-2.1.1-linux-x86_64/ChangeLog
+/var/log/kibana
+/tmp
+/tmp/.X11-unix
+/tmp/.ICE-unix
+/tmp/.Test-unix
+/tmp/.font-unix
+/tmp/.XIM-unix
+/tmp/reverse_shell.js
+/tmp/lse_kibana.txt
+/tmp/lse_kibana2.txt
+/tmp/linenum_kibana.txt
+/usr/share/kibana/optimize
+/usr/share/kibana/optimize/bundles
+/usr/share/kibana/optimize/bundles/src
+/usr/share/kibana/optimize/bundles/src/ui
+/usr/share/kibana/optimize/bundles/src/ui/public
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors/url
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors/url/icons
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors/url/icons/cv.png
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors/url/icons/de.png
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors/url/icons/go.png
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors/url/icons/ne.png
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors/url/icons/ni.png
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors/url/icons/stop.png
+/usr/share/kibana/optimize/bundles/src/ui/public/field_editor/components/field_format_editor/editors/url/icons/us.png
+/usr/share/kibana/optimize/bundles/dashboardViewer.entry.js
+/usr/share/kibana/optimize/bundles/05997d91a7ba91b3eb8774591478f045.svg
+/usr/share/kibana/optimize/bundles/dashboardViewer.style.css
+/usr/share/kibana/optimize/bundles/0c6dccf6e8d60a35330c60a8831b1c08.svg
+/usr/share/kibana/optimize/bundles/e18bbf611f2a2e43afc071aa2f4e1512.ttf
+/usr/share/kibana/optimize/bundles/1f5de7e3ff25f0b0acccfa328794c7ea.svg
+/usr/share/kibana/optimize/bundles/dfb02f8f6d0cedc009ee5887cc68f1f3.woff
+/usr/share/kibana/optimize/bundles/283abe380441c6725a8faf00adfd138c.svg
+/usr/share/kibana/optimize/bundles/ebdca7741674eca4e1fadeca157f3ae6.svg
+/usr/share/kibana/optimize/bundles/31c86fc56ac59def71b7d7cff315270b.svg
+/usr/share/kibana/optimize/bundles/f1db327547974915c7a903d2e5e9eedc.svg
+/usr/share/kibana/optimize/bundles/3211ece03a463a51c356a406827c30c0.svg
+/usr/share/kibana/optimize/bundles/f4769f9bdb7466be65088239c12046d1.eot
+/usr/share/kibana/optimize/bundles/3c9862715546cd524edf3b9fa7516994.svg
+/usr/share/kibana/optimize/bundles/fa2772327f55d8198301fdb8bcfc8158.woff
+/usr/share/kibana/optimize/bundles/428687c29242d0d2f3d7ac7e09942921.svg
+/usr/share/kibana/optimize/bundles/graph.bundle.js
+/usr/share/kibana/optimize/bundles/448c34a56d699c29117adc64c43affeb.woff2
+/usr/share/kibana/optimize/bundles/graph.entry.js
+/usr/share/kibana/optimize/bundles/45c73723862c6fc5eb3d6961db2d71fb.eot
+/usr/share/kibana/optimize/bundles/login.entry.js
+/usr/share/kibana/optimize/bundles/4b5a84aaf1c9485e060c503a0ff8cadb.woff2
+/usr/share/kibana/optimize/bundles/login.style.css
+/usr/share/kibana/optimize/bundles/4be5b8808b5216ee6b6a1a4a29493e32.svg
+/usr/share/kibana/optimize/bundles/logout.bundle.js
+/usr/share/kibana/optimize/bundles/4eae70b44c4e3b69f2357bff8f1e67f1.svg
+/usr/share/kibana/optimize/bundles/logout.entry.js
+/usr/share/kibana/optimize/bundles/5a2ae67159a441fd4b6cf30c0c6cc5b1.svg
+/usr/share/kibana/optimize/bundles/logout.style.css
+/usr/share/kibana/optimize/bundles/6199ab7146b1eb859db9ffd2b9b786d3.svg
+/usr/share/kibana/optimize/bundles/ml.bundle.js
+/usr/share/kibana/optimize/bundles/timelion.style.css
+/usr/share/kibana/optimize/bundles/69d89e51f62b6a582c311c35c0f778aa.svg
+/usr/share/kibana/optimize/bundles/ml.entry.js
+/usr/share/kibana/optimize/bundles/vendors.bundle.js
+/usr/share/kibana/optimize/bundles/71676fac241b6e6e51614074cf72152c.svg
+/usr/share/kibana/optimize/bundles/ml.style.css
+/usr/share/kibana/optimize/bundles/vendors.style.css
+/usr/share/kibana/optimize/bundles/74725229b8c17a39c35d6cf26a989557.svg
+/usr/share/kibana/optimize/bundles/monitoring.bundle.js
+/usr/share/kibana/optimize/bundles/76a4f23c6be74fd309e0d0fd2c27a5de.svg
+/usr/share/kibana/optimize/bundles/monitoring.entry.js
+/usr/share/kibana/optimize/bundles/7c87870ab40d63cfb8870c1f183f9939.ttf
+/usr/share/kibana/optimize/bundles/monitoring.style.css
+/usr/share/kibana/optimize/bundles/86581dc57044730966dee64f92133ee2.svg
+/usr/share/kibana/optimize/bundles/stateSessionStorageRedirect.bundle.js
+/usr/share/kibana/optimize/bundles/89889688147bd7575d6327160d64e760.svg
+/usr/share/kibana/optimize/bundles/stateSessionStorageRedirect.entry.js
+/usr/share/kibana/optimize/bundles/97bdb00c6bb0f0858161ef433ea62640.svg
+/usr/share/kibana/optimize/bundles/stateSessionStorageRedirect.style.css
+/usr/share/kibana/optimize/bundles/9ad9ca7ab44828ee57b75fdd76a84567.svg
+/usr/share/kibana/optimize/bundles/status_page.bundle.js
+/usr/share/kibana/optimize/bundles/a04c09b6eda01f84b583ed59e958afdc.svg
+/usr/share/kibana/optimize/bundles/status_page.entry.js
+/usr/share/kibana/optimize/bundles/a3b2c394347b7dba49ca15464bb9e234.svg
+/usr/share/kibana/optimize/bundles/apm.bundle.js
+/usr/share/kibana/optimize/bundles/apm.entry.js
+/usr/share/kibana/optimize/bundles/apm.style.css
+/usr/share/kibana/optimize/bundles/status_page.style.css
+/usr/share/kibana/optimize/bundles/ccd9193f3b8af43575b17f6b00df04ae.svg
+/usr/share/kibana/optimize/bundles/commons.bundle.js
+/usr/share/kibana/optimize/bundles/commons.style.css
+/usr/share/kibana/optimize/bundles/timelion.bundle.js
+/usr/share/kibana/optimize/bundles/d1c95c8e85228e93547df753065c0867.svg
+/usr/share/kibana/optimize/bundles/timelion.entry.js
+/usr/share/kibana/optimize/bundles/dashboardViewer.bundle.js
+/usr/share/kibana/optimize/bundles/graph.style.css
+/usr/share/kibana/optimize/bundles/kibana.bundle.js
+/usr/share/kibana/optimize/bundles/kibana.entry.js
+/usr/share/kibana/optimize/bundles/kibana.style.css
+/usr/share/kibana/optimize/bundles/login.bundle.js
+/usr/share/kibana/optimize/.babelcache.json
+/usr/share/kibana/plugins
+/opt/kibana
+/opt/kibana/bash
+[90m---[0;0m
+[97m[[93m*[97m] [90mfst010[97m Binaries with setuid bit[90m........................................[36m yes![0;0m
+[90m---[0;0m
+/usr/bin/chfn
+/usr/bin/chsh
+/usr/bin/mount
+/usr/bin/chage
+/usr/bin/gpasswd
+/usr/bin/newgrp
+/usr/bin/su
+/usr/bin/umount
+/usr/bin/sudo
+/usr/bin/pkexec
+/usr/bin/crontab
+/usr/bin/passwd
+/usr/sbin/pam_timestamp_check
+/usr/sbin/unix_chkpwd
+/usr/sbin/usernetctl
+/usr/lib/polkit-1/polkit-agent-helper-1
+/usr/lib/vmware-tools/bin64/vmware-user-suid-wrapper
+/usr/lib/vmware-tools/bin32/vmware-user-suid-wrapper
+/usr/libexec/dbus-1/dbus-daemon-launch-helper
+/opt/kibana/bash
+[90m---[0;0m
+[97m[[91m![97m] [90mfst020[97m Uncommon setuid binaries[90m........................................[92m yes![0;0m
+[90m---[0;0m
+/usr/lib/vmware-tools/bin64/vmware-user-suid-wrapper
+/usr/lib/vmware-tools/bin32/vmware-user-suid-wrapper
+/opt/kibana/bash
+[90m---[0;0m
+[97m[[91m![97m] [90mfst030[97m Can we write to any setuid binary?[90m..............................[92m yes![0;0m
+[90m---[0;0m
+/opt/kibana/bash
+[90m---[0;0m
+[97m[[93m*[97m] [90mfst040[97m Binaries with setgid bit[90m........................................ [90mskip
+[97m[[91m![97m] [90mfst050[97m Uncommon setgid binaries[90m........................................ [90mskip
+[97m[[91m![97m] [90mfst060[97m Can we write to any setgid binary?[90m.............................. [90mskip
+[97m[[93m*[97m] [90mfst070[97m Can we read /root?[90m..............................................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst080[97m Can we read subdirectories under /home?[90m.........................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst090[97m SSH files in home directories[90m...................................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst100[97m Useful binaries[90m.................................................[36m yes![0;0m
+[90m---[0;0m
+/usr/bin/curl
+[90m---[0;0m
+[97m[[93m*[97m] [90mfst110[97m Other interesting files in home directories[90m.....................[90m nope[0;0m
+[97m[[91m![97m] [90mfst120[97m Are there any credentials in fstab/mtab?[90m........................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst130[97m Does 'kibana' have mail?[90m........................................[90m nope[0;0m
+[97m[[91m![97m] [90mfst140[97m Can we access other users mail?[90m.................................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst150[97m Looking for GIT/SVN repositories[90m................................[90m nope[0;0m
+[97m[[91m![97m] [90mfst160[97m Can we write to critical files?[90m.................................

