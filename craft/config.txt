@@ -1,0 +1,22 @@
+some user :
+administrator
+ebachman
+dinesh
+gilfoyle
+
+
+creds:
+at this page : https://gogs.craft.htb/Craft/craft-api/commit/a2d28ed1554adddfcfb845879bfea09f976ab7c1
+-response = requests.get('https://api.craft.htb/api/auth/login',  auth=('dinesh', '4aUh0A8PbVJxgd'), verify=False)
+dinesh:4aUh0A8PbVJxgd
+email : dinesh@craft.htb
+
+found a ssh key :
+where I found : https://gogs.craft.htb/user/settings/ssh
+SHA256:8Fc2kZiv0Y+kjkh8atKr6brzBiM1DoDIhG6LN1ktPfA
+
+found a token at : https://api.craft.htb/api/auth/login    after login:
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiZGluZXNoIiwiZXhwIjoxNTcyNTAxMDA1fQ.Ip74Oq2SZWBHZkqQ13ZbrFafgYA1U7buyR1OEimjfyc
+
+found info:
+[{'id': 1, 'username': 'dinesh', 'password': '4aUh0A8PbVJxgd'}, {'id': 4, 'username': 'ebachman', 'password': 'llJ77D8QFkLPQB'}, {'id': 5, 'username': 'gilfoyle', 'password': 'ZEU3N8WNM2rh4T'}]
