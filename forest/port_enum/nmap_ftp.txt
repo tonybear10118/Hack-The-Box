@@ -1,0 +1,10 @@
+# Nmap 7.80 scan initiated Mon Oct 14 08:40:30 2019 as: nmap --script=ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-anon,ftp-libopie,,ftp-vuln-cve2010-4221,tftp-enum -p 21 -n -v -sV -Pn -o nmap_ftp.txt 10.10.10.161
+Nmap scan report for 10.10.10.161
+Host is up (0.61s latency).
+
+PORT   STATE  SERVICE VERSION
+21/tcp closed ftp
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Oct 14 08:40:32 2019 -- 1 IP address (1 host up) scanned in 1.75 seconds

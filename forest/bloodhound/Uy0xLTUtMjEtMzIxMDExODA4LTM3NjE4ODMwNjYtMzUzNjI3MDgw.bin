@@ -1,0 +1,199 @@
+Ë
+M
+3CN=svc-alfresco,OU=Service Accounts,DC=htb,DC=localSVC-ALFRESCO@HTB.LOCAL
+F
+*CN=DefaultAccount,CN=Users,DC=htb,DC=localDEFAULTACCOUNT@HTB.LOCAL
+6
+"CN=krbtgt,CN=Users,DC=htb,DC=localKRBTGT@HTB.LOCAL
+D
+)CN=Administrator,CN=Users,DC=htb,DC=localADMINISTRATOR@HTB.LOCAL
+4
+!CN=Guest,CN=Users,DC=htb,DC=localGUEST@HTB.LOCALÀ@
+o
+MCN=Discovery Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=localDISCOVERY MANAGEMENT@HTB.LOCAL
+N
+/CN=Event Log Readers,CN=Builtin,DC=htb,DC=localEVENT LOG READERS@HTB.LOCAL
+p
+@CN=Pre-Windows 2000 Compatible Access,CN=Builtin,DC=htb,DC=local,PRE-WINDOWS 2000 COMPATIBLE ACCESS@HTB.LOCAL
+k
+KCN=Records Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=localRECORDS MANAGEMENT@HTB.LOCAL
+W
+-S-1-5-21-3072663084-364016917-1341370565-1121&EXCHANGE WINDOWS PERMISSIONS@HTB.LOCAL
+s
+OCN=Security Administrator,OU=Microsoft Exchange Security Groups,DC=htb,DC=local SECURITY ADMINISTRATOR@HTB.LOCAL
+j
+=CN=Network Configuration Operators,CN=Builtin,DC=htb,DC=local)NETWORK CONFIGURATION OPERATORS@HTB.LOCAL
+y
+WCN=Exchange Install Domain Servers,CN=Microsoft Exchange System Objects,DC=htb,DC=local$D31000-NSEL5BRJ63V7@HTB.LOCAL
+F
+,S-1-5-21-3072663084-364016917-1341370565-513DOMAIN USERS@HTB.LOCAL
+M
+,S-1-5-21-3072663084-364016917-1341370565-553RAS AND IAS SERVERS@HTB.LOCAL
+J
+,CN=Domain Computers,CN=Users,DC=htb,DC=localDOMAIN COMPUTERS@HTB.LOCAL
+H
++CN=Protected Users,CN=Users,DC=htb,DC=localPROTECTED USERS@HTB.LOCAL
+>
+'CN=IIS_IUSRS,CN=Builtin,DC=htb,DC=localIIS_IUSRS@HTB.LOCAL
+q
+NCN=ExchangeLegacyInterop,OU=Microsoft Exchange Security Groups,DC=htb,DC=localEXCHANGELEGACYINTEROP@HTB.LOCAL
+L
+-CN=Enterprise Admins,CN=Users,DC=htb,DC=localENTERPRISE ADMINS@HTB.LOCAL
+J
+-CN=Print Operators,CN=Builtin,DC=htb,DC=localPRINT OPERATORS@HTB.LOCAL
+D
+)CN=Schema Admins,CN=Users,DC=htb,DC=localSCHEMA ADMINS@HTB.LOCAL
+<
+*CN=test,OU=Security Groups,DC=htb,DC=localTEST@HTB.LOCAL
+^
+7CN=Performance Monitor Users,CN=Builtin,DC=htb,DC=local#PERFORMANCE MONITOR USERS@HTB.LOCAL
+i
+JCN=Server Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=localSERVER MANAGEMENT@HTB.LOCAL
+
+UCN=Managed Availability Servers,OU=Microsoft Exchange Security Groups,DC=htb,DC=local&MANAGED AVAILABILITY SERVERS@HTB.LOCAL
+D
+)CN=Domain Admins,CN=Users,DC=htb,DC=localDOMAIN ADMINS@HTB.LOCAL
+J
+,S-1-5-21-3072663084-364016917-1341370565-515DOMAIN COMPUTERS@HTB.LOCAL
+L
+.CN=Backup Operators,CN=Builtin,DC=htb,DC=localBACKUP OPERATORS@HTB.LOCAL
+L
+.CN=Server Operators,CN=Builtin,DC=htb,DC=localSERVER OPERATORS@HTB.LOCAL
+H
++CN=Cert Publishers,CN=Users,DC=htb,DC=localCERT PUBLISHERS@HTB.LOCAL
+X
+4CN=Hyper-V Administrators,CN=Builtin,DC=htb,DC=local HYPER-V ADMINISTRATORS@HTB.LOCAL
+q
+NCN=Compliance Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=localCOMPLIANCE MANAGEMENT@HTB.LOCAL
+V
+3CN=Performance Log Users,CN=Builtin,DC=htb,DC=localPERFORMANCE LOG USERS@HTB.LOCAL
+I
+,S-1-5-21-3072663084-364016917-1341370565-517CERT PUBLISHERS@HTB.LOCAL
+O
+,S-1-5-21-3072663084-364016917-1341370565-527ENTERPRISE KEY ADMINS@HTB.LOCAL
+x
+CCN=Allowed RODC Password Replication Group,CN=Users,DC=htb,DC=local1ALLOWED RODC PASSWORD REPLICATION GROUP@HTB.LOCAL
+V
+3CN=Distributed COM Users,CN=Builtin,DC=htb,DC=localDISTRIBUTED COM USERS@HTB.LOCAL
+e
+HCN=Security Reader,OU=Microsoft Exchange Security Groups,DC=htb,DC=localSECURITY READER@HTB.LOCAL
+f
+;CN=System Managed Accounts Group,CN=Builtin,DC=htb,DC=local'SYSTEM MANAGED ACCOUNTS GROUP@HTB.LOCAL
+Z
+5CN=Cryptographic Operators,CN=Builtin,DC=htb,DC=local!CRYPTOGRAPHIC OPERATORS@HTB.LOCAL
+U
+-S-1-5-21-3072663084-364016917-1341370565-1119$EXCHANGE TRUSTED SUBSYSTEM@HTB.LOCAL
+K
+-S-1-5-21-3072663084-364016917-1341370565-1118EXCHANGE SERVERS@HTB.LOCAL
+T
+2CN=RDS Endpoint Servers,CN=Builtin,DC=htb,DC=localRDS ENDPOINT SERVERS@HTB.LOCAL
+e
+HCN=Delegated Setup,OU=Microsoft Exchange Security Groups,DC=htb,DC=localDELEGATED SETUP@HTB.LOCAL
+b
+8CN=Read-only Domain Controllers,CN=Users,DC=htb,DC=local&READ-ONLY DOMAIN CONTROLLERS@HTB.LOCAL
+H
+,CN=Administrators,CN=Builtin,DC=htb,DC=localADMINISTRATORS@HTB.LOCAL
+J
+-S-1-5-21-3072663084-364016917-1341370565-1113DELEGATED SETUP@HTB.LOCAL
+>
+&CN=Key Admins,CN=Users,DC=htb,DC=localKEY ADMINS@HTB.LOCAL
+o
+MCN=Recipient Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=localRECIPIENT MANAGEMENT@HTB.LOCAL
+a
+,S-1-5-21-3072663084-364016917-1341370565-4981ENTERPRISE READ-ONLY DOMAIN CONTROLLERS@HTB.LOCAL
+a
+FCN=UM Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=localUM MANAGEMENT@HTB.LOCAL
+x
+CCN=Enterprise Read-only Domain Controllers,CN=Users,DC=htb,DC=local1ENTERPRISE READ-ONLY DOMAIN CONTROLLERS@HTB.LOCAL
+8
+$CN=Guests,CN=Builtin,DC=htb,DC=localGUESTS@HTB.LOCAL
+K
+,S-1-5-21-3072663084-364016917-1341370565-519ENTERPRISE ADMINS@HTB.LOCAL
+p
+@CN=Windows Authorization Access Group,CN=Builtin,DC=htb,DC=local,WINDOWS AUTHORIZATION ACCESS GROUP@HTB.LOCAL
+Z
+5CN=Remote Management Users,CN=Builtin,DC=htb,DC=local!REMOTE MANAGEMENT USERS@HTB.LOCAL
+‰
+ZCN=View-Only Organization Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=local+VIEW-ONLY ORGANIZATION MANAGEMENT@HTB.LOCAL
+b
+8CN=Cloneable Domain Controllers,CN=Users,DC=htb,DC=local&CLONEABLE DOMAIN CONTROLLERS@HTB.LOCAL
+w
+QCN=Public Folder Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=local"PUBLIC FOLDER MANAGEMENT@HTB.LOCAL
+j
+=CN=Certificate Service DCOM Access,CN=Builtin,DC=htb,DC=local)CERTIFICATE SERVICE DCOM ACCESS@HTB.LOCAL
+T
+6CN=Service Accounts,OU=Security Groups,DC=htb,DC=localSERVICE ACCOUNTS@HTB.LOCAL
+P
+/CN=RAS and IAS Servers,CN=Users,DC=htb,DC=localRAS AND IAS SERVERS@HTB.LOCAL
+g
+ICN=Exchange Servers,OU=Microsoft Exchange Security Groups,DC=htb,DC=localEXCHANGE SERVERS@HTB.LOCAL
+v
+BCN=Denied RODC Password Replication Group,CN=Users,DC=htb,DC=local0DENIED RODC PASSWORD REPLICATION GROUP@HTB.LOCAL
+`
+<CN=Privileged IT Accounts,OU=Security Groups,DC=htb,DC=local PRIVILEGED IT ACCOUNTS@HTB.LOCAL
+r
+ACN=Access Control Assistance Operators,CN=Builtin,DC=htb,DC=local-ACCESS CONTROL ASSISTANCE OPERATORS@HTB.LOCAL
+B
+(CN=Domain Users,CN=Users,DC=htb,DC=localDOMAIN USERS@HTB.LOCAL
+{
+SCN=Exchange Trusted Subsystem,OU=Microsoft Exchange Security Groups,DC=htb,DC=local$EXCHANGE TRUSTED SUBSYSTEM@HTB.LOCAL
+T
+2CN=Remote Desktop Users,CN=Builtin,DC=htb,DC=localREMOTE DESKTOP USERS@HTB.LOCAL
+X
+4CN=RDS Management Servers,CN=Builtin,DC=htb,DC=local RDS MANAGEMENT SERVERS@HTB.LOCAL
+T
+1CN=Enterprise Key Admins,CN=Users,DC=htb,DC=localENTERPRISE KEY ADMINS@HTB.LOCAL
+u
+PCN=Organization Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=local!ORGANIZATION MANAGEMENT@HTB.LOCAL
+G
+,S-1-5-21-3072663084-364016917-1341370565-512DOMAIN ADMINS@HTB.LOCAL
+V
+,S-1-5-21-3072663084-364016917-1341370565-522&CLONEABLE DOMAIN CONTROLLERS@HTB.LOCAL
+@
+(CN=Replicator,CN=Builtin,DC=htb,DC=localREPLICATOR@HTB.LOCAL
+h
+<CN=Incoming Forest Trust Builders,CN=Builtin,DC=htb,DC=local(INCOMING FOREST TRUST BUILDERS@HTB.LOCAL
+G
+,S-1-5-21-3072663084-364016917-1341370565-514DOMAIN GUESTS@HTB.LOCAL
+k
+KCN=Hygiene Management,OU=Microsoft Exchange Security Groups,DC=htb,DC=localHYGIENE MANAGEMENT@HTB.LOCAL
+<
+%CN=DnsAdmins,CN=Users,DC=htb,DC=localDNSADMINS@HTB.LOCAL
+Y
+BCN=Help Desk,OU=Microsoft Exchange Security Groups,DC=htb,DC=localHELP DESK@HTB.LOCAL
+`
+7CN=Group Policy Creator Owners,CN=Users,DC=htb,DC=local%GROUP POLICY CREATOR OWNERS@HTB.LOCAL
+6
+#CN=Users,CN=Builtin,DC=htb,DC=localUSERS@HTB.LOCAL
+
+UCN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=htb,DC=local&EXCHANGE WINDOWS PERMISSIONS@HTB.LOCAL
+N
+.CN=Domain Controllers,CN=Users,DC=htb,DC=localDOMAIN CONTROLLERS@HTB.LOCAL
+F
+*CN=DnsUpdateProxy,CN=Users,DC=htb,DC=localDNSUPDATEPROXY@HTB.LOCAL
+^
+7CN=RDS Remote Access Servers,CN=Builtin,DC=htb,DC=local#RDS REMOTE ACCESS SERVERS@HTB.LOCAL
+j
+=CN=Terminal Server License Servers,CN=Builtin,DC=htb,DC=local)TERMINAL SERVER LICENSE SERVERS@HTB.LOCAL
+N
+/CN=Account Operators,CN=Builtin,DC=htb,DC=localACCOUNT OPERATORS@HTB.LOCAL
+h
+<CN=Storage Replica Administrators,CN=Builtin,DC=htb,DC=local(STORAGE REPLICA ADMINISTRATORS@HTB.LOCAL
+D
+)CN=Domain Guests,CN=Users,DC=htb,DC=localDOMAIN GUESTS@HTB.LOCAL
+L
+,S-1-5-21-3072663084-364016917-1341370565-516DOMAIN CONTROLLERS@HTB.LOCAL
+R
+-S-1-5-21-3072663084-364016917-1341370565-1104!ORGANIZATION MANAGEMENT@HTB.LOCAL
+S
+-S-1-5-21-3072663084-364016917-1341370565-1107"PUBLIC FOLDER MANAGEMENT@HTB.LOCAL
+D
+,S-1-5-21-3072663084-364016917-1341370565-526KEY ADMINS@HTB.LOCAL
+:
+&CN=EXCH01,CN=Computers,DC=htb,DC=localEXCH01.HTB.LOCAL
+A
+-S-1-5-21-3072663084-364016917-1341370565-1103EXCH01.HTB.LOCALn
+5
+(S-1-5-21-3072663084-364016917-1341370565	HTB.LOCAL
+5
+	HTB.LOCAL(S-1-5-21-3072663084-364016917-1341370565 

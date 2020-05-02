@@ -1,0 +1,8 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2019-10-17 10:28 EDT
+too short
+Pre-scan script results:
+|_eap-info: please specify an interface with -e
+| targets-asn: 
+|_  targets-asn.asn is a mandatory parameter
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 44.18 seconds

@@ -1,0 +1,10 @@
+# Nmap 7.80 scan initiated Mon Oct 14 05:43:29 2019 as: nmap --script=msrpc-enum -o msrpc_enum.txt 10.10.10.161
+Nmap scan report for 10.10.10.161
+Host is up (0.0054s latency).
+Not shown: 997 filtered ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+554/tcp  open  rtsp
+1723/tcp open  pptp
+
+# Nmap done at Mon Oct 14 05:43:34 2019 -- 1 IP address (1 host up) scanned in 4.94 seconds
