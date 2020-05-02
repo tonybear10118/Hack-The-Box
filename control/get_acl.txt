@@ -1,0 +1,48 @@
+PS C:\bug> get-acl HKLM:\SYSTEM\CurrentControlSet | format-list
+get-acl HKLM:\SYSTEM\CurrentControlSet | format-list
+
+
+Path   : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet
+Owner  : BUILTIN\Administrators
+Group  : NT AUTHORITY\SYSTEM
+Access : BUILTIN\Administrators Allow  FullControl
+         NT AUTHORITY\Authenticated Users Allow  ReadKey
+         NT AUTHORITY\Authenticated Users Allow  -2147483648
+         S-1-5-32-549 Allow  ReadKey
+         S-1-5-32-549 Allow  -2147483648
+         BUILTIN\Administrators Allow  FullControl
+         BUILTIN\Administrators Allow  268435456
+         NT AUTHORITY\SYSTEM Allow  FullControl
+         NT AUTHORITY\SYSTEM Allow  268435456
+         CREATOR OWNER Allow  268435456
+         APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES Allow  ReadKey
+         APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES Allow  -2147483648
+         S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681 Allow  
+         ReadKey
+         S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681 Allow  
+         -2147483648
+Audit  : 
+Sddl   : O:BAG:SYD:AI(A;;KA;;;BA)(A;ID;KR;;;AU)(A;CIIOID;GR;;;AU)(A;ID;KR;;;SO)(A;CIIOID;GR;;;SO)(A;ID;KA;;;BA)(A;CIIOI
+         D;GA;;;BA)(A;ID;KA;;;SY)(A;CIIOID;GA;;;SY)(A;CIIOID;GA;;;CO)(A;ID;KR;;;AC)(A;CIIOID;GR;;;AC)(A;ID;KR;;;S-1-15-
+         3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)(A;CIIOID;GR;;;S
+         -1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)
+
+=========================================================================================================================
+
+PS C:\> get-acl HKLM:\SYSTEM\CurrentControlSet\Services | format-list
+get-acl HKLM:\SYSTEM\CurrentControlSet\Services | format-list
+
+
+Path   : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
+Owner  : NT AUTHORITY\SYSTEM
+Group  : NT AUTHORITY\SYSTEM
+Access : CREATOR OWNER Allow  FullControl
+         NT AUTHORITY\Authenticated Users Allow  ReadKey
+         NT AUTHORITY\SYSTEM Allow  FullControl
+         BUILTIN\Administrators Allow  FullControl
+         CONTROL\Hector Allow  FullControl
+         APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES Allow  ReadKey
+Audit  : 
+Sddl   : O:SYG:SYD:PAI(A;CIIO;KA;;;CO)(A;CI;KR;;;AU)(A;CI;KA;;;SY)(A;CI;KA;;;BA)(A;CI;KA;;;S-1-5-21-3271572904-80546332
+         -2170161114-1000)(A;CI;KR;;;AC)
+

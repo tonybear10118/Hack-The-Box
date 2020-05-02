@@ -1,0 +1,9 @@
+PS C:\bug> $acl = Get-Acl -Path HKLM:\System\CurrentControlSet\Services\acpiex
+$acl = Get-Acl -Path HKLM:\System\CurrentControlSet\Services\acpiex
+PS C:\bug> ConvertFrom-SddlString -Sddl $acl.Sddl | findstr "Hector"
+ConvertFrom-SddlString -Sddl $acl.Sddl | findstr "Hector"
+                   ReadExtendedAttributes, ReadPermissions, WriteExtendedAttributes), CONTROL\Hector: AccessAllowed
+
+==============================
+
+

