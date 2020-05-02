@@ -1,0 +1,19 @@
+# Nmap 7.80 scan initiated Thu Nov  7 00:52:27 2019 as: nmap -sU -sC -sV -o nmap_udp.txt 10.10.10.160
+Nmap scan report for 10.10.10.160
+Host is up (0.35s latency).
+Not shown: 989 closed ports
+PORT      STATE    SERVICE       VERSION
+192/udp   filtered osu-nms
+1993/udp  filtered snmp-tcp-port
+10000/udp open     webmin        (https on TCP port 10000)
+17417/udp filtered unknown
+18004/udp filtered unknown
+19695/udp filtered unknown
+27195/udp filtered unknown
+46532/udp filtered unknown
+49199/udp filtered unknown
+51690/udp filtered unknown
+52144/udp filtered unknown
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Nov  7 01:09:52 2019 -- 1 IP address (1 host up) scanned in 1044.42 seconds

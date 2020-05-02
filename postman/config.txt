@@ -1,0 +1,3 @@
+    Login as root, and edit the /etc/webmin/config file.
+    Find the line referers_none=1 and change it to referers_none=0.
+    Save the file.

