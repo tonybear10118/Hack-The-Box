@@ -1,0 +1,4 @@
+/index.php (Status: 200)
+/home.php (Status: 302)
+/vendor (Status: 301)
+/server-status (Status: 403)

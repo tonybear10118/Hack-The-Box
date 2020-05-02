@@ -1,0 +1,19 @@
+{
+    "dataSource": {
+        "type": "microsoft analysis services",
+        "proxyUrl": "https://olap.flexmonster.com/olap/msmdpump.dll",
+        "dataSourceInfo": "WIN-IA9HPVD1RU5",
+        "catalog": "Adventure Works DW Standard Edition",
+        "cube": "Adventure Works",
+        "binary": false
+    },
+    "slice": {
+        "columns": [
+            {
+                "uniqueName": "[Measures]"
+            }
+        ]
+    },
+    "version": "2.7.18",
+    "creationDate": "2019-11-06T05:41:30.416Z"
+}

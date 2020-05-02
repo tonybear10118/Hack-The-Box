@@ -1,0 +1,8 @@
+creds at http://staging-order.mango.htb/home.php
+cracked by NOSQL injection :
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL%20Injection#extract-length-information
+
+1.
+admin:t9KcS3>!0B#2
+2.
+mango:h3mXK8RhU~f{]f5H

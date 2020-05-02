@@ -1,0 +1,3 @@
+/index.php (Status: 200)
+/analytics.php (Status: 200)
+/server-status (Status: 403)

