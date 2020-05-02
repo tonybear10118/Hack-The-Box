@@ -1,0 +1,23 @@
+Found smt weird at http://10.10.10.114/help/bookmarks.html
+-> Gitlab Login
+I name it as weird.js in this folder.
+
+
+>>> print( bytes.decode("\x76\x61\x6C\x75\x65")  )
+value
+>>> print( bytes.decode("\x75\x73\x65\x72\x5F\x6C\x6F\x67\x69\x6E")  )
+user_login
+>>> print( bytes.decode("\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64")  )
+getElementById
+>>> print( bytes.decode("\x63\x6C\x61\x76\x65")  )
+clave
+>>> print( bytes.decode("\x75\x73\x65\x72\x5F\x70\x61\x73\x73\x77\x6F\x72\x64")  )
+user_password
+>>> print( bytes.decode("\x31\x31\x64\x65\x73\x30\x30\x38\x31\x78")  )
+11des0081x
+
+
+<?php
+$db_connection = pg_connect("host=localhost dbname=profiles user=profiles password=profiles");
+$result = pg_query($db_connection, "SELECT * FROM profiles");
+
