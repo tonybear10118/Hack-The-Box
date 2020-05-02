@@ -1,0 +1,48 @@
+# Nmap 7.80 scan initiated Fri Nov  8 11:00:14 2019 as: nmap -sC -sV -p- -o nmap.txt 10.10.10.158
+Nmap scan report for 10.10.10.158
+Host is up (0.30s latency).
+Not shown: 65520 closed ports
+PORT      STATE SERVICE      VERSION
+21/tcp    open  ftp          FileZilla ftpd
+| ftp-syst: 
+|_  SYST: UNIX emulated by FileZilla
+80/tcp    open  http         Microsoft IIS httpd 8.5
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: Json HTB
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds Microsoft Windows Server 2008 R2 - 2012 microsoft-ds
+5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+6666/tcp  open  irc?
+|_irc-info: Unable to open connection
+47001/tcp open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49152/tcp open  msrpc        Microsoft Windows RPC
+49153/tcp open  msrpc        Microsoft Windows RPC
+49154/tcp open  msrpc        Microsoft Windows RPC
+49155/tcp open  msrpc        Microsoft Windows RPC
+49156/tcp open  msrpc        Microsoft Windows RPC
+49157/tcp open  msrpc        Microsoft Windows RPC
+49158/tcp open  msrpc        Microsoft Windows RPC
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 3h59m58s, deviation: 0s, median: 3h59m58s
+|_nbstat: NetBIOS name: JSON, NetBIOS user: <unknown>, NetBIOS MAC: 00:50:56:b9:2d:96 (VMware)
+| smb-security-mode: 
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2019-11-08T21:01:30
+|_  start_date: 2019-11-08T18:41:33
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Nov  8 12:02:34 2019 -- 1 IP address (1 host up) scanned in 3739.76 seconds

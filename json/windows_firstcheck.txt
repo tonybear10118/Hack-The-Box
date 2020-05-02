@@ -1,0 +1,205 @@
+C:\Users\userpool\bug_tmp>.\windows-privesc-check2.exe --audit -a -o check1.txt
+.\windows-privesc-check2.exe --audit -a -o check1.txt
+windows-privesc-check v2.0svn198 (http://pentestmonkey.net/windows-privesc-check)
+
+[i] TSUserEnabled registry value is 0. Excluding TERMINAL SERVER USER
+
+Considering these users to be trusted:
+* BUILTIN\Power Users
+* BUILTIN\Administrators
+* NT SERVICE\TrustedInstaller
+* NT AUTHORITY\SYSTEM
+
+[i] Running as current user.  No logon creds supplied (-u, -D, -p).
+
+[+] Runtime Options Dump
+ mode: audit
+ do_all: True
+ do_allfiles: False
+ do_appendices: True
+ do_drivers: False
+ do_drives: False
+ do_errors: False
+ do_eventlogs: False
+ do_groups: False
+ do_installed_software: False
+ do_loggedin: False
+ do_nt_objects: False
+ do_paths: False
+ do_processes: False
+ do_program_files: False
+ do_reg_keys: False
+ do_registry: False
+ do_scheduled_tasks: False
+ do_services: False
+ do_shares: False
+ do_unreadable_if: True
+ do_users: False
+ exploitable_by_list: []
+ ignore_principal_file: False
+ ignore_principal_list: ['BUILTIN\\Administrators', 'NT SERVICE\\TrustedInstaller', 'NT AUTHORITY\\SYSTEM']
+ ignorenoone: False
+ patchfile: None
+ privesc_mode: report_untrusted
+ remote_domain: None
+ remote_host: None
+ remote_pass: None
+ remote_user: None
+ report_file_stem: check1.txt
+ verbose: False
+
+============ Starting Audit at 2019-11-09 12:51:37 ============
+
+[+] Running: audit_misc_checks
+ [+] Checks completed
+
+[+] Running: audit_paths
+[-] Checking system path
+[-] Checking current user's path
+WARNING: Can't get security descriptor for file: 
+WARNING: Can't get security descriptor for file: \pagefile.sys
+ [+] Checks completed
+
+[+] Running: audit_eventlogs
+WARNING: Can't get security descriptor for file: C:\Windows\system32\winevt\Logs\Application.evtx
+WARNING: Can't get security descriptor for file: C:\Windows\system32\winevt\Logs\Application.evtx
+WARNING: Can't get security descriptor for file: C:\Windows\system32\winevt\Logs\Application.evtx
+WARNING: Can't get security descriptor for file: C:\Windows\system32\winevt\logs\HardwareEvents.evtx
+WARNING: Can't get security descriptor for file: C:\Windows\system32\winevt\logs\HardwareEvents.evtx
+WARNING: Can't get security descriptor for file: C:\Windows\system32\winevt\logs\HardwareEvents.evtx
+WARNING: Can't get security descriptor for file: C:\Windows\system32\winevt\Logs\System.evtx
+WARNING: Can't get security descriptor for file: C:\Windows\system32\winevt\Logs\System.evtx
+WARNING: Can't get security descriptor for file: C:\Windows\system32\winevt\Logs\System.evtx
+ [+] Checks completed
+
+[+] Running: audit_shares
+[E] NetShareGetInfo: Access is denied.
+[E] NetShareGetInfo: Access is denied.
+[E] NetShareGetInfo: Access is denied.
+ [+] Checks completed
+
+[+] Running: audit_patches
+[E] Can't open patch data file: None
+ [+] Checks completed
+
+[+] Running: audit_loggedin
+
+[+] Logged in users:
+User logged in: Logon Server="JSON" Logon Domain="JSON" Username="userpool"
+ [+] Checks completed
+
+[+] Running: audit_services
+[E] Errors occurred but were supressed.  Some checks might have been missed.  Probably a bug.
+ [+] Checks completed
+
+[+] Running: audit_drivers
+[E] Errors occurred but were supressed.  Some checks might have been missed.  Probably a bug.
+ [+] Checks completed
+
+[+] Running: audit_drives
+ [+] Checks completed
+
+[+] Running: audit_processes
+ [+] Checks completed
+
+[+] Running: audit_program_files
+ [+] Checks completed
+
+[+] Running: audit_registry
+[-] Walking registry (very slow: probably 15 mins - 1 hour)
+ [+] Checks completed
+
+[+] Running: audit_scheduled_tasks
+------ \Microsoft\Windows\AppID\VerifiedPublisherCertStoreCheck -------
+runas user: S-1-5-19
+exec command: %windir%\system32\appidcertstorecheck.exe
+exec command2: C:\Windows\system32\appidcertstorecheck.exe
+exec args: <none>
+
+------ \Microsoft\Windows\AppxDeploymentClient\Pre-staged app cleanup -------
+runas user: S-1-5-18
+exec command: %windir%\system32\rundll32.exe
+exec command2: C:\Windows\system32\rundll32.exe
+exec args: %windir%\system32\AppxDeploymentClient.dll,AppxPreStageCleanupRunTask
+
+------ \Microsoft\Windows\Autochk\Proxy -------
+runas user: S-1-5-18
+exec command: %windir%\system32\rundll32.exe
+exec command2: C:\Windows\system32\rundll32.exe
+exec args: /d acproxy.dll,PerformAutochkOperations
+
+------ \Microsoft\Windows\Customer Experience Improvement Program\Server\ServerCeipAssistant -------
+runas user: S-1-5-18
+exec command: %windir%\system32\ceipdata.exe
+exec command2: C:\Windows\system32\ceipdata.exe
+exec args: -id 1
+
+------ \Microsoft\Windows\Software Inventory Logging\Collection -------
+runas user: S-1-5-18
+exec command: %systemroot%\system32\cmd.exe
+exec command2: C:\Windows\system32\cmd.exe
+exec args: /d /c %systemroot%\system32\silcollector.cmd publish
+
+------ \Microsoft\Windows\Software Inventory Logging\Configuration -------
+runas user: S-1-5-18
+exec command: %systemroot%\system32\cmd.exe
+exec command2: C:\Windows\system32\cmd.exe
+exec args: /d /c %systemroot%\system32\silcollector.cmd configure
+
+------ \Microsoft\Windows\Storage Tiers Management\Storage Tiers Optimization -------
+runas user: S-1-5-18
+exec command: %windir%\system32\defrag.exe
+exec command2: C:\Windows\system32\defrag.exe
+exec args: -c -h -g -#
+
+------ \Microsoft\Windows\WindowsUpdate\Scheduled Start -------
+runas user: NT AUTHORITY\SYSTEM
+exec command: C:\Windows\system32\sc.exe
+exec command2: C:\Windows\system32\sc.exe
+exec args: start wuauserv
+
+------ \Microsoft\Windows\WindowsUpdate\Scheduled Start With Network -------
+runas user: NT AUTHORITY\SYSTEM
+exec command: C:\Windows\system32\sc.exe
+exec command2: C:\Windows\system32\sc.exe
+exec args: start wuauserv
+
+------ \Microsoft\Windows\Workplace Join\Automatic-Workplace-Join -------
+runas user: S-1-5-11
+exec command: %SystemRoot%\System32\AutoWorkplace.exe
+exec command2: C:\Windows\System32\AutoWorkplace.exe
+exec args: join
+
+------ \Microsoft\Windows\WS\WSRefreshBannedAppsListTask -------
+runas user: S-1-5-32-545
+exec command: rundll32.exe
+exec command2: rundll32.exe
+[W] is_replaceable called for non-existent file rundll32.exe
+exec args: WSClient.dll,RefreshBannedAppsList
+
+ [+] Checks completed
+
+[+] Running: audit_reg_keys
+ [+] Checks completed
+
+[+] Running: audit_users
+ [+] Checks completed
+
+[+] Running: audit_nt_objects
+ [+] Checks completed
+
+[+] Running: audit_groups
+ [+] Checks completed
+
+[+] Running: audit_installed_software
+[+] Checking installed software
+[+] Checking installed software (WoW64 enabled)
+ [+] Checks completed
+
+============ Audit Complete at 2019-11-09 13:02:11 ============
+
+[+] Runtime: 634.0 seconds
+
+[+] Saving report file check1.txt.xml
+[+] Saving report file check1.txt.txt
+[+] Saving report file check1.txt.html
