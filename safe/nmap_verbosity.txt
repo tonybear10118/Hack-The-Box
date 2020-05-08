@@ -1,0 +1,12 @@
+# Nmap 7.80 scan initiated Sun Oct 27 08:26:39 2019 as: nmap -p- -v -o nmap_verbosity.txt 10.10.10.147
+Increasing send delay for 10.10.10.147 from 0 to 5 due to 932 out of 3106 dropped probes since last increase.
+Nmap scan report for 10.10.10.147
+Host is up (0.26s latency).
+Not shown: 65532 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+1337/tcp open  waste
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Sun Oct 27 08:50:34 2019 -- 1 IP address (1 host up) scanned in 1434.86 seconds
