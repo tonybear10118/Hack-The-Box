@@ -1,0 +1,3 @@
+/install (Status: 301)
+/backup.php (Status: 200)
+/bolt (Status: 301)

